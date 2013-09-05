@@ -1,5 +1,5 @@
 {
-    "name": "akeneo/pim-community-standard",
+    "name": "symfony/framework-standard-edition",
     "license": "MIT",
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
@@ -8,38 +8,87 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "~2.4",
-        "doctrine/orm": "~2.2,>=2.2.3",
-        "doctrine/doctrine-bundle": "~1.2",
-        "twig/extensions": "~1.0",
-        "symfony/assetic-bundle": "~2.3",
-        "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.4",
-        "sensio/distribution-bundle": "~2.3",
-        "sensio/framework-extra-bundle": "~2.3",
-        "sensio/generator-bundle": "~2.3",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "symfony/symfony": "2.3.*",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "doctrine/doctrine-bundle": "1.2.*",
+        "twig/extensions": "1.0.*",
+        "symfony/assetic-bundle": "2.3.*",
+        "symfony/swiftmailer-bundle": "2.3.*",
+        "symfony/monolog-bundle": "2.3.*",
+        "sensio/distribution-bundle": "2.3.*",
+        "sensio/framework-extra-bundle": "2.3.*",
+        "sensio/generator-bundle": "2.3.*",
+        "akeneo/pim": "dev-master",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "oro/platform": "dev-maintenance/pim_alpha5",
+        "jms/di-extra-bundle": "1.4.*@dev",
+        "jms/job-queue-bundle": "dev-master",
+        "jms/aop-bundle": "dev-master",
+        "jms/serializer": "0.12.*@dev",
+        "jms/serializer-bundle": "0.12.*@dev",
+        "kriswallsmith/assetic": "1.1.*@dev",
+        "knplabs/knp-menu": "dev-master",
+        "knplabs/knp-menu-bundle": "dev-master",
+        "knplabs/knp-paginator-bundle": "dev-master",
+        "friendsofsymfony/rest-bundle": "0.12.*",
+        "friendsofsymfony/jsrouting-bundle": "1.1.*@dev",
+        "nelmio/api-doc-bundle": "dev-master",
+        "ass/xmlsecurity": "dev-master",
+        "besimple/soap-common": "dev-master",
+        "besimple/soap-server": "dev-master",
+        "besimple/soap-bundle": "dev-master",
+        "ddeboer/data-import": "dev-master",
+        "stof/doctrine-extensions-bundle": "dev-master",
+        "escapestudios/wsse-authentication-bundle": "2.1.x-dev",
+        "liip/imagine-bundle": "dev-master",
+        "leafo/lessphp": "dev-master",
+        "willdurand/expose-translation-bundle": "0.2.*@dev",
+        "apy/jsfv-bundle": "dev-master",
+        "genemu/form-bundle": "2.2.*",
+        "a2lix/translation-form-bundle" : "1.*@dev"
+        
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:akeneo/pim.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:laboro/platform.git",
+            "branch": "master"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/laboro/SonataAdminBundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:akeneo/DemoBundle.git"
+        }
+    ],
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "php app/console fos:js-routing:dump --target=web/js/routes.js"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "php app/console fos:js-routing:dump --target=web/js/routes.js"
         ]
     },
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
@@ -47,7 +96,7 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.4-dev"
+            "dev-master": "2.3-dev"
         }
     }
 }
