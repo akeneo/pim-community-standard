@@ -1,0 +1,231 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+
+framework:
+    #esi:             ~
+    translator:      { fallback: %locale% }
+    default_locale:  %locale%
+    secret:          %secret%
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: "%kernel.debug%"
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
+    trusted_proxies: ~
+    session:
+        cookie_lifetime:      43200
+        name:                 BAPID
+    fragments:
+        enabled: true
+        path: /_fragment # used for controller action in template
+
+# Twig Configuration
+twig:
+    debug:                    "%kernel.debug%"
+    strict_variables:         "%kernel.debug%"
+    exception_controller:     "FOS\RestBundle\Controller\ExceptionController::showAction"
+    globals:
+        env: %kernel.environment%
+        bap:
+            layout:           ::base.html.twig  # default layout across all Oro bundles
+            start_route:      oro_default
+    form:
+        resources:
+            - 'PimUIBundle:Form:pim-fields.html.twig'
+#            - 'OroUIBundle:Form:fields.html.twig'
+#            - 'OroFormBundle:Form:fields.html.twig'
+#            - 'OroTranslationBundle:Form:fields.html.twig'
+
+# Assetic Configuration
+assetic:
+    debug:                    false
+    use_controller:           false
+    bundles:
+        - OroAsseticBundle
+        - OroUIBundle
+        - OroUserBundle
+        - OroGridBundle
+        - OroFilterBundle
+        - OroNavigationBundle
+        - OroWindowsBundle
+        - OroEntityExtendBundle
+        - OroSegmentationTreeBundle
+        - PimUIBundle
+        - PimCatalogBundle
+
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        lessphp:
+            file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+            apply_to: "\.less$"
+        yui_css:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+        yui_js:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:               "%database_driver%"
+        host:                 "%database_host%"
+        port:                 "%database_port%"
+        dbname:               "%database_name%"
+        user:                 "%database_user%"
+        password:             "%database_password%"
+        charset:              UTF8
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping:         true
+        resolve_target_entities:
+            Symfony\Component\Security\Core\User\UserInterface:   Oro\Bundle\UserBundle\Entity\User
+            Pim\Bundle\CatalogBundle\Model\ProductValueInterface: Pim\Bundle\CatalogBundle\Entity\ProductValue
+            Pim\Bundle\CatalogBundle\Model\ProductInterface:      Pim\Bundle\CatalogBundle\Entity\Product
+            Pim\Bundle\CatalogBundle\Model\CategoryInterface:     Pim\Bundle\CatalogBundle\Entity\Category
+            Pim\Bundle\ImportExportBundle\Model\ExportInterface:  Pim\Bundle\ImportExportBundle\Entity\Export
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport:                "%mailer_transport%"
+    encryption:               "%mailer_encryption%"
+    auth_mode:                "%mailer_auth_mode%"
+    host:                     "%mailer_host%"
+    username:                 "%mailer_user%"
+    password:                 "%mailer_password%"
+    spool:                    { type: memory }
+
+knp_paginator:
+    page_range:               5         # default page range used in pagination control
+    default_options:
+        page_name:            page      # page query parameter name
+        sort_field_name:      sort      # sort field query parameter name
+        sort_direction_name:  direction # sort direction query parameter name
+        distinct:             true      # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination:           OroUIBundle::pager.html.twig
+
+fos_rest:
+    view:
+        failed_validation: HTTP_BAD_REQUEST
+        default_engine: php
+        formats:
+            json: true
+            xml: true
+    format_listener:
+        prefer_extension: true
+    body_listener:
+        decoders:
+            json: fos_rest.decoder.json
+            xml: fos_rest.decoder.xml
+    routing_loader:
+        default_format: json
+
+fos_js_routing:
+    routes_to_expose:          [oro_*, pim_*]
+
+be_simple_soap:
+    cache:
+        type:                 disk
+        lifetime:             86400
+        limit:                5
+    services:
+        soap:
+            namespace:        http://symfony.loc/Api/1.0/
+            binding:          rpc-literal
+            resource:         "%kernel.root_dir%/../app/config/soap.yml"
+            resource_type:    yml
+
+stof_doctrine_extensions:
+    default_locale: %default_locale%
+    translation_fallback: true
+    orm:
+        default:
+            timestampable:    true
+            tree:             true
+
+services:
+    oro.cache.abstract:
+        abstract: true
+        class:     Doctrine\Common\Cache\PhpFileCache
+        arguments: [%kernel.cache_dir%]
+    twig.extension.intl:
+         class: Twig_Extensions_Extension_Intl
+         tags:
+             - { name: twig.extension }
+
+escape_wsse_authentication:
+    authentication_provider_class: Oro\Bundle\UserBundle\Security\WsseUserProvider
+    authentication_listener_class: Oro\Bundle\UserBundle\Security\WsseAuthListener
+
+liip_imagine:
+    filter_sets:
+        avatar_med:
+            quality:          95
+            filters:
+                thumbnail:    { size: [58, 58], mode: outbound }
+                strip:        ~
+        thumbnail_small:
+            quality:          95
+            filters:
+                thumbnail:    { size: [80, 120], mode: inset }
+                strip:        ~
+        image_preview:
+            quality:          95
+            filters:
+                thumbnail:    { size: [900, 600], mode: inset }
+                strip:        ~
+
+genemu_form:
+    select2: ~
+    autocomplete: ~
+
+oro_search:
+    engine:                   orm
+    realtime_update:          true
+
+oro_ui:
+    settings:
+        application_name:
+            value: "Akeneo"
+        application_title:
+            value: "Akeneo"
+
+oro_user:
+    settings:
+        name_format:
+          value:              %%last%%, %%first%%
+
+oro_translation:
+    js_translation:
+        # order of domains reflects messages fallback
+        domains: [jsmessages, validators]
+
+
+oro_entity_extend:
+    backend:        Dynamic
+    backup:         "%kernel.root_dir%/entities/Backup/"
+
+oro_filter:
+    twig:
+        layout: PimFilterBundle:Filter:pim-layout.js.twig
+
+knp_gaufrette:
+    adapters:
+        pim_adapter:
+            local:
+                directory: %upload_dir%
+                create:    true
+    filesystems:
+        pim:
+            adapter: pim_adapter
+            alias:   pim_filesystem
+
+pim_demo:
+    load_data: true
+
+pim_catalog:
+    imported_product_data_transformer: pim_import_export.form.transform_imported_product_data_subscriber
