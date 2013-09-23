@@ -20,11 +20,13 @@ class AppKernel extends Kernel
 
             // BAP deps
             new JMS\AopBundle\JMSAopBundle(),
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+            //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\JobQueueBundle\JMSJobQueueBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\RestBundle\FOSRestBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new BeSimple\SoapBundle\BeSimpleSoapBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
@@ -34,6 +36,7 @@ class AppKernel extends Kernel
             new Bazinga\ExposeTranslationBundle\BazingaExposeTranslationBundle(),
             new APY\JsFormValidationBundle\APYJsFormValidationBundle(),
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
 
             // PIM deps
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
@@ -41,6 +44,7 @@ class AppKernel extends Kernel
             // BAP bundles
             new Oro\Bundle\FlexibleEntityBundle\OroFlexibleEntityBundle(),
             new Oro\Bundle\UIBundle\OroUIBundle(),
+            new Oro\Bundle\FormBundle\OroFormBundle(),
             new Oro\Bundle\JsFormValidationBundle\OroJsFormValidationBundle(),
             new Oro\Bundle\SoapBundle\OroSoapBundle(),
             new Oro\Bundle\SearchBundle\OroSearchBundle(),
@@ -52,8 +56,8 @@ class AppKernel extends Kernel
             new Oro\Bundle\FilterBundle\OroFilterBundle(),
             new Oro\Bundle\GridBundle\OroGridBundle(),
             new Oro\Bundle\WindowsBundle\OroWindowsBundle(),
+            // new Oro\Bundle\AddressBundle\OroAddressBundle(),
             new Oro\Bundle\DataAuditBundle\OroDataAuditBundle(),
-            new Oro\Bundle\FormBundle\OroFormBundle(),
             new Oro\Bundle\TagBundle\OroTagBundle(),
             new Oro\Bundle\AsseticBundle\OroAsseticBundle(),
             new Oro\Bundle\TranslationBundle\OroTranslationBundle(),
@@ -64,6 +68,8 @@ class AppKernel extends Kernel
             new Oro\Bundle\EntityConfigBundle\OroEntityConfigBundle(),
             new Oro\Bundle\EntityExtendBundle\OroEntityExtendBundle(),
             new Oro\Bundle\ImapBundle\OroImapBundle(),
+            new Oro\Bundle\CronBundle\OroCronBundle(),
+            new Oro\Bundle\BatchBundle\OroBatchBundle(),
 
             // BAP overrided bundles
             new Pim\Bundle\NavigationBundle\PimNavigationBundle(),
@@ -73,15 +79,15 @@ class AppKernel extends Kernel
             new Pim\Bundle\SearchBundle\PimSearchBundle(),
 
             // PIM bundles
+            new Pim\Bundle\DashboardBundle\PimDashboardBundle(),
             new Pim\Bundle\InstallerBundle\PimInstallerBundle(),
             new Pim\Bundle\UIBundle\PimUIBundle(),
             new Pim\Bundle\CatalogBundle\PimCatalogBundle(),
             new Pim\Bundle\TranslationBundle\PimTranslationBundle(),
             new Pim\Bundle\JsFormValidationBundle\PimJsFormValidationBundle(),
-            new Pim\Bundle\BatchBundle\PimBatchBundle(),
             new Pim\Bundle\ImportExportBundle\PimImportExportBundle(),
             new Pim\Bundle\DemoBundle\PimDemoBundle(),
-            new Pim\Bundle\VersioningBundle\PimVersioningBundle,
+            new Pim\Bundle\VersioningBundle\PimVersioningBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test', 'behat'))) {
