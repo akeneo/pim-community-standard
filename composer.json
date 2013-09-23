@@ -1,6 +1,6 @@
 {
     "name": "akeneo/pim-community-standard",
-    "license": "MIT",
+    "license": "OSL 3.0",
     "type": "project",
     "description": "The \"Akeneo Community Standard Edition\" distribution",
     "autoload": {
