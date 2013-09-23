@@ -4,57 +4,23 @@
     "type": "project",
     "description": "The \"Akeneo Community Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": {
+            "": "src/",
+            "Extend\\": "app/entities/"
+        }
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "~2.3@dev",
-        "doctrine/orm": ">=2.2.3,<2.4-dev",
-        "doctrine/doctrine-bundle": "dev-master",
-        "twig/extensions": "1.0.*",
-        "symfony/assetic-bundle": "2.3.*",
-        "symfony/swiftmailer-bundle": "2.3.*",
-        "symfony/monolog-bundle": "2.3.*",
-        "sensio/distribution-bundle": "2.3.*",
-        "sensio/framework-extra-bundle": "2.3.*",
-        "sensio/generator-bundle": "2.3.*",
-        "akeneo/pim": "dev-master",
+        "oro/platform": "dev-maintenance/pim_alpha6",
+        "akeneo/pim-community-bundles": "dev-master",
         "akeneo/demobundle": "dev-master",
-        "incenteev/composer-parameter-handler": "~2.0",
-        "oro/platform": "dev-maintenance/pim_alpha5",
-        "jms/di-extra-bundle": "1.4.*@dev",
-        "jms/job-queue-bundle": "dev-master",
-        "jms/aop-bundle": "dev-master",
-        "jms/serializer": "0.12.*@dev",
-        "jms/serializer-bundle": "0.12.*@dev",
-        "kriswallsmith/assetic": "1.1.*@dev",
-        "knplabs/knp-menu": "dev-master",
-        "knplabs/knp-menu-bundle": "dev-master",
-        "knplabs/knp-paginator-bundle": "dev-master",
-        "friendsofsymfony/rest-bundle": "0.12.*",
-        "friendsofsymfony/jsrouting-bundle": "1.1.*@dev",
-        "nelmio/api-doc-bundle": "dev-master",
-        "ass/xmlsecurity": "dev-master",
-        "besimple/soap-common": "dev-master",
-        "besimple/soap-server": "dev-master",
-        "besimple/soap-bundle": "dev-master",
-        "ddeboer/data-import": "dev-master",
-        "stof/doctrine-extensions-bundle": "dev-master",
-        "escapestudios/wsse-authentication-bundle": "2.1.x-dev",
-        "liip/imagine-bundle": "dev-master",
-        "leafo/lessphp": "dev-master",
-        "willdurand/expose-translation-bundle": "0.2.*@dev",
-        "apy/jsfv-bundle": "dev-master",
-        "genemu/form-bundle": "2.2.*",
-        "a2lix/translation-form-bundle" : "1.*@dev",
         "knplabs/knp-gaufrette-bundle": "dev-master",
         "knplabs/gaufrette": "dev-master"
-        
     },
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:akeneo/pim.git"
+            "url": "git@github.com:akeneo/pim-community-bundles.git"
         },
         {
             "type": "vcs",
@@ -91,7 +57,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
@@ -99,7 +65,7 @@
             "file": "app/config/parameters.yml"
         },
         "branch-alias": {
-            "dev-master": "2.3-dev"
+            "dev-master": "1.0-dev"
         }
     }
 }
