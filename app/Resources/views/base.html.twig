@@ -1,13 +1,28 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+{% extends "OroUIBundle:Default:index.html.twig" %}
+
+{% block head_script %}
+    {{ parent() }}
+    <script type="text/javascript">
+        require(['pim/init']);
+    </script>
+    {{ block('head_script_component') }}
+{% endblock %}
+
+{% block head_style %}
+    {{ parent() }}
+    {% stylesheets
+        'bundles/pimui/css/pim.less'
+
+        debug=false
+        filter='cssrewrite,lessphp'
+        output='css/pim_all.css'
+    %}
+    <link rel="stylesheet" media="all" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    {{ block('head_style_component') }}
+{% endblock %}
+
+{% block main %}
+    {{ parent() }}
+    {{ oro_windows_restore() }}
+{% endblock %}
