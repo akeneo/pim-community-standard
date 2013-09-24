@@ -5,7 +5,7 @@ then
     ENV="$1"
 fi
 
-php app/console doctrine:database:create--env $env
+php app/console doctrine:database:create --env $env
 php app/console oro:entity-extend:clear --env $ENV
 php app/console doctrine:schema:create --env $ENV
 php app/console doctrine:fixture:load --no-debug --no-interaction --env $ENV
