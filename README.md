@@ -17,7 +17,7 @@ Installation instructions:
 
 ### Using Composer
 
-[As both Symfony 2 and Akeneo PIM use [Composer][2] to manage their dependencies, this is the recommended way to install Akeneo PIM.]
+As both Symfony 2 and Akeneo PIM use [Composer][2] to manage their dependencies, this is the recommended way to install Akeneo PIM.
 
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
