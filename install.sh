@@ -1,26 +1,27 @@
 #!/bin/sh
-ENV="prod"
+env="prod"
 if [ $1 ]
 then
-    ENV="$1"
+    env="$1"
 fi
 
-php app/console doctrine:database:create --env $env
-php app/console oro:entity-extend:clear --env $ENV
-php app/console doctrine:schema:create --env $ENV
-php app/console doctrine:fixture:load --no-debug --no-interaction --env $ENV
-php app/console oro:navigation:init --env $ENV
-php app/console oro:entity-config:init --env $ENV
-php app/console oro:entity-extend:init --env $ENV
-php app/console oro:entity-extend:update-config --env $ENV
-php app/console doctrine:schema:update --env $ENV --force
-php app/console oro:search:create-index --env $ENV
-php app/console oro:navigation:init --env $ENV
-php app/console assets:install web --env $ENV
-php app/console assetic:dump --env $ENV
-php app/console oro:assetic:dump --env $ENV
-php app/console oro:translation:dump --env $ENV
+
+php app/console doctrine:database:drop --force --env $env
+php app/console doctrine:database:create  --env $env
+php app/console doctrine:schema:create --env $env
+php app/console doctrine:fixture:load --no-debug --no-interaction --env $env
+php app/console oro:acl:load --env $env
+php app/console oro:entity-config:update --env $env
+php app/console oro:entity-extend:create --env $env
+php app/console cache:clear --env $env
+php app/console doctrine:schema:update --env $env --force
+php app/console oro:search:create-index --env $env
 php app/console pim:search:reindex en_US --env $env
 php app/console pim:versioning:refresh --env $env
 php app/console pim:product:completeness-calculator --env $env
-
+php app/console fos:js-routing:dump --target=web/js/routes.js --no-debug
+php app/console oro:navigation:init --env=$env --no-debug
+php app/console assets:install web --env=$env --no-debug
+php app/console assetic:dump --env=$env --no-debug
+php app/console oro:assetic:dump --env=$env --no-debug
+php app/console cache:clear --env=$env --no-debug
