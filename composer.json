@@ -24,12 +24,8 @@
         },
         {
             "type": "vcs",
-            "url": "git@github.com:laboro/platform.git",
+            "url": "git@github.com:akeneo/platform.git",
             "branch": "master"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/laboro/SonataAdminBundle.git"
         },
         {
             "type": "vcs",
