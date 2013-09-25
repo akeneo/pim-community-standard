@@ -21,7 +21,8 @@ else
     ENV="prod"
 fi
 
-usage() {
+usage()
+{
     echo "Usage: $0 [db|assets|all] [--env=ENV]"
     echo "\tdb: will initialize all data"
     echo "\tassets: will initialize assets"

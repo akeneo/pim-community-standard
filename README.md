@@ -23,6 +23,8 @@ Installation instructions
 
 This is the recommended way to install Akeneo PIM.
 
+Due to some Oro Platform limitation, you **must** create your database before launching composer.
+
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
 
@@ -40,7 +42,7 @@ Install Akeneo PIM dependencies with Composer. Note that using the "--prefer-dis
 the installation by looking into your local Composer cache.
 Don't forget to create your database before launching this script.
 
-    $ php composer.phar install
+    $ php ../composer.phar install
 
 Then initialize the application data with the provided install script:
 
