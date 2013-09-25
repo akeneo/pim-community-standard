@@ -1,11 +1,15 @@
-Akeneo PIM Community Edition
-============================
+Akeneo PIM Community Standard Edition
+=====================================
 
-Welcome to Akeneo PIM.
+Welcome to Akeneo PIM Standard Edition.
 
-This document contains information on how to download, install, and start using Akeneo PIM.
+This repository contains the minimal application needed to start a new project based on Akeneo PIM.
+Practically, it means Akeneo PIM is declared as a dependency and will reside in the vendor directory.
 
-Important Note: this application is not production ready and is intending for evaluation and development only!
+If you want to contribute to Akeneo PIM, please use the PIM Community Dev repository located at
+https://github.com/akeneo/pim-community-dev
+
+Important Note: this application is not production ready and is intending for evaluation and development purposes only!
 
 Requirements
 ------------
@@ -19,7 +23,7 @@ These dependencies will be installed automatically with [Composer][2].
 Installation instructions
 -------------------------
 
-### Using Composer
+## Using Composer
 
 This is the recommended way to install Akeneo PIM.
 
@@ -28,7 +32,7 @@ http://getcomposer.org/ or just run the following command:
 
     $ curl -s https://getcomposer.org/installer | php
 
-Clone Akeneo PIM project with:
+### Clone Akeneo PIM project with:
 
     $ git clone git@github.com:akeneo/pim-community-standard.git
 
@@ -36,15 +40,20 @@ Now, you can go to your pim project directory.
 
     $ cd pim-community-standard
 
-Install Akeneo PIM dependencies with Composer. Note that using the "--prefer-dist" option can speed up
-the installation by looking into your local Composer cache.
-Don't forget to create your database before launching this script.
+### Install Akeneo PIM dependencies with Composer
 
-    $ php composer.phar install
+Due to some Oro Platform limitation, you **must** create your database before launching composer.
+
+    $ php ../composer.phar install
+
+Note that using the "--prefer-dist" option can speed up
+the installation by looking into your local Composer cache.
 
 Then initialize the application data with the provided install script:
 
-    $ ./install.sh
+    $ ./install.sh all
+
+Note: This script can executed several times if you need to reinit your db or redeploy your assets.
 
 Create the Apache Virtual host
 ------------------------------
@@ -68,7 +77,7 @@ Create the Apache Virtual host
 </VirtualHost>
 ```
 Do not forget to change the "/path/to/your/pim/installation/web" to the full path to
-the web directory contains inside your Akeneo PIM installation directory
+the web directory inside your Akeneo PIM installation directory.
 
 Now, you just have to add your host to hosts file `/etc/hosts`:
 
@@ -107,6 +116,24 @@ Go to http://akeneo-pim.local/app_dev.php
 You can now connect as Akeneo administrator with the following credentials:
 - login: "admin"
 - password "admin"
+
+
+Generating a clean database
+---------------------------
+
+By default, when you install the PIM, demo data are added to the database.
+
+If you want to get only the bare minimum data to have a clean but functionnal pim,
+just switch the following config line to false in app/config/config.yml:
+
+```
+pim_demo:
+    load_data: false
+```
+
+Then relaunch the install.sh script with the db option:
+
+$ ./install.sh db
 
 [1]:  http://symfony.com/doc/2.1/book/installation.html
 [2]:  http://getcomposer.org/

@@ -14,14 +14,16 @@
 
 set -e
 APP_ROOT=`dirname $0`
+DEFAULT_ENV="dev"
 
 if [ ! -z $SYMFONY_ENV ]; then
     ENV=$SYMFONY_ENV
 else
-    ENV="prod"
+    ENV=$DEFAULT_ENV
 fi
 
-usage() {
+usage()
+{
     echo "Usage: $0 [db|assets|all] [--env=ENV]"
     echo "\tdb: will initialize all data"
     echo "\tassets: will initialize assets"
@@ -94,3 +96,4 @@ if [ $TASK = 'assets' ] || [ $TASK = 'all' ]; then
     php app/console cache:clear
 fi
 
+echo "Done !"
