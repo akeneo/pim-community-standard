@@ -1,6 +1,5 @@
 Akeneo PIM Community Standard Edition
 =====================================
-
 Welcome to Akeneo PIM Standard Edition.
 
 This repository contains the minimal application needed to start a new project based on Akeneo PIM.
@@ -18,7 +17,6 @@ Akeneo PIM requires PHP 5.3.3 or above and MySQL 5.1 or above.
 
 Akene PIM is based on Symfony 2, Doctrine 2 and Oro Platform (see http://www.orocrm.com/oro-platform).
 These dependencies will be installed automatically with [Composer][2].
-
 
 Installation instructions
 -------------------------
@@ -85,8 +83,8 @@ Now, you just have to add your host to hosts file `/etc/hosts`:
 127.0.0.1 localhost akeneo-pim.local
 ```
 
-Give some rights to Apache
---------------------------
+Write permission for the HTTP server
+------------------------------------
 
 You must give write permission to the Apache user on the following directories:
 - app/cache
@@ -99,7 +97,7 @@ You must give write permission to the Apache user on the following directories:
 Checking your System Configuration
 ----------------------------------
 
-Before starting to use your application, make sure that your local system is properly
+Before starting to use your application, make sure that your system is properly
 configured for a Symfony application.
 
 Execute the `check.php` script from the command line:
