@@ -30,10 +30,6 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:akeneo/pim-community-bundles.git"
-        },
-        {
-            "type": "vcs",
             "url": "git@github.com:akeneo/platform.git",
             "branch": "master"
         },
