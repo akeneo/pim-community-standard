@@ -46,13 +46,12 @@ Go to /var/www and create a symbolic link to your pim web directory:
 
     /var/www$ sudo ln -s ~/git/pim-community-standard/web akeneo-pim.local
 
-Then, go to your apache sites-available directory (/etc/apache2/sites-available) 
-and create your virtual host "akeneo-pim.local" with the following lines:
+Then, go to your apache sites-available directory (`/etc/apache2/sites-available`) 
+and create your virtual host `akeneo-pim.local` with the following lines:
 
 ```
 <VirtualHost *:80>
     ServerName akeneo-pim.local
-    ServerAlias www.akeneo-pim.local
 
     DocumentRoot /var/www/akeneo-pim.local
     <Directory /var/www/akeneo-pim.local/>
@@ -73,10 +72,10 @@ Then add your virtual host to the apache enable sites:
 
     $ sudo a2ensite akeneo-pim.local
 
-Now, you just have to add your host to hosts file /etc/hosts:
+Now, you just have to add your host to hosts file `/etc/hosts`:
 
 ```
-127.0.0.1 localhost www.akeneo-pim.local
+127.0.0.1 localhost akeneo-pim.local
 ```
 
 And relaunch apache server.
