@@ -82,8 +82,20 @@ And relaunch apache server.
 
 After this step you can login as application administrator using user name "admin" and password "admin".
 
+Give some rights to Apache
+--------------------------
+
+You must give write rights to Apache on the following directories:
+- app/cache
+- app/logs
+- app/logs/batch
+- app/entities
+- web/bundles
+- web/uploads
+
+
 Checking your System Configuration
--------------------------------------
+----------------------------------
 
 Before starting to code, make sure that your local system is properly
 configured for a Symfony application.
