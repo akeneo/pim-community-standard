@@ -1,11 +1,16 @@
-Akeneo PIM Community Edition
-============================
+Akeneo PIM Community Standard Edition
+=====================================
 
-Welcome to Akeneo PIM.
+Welcome to Akeneo PIM Standard Edition.
 
-This document contains information on how to download, install, and start using Akeneo PIM.
+This repository contains the minimal application needed to start a new project based on Akeneo PIM.
+Practically, it means Akeneo PIM is declared as a dependency and will reside in the vendor directory.
 
-Important Note: this application is not production ready and is intending for evaluation and development only!
+If you want to contribute to Akeneo PIM, please use the PIM Community Dev repository located at
+https://github.com/akeneo/pim-community-dev
+
+Important Note: this application is not production ready and is intending for evaluation and development purposes only!
+
 
 Requirements
 ------------
@@ -47,7 +52,9 @@ the installation by looking into your local Composer cache.
 
 Then initialize the application data with the provided install script:
 
-    $ ./install.sh
+    $ ./install.sh all
+
+Note: This script can executed several times if you need to reinit your db or redeploy your assets.
 
 Create the Apache Virtual host
 ------------------------------
@@ -110,6 +117,24 @@ Go to http://akeneo-pim.local/app_dev.php
 You can now connect as Akeneo administrator with the following credentials:
 - login: "admin"
 - password "admin"
+
+
+Generate a clean database
+-------------------------
+
+By default, when you install the PIM, demo data are added to the database.
+
+If you want to get only the bare minimum data to have a clean but functionnal pim,
+just switch the following config line to false in app/config/config.yml:
+
+```
+pim_demo:
+    load_data: false
+```
+
+Then relaunch the install.sh script with the db option:
+
+$ ./install.sh db
 
 [1]:  http://symfony.com/doc/2.1/book/installation.html
 [2]:  http://getcomposer.org/
