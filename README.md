@@ -11,7 +11,6 @@ https://github.com/akeneo/pim-community-dev
 
 Important Note: this application is not production ready and is intending for evaluation and development purposes only!
 
-
 Requirements
 ------------
 
@@ -78,7 +77,7 @@ Create the Apache Virtual host
 </VirtualHost>
 ```
 Do not forget to change the "/path/to/your/pim/installation/web" to the full path to
-the web directory contains inside your Akeneo PIM installation directory
+the web directory inside your Akeneo PIM installation directory.
 
 Now, you just have to add your host to hosts file `/etc/hosts`:
 
@@ -119,8 +118,8 @@ You can now connect as Akeneo administrator with the following credentials:
 - password "admin"
 
 
-Generate a clean database
--------------------------
+Generating a clean database
+---------------------------
 
 By default, when you install the PIM, demo data are added to the database.
 
