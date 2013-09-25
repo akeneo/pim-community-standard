@@ -34,7 +34,7 @@ http://getcomposer.org/ or just run the following command:
 
 ### Clone Akeneo PIM project with:
 
-    $ git clone git@github.com:akeneo/pim-community-standard.git
+    $ git clone https://github.com/akeneo/pim-community-standard.git
 
 Now, you can go to your pim project directory.
 
@@ -42,7 +42,7 @@ Now, you can go to your pim project directory.
 
 ### Install Akeneo PIM dependencies with Composer
 
-Due to some Oro Platform limitation, you **must** create your database before launching composer.
+Due to some Oro Platform limitations, you **MUST** create your database before launching composer.
 
     $ php ../composer.phar install
 
