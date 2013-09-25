@@ -19,18 +19,16 @@ These dependencies will be installed automatically with [Composer][2].
 Installation instructions
 -------------------------
 
-### Using Composer
+## Using Composer
 
 This is the recommended way to install Akeneo PIM.
-
-Due to some Oro Platform limitation, you **must** create your database before launching composer.
 
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
 
     $ curl -s https://getcomposer.org/installer | php
 
-Clone Akeneo PIM project with:
+### Clone Akeneo PIM project with:
 
     $ git clone git@github.com:akeneo/pim-community-standard.git
 
@@ -38,11 +36,14 @@ Now, you can go to your pim project directory.
 
     $ cd pim-community-standard
 
-Install Akeneo PIM dependencies with Composer. Note that using the "--prefer-dist" option can speed up
-the installation by looking into your local Composer cache.
-Don't forget to create your database before launching this script.
+### Install Akeneo PIM dependencies with Composer.
+
+Due to some Oro Platform limitation, you **must** create your database before launching composer.
 
     $ php ../composer.phar install
+
+Note that using the "--prefer-dist" option can speed up
+the installation by looking into your local Composer cache.
 
 Then initialize the application data with the provided install script:
 
