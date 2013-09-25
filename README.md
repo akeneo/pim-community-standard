@@ -36,7 +36,7 @@ Now, you can go to your pim project directory.
 
     $ cd pim-community-standard
 
-### Install Akeneo PIM dependencies with Composer.
+### Install Akeneo PIM dependencies with Composer
 
 Due to some Oro Platform limitation, you **must** create your database before launching composer.
 
