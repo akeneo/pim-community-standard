@@ -73,7 +73,7 @@
             "target-dir": "Pim/Bundle/DemoBundle",
             "source": {
                 "type": "git",
-                "url": "git@github.com:akeneo/DemoBundle.git",
+                "url": "https://github.com/akeneo/DemoBundle.git",
                 "reference": "2ee3d871cd684830d6fe884317392b852bde85e1"
             },
             "dist": {
@@ -3517,7 +3517,7 @@
             "version": "dev-maintenance/pim_alpha6",
             "source": {
                 "type": "git",
-                "url": "git@github.com:akeneo/platform.git",
+                "url": "https://github.com/akeneo/platform.git",
                 "reference": "1102e694ed972116777724acfb6492bea9d357bc"
             },
             "dist": {
