@@ -12,7 +12,7 @@ Requirements
 
 Akeneo PIM requires Symfony 2, Doctrine 2 and PHP 5.3.3 or above.
 
-Installation instructions:
+Installation instructions
 -------------------------
 
 ### Using Composer
@@ -35,11 +35,53 @@ Don't forget to create your database before launching this script.
 
     $ php composer.phar install
 
-Then initialize application with install script :
+Then initialize application with install script:
 
     $ ./install.sh
 
-After installation you can login as application administrator using user name "admin" and password "admin".
+Create your Virtual host
+------------------------
+
+Go to /var/www and create a symbolic link to your pim web directory:
+
+    /var/www$ sudo ln -s ~/git/pim-community-standard/web akeneo-pim.local
+
+Then, go to your apache sites-available directory (/etc/apache2/sites-available) 
+and create your virtual host "akeneo-pim.local" with the following lines:
+
+```
+<VirtualHost *:80>
+    ServerName akeneo-pim.local
+    ServerAlias www.akeneo-pim.local
+
+    DocumentRoot /var/www/akeneo-pim.local
+    <Directory /var/www/akeneo-pim.local/>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/akeneo-pim_error.log
+
+    # Possible values include: debug, info, notice, warn, error, crit, alert, emerg.
+    LogLevel warn
+    CustomLog ${APACHE_LOG_DIR}/akeneo-pim_access.log combined
+</VirtualHost>
+```
+
+Then add your virtual host to the apache enable sites:
+
+    $ sudo a2ensite akeneo-pim.local
+
+Now, you just have to add your host to hosts file /etc/hosts:
+
+```
+127.0.0.1 localhost www.akeneo-pim.local
+```
+
+And relaunch apache server.
+
+After this step you can login as application administrator using user name "admin" and password "admin".
 
 Checking your System Configuration
 -------------------------------------
