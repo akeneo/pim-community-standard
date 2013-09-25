@@ -22,20 +22,22 @@ As both Symfony 2 and Akeneo PIM use [Composer][2] to manage their dependencies,
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
 
-    curl -s https://getcomposer.org/installer | php
+    $ curl -s https://getcomposer.org/installer | php
 
-- Clone Akeneo PIM project with :
+Clone Akeneo PIM project with:
 
-    git@github.com:akeneo/pim-community-standard.git
+    $ git clone git@github.com:akeneo/pim-community-standard.git
 
-- Go to app/config folder and create parameters.yml using parameters.yml.dist as example. Update database name and credentials
-- Install Akeneo PIM dependencies with composer. If installation process seems too slow you can use "--prefer-dist" option.
+Now, you can go to your pim project directory.
 
-    php composer.phar install
+Install Akeneo PIM dependencies with composer. If installation process seems too slow you can use "--prefer-dist" option.
+Don't forget to create your database before launching this script.
 
-- Then initialize application with install script :
+    $ php composer.phar install
 
-    install.sh
+Then initialize application with install script :
+
+    $ ./install.sh
 
 After installation you can login as application administrator using user name "admin" and password "admin".
 
