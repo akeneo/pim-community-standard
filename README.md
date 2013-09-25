@@ -5,7 +5,7 @@ Welcome to Akeneo PIM.
 
 This document contains information on how to download, install, and start using Akeneo PIM.
 
-Important Note: this application is not production ready and is intending for evaluation and development only!
+Important Note: this application is not production ready and is intended for evaluation and development only!
 
 Requirements
 ------------
@@ -47,7 +47,7 @@ the installation by looking into your local Composer cache.
 
 Then initialize the application data with the provided install script:
 
-    $ ./install.sh
+    $ ./install.sh all
 
 Create the Apache Virtual host
 ------------------------------
