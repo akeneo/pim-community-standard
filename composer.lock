@@ -124,7 +124,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:akeneo/pim-community-bundles.git",
+                "url": "https://github.com/akeneo/pim-community-bundles.git",
                 "reference": "e565e4284441549405eadccab9bfa1e2220053df"
             },
             "dist": {
@@ -148,6 +148,7 @@
                     "Pim\\Bundle": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "OSL 3.0"
             ],
@@ -157,11 +158,7 @@
                 "PIM",
                 "Product Information Management"
             ],
-            "support": {
-                "source": "https://github.com/akeneo/pim-community-bundles/tree/master",
-                "issues": "https://github.com/akeneo/pim-community-bundles/issues"
-            },
-            "time": "2013-09-25 13:37:09"
+            "time": "2013-09-25 20:53:09"
         },
         {
             "name": "apy/jsfv-bundle",
