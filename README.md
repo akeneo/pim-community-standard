@@ -71,7 +71,7 @@ Create the Apache Virtual host
 </VirtualHost>
 ```
 Do not forget to change the "/path/to/your/pim/installation/web" to the full path to
-the web directory contains inside your Akeneo PIM installation directory
+the web directory inside your Akeneo PIM installation directory.
 
 Now, you just have to add your host to hosts file `/etc/hosts`:
 
