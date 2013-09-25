@@ -30,12 +30,12 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:akeneo/platform.git",
+            "url": "https://github.com/akeneo/platform.git",
             "branch": "master"
         },
         {
             "type": "vcs",
-            "url": "git@github.com:akeneo/DemoBundle.git"
+            "url": "https://github.com/akeneo/DemoBundle.git"
         }
     ],
     "scripts": {
