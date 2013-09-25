@@ -122,16 +122,15 @@
         {
             "name": "akeneo/pim-community-bundles",
             "version": "dev-master",
-            "target-dir": "Pim/Bundle",
             "source": {
                 "type": "git",
                 "url": "git@github.com:akeneo/pim-community-bundles.git",
-                "reference": "be20a19fda0671afe641f58c0b9a0319aba40875"
+                "reference": "e565e4284441549405eadccab9bfa1e2220053df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-bundles/zipball/be20a19fda0671afe641f58c0b9a0319aba40875",
-                "reference": "be20a19fda0671afe641f58c0b9a0319aba40875",
+                "url": "https://api.github.com/repos/akeneo/pim-community-bundles/zipball/e565e4284441549405eadccab9bfa1e2220053df",
+                "reference": "e565e4284441549405eadccab9bfa1e2220053df",
                 "shasum": ""
             },
             "require": {
@@ -146,7 +145,7 @@
             },
             "autoload": {
                 "psr-0": {
-                    "Pim\\Bundle": ""
+                    "Pim\\Bundle": "src/"
                 }
             },
             "license": [
