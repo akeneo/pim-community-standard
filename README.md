@@ -15,13 +15,12 @@ Requirements
 
 Akeneo PIM requires PHP 5.3.3 or above and MySQL 5.1 or above.
 
-Akene PIM is based on Symfony 2, Doctrine 2 and Oro Platform (see http://www.orocrm.com/oro-platform).
+Akene PIM is based on Symfony 2, Doctrine 2 and Oro Platform [OroPlatform][3].
 These dependencies will be installed automatically with [Composer][2].
 
 Installation instructions
 -------------------------
-
-## Using Composer
+## Using Composer to create the project
 
 This is the recommended way to install Akeneo PIM.
 
@@ -30,28 +29,22 @@ http://getcomposer.org/ or just run the following command:
 
     $ curl -s https://getcomposer.org/installer | php
 
-### Clone Akeneo PIM project with:
-
-    $ git clone https://github.com/akeneo/pim-community-standard.git
-
-Now, you can go to your pim project directory.
-
-    $ cd pim-community-standard
-
-### Install Akeneo PIM dependencies with Composer
+### Create a Akeneo PIM project with Composer
 
 Due to some Oro Platform limitations, you **MUST** create your database before launching composer.
 
-    $ php ../composer.phar install
+    $ mkdir pim-project
+    $ php composer.phar create-project akeneo/pim-community-standard ./pim-project dev-master
 
-Note that using the "--prefer-dist" option can speed up
-the installation by looking into your local Composer cache.
+Note that using the "--prefer-dist" option can speed up the installation by
+looking into your local Composer cache.
 
-Then initialize the application data with the provided install script:
+### Initialize data and assets
 
+    $ cd pim-project
     $ ./install.sh all
 
-Note: This script can executed several times if you need to reinit your db or redeploy your assets.
+Note: This script can be executed several times if you need to reinit your db or redeploy your assets.
 
 Create the Apache Virtual host
 ------------------------------
@@ -135,3 +128,4 @@ $ ./install.sh db
 
 [1]:  http://symfony.com/doc/2.1/book/installation.html
 [2]:  http://getcomposer.org/
+[3]:  http://www.orocrm.com/oro-platform 
