@@ -40,7 +40,6 @@ http://getcomposer.org/ or just run the following command:
 
 Due to some Oro Platform limitations, you **MUST** create your database before launching composer.
 
-    $ mkdir pim-project
     $ php composer.phar create-project akeneo/pim-community-standard ./pim-project v1.0.0-BETA1
 
 Note that using the "--prefer-dist" option can speed up the installation by
