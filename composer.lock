@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8ed16625526a0cd0c471418afb7d1f2a",
+    "hash": "f1c36f289722f867cf44f866e47602c5",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -121,16 +121,16 @@
         },
         {
             "name": "akeneo/pim-community-dev",
-            "version": "dev-master",
+            "version": "v1.0.0-BETA1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "efece5f6dd0e3f15f8923a1675858c5995d040f1"
+                "reference": "48c5af9b7fe97e1a314ef849715605b14ae665ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/efece5f6dd0e3f15f8923a1675858c5995d040f1",
-                "reference": "efece5f6dd0e3f15f8923a1675858c5995d040f1",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/48c5af9b7fe97e1a314ef849715605b14ae665ae",
+                "reference": "48c5af9b7fe97e1a314ef849715605b14ae665ae",
                 "shasum": ""
             },
             "require": {
@@ -195,10 +195,10 @@
             ],
             "description": "Akeneo PIM, the future of catalog management is open !",
             "support": {
-                "source": "https://github.com/akeneo/pim-community-dev/tree/master",
+                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.0.0-BETA1",
                 "issues": "https://github.com/akeneo/pim-community-dev/issues"
             },
-            "time": "2013-09-26 16:03:26"
+            "time": "2013-09-26 16:01:50"
         },
         {
             "name": "apy/jsfv-bundle",
@@ -5843,7 +5843,7 @@
                 "Behat",
                 "page"
             ],
-            "time": "2013-05-24 08:09:10"
+            "time": "2013-08-13 09:40:20"
         }
     ],
     "aliases": [
