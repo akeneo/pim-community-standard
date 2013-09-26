@@ -22,7 +22,7 @@ Requirements
  - MySQL 5.1 or above
  - Apache mod rewrite enabled
 
-Akene PIM is based on Symfony 2, Doctrine 2 and Oro Platform [OroPlatform][3].
+Akeneo PIM is based on Symfony 2, Doctrine 2 and Oro Platform [OroPlatform][3].
 These dependencies will be installed automatically with [Composer][2].
 
 Installation instructions
