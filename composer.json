@@ -65,7 +65,14 @@
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "database_host": "PIM_DATABASE_HOST",
+                "database_port": "PIM_DATABASE_PORT",
+                "database_name": "PIM_DATABASE_NAME",
+                "database_user": "PIM_DATABASE_USER",
+                "database_password": "PIM_DATABASE_PASSWORD"
+            }
         },
         "branch-alias": {
             "dev-master": "1.0-dev"
