@@ -12,8 +12,15 @@ Important Note: this application is not production ready and is intending for ev
 
 Requirements
 ------------
-
-Akeneo PIM requires PHP 5.3.3 or above and MySQL 5.1 or above.
+ - PHP 5.3.3 or above
+ - PHP Modules:
+    - php5-curl
+    - php5-gd
+    - php5-intl
+    - php5-mysql
+ - a PHP opcode cache (Akeneo is tested mainly with APC)
+ - MySQL 5.1 or above
+ - Apache mod rewrite enabled
 
 Akene PIM is based on Symfony 2, Doctrine 2 and Oro Platform [OroPlatform][3].
 These dependencies will be installed automatically with [Composer][2].
@@ -45,6 +52,7 @@ looking into your local Composer cache.
     $ ./install.sh all
 
 Note: This script can be executed several times if you need to reinit your db or redeploy your assets.
+By default, this script initialize the dev environment.
 
 Create the Apache Virtual host
 ------------------------------
@@ -84,8 +92,8 @@ You must give write permission to the Apache user on the following directories:
 - app/logs
 - app/logs/batch
 - app/entities
-- web/bundles
-- web/uploads
+- web/bundles/jsformvalidation
+- web/uploads/product
 
 Checking your System Configuration
 ----------------------------------
@@ -102,7 +110,7 @@ If you get any warnings or recommendations, fix them before moving on.
 Connect to your PIM application
 -------------------------------
 
-Go to http://akeneo-pim.local/app_dev.php
+Go to http://akeneo-pim.local/ for production mode or http://akeneo-pim.local/app_dev.php for development mode.
 
 You can now connect as Akeneo administrator with the following credentials:
 - login: "admin"

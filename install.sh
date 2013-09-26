@@ -28,6 +28,7 @@ usage()
     echo "\tdb: will initialize all data"
     echo "\tassets: will initialize assets"
     echo "\tall: will do both"
+    echo "\tBy default, ENV is dev"
     exit 1;
 }
 
