@@ -2,9 +2,9 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     localhost
     database_port:     ~
-    database_name:     akeneo_pim
-    database_user:     root
-    database_password:
+    database_name:     PIM_DATABASE_NAME
+    database_user:     PIM_DATABASE_USER
+    database_password: PIM_DATABASE_PASSWORD
 
     mailer_transport:  smtp
     mailer_encryption: ssl
