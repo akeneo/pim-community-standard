@@ -125,12 +125,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "48c5af9b7fe97e1a314ef849715605b14ae665ae"
+                "reference": "3246d72a4c2ee0cd9a070b73b013ed3106e76447"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/48c5af9b7fe97e1a314ef849715605b14ae665ae",
-                "reference": "48c5af9b7fe97e1a314ef849715605b14ae665ae",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/3246d72a4c2ee0cd9a070b73b013ed3106e76447",
+                "reference": "3246d72a4c2ee0cd9a070b73b013ed3106e76447",
                 "shasum": ""
             },
             "require": {
@@ -198,7 +198,7 @@
                 "source": "https://github.com/akeneo/pim-community-dev/tree/v1.0.0-BETA1",
                 "issues": "https://github.com/akeneo/pim-community-dev/issues"
             },
-            "time": "2013-09-26 16:01:50"
+            "time": "2013-09-27 10:01:26"
         },
         {
             "name": "apy/jsfv-bundle",
