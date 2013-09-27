@@ -48,7 +48,7 @@ looking into your local Composer cache.
 ### Initialize data and assets
 
     $ cd pim-project
-    $ ./install.sh all
+    $ ./install.sh all --env=prod
 
 Note: This script can be executed several times if you need to reinit your db or redeploy your assets.
 By default, this script initialize the dev environment.
@@ -130,7 +130,7 @@ pim_demo:
 
 Then relaunch the install.sh script with the db option:
 
-$ ./install.sh db
+$ ./install.sh db --env=prod
 
 [1]:  http://symfony.com/doc/2.1/book/installation.html
 [2]:  http://getcomposer.org/
