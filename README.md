@@ -111,6 +111,7 @@ Connect to your PIM application
 -------------------------------
 
 Go to http://akeneo-pim.local/ for production mode or http://akeneo-pim.local/app_dev.php for development mode.
+Note: If you want to use development mode, do not forget to launch ./install.sh all dev
 
 You can now connect as Akeneo administrator with the following credentials:
 - login: "admin"
