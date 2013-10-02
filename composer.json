@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.3.3",
         "oro/platform": "dev-maintenance/pim_alpha6",
-        "akeneo/pim-community-dev": "dev-master",
+        "akeneo/pim-community-dev": "v1.0.0-BETA1",
         "akeneo/demobundle": "dev-master",
         "knplabs/knp-gaufrette-bundle": "dev-master",
         "knplabs/gaufrette": "dev-master"
