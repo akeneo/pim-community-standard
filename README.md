@@ -10,14 +10,17 @@ https://github.com/akeneo/pim-community-dev
 
 Important Note: this application is not production ready and is intending for evaluation and development purposes only!
 
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/badges/quality-score.png?s=05ef3d5d2bbfae2f9a659060b21711d275f0c1ff)](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/)
+
 Requirements
 ------------
- - PHP 5.3.3 or above
+ - PHP 5.4.4 or above
  - PHP Modules:
     - php5-curl
     - php5-gd
     - php5-intl
     - php5-mysql
+    - php5-mcrypt
  - a PHP opcode cache (Akeneo is tested mainly with APC)
  - PHP memory_limit at least at 256 MB on Apache side and 512 MB on CLI side
  - MySQL 5.1 or above
@@ -92,10 +95,18 @@ You must give write permission to the Apache user on the following directories:
 - app/cache
 - app/logs
 - app/entities
-- web/bundles
-- web/uploads/product
 - app/import
 - app/export
+- app/emails
+- web/bundles
+- web/uploads/product
+
+Configure crontab
+-----------------
+
+To ensure that completeness is as up to date as possible, you can configure the following crontab
+line:
+*/5 * * * * php app/console pim:product:completeness-calculator > /tmp/completeness.log
 
 Checking your System Configuration
 ----------------------------------
