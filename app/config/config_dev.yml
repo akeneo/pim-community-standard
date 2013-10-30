@@ -24,3 +24,9 @@ oro_assetic:
     js_debug_all:   false
     css_debug:      ~
     css_debug_all:  false
+
+swiftmailer:
+    disable_delivery: true
+
+parameters:
+    apy_js_form_validation.yui_js: false

@@ -12,9 +12,9 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "oro/platform": "dev-maintenance/pim_alpha6",
-        "akeneo/pim-community-dev": "v1.0.0-BETA1",
-        "akeneo/demobundle": "dev-master",
+        "oro/platform": "dev-maintenance/pim_beta1",
+        "akeneo/pim-community-dev": "dev-master",
+        "akeneo/DemoBundle": "dev-master",
         "knplabs/knp-gaufrette-bundle": "dev-master",
         "knplabs/gaufrette": "dev-master"
     },
@@ -69,6 +69,7 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
+        "symfony-assets-install": "symlink",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml",
             "env-map": {
