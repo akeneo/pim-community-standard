@@ -99,7 +99,7 @@ You must give write permission to the Apache user on the following directories:
 - app/export
 - app/emails
 - web/bundles
-- web/uploads/product
+- app/uploads/product
 
 Configure crontab
 -----------------
