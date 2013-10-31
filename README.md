@@ -21,13 +21,13 @@ Requirements
     - php5-intl
     - php5-mysql
     - php5-mcrypt
- - a PHP opcode cache (Akeneo is tested mainly with APC)
+    - php-apc (opcode and data cache)
  - PHP memory_limit at least at 256 MB on Apache side and 512 MB on CLI side
  - MySQL 5.1 or above
  - Apache mod rewrite enabled
  - Java JRE (for compressing the JavaScript via YUI Compressor)
 
-Akeneo PIM is based on Symfony 2, Doctrine 2 and Oro Platform [OroPlatform][3].
+Akeneo PIM is based on Symfony 2, Doctrine 2 and [OroPlatform][3].
 These dependencies will be installed automatically with [Composer][2].
 
 Installation instructions
@@ -154,9 +154,14 @@ Known issues
 `xdebug.max_nesting_level=500`
 
  - not enough memory can cause the JS routing bundle to fail on a segmentation fault. Please check with `php -i | grep memory` that you have enough memory according to the requirements
+
  - some segmentation fault can be caused as well by the circular references collector. You can disable it with the following setting in your php.ini files:
 `zend.enable_gc = 0`
 
+ - when pulling from beta1, some cache need to be removed by hand (`rm -rf var/cache/*`) otherwise you can get the following error:
+`PHP Fatal error: Class 'Pim\\Bundle\\CatalogBundle\\EventListener\\TimestampableLister' not found in /var/www/pim-community-dev/app/cache/prod/appProdProjectContainer.php on line 3644`
+
+ 
 [1]:  http://symfony.com/doc/2.1/book/installation.html
 [2]:  http://getcomposer.org/
 [3]:  http://www.orocrm.com/oro-platform 
