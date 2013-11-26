@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2a759aca52f431a41218a70a07302dd9",
+    "hash": "b941a8be80326adba3398950179fec27",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -74,12 +74,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/DemoBundle.git",
-                "reference": "a1072f132564048988d2873b5c05f1c7fa53d5cc"
+                "reference": "b87042e6249ad0f34d8eadcc906b8146516fa0c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/DemoBundle/zipball/a1072f132564048988d2873b5c05f1c7fa53d5cc",
-                "reference": "a1072f132564048988d2873b5c05f1c7fa53d5cc",
+                "url": "https://api.github.com/repos/akeneo/DemoBundle/zipball/b87042e6249ad0f34d8eadcc906b8146516fa0c5",
+                "reference": "b87042e6249ad0f34d8eadcc906b8146516fa0c5",
                 "shasum": ""
             },
             "require": {
@@ -121,23 +121,23 @@
         },
         {
             "name": "akeneo/pim-community-dev",
-            "version": "v1.0.0-BETA2",
+            "version": "v1.0.0-BETA3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "0471588f2a135eeccb057d4340e9d54f2b1a2ae9"
+                "reference": "ceb6ff17c90bce693155f7bf03dcd8bda00c32ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/0471588f2a135eeccb057d4340e9d54f2b1a2ae9",
-                "reference": "0471588f2a135eeccb057d4340e9d54f2b1a2ae9",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/ceb6ff17c90bce693155f7bf03dcd8bda00c32ee",
+                "reference": "ceb6ff17c90bce693155f7bf03dcd8bda00c32ee",
                 "shasum": ""
             },
             "require": {
                 "akeneo/demobundle": "dev-master",
                 "incenteev/composer-parameter-handler": "~2.0",
                 "knplabs/knp-gaufrette-bundle": "dev-master",
-                "oro/platform": "dev-maintenance/pim_beta1",
+                "oro/platform": "dev-maintenance/pim_beta3",
                 "php": ">=5.3.3"
             },
             "require-dev": {
@@ -196,7 +196,7 @@
             ],
             "description": "Akeneo PIM, the future of catalog management is open !",
             "support": {
-                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.0.0-BETA2",
+                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.0.0-BETA3",
                 "issues": "https://github.com/akeneo/pim-community-dev/issues"
             },
             "time": "2013-10-30 08:49:08"
@@ -3630,16 +3630,16 @@
         },
         {
             "name": "oro/platform",
-            "version": "dev-maintenance/pim_beta1",
+            "version": "dev-maintenance/pim_beta3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/platform.git",
-                "reference": "826ee3ef0d49c90aa48994bffb3abe8eb9f699b6"
+                "reference": "51c4583eb141b7617cdf5308cd61e60d43056544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/platform/zipball/826ee3ef0d49c90aa48994bffb3abe8eb9f699b6",
-                "reference": "826ee3ef0d49c90aa48994bffb3abe8eb9f699b6",
+                "url": "https://api.github.com/repos/akeneo/platform/zipball/51c4583eb141b7617cdf5308cd61e60d43056544",
+                "reference": "51c4583eb141b7617cdf5308cd61e60d43056544",
                 "shasum": ""
             },
             "require": {
@@ -3698,7 +3698,7 @@
             "description": "Business Application Platform (BAP)",
             "homepage": "https://github.com/orocrm/platform.git",
             "support": {
-                "source": "https://github.com/akeneo/platform/tree/maintenance/pim_beta1",
+                "source": "https://github.com/akeneo/platform/tree/maintenance/pim_beta3",
                 "issues": "https://github.com/akeneo/platform/issues"
             },
             "time": "2013-10-29 14:24:04"
