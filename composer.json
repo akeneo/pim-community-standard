@@ -12,9 +12,9 @@
         }
     },
     "require": {
-        "php": ">=5.3.3",
-        "oro/platform": "dev-maintenance/pim_beta1",
-        "akeneo/pim-community-dev": "v1.0.0-BETA2",
+        "php": ">=5.4.4",
+        "oro/platform": "dev-maintenance/pim_beta3",
+        "akeneo/pim-community-dev": "v1.0.0-BETA3",
         "akeneo/DemoBundle": "dev-master",
         "knplabs/knp-gaufrette-bundle": "dev-master",
         "knplabs/gaufrette": "dev-master"
