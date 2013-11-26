@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1bcf4ae7513befa6168a9eccf75f247f",
+    "hash": "2a759aca52f431a41218a70a07302dd9",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -121,16 +121,16 @@
         },
         {
             "name": "akeneo/pim-community-dev",
-            "version": "dev-master",
+            "version": "v1.0.0-BETA2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "407689c9834cfe51d24ce7650f9aaa187a4813d1"
+                "reference": "0471588f2a135eeccb057d4340e9d54f2b1a2ae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/407689c9834cfe51d24ce7650f9aaa187a4813d1",
-                "reference": "407689c9834cfe51d24ce7650f9aaa187a4813d1",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/0471588f2a135eeccb057d4340e9d54f2b1a2ae9",
+                "reference": "0471588f2a135eeccb057d4340e9d54f2b1a2ae9",
                 "shasum": ""
             },
             "require": {
@@ -196,10 +196,10 @@
             ],
             "description": "Akeneo PIM, the future of catalog management is open !",
             "support": {
-                "source": "https://github.com/akeneo/pim-community-dev/tree/master",
+                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.0.0-BETA2",
                 "issues": "https://github.com/akeneo/pim-community-dev/issues"
             },
-            "time": "2013-10-30 08:48:19"
+            "time": "2013-10-30 08:49:08"
         },
         {
             "name": "apy/jsfv-bundle",
@@ -277,12 +277,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aschamberger/XmlSecurity.git",
-                "reference": "f2e3e69e2a2b55f6e4f0eb8c85b8f178116ca97f"
+                "reference": "b2108c78164bb088c4d0a3469f609e9d755b7378"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aschamberger/XmlSecurity/zipball/f2e3e69e2a2b55f6e4f0eb8c85b8f178116ca97f",
-                "reference": "f2e3e69e2a2b55f6e4f0eb8c85b8f178116ca97f",
+                "url": "https://api.github.com/repos/aschamberger/XmlSecurity/zipball/b2108c78164bb088c4d0a3469f609e9d755b7378",
+                "reference": "b2108c78164bb088c4d0a3469f609e9d755b7378",
                 "shasum": ""
             },
             "require": {
@@ -294,6 +294,11 @@
                 "ext-mcrypt": "*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "ass\\XmlSecurity": "src/"
@@ -321,7 +326,7 @@
                 "signature",
                 "xml"
             ],
-            "time": "2013-10-30 07:54:18"
+            "time": "2013-10-30 08:57:42"
         },
         {
             "name": "besimple/soap-bundle",
@@ -3629,12 +3634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/platform.git",
-                "reference": "546cb47132194ae36595f489bf4abe799173e445"
+                "reference": "826ee3ef0d49c90aa48994bffb3abe8eb9f699b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/platform/zipball/546cb47132194ae36595f489bf4abe799173e445",
-                "reference": "546cb47132194ae36595f489bf4abe799173e445",
+                "url": "https://api.github.com/repos/akeneo/platform/zipball/826ee3ef0d49c90aa48994bffb3abe8eb9f699b6",
+                "reference": "826ee3ef0d49c90aa48994bffb3abe8eb9f699b6",
                 "shasum": ""
             },
             "require": {
@@ -6026,7 +6031,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "oro/platform": 20,
-        "akeneo/pim-community-dev": 20,
         "akeneo/demobundle": 20,
         "knplabs/knp-gaufrette-bundle": 20,
         "knplabs/gaufrette": 20,
