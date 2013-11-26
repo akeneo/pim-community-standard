@@ -58,6 +58,10 @@ http://getcomposer.org/ or just run the following command:
 
 Due to some Oro Platform limitations, you **MUST** create your database before launching composer.
 
+Please note that you will certainly need to provide your GitHub credentials with this method,
+A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls
+from anonymous users.
+
     $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.0-BETA2
 
 ## Initialize data and assets
