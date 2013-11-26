@@ -39,10 +39,10 @@ The archive contains all the needed dependencies.
 You can find it here:
 http://www.akeneo.com/download/
 
-Once you have installed it and extracted to a directory, you must changed the `app/config/parameters.yml`
+Once you have installed it and extracted to a directory, you must change the `app/config/parameters.yml`
 to suit your configuration, mainly the `database` suffixed parameters.
 
-From here, you can follow the next step "Initialize data and assets"
+From here, you can switch to the step "Initialize data and assets"
 
 
 ## Using Composer to create the project
