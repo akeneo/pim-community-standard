@@ -32,9 +32,20 @@ These dependencies will be installed automatically with [Composer][2].
 
 Installation instructions
 -------------------------
+## Using an archive to create the project
+
+The archive contains all the needed dependencies.
+
+You can find it here:
+http://www.akeneo.com/download/
+
+Once you have installed it and extracted to a directory, you can follow, the next step
+"Initialize data and assets"
+
+
 ## Using Composer to create the project
 
-This is the recommended way to install Akeneo PIM.
+Composer will download dependencies 
 
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
@@ -50,9 +61,9 @@ Due to some Oro Platform limitations, you **MUST** create your database before l
 Note that using the "--prefer-dist" option can speed up the installation by
 looking into your local Composer cache.
 
-### Initialize data and assets
+## Initialize data and assets
 
-    $ cd pim-project
+    $ cd <my-pim-directory>
     $ ./install.sh all prod
 
 Note: This script can be executed several times if you need to reinit your db or redeploy your assets.
