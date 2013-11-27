@@ -121,7 +121,7 @@ Configure crontab
 To ensure that completeness is as up to date as possible, you can configure the following crontab
 line:
 
-    */5 * * * * php app/console pim:product:completeness-calculator > /tmp/completeness.log
+    */5 * * * * php app/console pim:product:completeness-calculator 5000 > /tmp/completeness.log
 
 In case you import data without running the versionning system in real time, you can make sure
 the versionning is recalculated appropriately with this crontab line (assuming you filled the 
