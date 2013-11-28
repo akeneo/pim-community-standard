@@ -1,8 +1,14 @@
 {
     "name": "akeneo/pim-community-standard",
+    "description": "The \"Akeneo Community Standard Edition\" distribution",
     "license": "OSL 3.0",
     "type": "project",
-    "description": "The \"Akeneo Community Standard Edition\" distribution",
+    "authors": [
+        {
+            "name": "Akeneo",
+            "homepage": "http://www.akeneo.com"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "": "src/",
@@ -17,7 +23,7 @@
         "akeneo/pim-community-dev": "v1.0.0-BETA3",
         "akeneo/DemoBundle": "dev-master",
         "knplabs/knp-gaufrette-bundle": "dev-master",
-        "knplabs/gaufrette": "dev-master"
+        "incenteev/composer-parameter-handler": "~2.0"
     },
     "require-dev": {
         "behat/behat":  "2.4.*@stable",
@@ -33,11 +39,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/akeneo/platform.git",
-            "branch": "master"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/akeneo/pim-community-dev.git",
             "branch": "master"
         },
         {
