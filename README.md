@@ -63,7 +63,7 @@ Please note that you will certainly need to provide your GitHub credentials with
 A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls
 from anonymous users.
 
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.0-BETA2
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.0-BETA3
 
 ## Initialize data and assets
 

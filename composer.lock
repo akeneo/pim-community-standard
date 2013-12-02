@@ -125,12 +125,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "b7a87a7d207b3ee969a3dbe0ee29e86a4a0eeb26"
+                "reference": "1662e33b9496ce9d4d61f785c355f2b1abe89544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/b7a87a7d207b3ee969a3dbe0ee29e86a4a0eeb26",
-                "reference": "b7a87a7d207b3ee969a3dbe0ee29e86a4a0eeb26",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/1662e33b9496ce9d4d61f785c355f2b1abe89544",
+                "reference": "1662e33b9496ce9d4d61f785c355f2b1abe89544",
                 "shasum": ""
             },
             "require": {
