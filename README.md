@@ -34,12 +34,13 @@ Installation instructions
 -------------------------
 ## Using an archive to create the project
 
-The archive contains all the needed dependencies.
+The archive contains all the needed dependencies. This is the recommended installation method if you do
+not have a GitHub account that will let you download all the dependencies without limit.
 
-You can find it here:
+You can find the archive here:
 http://www.akeneo.com/download/
 
-Once you have installed it and extracted to a directory, you must change the `app/config/parameters.yml`
+Once it has been downloaded and extracted to a directory, you must change the `app/config/parameters.yml`
 to suit your configuration, mainly the `database` suffixed parameters.
 
 From here, you can switch to the step "Initialize data and assets"
