@@ -19,31 +19,18 @@
     },
     "require": {
         "php": ">=5.4.4",
-        "oro/platform": "dev-maintenance/pim_beta3",
-        "akeneo/pim-community-dev": "v1.0.0-BETA3",
-        "akeneo/DemoBundle": "dev-master",
-        "knplabs/knp-gaufrette-bundle": "dev-master",
-        "incenteev/composer-parameter-handler": "~2.0"
-    },
-    "require-dev": {
-        "behat/behat":  "2.4.*@stable",
-        "behat/symfony2-extension":      "*",
-        "behat/mink-extension":          "*",
-        "behat/mink-browserkit-driver":  "*",
-        "behat/mink-selenium2-driver":   "*",
-        "behat/common-contexts": "*",
-        "sensiolabs/behat-page-object-extension": "*",
-        "kriswallsmith/buzz": ">=0.5"
+        "akeneo/pim-community-dev": "v1.0.0-BETA4"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/akeneo/platform.git",
+            "url": "https://github.com/akeneo/pim-community-dev.git",
             "branch": "master"
         },
         {
             "type": "vcs",
-            "url": "https://github.com/akeneo/DemoBundle.git"
+            "url": "https://github.com/akeneo/platform.git",
+            "branch": "master"
         }
     ],
     "scripts": {
@@ -73,14 +60,7 @@
         "symfony-web-dir": "web",
         "symfony-assets-install": "symlink",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml",
-            "env-map": {
-                "database_host": "PIM_DATABASE_HOST",
-                "database_port": "PIM_DATABASE_PORT",
-                "database_name": "PIM_DATABASE_NAME",
-                "database_user": "PIM_DATABASE_USER",
-                "database_password": "PIM_DATABASE_PASSWORD"
-            }
+            "file": "app/config/parameters.yml"
         }
     }
 }
