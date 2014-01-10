@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "4b19d5940d8dcb23ab65c62bac68ed250719fc14"
+                "reference": "5f72a7f4ed0f45784668a0bd0b77bed36b45808e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/4b19d5940d8dcb23ab65c62bac68ed250719fc14",
-                "reference": "4b19d5940d8dcb23ab65c62bac68ed250719fc14",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/5f72a7f4ed0f45784668a0bd0b77bed36b45808e",
+                "reference": "5f72a7f4ed0f45784668a0bd0b77bed36b45808e",
                 "shasum": ""
             },
             "require": {
@@ -3717,12 +3717,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/platform.git",
-                "reference": "f8f6a94c1761f34e4e5cc10c9c4f4d89cdc5eac1"
+                "reference": "021636d58ee24d2b51797094fe4d2c7e4e210a33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/platform/zipball/f8f6a94c1761f34e4e5cc10c9c4f4d89cdc5eac1",
-                "reference": "f8f6a94c1761f34e4e5cc10c9c4f4d89cdc5eac1",
+                "url": "https://api.github.com/repos/akeneo/platform/zipball/021636d58ee24d2b51797094fe4d2c7e4e210a33",
+                "reference": "021636d58ee24d2b51797094fe4d2c7e4e210a33",
                 "shasum": ""
             },
             "require": {
