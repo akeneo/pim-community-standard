@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "efd15feda552eb7aed58d3a9ee0a1cbc17e95950"
+                "reference": "d0f6b65028abbcb52a6782036e210760cbaeabb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/efd15feda552eb7aed58d3a9ee0a1cbc17e95950",
-                "reference": "efd15feda552eb7aed58d3a9ee0a1cbc17e95950",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/d0f6b65028abbcb52a6782036e210760cbaeabb7",
+                "reference": "d0f6b65028abbcb52a6782036e210760cbaeabb7",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
             ],
             "description": "Akeneo PIM, the future of catalog management is open !",
             "support": {
-                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.0.0-BETA3",
+                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.0.0-BETA4",
                 "issues": "https://github.com/akeneo/pim-community-dev/issues"
             },
             "time": "2013-10-30 08:49:08"
