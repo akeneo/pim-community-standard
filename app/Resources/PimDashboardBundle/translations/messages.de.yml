@@ -1,0 +1,21 @@
+---
+pim_dashboard:
+  menu:
+    label:
+      collect: Sammeln
+      enrich: Anreichern
+      spread: Ausleiten
+      settings: Einstellungen
+  link:
+    label:
+      import_profile: Importprofile verwalten
+      import_report: Import Historie
+      product: Produkte verwalten
+      category: Kategorien verwalten
+      variant: Variantengruppen verwalten
+      group: Gruppen verwalten
+      channel: Ausgabekanäle verwalten
+      export_profile: Exportprofile verwalten
+      export_report: Export Historie
+      attribute: Attribute verwalten
+      family: Produktfamilien verwalten
