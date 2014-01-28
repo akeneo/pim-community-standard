@@ -71,7 +71,7 @@ from anonymous users.
     $ ./install.sh all prod
 
 Note: This script can be executed several times if you need to reinit your db or redeploy your assets.
-By default, this script initialize the dev environment.
+By default, this script initializes the dev environment.
 
 Create the Apache Virtual host
 ------------------------------
@@ -115,6 +115,7 @@ You must give write permission to the Apache user on the following directories:
 - app/emails
 - web/bundles
 - app/uploads/product
+- app/archive
 
 Configure crontab
 -----------------
@@ -122,10 +123,10 @@ Configure crontab
 To ensure that completeness is as up to date as possible, you can configure the following crontab
 line:
 
-    */5 * * * * php app/console pim:product:completeness-calculator 5000 > /tmp/completeness.log
+    */2 * * * * php app/console pim:completeness:calculate > /tmp/completeness.log
 
-In case you import data without running the versionning system in real time, you can make sure
-the versionning is recalculated appropriately with this crontab line (assuming you filled the 
+In case you import data without running the versioning system in real time, you can make sure
+that versioning is recalculated appropriately with this crontab line (assuming you filled the
 version pending table with the adequate information):
 
     */5 * * * * php app/console pim:versioning:refresh > /tmp/versioning.log
@@ -133,7 +134,7 @@ version pending table with the adequate information):
 Checking your System Configuration
 ----------------------------------
 
-Before starting to use your application, make sure that your system is properly
+Before starting to contribute to Akeneo, make sure that your system is properly
 configured for a Symfony application.
 
 Execute the `check.php` script from the command line:
@@ -149,21 +150,20 @@ Go to http://akeneo-pim.local/ for production mode or http://akeneo-pim.local/ap
 Note: If you want to use development mode, do not forget to launch ./install.sh all dev
 
 You can now connect as Akeneo administrator with the following credentials:
-- login: "admin"
-- password "admin"
+- username: "admin"
+- password: "admin"
 
 
 Generating a clean database
 ---------------------------
 
-By default, when you install the PIM, demo data are added to the database.
+By default, when you install the PIM, the database is preconfigured with demo data.
 
-If you want to get only the bare minimum data to have a clean but functionnal pim,
-just switch the following config line to false in app/config/config.yml:
+If you want to get only the bare minimum of data to have a clean but functional PIM,
+just change the following config line in app/config/parameters.yml:
 
 ```
-pim_demo:
-    load_data: false
+    installer_data: PimInstallerBundle:minimal
 ```
 
 Then relaunch the install.sh script with the db option:
@@ -172,18 +172,13 @@ $ ./install.sh db prod
 
 Known issues
 ------------
- - with XDebug, the default value of max_nesting_level (100) is too low and make the ACL loading failed (which causes 403 HTTP response code on every application screen, even the login screen). A working value is 500:
+ - with XDebug on, the default value of max_nesting_level (100) is too low and can make the ACL loading fail (which causes 403 HTTP response code on every application screen, even the login screen). A working value is 500:
 `xdebug.max_nesting_level=500`
 
- - not enough memory can cause the JS routing bundle to fail on a segmentation fault. Please check with `php -i | grep memory` that you have enough memory according to the requirements
-
+ - not enough memory can cause the JS routing bundle to fail with a segmentation fault. Please check with `php -i | grep memory` that you have enough memory according to the requirements
  - some segmentation fault can be caused as well by the circular references collector. You can disable it with the following setting in your php.ini files:
 `zend.enable_gc = 0`
 
- - when pulling from beta1, some cache need to be removed by hand (`rm -rf var/cache/*`) otherwise you can get the following error:
-`PHP Fatal error: Class 'Pim\\Bundle\\CatalogBundle\\EventListener\\TimestampableLister' not found in /var/www/pim-community-dev/app/cache/prod/appProdProjectContainer.php on line 3644`
-
- 
 [1]:  http://symfony.com/doc/2.1/book/installation.html
 [2]:  http://getcomposer.org/
-[3]:  http://www.orocrm.com/oro-platform 
+[3]:  http://www.orocrm.com/oro-platform
