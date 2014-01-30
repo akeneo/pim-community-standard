@@ -172,15 +172,19 @@ $ ./install.sh db prod
 
 Known issues
 ------------
+ - when cleaning up the cache by hand (rm -rf app/cache/*), error about `Oro\\Bundle\\UserBundle\\Entity\\User::$field_catalogLocale` can occur. In this case, a proper cache:clear command is required, as it will warm a non-corrupted cache:
+`php app/console cache:clear`
+
  - with XDebug on, the default value of max_nesting_level (100) is too low and can make the ACL loading fail (which causes 403 HTTP response code on every application screen, even the login screen). A working value is 500:
 `xdebug.max_nesting_level=500`
 
  - not enough memory can cause the JS routing bundle to fail with a segmentation fault. Please check with `php -i | grep memory` that you have enough memory according to the requirements
- - 
+
  - some segmentation fault can be caused as well by the circular references collector. You can disable it with the following setting in your php.ini files:
 `zend.enable_gc = 0`
 
  - When installing with `php composer.phar create-project...` command, error about `Unable to parse file "<path>/Resources/config/web.xml".`. It seems an external issue related to libxml, you can downgrade to `libxml2.x86_64 0:2.6.26-2.1.21.el5_9.1`. Look at: http://www.akeneo.com/topic/erreur-with-php-composer-phar-beta4/ for more informations.
+
 
 [1]:  http://symfony.com/doc/2.1/book/installation.html
 [2]:  http://getcomposer.org/
