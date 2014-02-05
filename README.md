@@ -38,6 +38,19 @@ These dependencies will be installed automatically with [Composer][2].
 
 Installation instructions
 -------------------------
+## Using an archive to create the project
+
+The archive contains all the needed dependencies. This is the recommended installation method if you do
+not have a GitHub account that will let you download all the dependencies without limit.
+
+You can find the archive here:
+http://www.akeneo.com/download/
+
+Once it has been downloaded and extracted to a directory, you must change the `app/config/parameters.yml`
+to suit your configuration, mainly the `database` suffixed parameters.
+
+From here, you can switch to the step "Initialize data and assets"
+
 ## Using Composer to install dependencies
 
 This is the recommended way to install Akeneo PIM.
@@ -47,22 +60,15 @@ http://getcomposer.org/ or just run the following command:
 
     $ curl -s https://getcomposer.org/installer | php
 
-### Clone Akeneo PIM project with:
+### Create a Akeneo PIM project with Composer
 
-    git clone git@github.com:akeneo/pim-community-dev.git
+Due to some Oro Platform limitations, you **MUST** create your database before launching composer.
 
-Now, you can go to your pim project directory.
+Please note that you will certainly need to provide your GitHub credentials with this method,
+A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls
+from anonymous users.
 
-    $ cd pim-community-dev
-
-### Install Akeneo PIM dependencies with Composer
-
-Due to some limitations of Oro Platform, you **MUST** create your database before launching composer.
-
-    $ php ../composer.phar install
-
-Note that using the "--prefer-dist" option can speed up
-the installation by looking into your local Composer cache.
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.0-BETA2
 
 ### Add translation packs
 
