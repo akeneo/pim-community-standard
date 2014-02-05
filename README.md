@@ -91,7 +91,7 @@ By default, this script initializes the dev environment.
 
 In case of problems with the menu, you can try to clear your cache with:
 
-    $ php app/console cache:clear
+    $ php app/console cache:clear --env=prod
 
 Create the Apache Virtual host
 ------------------------------
