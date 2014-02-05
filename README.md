@@ -89,9 +89,9 @@ Note: This script can be executed several times if you need to reinit your db or
 You just have to use the `--force` option.
 By default, this script initializes the dev environment.
 
-In case of problems with the menu, you can try to remove your cache by hand:
+In case of problems with the menu, you can try to clear your cache with:
 
-    $ rm -rf app/cache/*
+    $ php app/console cache:clear
 
 Create the Apache Virtual host
 ------------------------------
