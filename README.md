@@ -14,7 +14,8 @@ Important Note: this application is not production ready and is intending for ev
 
 Requirements
 ------------
- - PHP 5.4.4 or above
+## System
+ - PHP 5.4.* above 5.4.4 (Akeneo PIM has not been yet tested with PHP 5.5)
  - PHP Modules:
     - php5-curl
     - php5-gd
@@ -27,8 +28,13 @@ Requirements
  - Apache mod rewrite enabled
  - Java JRE (for compressing the JavaScript via YUI Compressor)
 
-Akeneo PIM is based on Symfony 2, Doctrine 2 and [OroPlatform][3].
+Akeneo PIM is based on Symfony 2, Doctrine 2 and [Oro Platform][3].
 These dependencies will be installed automatically with [Composer][2].
+
+## Web browsers
+ - tested: Chrome & Firefox
+ - supported: IE 10, Safari
+ - not supported: IE < 10
 
 Installation instructions
 -------------------------
@@ -45,10 +51,9 @@ to suit your configuration, mainly the `database` suffixed parameters.
 
 From here, you can switch to the step "Initialize data and assets"
 
+## Using Composer to install dependencies
 
-## Using Composer to create the project
-
-Composer will download dependencies 
+This is the recommended way to install Akeneo PIM.
 
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
@@ -63,15 +68,30 @@ Please note that you will certainly need to provide your GitHub credentials with
 A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls
 from anonymous users.
 
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.0-BETA4
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.0-BETA2
 
-## Initialize data and assets
+### Add translation packs
 
-    $ cd <my-pim-directory>
-    $ ./install.sh all prod
+You can download translation packs from crowdin:
+- http://crowdin.net/project/akeneo
+- http://crowdin.net/project/oro-platform
+
+The Akeneo PIM archive contains the following directories tree: <locale>/<version>/<translation_directories>
+You just have to paste the <translation_directories> in your app/Resources/ directory.
+
+For Oro Platform, the archive contains the same directories tree except the version directory which is removed.
+
+### Initialize data and assets
+
+    $ php app/console pim:install --env=prod
 
 Note: This script can be executed several times if you need to reinit your db or redeploy your assets.
+You just have to use the `--force` option.
 By default, this script initializes the dev environment.
+
+In case of problems with the menu, you can try to remove your cache by hand:
+
+    $ rm -rf app/cache/*
 
 Create the Apache Virtual host
 ------------------------------
@@ -139,7 +159,7 @@ configured for a Symfony application.
 
 Execute the `check.php` script from the command line:
 
-    php app/check.php
+    php app/console pim:install --force --task=check
 
 If you get any warnings or recommendations, fix them before moving on.
 
@@ -168,7 +188,7 @@ just change the following config line in app/config/parameters.yml:
 
 Then relaunch the install.sh script with the db option:
 
-$ ./install.sh db prod
+$ php app/console pim:install --force --env=prod --task=db
 
 Known issues
 ------------

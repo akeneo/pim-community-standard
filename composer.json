@@ -19,7 +19,7 @@
     },
     "require": {
         "php": ">=5.4.4",
-        "akeneo/pim-community-dev": "v1.0.0-BETA4"
+        "akeneo/pim-community-dev": "v1.0.0-RC1"
     },
     "repositories": [
         {
