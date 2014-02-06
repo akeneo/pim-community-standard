@@ -89,7 +89,7 @@ Note: This script can be executed several times if you need to reinit your db or
 You just have to use the `--force` option.
 By default, this script initializes the dev environment.
 
-In case of problems with the menu, you can try to clear your cache with:
+### Clear the cache to finalize the installation
 
     $ php app/console cache:clear --env=prod
 
