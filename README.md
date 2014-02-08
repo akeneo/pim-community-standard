@@ -166,8 +166,7 @@ If you get any warnings or recommendations, fix them before moving on.
 Connect to your PIM application
 -------------------------------
 
-Go to http://akeneo-pim.local/ for production mode or http://akeneo-pim.local/app_dev.php for development mode.
-Note: If you want to use development mode, do not forget to launch ./install.sh all dev
+Go to http://akeneo-pim.local/ for production mode or http://akeneo-pim.local/ for production mode.
 
 You can now connect as Akeneo administrator with the following credentials:
 - username: "admin"
@@ -186,7 +185,7 @@ just change the following config line in app/config/parameters.yml:
     installer_data: PimInstallerBundle:minimal
 ```
 
-Then relaunch the install.sh script with the db option:
+Then relaunch the install with the db option:
 
 $ php app/console pim:install --force --env=prod --task=db
 
