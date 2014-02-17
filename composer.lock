@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "85989623aa203976b3a57ec69665820c",
+    "hash": "9e63dddc6f33840e4cb956337d8bd166",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
