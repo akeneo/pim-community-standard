@@ -70,13 +70,13 @@ from anonymous users.
 
     $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.0-RC1
 
-### Add translation packs
+### Add translation packs (optional)
 
 You can download translation packs from crowdin:
 - http://crowdin.net/project/akeneo
 - http://crowdin.net/project/oro-platform
 
-The Akeneo PIM archive contains the following directories tree: <locale>/<version>/<translation_directories>
+The Akeneo PIM archive contains the following directories tree: `<locale>/<version>/<translation_directories>`
 You just have to paste the <translation_directories> in your app/Resources/ directory.
 
 For Oro Platform, the archive contains the same directories tree except the version directory which is removed.
@@ -159,7 +159,7 @@ configured for a Symfony application.
 
 Execute the `check.php` script from the command line:
 
-    php app/console pim:install --force --task=check
+    $ php app/console pim:install --force --task=check --env=prod
 
 If you get any warnings or recommendations, fix them before moving on.
 
