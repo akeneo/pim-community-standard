@@ -25,13 +25,33 @@ class AppKernel extends OroKernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 
-        $bundles = array_merge(parent::registerBundles(), $bundles);
+        $oroBundles = parent::registerBundles();
+        $exclude = array(
+            'Oro\Bundle\ImportExportBundle\OroImportExportBundle',
+            'Oro\Bundle\QueryDesignerBundle\OroQueryDesignerBundle',
+            'JMS\JobQueueBundle\JMSJobQueueBundle',
+            'Oro\Bundle\AddressBundle\OroAddressBundle',
+            'Oro\Bundle\SoapBundle\OroSoapBundle',
+            'Oro\Bundle\SyncBundle\OroSyncBundle',
+            'Oro\Bundle\WorkflowBundle\OroWorkflowBundle',
+            'Oro\Bundle\NotificationBundle\OroNotificationBundle',
+            'Oro\Bundle\CalendarBundle\OroCalendarBundle',
+            'Oro\Bundle\CronBundle\OroCronBundle'
+        );
+        foreach ($oroBundles as $bundleIndex => $bundle) {
+            if (in_array(get_class($bundle), $exclude)) {
+                unset($oroBundles[$bundleIndex]);
+            }
+        }
+        $bundles = array_merge($oroBundles, $bundles);
 
         $pimDepBundles = array(
             // Uncomment the following line to use MongoDB implementation
             // new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new APY\JsFormValidationBundle\APYJsFormValidationBundle(),
+            new Akeneo\Bundle\MeasureBundle\AkeneoMeasureBundle(),
+            new Akeneo\Bundle\BatchBundle\AkeneoBatchBundle()
         );
         $bundles = array_merge($bundles, $pimDepBundles);
 
@@ -39,12 +59,12 @@ class AppKernel extends OroKernel
             // BAP overriden bundles
             new Pim\Bundle\NavigationBundle\PimNavigationBundle(),
             new Pim\Bundle\FilterBundle\PimFilterBundle(),
-            new Pim\Bundle\DataGridBundle\PimDataGridBundle(),
             new Pim\Bundle\UserBundle\PimUserBundle(),
             new Pim\Bundle\SearchBundle\PimSearchBundle(),
             new Pim\Bundle\JsFormValidationBundle\PimJsFormValidationBundle(),
 
             // PIM bundles
+            new Pim\Bundle\DataGridBundle\PimDataGridBundle(),
             new Pim\Bundle\DashboardBundle\PimDashboardBundle(),
             new Pim\Bundle\InstallerBundle\PimInstallerBundle(),
             new Pim\Bundle\UIBundle\PimUIBundle(),
