@@ -8,8 +8,6 @@ Practically, it means Akeneo PIM is declared as a dependency and will reside in 
 If you want to contribute to Akeneo PIM, please use the PIM Community Dev repository located at
 https://github.com/akeneo/pim-community-dev
 
-Important Note: this application is not production ready and is intending for evaluation and development purposes only!
-
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/badges/quality-score.png?s=05ef3d5d2bbfae2f9a659060b21711d275f0c1ff)](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/)
 
 Requirements
