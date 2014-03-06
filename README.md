@@ -64,6 +64,21 @@ from anonymous users.
 After that, follow the instructions here:
 http://docs.akeneo.com/installation/installation_workstation.html#installing-akeneo
 
+#### Write permissions
+
+The following directories must be writable for both the CLI user and the Apache user:
+- app/cache
+- app/logs
+- app/entities
+- app/import
+- app/export
+- app/emails
+- web/bundles
+- app/uploads/product
+- app/archive
+
+See http://docs.akeneo.com/installation/installation_workstation.html#apache for an alternative solution.
+
 ### Add translation packs (optional)
 
 You can download translation packs from crowdin:
