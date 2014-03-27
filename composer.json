@@ -19,8 +19,7 @@
     },
     "require": {
         "php": ">=5.4.4",
-        "akeneo/pim-community-dev": "v1.0.0",
-        "knplabs/gaufrette": "v0.1.7"
+        "akeneo/pim-community-dev": "v1.0.3"
     },
     "repositories": [
         {
