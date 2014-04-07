@@ -56,11 +56,11 @@ A lot of our dependencies are coming from GitHub and this reaches the max limit 
 from anonymous users.
 
 ```
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.2
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project v1.0.3
 ```
 
 After that, follow the instructions here:
-http://docs.akeneo.com/installation/installation_workstation.html#installing-akeneo
+http://docs.akeneo.com/master/installation/installation_workstation.html#installing-akeneo
 
 #### Write permissions
 
@@ -75,7 +75,7 @@ The following directories must be writable for both the CLI user and the Apache 
 - app/uploads/product
 - app/archive
 
-See http://docs.akeneo.com/installation/installation_workstation.html#apache for an alternative solution.
+See http://docs.akeneo.com/master/installation/installation_workstation.html#apache for an alternative solution.
 
 ### Add translation packs (optional)
 
