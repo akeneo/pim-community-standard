@@ -36,7 +36,7 @@ Installation instructions
 -------------------------
 ### Recommended installation
 To install Akeneo PIM for a PIM project or for evaluation, please follow:
-http://docs.akeneo.com/installation/installation_workstation.html
+http://docs.akeneo.com/master/installation/installation_workstation.html
 
 ### Create a Akeneo PIM project with Composer
 
