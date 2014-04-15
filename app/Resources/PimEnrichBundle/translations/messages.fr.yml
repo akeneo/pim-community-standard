@@ -1,55 +1,68 @@
 ---
 attribute:
+  title: attribut
   overview: Liste des attributs
   create: Créer un attribut
   edit: Modifier un attribut
 attribute group:
+  title: "groupe d'attributs"
   overview: "Liste des groupes d'attributs"
   create: "Créer un groupe d'attributs"
   edit: "Modifier un groupe d'attributs"
 category:
+  title: catégorie
   overview: Liste des catégories
   create: Créer une catégorie
   edit: Editer une catégorie
 tree:
+  title: arbre
   create: Créer un arbre
   edit: Editer un arbre
 channel:
+  title: canal
   overview: Liste des canaux
   create: Créer un channel
   edit: Editer un channel
 currency:
+  title: devise
   overview: Liste des devises
   create: Créer une monnaie
   edit: Editer une monnaie
 family:
+  title: famille
   overview: Liste des familles
   create: Créer une famille
   edit: Editer une famille
 locale:
+  title: locale
   overview: Liste des locales
   create: Créer une locale
   edit: Modifier une locale
 product:
+  title: produit
   overview: Liste des produits
   create: Créer un produit
   edit: Modifier un produit
 group:
+  title: groupe
   overview: Liste des groupes
   create: Créer un groupe
   edit: Editer un groupe
+group type:
+  title: type de groupe
+  overview: Liste des types de groupe
+  create: Créer le type de groupe
+  edit: modifier le type de groupe
 variant group:
+  title: groupe de variantes
   overview: Liste des groupes de variantes
   create: Créer un groupe de variantes
   edit: Modifier un groupe de variantes
 association type:
+  title: "type d'association"
   overview: "Liste des types d'association"
   create: "Créer un type d'association"
   edit: "Modifier le type d'association"
-group type:
-  overview: Liste des types de groupe
-  create: Créer le type de groupe
-  edit: modifier le type de groupe
 products: Produits
 btn:
   create:
@@ -199,6 +212,7 @@ info:
     none exist: "Aucun type d'association n'existe."
     create one: Cliquez ici pour en créer un
 color:
+  title: Couleur
   gray: Gris
   white: Blanc
   yellow: Jaune
@@ -236,6 +250,7 @@ Edit: Modifier
 Remove: Supprimer
 Delete: Supprimer
 Parameters: Paramètres
+System: Système
 Values: Valeurs
 General parameters: Paramètres généraux
 Backend parameters: "Paramètres de l'interface"
@@ -244,7 +259,6 @@ Default label: Libellé par défaut
 Default value: Valeur par défaut
 Attributetype: "Type d'attribut"
 Attribute type: "Type d'attribut"
-Searchable: Recherchable
 Defaultvalue: Valeur par défaut
 Variant: Variante
 Smart: Intelligent
@@ -257,10 +271,14 @@ default: Défaut
 Axis: Axes
 Add attributes: Ajouter des attributs
 Translate from: Traduire depuis
-Yes: Oui
-No: ' '
+"Yes": true
+"No": false
 Close: Fermer
 Choose a color: Choisir une couleur
+Search: Recherche
+Choose the attribute type: "Choisissez le type d'attribut"
+Drop a file or click here: Déposez un fichier ou cliquez ici
+Drop an image or click here: Déposez une image ou cliquez ici
 Create: Créer
 Cancel: Annuler
 Choose a family: Choisissez une famille
@@ -300,31 +318,46 @@ Minimum input length: "Longueur d'entrée minimale"
 Default: Défaut
 Attributes: Attributs
 Title: Titre
+pim_title.attribute_group:
+  create: "Groupe d'attributs | Créer"
+  edit: "Groupe d'attribut %group.label% | Modifier"
+pim_title.category:
+  create: Arborescences | Créer
+  edit: 'Arborescences %category.label% | Modifier'
+pim_title.attribute:
+  index: Attributs
+  create: Attributs | Créer
+  edit: 'Attributs %attribute.label% | Modifier'
+pim_title.product:
+  index: Produits
+  edit: 'Produit %product.sku% | Modifier'
+pim_title.family:
+  index: Familles
+  edit: 'Famille %family.label% | Modifier'
+pim_title.channel:
+  index: Canaux
+  create: Canaux | Créer
+  edit: 'Canal %channel.label% | Modifier'
+pim_title.currency:
+  index: Devises
+pim_title.locale:
+  index: Locales
+pim_title.group:
+  index: Groupes
+  edit: 'Groupes %group.label% | Edit'
+pim_title.variant_group:
+  index: Groupes de variantes
+  edit: 'Groupe de variantes %group.label% | Editer'
+pim_title.association_type:
+  index: "Types d'associations"
+  edit: "Types d'association %association type.label% | Modifier"
+pim_title.group_type:
+  index: Types de groupe
+  edit: 'Type de groupes %group type.label% | Modifier'
+pim_title.mass_edit_action:
+  choose: Edition de masse | Choisir
+  configure: Edition de masse | Configurer
 pim_title.dashboard: Tableau de bord
-pim_title.attribute_group.create: "Groupe d'attributs | Créer"
-pim_title.attribute_group.edit: "Groupe d'attributs %group.label% | Modifier"
-pim_title.category.create: Arborescences | Créer
-pim_title.category.edit: 'Arborescences %category.label% | Modifier'
-pim_title.attribute.index: Attributs
-pim_title.attribute.create: Attributs | Créer
-pim_title.attribute.edit: 'Attributs %attribute.label% | Modifier'
-pim_title.product.index: Produits
-pim_title.product.edit: 'Produits %product.sku% | Modifier'
-pim_title.family.index: Familles
-pim_title.family.edit: 'Familles %family.label% | Modifier'
-pim_title.channel.index: Canaux
-pim_title.channel.create: Canaux | Créer
-pim_title.channel.edit: 'Canaux %channel.label% | Modifier'
-pim_title.currency.index: Devises
-pim_title.locale.index: Locales
-pim_title.group.index: Groupes
-pim_title.group.edit: 'Groupes %group.label% | Modifier'
-pim_title.variant_group.index: Groupes variants
-pim_title.variant_group.edit: 'Groupe variants %group.label% | Modifier'
-pim_title.association_type.index: "Types d'association"
-pim_title.association_type.edit: "Types d'association %association type.label% | Modifier"
-pim_title.group_type.index: Types de groupe
-pim_title.group_type.edit: 'Type de groupe %grouptype.label% | Modifier'
 pim_catalog_identifier: Identifiant
 pim_catalog_text: Texte
 pim_catalog_textarea: Zone de texte (TextArea)
@@ -337,7 +370,6 @@ pim_catalog_image: Image
 pim_catalog_boolean: Oui/Non
 pim_catalog_date: Date
 pim_catalog_metric: Unité de mesure
-Fallback: Langue de repli
 Activated: Activé
 Disable: Désactivé
 pim_enrich.mass_edit_action:
@@ -400,7 +432,9 @@ View group: Afficher le groupe
 Products: Produits
 pim_enrich:
   acl:
-    locale.index: Lister les locales
+    locale:
+      index: Liste des locales
+      access: Accès aux locales
     currency:
       index: Liste des devises
       toggle: Activer/désactiver devises
@@ -431,6 +465,7 @@ pim_enrich:
       edit: Modifier un canal
       remove: Supprimer un canal
     family:
+      index: Liste des familles
       create: Créer une famille
       edit: Modifier une famille
       remove: Supprimer une famille
@@ -464,7 +499,6 @@ pim_enrich:
       create: "Créer un type d'association"
       edit: "Modifier un type d'association"
       remove: "Supprimer un type d'association"
-  datagrid_configuration.columns.min_message: Au moins une colonne à afficher doit être sélectionnée
 pim_menu:
   tab:
     collect: Extraire
@@ -505,6 +539,55 @@ popin.create:
   option.title: Créer une nouvelle option
 In group: Dans le groupe
 Attribute as label: Attribut en tant que libellé
-Available Columns: Colonnes disponibles
-Displayed Columns: Colonnes affichées
 Is associated: Est associé
+Complete: Complet
+Created At: Crée le
+Updated At: Mis à jour le
+Enabled: Activé
+Disabled: Désactivé
+Status: Statut
+Change History: Historique des modifications
+Data Audit: Historique des données
+Data Audit - System: 'Historique des données - système'
+Action: Action
+Version: Version
+Entity type: "Type d'entité"
+Entity name: "Nom de l'entité"
+Entity id: "Id de l'entité"
+Data: Données
+Author: Auteur
+Logged at: Connecté le
+Deleted: Supprimé
+Old values: Anciennes valeurs
+New values: Nouvelles valeurs
+System configuration: Configuration du système
+General setup: Paramétrage général
+Localization: Localisation
+Localization options: Options de localisation
+Locale: Locale
+Location: Emplacement
+Format address by address country: "Format d'adresse par pays"
+Language: Langue
+Timezone: Fuseau horaire
+Currency: Devise
+oro.locale:
+  address_format:
+    region_name_type:
+      parish: Commune
+      state: État
+      island: île
+      county: Comté
+      area: zone
+      prefecture: préfecture
+      department: département
+      district: quartier
+      province: province
+  form:
+    tooltip:
+      locale: "Sélectionnez l'option de paramètre régional utilisé pour le format des nombres, des adresses, noms et dates"
+      location: " L'emplacement sera utilisé pour mettre en forme les adresses lorsque l'option 'Formate l'adresse par adresse de pays' est désactivée"
+      format_address_by_address_country: "En sélectionnant cette option, les adresses seront formatées selon le pays où elles sont localisées. Si l'option est désactivée, les adresses seront formatées selon le format de votre adresse de localisation"
+      language: Sélectionnez la langue du système que vous souhaitez utiliser
+      timezone: "Sélectionnez le fuseau horaire pour afficher la date et l'heure"
+      currency: Sélectionnez la monnaie par défaut
+Selected products successfully deleted: La sélection de produits a été supprimée

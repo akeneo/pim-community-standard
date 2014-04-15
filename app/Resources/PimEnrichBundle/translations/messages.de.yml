@@ -38,6 +38,10 @@ group:
   overview: Gruppenübersicht
   create: Gruppe anlegen
   edit: Gruppe bearbeiten
+group type:
+  overview: Gruppentypen-Übersicht
+  create: Gruppentyp anlegen
+  edit: Gruppentyp bearbeiten
 variant group:
   overview: Variantengruppen-Übersicht
   create: Variantengruppe anlegen
@@ -46,10 +50,6 @@ association type:
   overview: Verbindungstypen-Übersicht
   create: Verbindungstyp anlegen
   edit: Verbindungstyp bearbeiten
-group type:
-  overview: Gruppentypen-Übersicht
-  create: Gruppentyp anlegen
-  edit: Gruppentyp bearbeiten
 products: Produkte
 btn:
   create:
@@ -69,6 +69,7 @@ btn:
   edit: Bearbeiten
   save: Speichern
   save and back: Speichern und zurück zur Übersicht
+  save and create: Speichern und neuen anlegen
   remove: Entfernen
   delete: Löschen
   cancel: Abbrechen
@@ -190,10 +191,13 @@ info:
     axis: 'Variation Achse: %attributes%'
     select products: Bitte wählen Sie die Produkte aus, die zu dieser Gruppe gehören.
     selectable products: Die folgenden wählbaren Produkte haben einen definierten Wert für jede Achse.
+    no group types: Es sind keine Gruppentypen vorhanden. Klicken Sie hier, um einen anzulegen
   association type:
     show products: Produkte anzeigen
     show groups: Gruppen anzeigen
     remove from products: 'Das Löschen dieses Verbindungstyps entfernt ihn von %count% Produkten.'
+    none exist: Es gibt keine Verbindungstypen.
+    create one: Klicken Sie hier, um einen anzulegen
 color:
   gray: Grau
   white: Weiß
@@ -232,6 +236,7 @@ Edit: Bearbeiten
 Remove: Entfernen
 Delete: Löschen
 Parameters: Parameter
+System: System
 Values: Werte
 General parameters: Allgemeine Parameter
 Backend parameters: Backend Parameter
@@ -240,7 +245,6 @@ Default label: Standardbezeichnung
 Default value: Standardwert
 Attributetype: Attributtyp
 Attribute type: Attributtyp
-Searchable: Durchsuchbar
 Defaultvalue: Standardwert
 Variant: Variante
 Smart: Smart
@@ -253,7 +257,8 @@ default: Standard
 Axis: Achse
 Add attributes: Attribute hinzufügen
 Translate from: Übersetzen von
-Yes: "1"
+"Yes": true
+"No": false
 Close: Schließen
 Choose a color: Wählen Sie eine Farbe
 Create: Anlegen
@@ -295,31 +300,46 @@ Minimum input length: Minimale Eingabelänge
 Default: Standard
 Attributes: Attribute
 Title: Titel
+pim_title.attribute_group:
+  create: Attributgruppen | Anlegen
+  edit: 'Attributgruppen %group.label% | Bearbeiten'
+pim_title.category:
+  create: Kategorie-Strukturbäume | Anlegen
+  edit: 'Kategorie-Strukturbäume %category.label% | Bearbeiten'
+pim_title.attribute:
+  index: Attribute
+  create: Attribute | Anlegen
+  edit: 'Attributee %attribute.label% | Bearbeiten'
+pim_title.product:
+  index: Produkte
+  edit: 'Produkte %product.sku% | Bearbeiten'
+pim_title.family:
+  index: Produktfamilien
+  edit: 'Produktfamilien %family.label% | Bearbeiten'
+pim_title.channel:
+  index: Ausgabekanäle
+  create: Ausgabekanäle | Anlegen
+  edit: 'Ausgabekanäle %channel.label% | Bearbeiten'
+pim_title.currency:
+  index: Währungen
+pim_title.locale:
+  index: Gebietsschemata
+pim_title.group:
+  index: Gruppen
+  edit: 'Gruppen %group.label% | Bearbeiten'
+pim_title.variant_group:
+  index: Variantengruppen
+  edit: 'Variantengruppen %group.label% | Bearbeiten'
+pim_title.association_type:
+  index: Verbindungstypen
+  edit: 'Verbindungstypen %association type.label% | Bearbeiten'
+pim_title.group_type:
+  index: Gruppentypen
+  edit: 'Gruppentypen %group type.label% | Bearbeiten'
+pim_title.mass_edit_action:
+  choose: Massenbearbeitung | Auswählen
+  configure: Massenbearbeitung | Konfigurieren
 pim_title.dashboard: Dashboard
-pim_title.attribute_group.create: Attributgruppen | Anlegen
-pim_title.attribute_group.edit: 'Attributgruppen %group.label% | Bearbeiten'
-pim_title.category.create: Kategorie-Strukturbäume | Anlegen
-pim_title.category.edit: 'Kategorie-Strukturbäume %category.label% | Bearbeiten'
-pim_title.attribute.index: Attribute
-pim_title.attribute.create: Attribute | Anlegen
-pim_title.attribute.edit: 'Attribute %attribute.label% | Bearbeiten'
-pim_title.product.index: Produkte
-pim_title.product.edit: 'Produkte %product.sku% | Bearbeiten'
-pim_title.family.index: Produktfamilien
-pim_title.family.edit: 'Produktfamilien %family.label% | Bearbeiten'
-pim_title.channel.index: Ausgabekanäle
-pim_title.channel.create: Ausgabekanäle | Anlegen
-pim_title.channel.edit: 'Ausgabekanäle %channel.label% | Bearbeiten'
-pim_title.currency.index: Währungen
-pim_title.locale.index: Gebietsschemata
-pim_title.group.index: Gruppen
-pim_title.group.edit: 'Gruppen %group.label% | Bearbeiten'
-pim_title.variant_group.index: Variantengruppen
-pim_title.variant_group.edit: 'Variantengruppen %group.label% | Bearbeiten'
-pim_title.association_type.index: Verbindungstypen
-pim_title.association_type.edit: 'Verbindungstypen %association type.label% | Bearbeiten'
-pim_title.group_type.index: Gruppentypen
-pim_title.group_type.edit: 'Gruppentypen %group type.label% | Bearbeiten'
 pim_catalog_identifier: Kennung
 pim_catalog_text: Text
 pim_catalog_textarea: Textbereich
@@ -332,7 +352,6 @@ pim_catalog_image: Abbildung
 pim_catalog_boolean: Ja/Nein
 pim_catalog_date: Datum
 pim_catalog_metric: Maßeinheit
-Fallback: Fallback-Sprache
 Activated: Aktiviert
 Disable: Deaktivieren
 pim_enrich.mass_edit_action:
@@ -395,7 +414,6 @@ View group: Gruppe ansehen
 Products: Produkte
 pim_enrich:
   acl:
-    locale.index: Gebietsschemata auflisten
     currency:
       index: Währungen auflisten
       toggle: Währungen umschalten
@@ -459,7 +477,6 @@ pim_enrich:
       create: Einen Verbindungstyp anlegen
       edit: Einen Verbindungstyp bearbeiten
       remove: Einen Verbindungstyp löschen
-  datagrid_configuration.columns.min_message: Sie müssen mindestens eine Spalte der Tabelle zur Anzeige auswählen
 pim_menu:
   tab:
     collect: Sammeln
@@ -500,6 +517,54 @@ popin.create:
   option.title: Neue Option anlegen
 In group: In Gruppe
 Attribute as label: Attribut als Label
-Available Columns: Verfügbare Spalten
-Displayed Columns: Angezeigten Spalten
 Is associated: Ist verbunden
+Complete: Vollständig
+Created At: Angelegt am
+Updated At: Aktualisiert am
+Enabled: Aktiviert
+Disabled: Deaktiviert
+Status: Status
+Change History: Änderungshistorie
+Data Audit: Datenhistorie
+Data Audit - System: 'Datenhistorie - System'
+Action: Aktion
+Version: Version
+Entity type: Entitätstyp
+Entity name: Entitätsname
+Entity id: Entitäts-ID
+Data: Daten
+Author: Autor
+Logged at: Angemeldet am
+Deleted: Gelöscht
+Old values: Alte Werte
+New values: Neue Werte
+System configuration: Systemkonfiguration
+General setup: Allgemeine Konfiguration
+Localization: Lokalisierung
+Localization options: Lokalisierungsoptionen
+Locale: Gebietsschema
+Location: Standort
+Format address by address country: Formatiere nach Land der Adresse
+Language: Sprache
+Timezone: Zeitzone
+Currency: Währung
+oro.locale:
+  address_format:
+    region_name_type:
+      parish: Gemeinde
+      state: Staat
+      island: Insel
+      county: Landkreis
+      area: Gebiet
+      prefecture: Präfektur
+      department: Abteilung
+      district: Bezirk
+      province: Provinz
+  form:
+    tooltip:
+      locale: Wählen Sie die Gebietsschema-Option mit der Nummern, Adressen, Namen und Daten formatieren werden
+      location: 'Der Standort wird verwendet um Adressen zu formatieren, wenn die Optione "Formatiere Adresse nach Land der Adresse" deaktiviert ist'
+      format_address_by_address_country: Mit dieser Optionen werden Adressen nach dem Land formatiert, in dem sie sich befinden. Ist diese Option deaktiviert, werden Adressen nach der Adresse Ihres Standortes formatiert
+      language: Wählen Sie die Systemsprache die Sie verwenden möchten
+      timezone: Wählen Sie die Zeitzone für die Anzeige von Datum und Uhrzeit
+      currency: Wählen Sie die Standardwährung
