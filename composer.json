@@ -19,7 +19,7 @@
     },
     "require": {
         "php": ">=5.4.4",
-        "akeneo/pim-community-dev": "v1.0.3",
+        "akeneo/pim-community-dev": "v1.1.0-RC2",
         "knplabs/knp-menu": "2.0.x-dev#ff1a6e73e79c9f75c6a130d03b07f05c89fede63"
     },
     "repositories": [
