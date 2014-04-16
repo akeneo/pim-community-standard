@@ -8,26 +8,13 @@ doctrine:
                 metadata_cache_driver: apc
                 result_cache_driver:   apc
                 query_cache_driver:    apc
-
 monolog:
     handlers:
         main:
             type:         fingers_crossed
-            action_level: critical
-            handler:      grouped
-        grouped:
-            type:    group
-            members: [streamed, buffered]
-        streamed:
-           type:  stream
-           path:  "%kernel.logs_dir%/%kernel.environment%.log"
-           level: debug
-        buffered:
-            type:    buffer
-            handler: swift
-        swift:
-            type:       native_mailer
-            from_email: %error_reporting_email%
-            to_email:   %error_reporting_email%
-            subject:    An Error Occurred!
-            level:      debug
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  %kernel.logs_dir%/%kernel.environment%.log
+            level: debug
