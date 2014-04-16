@@ -13,13 +13,12 @@
         "psr-0": {
             "": "src/",
             "Context": "features/",
-            "Extend\\": "app/entities/",
             "OroEmail\\": "app/emails/"
         }
     },
     "require": {
         "php": ">=5.4.4",
-        "akeneo/pim-community-dev": "v1.1.0-RC3"
+        "akeneo/pim-community-dev": "1.1.*@stable"
     },
     "repositories": [
         {
