@@ -67,10 +67,8 @@ http://docs.akeneo.com/master/installation/installation_workstation.html#install
 The following directories must be writable for both the CLI user and the Apache user:
 - app/cache
 - app/logs
-- app/entities
 - app/import
 - app/export
-- app/emails
 - web/bundles
 - app/uploads/product
 - app/archive
