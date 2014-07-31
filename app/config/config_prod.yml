@@ -8,13 +8,14 @@ doctrine:
                 metadata_cache_driver: apc
                 result_cache_driver:   apc
                 query_cache_driver:    apc
+
 monolog:
     handlers:
         main:
             type:         fingers_crossed
-            action_level: error
+            action_level: critical
             handler:      nested
         nested:
-            type:  stream
-            path:  %kernel.logs_dir%/%kernel.environment%.log
+            type: stream
+            path: %kernel.logs_dir%/%kernel.environment%.log
             level: debug
