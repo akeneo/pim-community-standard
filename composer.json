@@ -18,8 +18,8 @@
     },
     "require": {
         "php": ">=5.4.4",
-        "akeneo/pim-community-dev": "1.1.1",
-        "oro/platform": "dev-pim-1.0#f96799947c7474b443882e7aa943f530598f3f96",
+        "akeneo/pim-community-dev": "1.2.0-BETA1",
+        "oro/platform": "1.0.0-beta10",
         "apy/jsfv-bundle": "2.1.x-dev#c7bcd7bbd52af55cfd7f6e9097e284d964ce0200",
         "knplabs/knp-menu": "2.0.x-dev#835ee51d911e4d8c9adf129907ebbebfa9a1e906",
         "knplabs/knp-menu-bundle": "2.0.x-dev#838c4a0f9b0631b37d699d9a7ebd695707298678",
@@ -72,6 +72,11 @@
                 "database_user": "PIM_DATABASE_USER",
                 "database_password": "PIM_DATABASE_PASSWORD"
             }
+        },
+        "branch-alias": {
+            "dev-master": "1.2.x-dev",
+            "dev-1.1": "1.1.x-dev",
+            "dev-1.0": "1.0.x-dev"
         }
     }
 }
