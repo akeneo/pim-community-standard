@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a936469c35e6650e57a89620bed435e3",
+    "hash": "170b74fc8b6008286d2be4c02ba15beb",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -75,12 +75,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/BatchBundle.git",
-                "reference": "60b937bb90b4bb396a281c210191fd93af1314c0"
+                "reference": "c362e627605e892e7b8e38974cf5a421833ca2f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/BatchBundle/zipball/60b937bb90b4bb396a281c210191fd93af1314c0",
-                "reference": "60b937bb90b4bb396a281c210191fd93af1314c0",
+                "url": "https://api.github.com/repos/akeneo/BatchBundle/zipball/c362e627605e892e7b8e38974cf5a421833ca2f6",
+                "reference": "c362e627605e892e7b8e38974cf5a421833ca2f6",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,7 @@
                 "reader",
                 "writer"
             ],
-            "time": "2014-08-12 16:33:12"
+            "time": "2014-08-14 16:01:19"
         },
         {
             "name": "akeneo/measure-bundle",
@@ -124,12 +124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/MeasureBundle.git",
-                "reference": "fc6226fd3a1113d07776a84b5a6ab3c1c31257f6"
+                "reference": "0fe60aadbd473669c0c66e8f1a887058722306d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/MeasureBundle/zipball/fc6226fd3a1113d07776a84b5a6ab3c1c31257f6",
-                "reference": "fc6226fd3a1113d07776a84b5a6ab3c1c31257f6",
+                "url": "https://api.github.com/repos/akeneo/MeasureBundle/zipball/0fe60aadbd473669c0c66e8f1a887058722306d2",
+                "reference": "0fe60aadbd473669c0c66e8f1a887058722306d2",
                 "shasum": ""
             },
             "require": {
@@ -158,20 +158,20 @@
                 "convert",
                 "measure"
             ],
-            "time": "2014-08-13 11:22:23"
+            "time": "2014-08-18 13:36:14"
         },
         {
             "name": "akeneo/pim-community-dev",
-            "version": "v1.2.0-RC3",
+            "version": "v1.2.0-RC4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "222b227ede20187541911bf7a2b0f40d992da541"
+                "reference": "d0d3f3bc4e55a563cd12efabe53d1b07fe6cf6f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/222b227ede20187541911bf7a2b0f40d992da541",
-                "reference": "222b227ede20187541911bf7a2b0f40d992da541",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/d0d3f3bc4e55a563cd12efabe53d1b07fe6cf6f5",
+                "reference": "d0d3f3bc4e55a563cd12efabe53d1b07fe6cf6f5",
                 "shasum": ""
             },
             "require": {
@@ -181,7 +181,7 @@
                 "incenteev/composer-parameter-handler": "2.1.0",
                 "knplabs/gaufrette": "0.1.8",
                 "knplabs/knp-gaufrette-bundle": "0.1.7",
-                "oro/platform": "1.0.0-beta12",
+                "oro/platform": "1.0.0-beta13",
                 "php": ">=5.4.4",
                 "symfony/icu": "1.1.0"
             },
@@ -262,10 +262,10 @@
             ],
             "description": "Akeneo PIM, the future of catalog management is open !",
             "support": {
-                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.2.0-RC3",
+                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.2.0-RC4",
                 "issues": "https://github.com/akeneo/pim-community-dev/issues"
             },
-            "time": "2014-08-14 13:05:20"
+            "time": "2014-08-25 09:01:36"
         },
         {
             "name": "apy/jsfv-bundle",
@@ -393,6 +393,46 @@
                 "xml"
             ],
             "time": "2013-10-30 08:57:42"
+        },
+        {
+            "name": "behat/transliterator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+                "reference": "c93521d3462a554332d1ef5bb0e9b5b8ca4106c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Transliterator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2014-05-15 22:08:22"
         },
         {
             "name": "besimple/soap",
@@ -918,12 +958,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "1b62e9f76fce135ed1b4c2caca57e2257b0cd651"
+                "reference": "f15c4823b1bc5fceacc199765709cb67001445b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/1b62e9f76fce135ed1b4c2caca57e2257b0cd651",
-                "reference": "1b62e9f76fce135ed1b4c2caca57e2257b0cd651",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/f15c4823b1bc5fceacc199765709cb67001445b2",
+                "reference": "f15c4823b1bc5fceacc199765709cb67001445b2",
                 "shasum": ""
             },
             "require": {
@@ -973,7 +1013,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2014-08-04 10:25:05"
+            "time": "2014-08-20 16:09:16"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -1599,15 +1639,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "de89aaec17f4bde70db675b6f6c0ed70d1e855fe"
+                "reference": "54af483e293e3f00fd4173b23d9dabdd8c30e33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/de89aaec17f4bde70db675b6f6c0ed70d1e855fe",
-                "reference": "de89aaec17f4bde70db675b6f6c0ed70d1e855fe",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/54af483e293e3f00fd4173b23d9dabdd8c30e33e",
+                "reference": "54af483e293e3f00fd4173b23d9dabdd8c30e33e",
                 "shasum": ""
             },
             "require": {
+                "behat/transliterator": "~1.0",
                 "doctrine/common": "~2.2",
                 "php": ">=5.3.2"
             },
@@ -1671,7 +1712,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2014-06-06 09:08:07"
+            "time": "2014-08-21 01:13:59"
         },
         {
             "name": "genemu/form-bundle",
@@ -2859,7 +2900,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -2915,7 +2956,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3398,16 +3439,16 @@
         },
         {
             "name": "oro/platform",
-            "version": "1.0.0-beta12",
+            "version": "1.0.0-beta13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/platform.git",
-                "reference": "afc68fb960c60b1a7c0f537a8e520324fd8eaaa1"
+                "reference": "2e7ae166440ee7697300967ee7a231745c1f359b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/platform/zipball/afc68fb960c60b1a7c0f537a8e520324fd8eaaa1",
-                "reference": "afc68fb960c60b1a7c0f537a8e520324fd8eaaa1",
+                "url": "https://api.github.com/repos/akeneo/platform/zipball/2e7ae166440ee7697300967ee7a231745c1f359b",
+                "reference": "2e7ae166440ee7697300967ee7a231745c1f359b",
                 "shasum": ""
             },
             "require": {
@@ -3462,10 +3503,10 @@
             "description": "Business Application Platform (BAP)",
             "homepage": "https://github.com/orocrm/platform.git",
             "support": {
-                "source": "https://github.com/akeneo/platform/tree/1.0.0-beta12",
+                "source": "https://github.com/akeneo/platform/tree/1.0.0-beta13",
                 "issues": "https://github.com/akeneo/platform/issues"
             },
-            "time": "2014-08-08 13:31:21"
+            "time": "2014-08-21 14:44:19"
         },
         {
             "name": "phpcollection/phpcollection",
