@@ -2,6 +2,7 @@
 
 ## Improvements
 - Java dependency has been removed
+- Add locale fallback to en_US
 
 ## Bug fixes
 - Sort exported categories by tree and order inside the tree
@@ -17,6 +18,7 @@
 - Fixed unique value validation for date attributes during import
 - Fixed apply filter on channel tree on MongoDB implementation
 - Fixed a bug on ProductCsvWriter
+- Fixed a bug that causes product associations to be stored twice in MongoDB implementation
 
 ## BC breaks
 - Replace ACLs `pim_enrich_family_add_atribute` and `pim_enrich_family_remove_atribute` with `pim_enrich_family_edit_attributes`. This ACL also enforces rights to edit attribute requirements.
