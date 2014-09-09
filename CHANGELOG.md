@@ -1,3 +1,9 @@
+# 1.3.*
+
+## Improvements
+
+ - remove the fixed mysql socket location
+
 # 1.2.0
 
 ## Improvements
