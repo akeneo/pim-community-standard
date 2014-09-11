@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6b7682476e36c74bc45dd7fe455cb030",
+    "hash": "a58709bcc09e674fadcd75af30ac29a4",
     "packages": [
         {
             "name": "a2lix/translation-form-bundle",
@@ -70,7 +70,7 @@
         },
         {
             "name": "akeneo/batch-bundle",
-            "version": "dev-master",
+            "version": "0.2.5",
             "target-dir": "Akeneo/Bundle/BatchBundle",
             "source": {
                 "type": "git",
@@ -119,7 +119,7 @@
         },
         {
             "name": "akeneo/measure-bundle",
-            "version": "dev-master",
+            "version": "0.2.3",
             "target-dir": "Akeneo/Bundle/MeasureBundle",
             "source": {
                 "type": "git",
@@ -4825,7 +4825,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "akeneo/pim-community-dev": 0
+        "akeneo/pim-community-dev": 0,
+        "akeneo/measure-bundle": 0,
+        "akeneo/batch-bundle": 0
     },
     "prefer-stable": false,
     "platform": {

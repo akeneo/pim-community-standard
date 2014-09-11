@@ -18,7 +18,9 @@
     },
     "require": {
         "php": ">=5.4.4",
-        "akeneo/pim-community-dev": "1.2.*@stable"
+        "akeneo/pim-community-dev": "1.2.*@stable",
+        "akeneo/measure-bundle": "0.2.*@stable",
+        "akeneo/batch-bundle": "0.2.*@stable"
     },
     "repositories": [
         {
