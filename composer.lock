@@ -75,12 +75,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/BatchBundle.git",
-                "reference": "715dad619d9461cf87fa4902edcd760873328da2"
+                "reference": "c362e627605e892e7b8e38974cf5a421833ca2f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/BatchBundle/zipball/715dad619d9461cf87fa4902edcd760873328da2",
-                "reference": "715dad619d9461cf87fa4902edcd760873328da2",
+                "url": "https://api.github.com/repos/akeneo/BatchBundle/zipball/c362e627605e892e7b8e38974cf5a421833ca2f6",
+                "reference": "c362e627605e892e7b8e38974cf5a421833ca2f6",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,7 @@
                 "reader",
                 "writer"
             ],
-            "time": "2014-09-03 17:21:40"
+            "time": "2014-08-14 16:01:19"
         },
         {
             "name": "akeneo/measure-bundle",
@@ -124,12 +124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/MeasureBundle.git",
-                "reference": "ae15d15bd86fd8835585f17eae55a2360ed4de1d"
+                "reference": "0fe60aadbd473669c0c66e8f1a887058722306d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/MeasureBundle/zipball/ae15d15bd86fd8835585f17eae55a2360ed4de1d",
-                "reference": "ae15d15bd86fd8835585f17eae55a2360ed4de1d",
+                "url": "https://api.github.com/repos/akeneo/MeasureBundle/zipball/0fe60aadbd473669c0c66e8f1a887058722306d2",
+                "reference": "0fe60aadbd473669c0c66e8f1a887058722306d2",
                 "shasum": ""
             },
             "require": {
@@ -158,20 +158,20 @@
                 "convert",
                 "measure"
             ],
-            "time": "2014-08-29 09:34:40"
+            "time": "2014-08-18 13:36:14"
         },
         {
             "name": "akeneo/pim-community-dev",
-            "version": "v1.2.3",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/akeneo/pim-community-dev.git",
-                "reference": "6dc268ca444ffc0c43d8ee87da2182978330ea5f"
+                "reference": "46e7d939a0347f489704ad1141975a331f636739"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/6dc268ca444ffc0c43d8ee87da2182978330ea5f",
-                "reference": "6dc268ca444ffc0c43d8ee87da2182978330ea5f",
+                "url": "https://api.github.com/repos/akeneo/pim-community-dev/zipball/46e7d939a0347f489704ad1141975a331f636739",
+                "reference": "46e7d939a0347f489704ad1141975a331f636739",
                 "shasum": ""
             },
             "require": {
@@ -263,10 +263,10 @@
             ],
             "description": "Akeneo PIM, the future of catalog management is open !",
             "support": {
-                "source": "https://github.com/akeneo/pim-community-dev/tree/v1.2.3",
+                "source": "https://github.com/akeneo/pim-community-dev/tree/1.2",
                 "issues": "https://github.com/akeneo/pim-community-dev/issues"
             },
-            "time": "2014-09-08 15:25:14"
+            "time": "2014-09-11 15:35:39"
         },
         {
             "name": "apy/jsfv-bundle",
@@ -622,12 +622,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "6634069ada56fd169de5e3ca29bc407d9d9a11b6"
+                "reference": "e93f3b718c421daddff58c4a4af1aee574472cd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/6634069ada56fd169de5e3ca29bc407d9d9a11b6",
-                "reference": "6634069ada56fd169de5e3ca29bc407d9d9a11b6",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/e93f3b718c421daddff58c4a4af1aee574472cd6",
+                "reference": "e93f3b718c421daddff58c4a4af1aee574472cd6",
                 "shasum": ""
             },
             "require": {
@@ -682,7 +682,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2014-09-04 13:31:34"
+            "time": "2014-07-27 16:33:24"
         },
         {
             "name": "doctrine/cache",
@@ -690,12 +690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "daba57d377f2620ce0355797acad538fc682e3a4"
+                "reference": "72121e68265cd8b37f9b69778308251f6c5133e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/daba57d377f2620ce0355797acad538fc682e3a4",
-                "reference": "daba57d377f2620ce0355797acad538fc682e3a4",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/72121e68265cd8b37f9b69778308251f6c5133e4",
+                "reference": "72121e68265cd8b37f9b69778308251f6c5133e4",
                 "shasum": ""
             },
             "require": {
@@ -751,7 +751,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2014-08-30 05:24:19"
+            "time": "2014-08-05 12:51:19"
         },
         {
             "name": "doctrine/collections",
@@ -1226,12 +1226,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
+                "reference": "db77c80d33d72e33a62b80581e9d150af85de556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/db77c80d33d72e33a62b80581e9d150af85de556",
+                "reference": "db77c80d33d72e33a62b80581e9d150af85de556",
                 "shasum": ""
             },
             "require": {
@@ -1254,16 +1254,19 @@
             ],
             "authors": [
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com",
+                    "homepage": "http://www.instaclick.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh",
+                    "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
             "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
@@ -1272,7 +1275,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-06-11 23:09:27"
         },
         {
             "name": "doctrine/orm",
@@ -1637,12 +1640,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Atlantic18/DoctrineExtensions.git",
-                "reference": "fc56b463ec0f82344dc1ec72ae90f04036675b66"
+                "reference": "54af483e293e3f00fd4173b23d9dabdd8c30e33e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/fc56b463ec0f82344dc1ec72ae90f04036675b66",
-                "reference": "fc56b463ec0f82344dc1ec72ae90f04036675b66",
+                "url": "https://api.github.com/repos/Atlantic18/DoctrineExtensions/zipball/54af483e293e3f00fd4173b23d9dabdd8c30e33e",
+                "reference": "54af483e293e3f00fd4173b23d9dabdd8c30e33e",
                 "shasum": ""
             },
             "require": {
@@ -1710,7 +1713,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2014-09-04 15:05:20"
+            "time": "2014-08-21 01:13:59"
         },
         {
             "name": "genemu/form-bundle",
@@ -2898,7 +2901,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -2954,7 +2957,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -4494,12 +4497,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "084ca201a737de82323f7613665e7229789aa434"
+                "reference": "9cd07271c3b0efb8d82fd9dae18be48ffd6b09ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/084ca201a737de82323f7613665e7229789aa434",
-                "reference": "084ca201a737de82323f7613665e7229789aa434",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/9cd07271c3b0efb8d82fd9dae18be48ffd6b09ad",
+                "reference": "9cd07271c3b0efb8d82fd9dae18be48ffd6b09ad",
                 "shasum": ""
             },
             "require": {
@@ -4543,7 +4546,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-09-02 14:08:17"
+            "time": "2014-08-27 09:26:36"
         },
         {
             "name": "willdurand/js-translation-bundle",
