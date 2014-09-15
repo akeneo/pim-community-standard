@@ -17,8 +17,11 @@
         }
     },
     "require": {
-        "php": ">=5.4.4",
-        "akeneo/pim-community-dev": "dev-master"
+        "akeneo/pim-community-dev": "1.2.4",
+        "oro/platform": "1.0.0-beta13",
+        "knplabs/knp-menu-bundle":"v2.0.0-alpha2",
+        "knplabs/knp-menu":"v2.0.0-alpha2",
+        "gedmo/doctrine-extensions":"2.3.x-dev@dev"
     },
     "repositories": [
         {
@@ -53,7 +56,7 @@
     "config": {
         "bin-dir": "bin"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
