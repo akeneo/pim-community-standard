@@ -1,7 +1,7 @@
 # 1.3.*
 
 ## Improvements
-
+ - switch to stability stable on composer
  - remove the fixed mysql socket location
 
 # 1.2.0
