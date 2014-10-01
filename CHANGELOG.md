@@ -1,24 +1,30 @@
-# 1.3.x
-
-## Features
-- Export a product as PDF
-- Add a widget in the navigation bar to display notifications when import/export jobs finish
-- Add the sequential edit for a selected list of products
-- Add comments on a product
-
-## Improvements
- - remove the fixed mysql socket location
- - switch to stability stable
- - base template has been moved from `app/Resources/views` to `PimEnrichBundle/Resources/views`
-
-## BC breaks
-- Rename `Pim\Bundle\CatalogBundle\DependencyInjection\Compiler\ResolveDoctrineOrmTargetEntitiesPass` to `Pim\Bundle\CatalogBundle\DependencyInjection\Compiler\ResolveDoctrineTargetModelsPass`
-- Rename `Pim\Bundle\CatalogBundle\DependencyInjection\Compiler\AbstractResolveDoctrineOrmTargetEntitiesPass` to `Pim\Bundle\CatalogBundle\DependencyInjection\Compiler\AbstractResolveDoctrineTargetModelsPass`
-
 # 1.2.x
 
 ## Bug fixes
+
+# 1.2.7 (2014-10-01)
+
+## Bug fixes
+- Fix no warning message when leaving a product form after a submit with errors
+- Stabilize composer.json (minimum-stability: stable) and fix monolog version issue
+
+# 1.2.6 (2014-09-26)
+
+## Bug fixes
 - Fix installer fail on requirements when you change the archive and uploads folder
+- Fix display of multi-byte characters in long form labels that are truncated
+- Incorrect date display between export/import widget and job execution page and job history
+- Fix archiver bug with yml imports
+- Fix missing product versioning data when a category, attribute or attribute option linked to a product is removed
+
+## BC breaks
+- Added supports method in Pim\Bundle\BaseConnectorBundle\Archiver\ArchiverInterface
+- Two new methods have been added to Pim\Bundle\CatalogBundle\Repository\ProductRepositoryInterface: `findAllWithAttribute` and `findAllWithAttributeOption`
+- Constructor of Pim\Bundle\VersioningBundle\UpdateGuesser\AttributeOptionUpdateGuesser has been changed
+
+## Improvements
+- Add images in icecat_demo_dev installer fixtures
+- Add sorter to the grid state
 
 # 1.2.5 (2014-09-19)
 
