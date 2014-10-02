@@ -18,6 +18,8 @@
     },
     "require": {
         "akeneo/pim-community-dev": "dev-master@dev",
+        "monolog/monolog": "1.10.*",
+        "symfony/icu": "1.1.0",
         "oro/platform": "1.0.0-beta13",
         "knplabs/knp-menu-bundle":"v2.0.0-alpha2",
         "knplabs/knp-menu":"v2.0.0-alpha2",
