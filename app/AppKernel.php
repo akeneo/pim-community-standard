@@ -166,7 +166,6 @@ class AppKernel extends Kernel
             new Oro\Bundle\UIBundle\OroUIBundle(),
             new Oro\Bundle\AsseticBundle\OroAsseticBundle(),
             new Oro\Bundle\ConfigBundle\OroConfigBundle(),
-            new Oro\Bundle\DataAuditBundle\OroDataAuditBundle(),
             new Oro\Bundle\DataGridBundle\OroDataGridBundle(),
             new Oro\Bundle\DistributionBundle\OroDistributionBundle(),
             new Oro\Bundle\EmailBundle\OroEmailBundle(),
@@ -200,6 +199,8 @@ class AppKernel extends Kernel
             // new Oro\Bundle\SyncBundle\OroSyncBundle(),
             // new Oro\Bundle\TagBundle\OroTagBundle(),
             // new Oro\Bundle\WorkflowBundle\OroWorkflowBundle(),
+            // new Oro\Bundle\DataAuditBundle\OroDataAuditBundle(),
+
         ];
     }
 }
