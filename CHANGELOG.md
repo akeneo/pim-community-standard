@@ -1,3 +1,15 @@
+# 1.2.x
+
+## Bug fixes
+
+# 1.2.10 (2014-10-24)
+
+## Bug fixes
+- PIM-3221: Fix the possibility to update attributes on variant groups during import
+- PIM-3283: Fix issue on the password reset
+- PIM-3209: Fix issue on the extension validation during import
+- PIM-3234: Fix performance issue on category filter
+
 # 1.2.9 (2014-10-17)
 
 ## Bug fixes
