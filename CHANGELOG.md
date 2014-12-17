@@ -1,7 +1,28 @@
+# 1.2.16 (2014-12-17)
+
+## Bug fixes
+- PIM-3447: Enforce max database length limit on identifier, text and textarea attribute values
+- PIM-3471: Add an error log when the max number of indexes is reached for the mongo product collection (MongoResultException is raised since Mongo 2.6.*)
+- PIM-3369: Check on import if the couple channel/local exist
+- PIM-3368: Add association type check on association import
+- PIM-3377: Add a check if the specific locale exists on imports, and skip unused attribute column for locale specific on exports
+- PIM-3458: When creating an attribute group, automatically set the sort order to the last one
+- PIM-3420: Remove update guessers on attributes and attributes option to fix the versionning memory leak
+
+## BC breaks
+- PIM-3368: Add AssociationType class argument to the `Pim\Bundle\TransformBundle\Transformer\AssociationTransformer` constructor
+
+## Improvements
+- PIM-3448: Add the method `getAttributeGroupsFromAttributeCodes` in the `Pim\Bundle\CatalogBundle\Entity\Repository\AttributeGroupRepository`
+
 # 1.2.15 (2014-12-10)
 
 ## Bug fixes
-- PIM-3447: Fix date picker year range selection over next year
+- PIM-3473: Fix date picker year range selection over next year
+- PIM-3475: Fix attribute options sort order in import/export
+
+## BC breaks
+- Export of attribute options in CSV now include a sort_order column
 
 # 1.2.14 (2014-12-03)
 
