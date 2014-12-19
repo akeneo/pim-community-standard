@@ -22,9 +22,95 @@
 - Change visibility of ProductQueryBuilder::addAttributeSorter, ProductQueryBuilder::addFieldSorter from public to protected, add a addSorter method in ProductQueryBuilderInterface
 - Remove ProductFilterUtility::getAttribute()
 
-# 1.2.x
+# 1.2.17 (2014-12-19)
+- PIM-3550 : force the version of "doctrine/annotations" to "v1.2.1" to avoid the BC Break introduced with v1.2.2
+
+# 1.2.16 (2014-12-17)
 
 ## Bug fixes
+- PIM-3447: Enforce max database length limit on identifier, text and textarea attribute values
+- PIM-3471: Add an error log when the max number of indexes is reached for the mongo product collection (MongoResultException is raised since Mongo 2.6.*)
+- PIM-3369: Check on import if the couple channel/local exist
+- PIM-3368: Add association type check on association import
+- PIM-3377: Add a check if the specific locale exists on imports, and skip unused attribute column for locale specific on exports
+- PIM-3458: When creating an attribute group, automatically set the sort order to the last one
+- PIM-3420: Remove update guessers on attributes and attributes option to fix the versionning memory leak
+
+## BC breaks
+- PIM-3368: Add AssociationType class argument to the `Pim\Bundle\TransformBundle\Transformer\AssociationTransformer` constructor
+
+## Improvements
+- PIM-3448: Add the method `getAttributeGroupsFromAttributeCodes` in the `Pim\Bundle\CatalogBundle\Entity\Repository\AttributeGroupRepository`
+
+# 1.2.15 (2014-12-10)
+
+## Bug fixes
+- PIM-3473: Fix date picker year range selection over next year
+- PIM-3475: Fix attribute options sort order in import/export
+
+## BC breaks
+- Export of attribute options in CSV now include a sort_order column
+
+# 1.2.14 (2014-12-03)
+
+## Bug fixes
+- PIM-3443: Fix prices not exported in quick export
+- PIM-3446: Fix import export history with large amount of errors
+
+# 1.2.13 (2014-11-26)
+
+## Bug fixes
+- PIM-3406: Fix boolean filter on Mongo implementation
+- PIM-3430: Fix doctrine issue on prices when skip an item during the product import
+- PIM-3358: Fix sprintf issue in an exception which prevents doctrine writer to deal with anything else than an object
+- PIM-3326: Fix mongo filters with multiples values and empty on MongoDB
+- PIM-3426: Fix common attributes edition on multi selects
+- PIM-3434: Fix bug in product media manager when file does not exist on the filesystem
+- PIM-3436: Fix WYSIWYG field on product edit form (load them asynchronously)
+- PIM-3372: Add an error message when the locale is disabled during product import
+- PIM-3370: Add an error message when the channel doesnt exist during product import
+- PIM-3374: Add an error message when a channel is provided for a global attribute
+- PIM-3375: Add an error message when a locale is provided for a global attribute
+- PIM-3376: Add an error message when a channel and a locale are provided for a global attribute
+- PIM-3393: Don't show the update view button for non-owners
+
+# 1.2.12 (2014-11-13)
+
+## Bug fixes
+- PIM-3298: Fix issue with locale specific property of an attribute when edit and mass edit
+- PIM-3229: Fix values for simple and multi select attributes with missing translations not being displayed in the grid
+- PIM-3309: Fix check on product value uniqueness
+- PIM-3288: Fix memory leak on product import (avoid to hydrate all products of a category when we add a category to a product)
+- PIM-3354: Fix parameter alias in ORM ProductCategoryRepository
+
+# 1.2.11 (2014-10-31)
+
+## Bug fixes
+- PIM-3308: Fix regression on unclassified filter
+- PIM-3311: Fix creation of products with missing identifier during imports
+- PIM-3312: Fix CSV import of product values with invalid channel, locale or currency
+
+# 1.2.10 (2014-10-24)
+
+## Bug fixes
+- PIM-3221: Fix the possibility to update attributes on variant groups during import
+- PIM-3283: Fix issue on the password reset
+- PIM-3209: Fix issue on the extension validation during import
+- PIM-3234: Fix performance issue on category filter
+
+# 1.2.9 (2014-10-17)
+
+## Bug fixes
+- PIM-3254: Fix issue with inactive locales in exports
+- PIM-3217: Fix missing filter groups in grid filter selector when two attribute groups have the same sort orders
+- PIM-3281: Fix mass edit issue on localizable values, it uses user locale instead of selected locale
+- PIM-3248: Fix completeness not being correctly calculated after removing a required attribute from a family
+- PIM-3279: Fix performance issue with big group sets
+- PIM-3266: Fix the flush of skipped items during an import that uses the `Pim\Bundle\BaseConnectorBundle\Processor\TransformerProcessor`. All your custom processors that uses the `TransformmerProcessor` should now inject the `Pim\Bundle\CatalogBundle\Doctrine\SmartManagerRegistry` to fix this issue too.
+- PIM-3282: Fix the grid filters that can be set as json in the request
+
+## BC breaks
+- Two new arguments have been added to Pim\Bundle\FilterBundle\Filter\Product\GroupsFilter: `userContext` and `groupClass`
 
 # 1.2.8 (2014-10-10)
 
@@ -775,4 +861,3 @@ that made the entity too smart for its own good and created performances problem
 - Fix price format different between import and enrich
 - Fix channel datagrid result count
 - Fix end date which is updated for all jobs
-
