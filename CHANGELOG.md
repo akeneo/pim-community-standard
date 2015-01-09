@@ -1,3 +1,9 @@
+# 1.2.19 (2015-01-09)
+
+## Bug fixes
+- PIM-3556: Fix memory leak on versionning
+- PIM-3548: Do not rely on the absolute file path of a media 
+
 # 1.2.18 (2014-12-23)
 
 ## Bug fixes
