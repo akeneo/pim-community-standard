@@ -201,7 +201,6 @@ class AppKernel extends Kernel
             // new Oro\Bundle\SyncBundle\OroSyncBundle(),
             // new Oro\Bundle\TagBundle\OroTagBundle(),
             // new Oro\Bundle\WorkflowBundle\OroWorkflowBundle(),
-
         ];
     }
 }
