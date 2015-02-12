@@ -1,5 +1,77 @@
 # 1.3.x
 
+# 1.3.0-RC2 (2015-02-12)
+
+## Bug fixes
+- PIM-1235: Fix information message when trying to delete a category tree used by a channel
+- PIM-3068: Darken navigation arrows in product grid
+- PIM-2094: Regroup attributes validation properties in a subpanel
+- PIM-3700: Fix comment display on long words
+- PIM-2103: Display a loading when deleting a category tree
+- PIM-3394: Improve forgotten password screen
+- PIM-3398: Translate units on metric fields on product edit form
+- PIM-3575: Sort csv column in a determinist way (alphabetically) on export
+- PIM-3752: Fixed the hard coded entry `Select Job` on import/export creation
+- PIM-3736: Fix wrong count of products in Variant group view
+- PIM-3628: Fixed products not being versioned when modifing a metric, price or media value
+- PIM-3753: Fix completeness filter
+
+## BC breaks
+- Add a TranslatorInterface argument in MetricType::__construct
+- Change of constructor of `Pim/Bundle/CommentBundle/Form/Type/CommentType` to accept `Pim\Bundle\CommentBundle\Entity` as a string for the third argument
+- Added new constructor to `Pim/Bundle/DataGridBundle/Form/Type/DatagridViewType` to accept `Pim\Bundle\DataGridBundle\Entity\DataGridView` as a string for the first argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AssociationType` to accept `Pim\Bundle\CatalogBundle\Model\Product` as a string for the third argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AssociationType` to accept `Pim\Bundle\CatalogBundle\Entity\AssociationType` as a string for the fourth
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AssociationType` to accept `Pim\Bundle\CatalogBundle\Entity\Group` as a string for the fifth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AssociationType` to accept `Pim\Bundle\CatalogBundle\Model\Association` as a string for the sixth argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/AssociationTypeType` to accept `Pim\Bundle\CatalogBundle\Model\AssociationType` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/AttributeGroupType` to accept `Pim\Bundle\CatalogBundle\Entity\AttributeGroup` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/AttributeOptionCreateType` to accept `Pim\Bundle\CatalogBundle\Entity\AttributeOption` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/AttributeOptionType` to accept `Pim\Bundle\CatalogBundle\Entity\AttributeOption` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/AttributeOptionValueType` to accept `Pim\Bundle\CatalogBundle\Entity\AttributeOptionValue` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/AttributeRequirementType` to accept `Pim\Bundle\CatalogBundle\Entity\AttributeRequirement` as a string for the first argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AttributeType` to accept `Pim\Bundle\CatalogBundle\Entity\AttributeTranslation` as a string for the third argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AttributeType` to accept `Pim\Bundle\CatalogBundle\Entity\Attribute` as a string for the fourth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AttributeType` to accept `Pim\Bundle\CatalogBundle\Entity\AttributeGroup` as a string for the fifth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AvailableAttributesType` to accept `Pim\Bundle\CatalogBundle\Entity\Attribute` as a string for the third argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/AvailableAttributesType` to accept `Pim\Bundle\CatalogBundle\Model\AvailableAttribute` as a string for the fourth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/CategoryType` to accept `Pim\Bundle\CatalogBundle\Entity\Category` as a string for the first argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/CategoryType` to accept `Pim\Bundle\CatalogBundle\Entity\CategoryTranslation` as a string for the second argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/ChannelType` to accept `Pim\Bundle\CatalogBundle\Entity\Category` as a string for the fourth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/ChannelType` to accept `Pim\Bundle\CatalogBundle\Entity\Channel` as a string for the fifth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/FamilyType` to accept `Pim\Bundle\CatalogBundle\Entity\Attribute` as a string for the fourth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/FamilyType` to accept `Pim\Bundle\CatalogBundle\Entity\Family` as a string for the fifth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/GroupType` to accept `Pim\Bundle\CatalogBundle\Entity\Attribute` as a string for the second argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/GroupType` to accept `Pim\Bundle\CatalogBundle\Entity\Group` as a string for the third argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/GroupTypeType` to accept `Pim\Bundle\CatalogBundle\Entity\GroupType` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/ImageType` to accept `Pim\Bundle\CatalogBundle\Entity\ProductMedia` as a string for the fist argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/AddToGroupsType` to accept `Pim\Bundle\CatalogBundle\Entity\Group` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/AddToGroupsType` to accept `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToGroups` as a string for the second argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/AddToVariantGroupType` to accept `Pim\Bundle\CatalogBundle\Entity\Group` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/AddToVariantGroupType` to accept `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToVariantGroup` as a second for the third argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/ChangeFamilyType` to accept `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ChangeFamily` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/ChangeStatusType` to accept `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ChangeStatus` as a string for the first argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/ClassifyType` to accept ` Pim\Bundle\EnrichBundle\MassEditAction\Operation\Classify` as a string for the second argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/EditCommonAttributesType` to accept `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes` as a string for the fifth argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MassEditAction/SetAttributeRequirementsType` to accept `Pim\Bundle\EnrichBundle\MassEditAction\Operation\SetAttributeRequirements` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MediaType` to accept `Pim\Bundle\CatalogBundle\Model\ProductMedia` as a string for the first argument
+- Added new constructor to `Pim/Bundle/EnrichBundle/Form/Type/MetricType` to accept `Pim\Bundle\CatalogBundle\Model\Metric` as a string for the first argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Form/Type/PriceType` to accept `Pim\Bundle\CatalogBundle\Model\Price` as a string for the first argument
+- Change the constructor of `Pim/Bundle/ImportExportBundle/Form/Type/JobInstanceType` to accept `Symfony\Component\Translation\TranslatorInterface` as for the second argument
+- Change the constructor of `Pim/Bundle/BaseConnectorBundle/Writer/Doctrine/ProductWriter` to accept `Pim\Bundle\CatalogBundle\Manager\MediaManager` as for the first argument instead of `Pim\Bundle\CatalogBundle\Manager\ProductManager`
+- Change the constructor of `Pim/Bundle/CatalogBundle/Manager/AssociationTypeManager` to remove the $eventDispatcher argument from the constructor
+- Change the constructor of `Pim/Bundle/CatalogBundle/Manager/AttributeManager` to remove the $eventDispatcher argument from the constructor
+- Change the constructor of `Pim/Bundle/CatalogBundle/Manager/CategoryManager` to remove the $eventDispatcher argument from the constructor
+- Change the constructor of `Pim/Bundle/CatalogBundle/Manager/GroupManager` to remove the $eventDispatcher argument from the constructor
+- Change the constructor of `Pim/Bundle/CatalogBundle/Manager/FamilyManager` to remove the $eventDispatcher argument from the constructor
+- Change the constructor of `Pim/Bundle/EnrichBundle/Controller/AttributeGroupController` to accept `Akeneo\Component\StorageUtils\Remover\RemoverInterface` and `Akeneo\Component\StorageUtils\Saver\BulkSaverInterface` as for the fourteenth and fifteenth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Controller/CategoryTreeController` to accept `Akeneo\Component\StorageUtils\Remover\RemoverInterface` and `Akeneo\Component\StorageUtils\Saver\SaverInterface` as for the fourteenth and fifteenth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Controller/FamilyController` to accept `Akeneo\Component\StorageUtils\Remover\RemoverInterface` and `Akeneo\Component\StorageUtils\Saver\SaverInterface` as for the fourteenth and fifteenth argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Controller/GroupController` to accept `Akeneo\Component\StorageUtils\Remover\RemoverInterface` as for the fourteenth  argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Controller/ProductController` to accept `Akeneo\Component\StorageUtils\Remover\RemoverInterface` as for the fourteenth  argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Controller/VariantGroupController` to accept `Akeneo\Component\StorageUtils\Remover\RemoverInterface` as for the fourteenth  argument
+- Change the constructor of `Pim/Bundle/EnrichBundle/Controller/VariantGroupController` and remove `Pim\Bundle\CatalogBundle\Builder\ProductTemplateBuilderInterface`
+
 # 1.3.0-RC1 (2015-02-03)
 
 ## Features
@@ -135,11 +207,11 @@
 - Add methods isLocaleSpecific and getLocaleSpecificCodes in AttributeInterface
 - AssociationTransformer constructor now expects a $associationTypeClass as last argument
 - Inject the GroupFactory as las constructor argument in GroupController and VariantGroupController
-- The following constants have been moved:
+- (Akeneo storage) The following constants have been moved:
   * `DOCTRINE_ORM` and `DOCTRINE_MONGODB_ODM` from `Pim\Bundle\CatalogBundle\DependencyInjection\PimCatalogExtension` are now located in `Akeneo\Bundle\StorageUtilsBundle\DependencyInjection\AkeneoStorageUtilsExtension`
   * `DOCTRINE_MONGODB`, `ODM_ENTITIES_TYPE` and `ODM_ENTITY_TYPE` from `Pim\Bundle\CatalogBundle\PimCatalogBundle` are now located in `Akeneo\Bundle\StorageUtilsBundle\AkeneoStorageUtilsBundle`
-- The container parameter `pim_catalog.storage_driver` has been deleted
-- The following services have been renamed:
+- (Akeneo storage) The container parameter `pim_catalog.storage_driver` has been deleted
+- (Akeneo storage) The following services have been renamed:
   * `pim_catalog.event_subscriber.resolve_target_repository` has been renamed to `akeneo_storage_utils.event_subscriber.resolve_target_repository`
   * `pim_catalog.doctrine.smart_manager_registry` has been renamed to `akeneo_storage_utils.doctrine.smart_manager_registry`
   * `pim_catalog.doctrine.table_name_builder` has been renamed to `akeneo_storage_utils.doctrine.table_name_builder`
@@ -148,7 +220,7 @@
   * `pim_catalog.event_subscriber.mongodb.entities_type` has been renamed to `akeneo_storage_utils.event_subscriber.mongodb.entities_type`
   * `pim_catalog.event_subscriber.mongodb.entity_type` has been renamed to `akeneo_storage_utils.event_subscriber.mongodb.entity_type`
   * `pim_catalog.mongodb.mongo_objects_factory` has been renamed to `akeneo_storage_utils.mongodb.mongo_objects_factory`
-- The following classes have been renamed or moved:
+- (Akeneo storage) The following classes have been renamed or moved:
   * `Pim\Bundle\CatalogBundle\MongoDB\MongoObjectsFactory` becomes `Akeneo\Bundle\StorageUtilsBundle\MongoDB\MongoObjectsFactory`
   * `Pim\Bundle\CatalogBundle\MongoDB\Type\Entities` becomes `Akeneo\Bundle\StorageUtilsBundle\MongoDB\Type\Entities`
   * `Pim\Bundle\CatalogBundle\MongoDB\Type\Entity` becomes `Akeneo\Bundle\StorageUtilsBundle\MongoDB\Type\Entity`
@@ -185,13 +257,18 @@
 - constructor of `Pim/Bundle/VersioningBundle/Doctrine/ORM/PendingMassPersister` has been updated and now receives `Pim\Bundle\VersioningBundle\Manager\VersionContext`
 - constructor of `Pim/Bundle/VersioningBundle/EventSubscriber/AddVersionSubscriber` has been updated and now receives `Pim\Bundle\VersioningBundle\Manager\VersionContext`
 - constructor of `src/Pim/Bundle/VersioningBundle/EventSubscriber/MongoDBODM/AddProductVersionSubscriber.php` has been updated and now receives `Pim\Bundle\VersioningBundle\Manager\VersionContext`
+- constructor of `src/Pim/Bundle/CatalogBundle/Manager/GroupManager` has been updated and now receives `Pim\Bundle\CatalogBundle\Repository\ProductRepositoryInterface`
+- Added `getProductsByGroup` method in `Pim/Bundle/CatalogBundle/Repository/ProductRepositoryInterface`
 
 ## Bug fixes
 - PIM-3332: Fix incompatibility with overriden category due to usage of ParamConverter in ProductController
 - PIM-3069: Fix image file prefixes not well generated on product creation (import and fixtures)
 - PIM-3548: Do not use the absolute file path of a media
+- PIM-3730: Fix variant group link on product edit page
+- PIM-3632: Correctly show scopable attribute icons on scope change
+- PIM-3583: Fix the bad parsed filter value with spaces
 
-# 1.2.*
+# 1.2.25 (2015-02-04)
 
 ## Bug fixes
 - PIM-3718: load tinymce only on textarea click
