@@ -1,3 +1,8 @@
+# 1.2.26 (2015-02-12)
+
+## Bug fixes
+- PIM-3761: Fix WYSIWYG onClick behaviour, event correctly bind
+
 # 1.2.25 (2015-02-04)
 
 ## Bug fixes
