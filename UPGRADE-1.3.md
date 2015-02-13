@@ -16,7 +16,7 @@ Please note that former services are still supported thanks to aliases until ver
 
 ## Update dependencies and configuration
 
-Download the latest [PIM community standard](http://www.akeneo.com/pim-community-standard.tar.gz) and extract it:
+Download the latest [PIM community standard](http://www.akeneo.com/download/) and extract it:
 
 ```
  wget http://www.akeneo.com/pim-community-standard.tar.gz
