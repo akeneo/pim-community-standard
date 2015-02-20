@@ -1,3 +1,9 @@
+# 1.2.28 (2015-02-20)
+
+## Bug fixes
+- PIM-3790: Fix WYSIWYG on folded scopable elements
+- PIM-3785: Can not export Products/Published due to null medias
+
 # 1.2.27 (2015-02-13)
 
 ## Bug fixes
