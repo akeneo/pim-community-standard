@@ -19,9 +19,9 @@ Please note that former services are still supported thanks to aliases until ver
 Download the latest [PIM community standard](http://www.akeneo.com/pim-community-standard.tar.gz) and extract it:
 
 ```
- wget http://www.akeneo.com/pim-community-standard.tar.gz
- tar -zxf pim-community-standard.tar.gz
- cd pim-community-standard/
+ wget http://www.akeneo.com/pim-community-standard-v1.3-latest.tar.gz
+ tar -zxf pim-community-standard-v1.3-latest.tar.gz
+ cd pim-community-standard-v1.3.*/
 ```
 
 Copy the following files to your PIM installation:
@@ -31,6 +31,7 @@ Copy the following files to your PIM installation:
  cp app/PimRequirements.php $PIM_DIR/app
  cp app/SymfonyRequirements.php $PIM_DIR/app
  cp app/config/pim_parameters.yml $PIM_DIR/app/config
+ cp -Rf upgrades $PIM_DIR/vendor/akeneo/pim-community-dev/
  cp composer.json $PIM_DIR
 ```
 
