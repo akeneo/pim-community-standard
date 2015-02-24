@@ -1,3 +1,5 @@
+# 1.2.29 (2015-02-24)
+
 # 1.2.28 (2015-02-20)
 
 ## Bug fixes
@@ -13,6 +15,7 @@
 
 ## Bug fixes
 - PIM-3761: Fix WYSIWYG onClick behaviour, event correctly bind
+- PIM-3632 : Correctly show scopable attribute icons on scope change
 
 # 1.2.25 (2015-02-04)
 
