@@ -31,7 +31,7 @@ Copy the following files to your PIM installation:
  cp app/PimRequirements.php $PIM_DIR/app
  cp app/SymfonyRequirements.php $PIM_DIR/app
  cp app/config/pim_parameters.yml $PIM_DIR/app/config
- cp -Rf upgrades $PIM_DIR/vendor/akeneo/pim-community-dev/
+ cp -Rf upgrades $PIM_DIR
  cp composer.json $PIM_DIR
 ```
 
