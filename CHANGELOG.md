@@ -1,3 +1,24 @@
+# 1.3.3 (2015-03-02)
+
+## Bug fixes
+- PIM-3837: Fix XSS vulnerability on user form
+
+# 1.3.2 (2015-02-27)
+
+## Bug fixes
+- PIM-3665: Remove media even if file not on filesystem
+- PIM-3834: add missing cascade detach product -> associations, product -> completenesses
+- PIM-3820: Attribute option translation not well handled on import
+- PIM-3762: Fix the bug on image not well displayed on pdf export
+
+# 1.3.1 (2015-02-24)
+
+## Bug fixes
+- PIM-3775: Fix variant group import from an archive
+- PIM-3783: Fix issue with Rest API and MediaNormalizer
+- PIM-3791: Fix fatal error on MongoDB mass pending persister
+- PIM-3757: Fix bugs on product query filter on multiple filter applied at once
+
 # 1.3.0 - "Hare Force" (2015-02-12)
 
 # 1.3.0-RC3 (2015-02-12)
@@ -273,6 +294,30 @@
 - PIM-3632: Correctly show scopable attribute icons on scope change
 - PIM-3583: Fix the bad parsed filter value with spaces
 
+# 1.2.30
+
+## Bug fixes
+- PIM-3837: Fix XSS vulnerability on user form
+
+# 1.2.29 (2015-02-24)
+
+# 1.2.28 (2015-02-20)
+
+## Bug fixes
+- PIM-3790: Fix WYSIWYG on folded scopable elements
+- PIM-3785: Can not export Products/Published due to null medias
+
+# 1.2.27 (2015-02-13)
+
+## Bug fixes
+- PIM-3779: Fix multiple WYSIWYG on same textarea element
+
+# 1.2.26 (2015-02-12)
+
+## Bug fixes
+- PIM-3761: Fix WYSIWYG onClick behaviour, event correctly bind
+- PIM-3632 : Correctly show scopable attribute icons on scope change
+
 # 1.2.25 (2015-02-04)
 
 ## Bug fixes
@@ -316,7 +361,7 @@
 - PIM-3558: Fix order of options for multiselect attribute in product versionning and csv product export
 
 ## BC breaks
-- PIM-3558: In the exported product csv file, we apply the sort order defined by the user to sort the options of a multiselect
+- PIM-3558: in the exported product csv file, we apply the sort order defined by the user to sort the options of a multiselect
 
 # 1.2.17 (2014-12-19)
 - PIM-3550: force the version of "doctrine/annotations" to "v1.2.1" to avoid the BC Break introduced with v1.2.2
@@ -483,7 +528,7 @@
 - constructor of Pim\Bundle\BaseConnectorBundle\Writer\Doctrine\Writer has changed
 - Pim\Bundle\TransformBundle\Cache\ProductCacheClearer has been renamed Pim\Bundle\TransformBundle\Cache\CacheClearer
 
-# 1.2.0 - "Acrobatty Bunny" (2014-08-28)
+# 1.2.0 (2014-08-28)
 
 ## Improvements
 

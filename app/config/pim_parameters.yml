@@ -34,4 +34,4 @@ parameters:
     # mongodb_server: 'mongodb://localhost:27017'
     # mongodb_database: akeneo_pim
 
-    doctrine_migrations_dir: %kernel.root_dir%/../vendor/akeneo/pim-community-dev/upgrades/schema
+    doctrine_migrations_dir: %kernel.root_dir%/../upgrades/schema
