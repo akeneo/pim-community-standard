@@ -1,3 +1,10 @@
+# 1.2.32 (2015-03-11)
+
+## Bug fixes
+- PIM-3786: Attribute type should not be blank for import
+- PIM-3437: Fix applying datagrid views and columns when not using hash navigation
+- PIM-3844: Create popin keeps state in memory
+
 # 1.2.31 (2015-03-06)
 
 # 1.2.30 (2015-03-02)
