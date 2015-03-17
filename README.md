@@ -98,11 +98,14 @@ Generating a clean database
 By default, when you install the PIM, the database is preconfigured with demo data.
 
 If you want to get only the bare minimum of data to have a clean but functional PIM,
-just change the following config line in app/config/parameters.yml:
+just add or change the following config line in app/config/parameters.yml:
 
 ```
     installer_data: PimInstallerBundle:minimal
 ```
+Then clear the cache:
+
+$ php app/console cache:clear --env=prod
 
 Then relaunch the install with the db option:
 
