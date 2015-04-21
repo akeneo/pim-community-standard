@@ -1,3 +1,8 @@
+# 1.3.9 (2015-04-21)
+
+## Bug fixes
+- PIM-4082: Fix error translation keys when creating a job
+
 # 1.3.8 (2015-04-14)
 
 ## Bug fixes
@@ -5,6 +10,9 @@
 - PIM-4047: Missing translation key for a number value which should not be decimal in edit form
 - PIM-3848: fix completeness not well calculated after attribute requirements deletion
 - PIM-4050: Fix float val in range number error message
+
+## Technical improvements
+- rollback the visibility of the ProductRepository::buildByScope from protected to public (as in 1.2) to ensure connectors compatibility
 
 # 1.3.7 (2015-04-03)
 
