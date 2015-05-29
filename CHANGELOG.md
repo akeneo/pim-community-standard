@@ -3,6 +3,7 @@
 ## Bug fixes
 - PIM-4223: Fix grid sorting order initialization (changed to be consistent with Platform behavior)
 - PIM-4227: Disable product versionning on category update (never used and very slow)
+NB: You may need to add a "max_products_category_removal" parameter in app/config/pim_parameters.yml file.
 
 # 1.3.12 (2015-05-22)
 
