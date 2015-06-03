@@ -1,14 +1,14 @@
-# 1.3.x
+# 1.3.14 (2015-06-03)
 
 ## Bug fixes
 - PIM-4227: fix BC break introduced in 1.3.13
+- PIM-4309: Fix bug processing media with a non existing media
 
 # 1.3.13 (2015-05-29)
 
 ## Bug fixes
 - PIM-4223: Fix grid sorting order initialization (changed to be consistent with Platform behavior)
 - PIM-4227: Disable product versionning on category update (never used and very slow)
-NB: You may need to add a "max_products_category_removal" parameter in app/config/pim_parameters.yml file.
 
 # 1.3.12 (2015-05-22)
 
