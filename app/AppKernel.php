@@ -19,12 +19,14 @@ class AppKernel extends Kernel
     {
         $bundles = [
             // your app bundles should be registered here
+            // new Acme\Bundle\AppBundle\AcmeAppBundle(),
         ];
 
         if (in_array($this->getEnvironment(), array('dev', 'test', 'behat'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
         }
 
         $bundles = array_merge(
@@ -86,6 +88,8 @@ class AppKernel extends Kernel
             new Pim\Bundle\TransformBundle\PimTransformBundle(),
             new Pim\Bundle\CommentBundle\PimCommentBundle(),
             new Pim\Bundle\PdfGeneratorBundle\PimPdfGeneratorBundle(),
+            new Pim\Bundle\ReferenceDataBundle\PimReferenceDataBundle(),
+            new Pim\Bundle\ConnectorBundle\PimConnectorBundle(),
         ];
     }
 
@@ -143,7 +147,6 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
-            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         ];
     }
 

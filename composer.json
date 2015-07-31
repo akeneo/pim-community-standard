@@ -20,11 +20,13 @@
         }
     },
     "require": {
-        "akeneo/pim-community-dev": "dev-master"
+        "akeneo/pim-community-dev": "1.4.0-ALPHA1",
+        "akeneo/batch-bundle": "0.4.x-dev",
+        "akeneo/measure-bundle": "0.4.x-dev",
+        "oro/platform": "dev-pim-1.4"
     },
     "require-dev": {
-        "doctrine/migrations": "1.0.*@dev",
-        "doctrine/doctrine-migrations-bundle": "1.0.0"
+        "doctrine/migrations": "1.0.0-alpha3@alpha"
     },
     "repositories": [
         {
@@ -45,6 +47,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
             "php app/console fos:js-routing:dump --target=web/js/routes.js"
         ],
         "post-update-cmd": [
@@ -53,6 +57,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
             "php app/console fos:js-routing:dump --target=web/js/routes.js"
         ]
     },
@@ -63,8 +69,9 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "symfony-assets-install": "symlink",
+        "symfony-assets-install": "relative",
         "incenteev-parameters": {
+            "keep-outdated": true,
             "file": "app/config/parameters.yml",
             "env-map": {
                 "database_host": "PIM_DATABASE_HOST",

@@ -1,3 +1,287 @@
+# 1.4.x
+
+# 1.4.0-alpha (2015-07-31)
+
+## Features
+
+## Technical improvements
+- Revamp the Readers, Processors and Writers to import data, make them more simple and re-useable
+- Use DEFERRED_EXPLICIT as Doctrine changeTrackingPolicy (for all models)
+- Continue to group persist()/flush() to the dedicated layer (SaverInterface) to avoid to have them everywhere in the stack
+- Category filter is separated from other datagrid filters for performance concerns (parallel ajax requests)
+- Use MySQL as a non blocking session storage
+- Handle Doctrine mapping overrides smoothly (no more need to copy/paste the full mapping of an entity or a document)
+- Product edit form revamp to handle lot of attributes, locales and channels per product
+- Re-work the import/export engine by introducing a new Connector (component+bundle), the old one is deprecated but still useable
+- Re-work the installer to use the new import engine (remove the yml format for fixtures)
+- Remove the yml category and association fixtures
+- Migrate to symfony 2.7
+
+## Bug fixes
+- PIM-3874: clicking a category gives an error with only "list categories" permission
+- PIM-3771: Create version when modifying variant group attribute
+- PIM-2743: keep page per view on datagrids
+- PIM-3758: Hide the category tree on products grid if user do not have the right to list categories
+- PIM-3929: Categories with circular references are skipped in processor during import
+- PIM-4024: Fix for metric and price denormalizer
+- PIM-4314: Added missing translation keys
+- PIM-4112: Not translated Error message when wrong format import
+- PMI-4032: Fix wrong error message when deleting used attribute option by a published product
+
+## BC breaks
+- Change the constructor of `Pim\Bundle\UserBundle\Context\UserContext`, `Pim\Bundle\UserBundle\Form\Type\UserType`, `Pim\Bundle\VersioningBundle\EventSubscriber\AddUserSubscriber`, `Pim\Bundle\EnrichBundle\Controller\JobExecutionController`, `Pim\Bundle\ImportExportBundle\Controller\JobProfileController`, `Pim\Bundle\EnrichBundle\Controller\VariantGroupController` and `Pim\Bundle\EnrichBundle\EventListener\UserContextListener`. Replace `Symfony\Component\Security\Core\SecurityContext` by `Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface`
+- Change the constructor of `Pim\Bundle\VersioningBundle\EventSubscriber\AddUserSubscriber`, added `Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface`
+- Change interface `Symfony\Component\Validator\ValidatorInterface` to `Symfony\Component\Validator\Validator\ValidatorInterface`
+- Change interface `Symfony\Component\OptionsResolver\OptionsResolverInterface` to `Symfony\Component\OptionsResolver\OptionsResolver`
+- Change interface `Symfony\Component\Form\Tests\Extension\Core\Type\TypeTestCase` to `Symfony\Component\Form\Test\TypeTestCase`
+- Change interface `Symfony\Component\Form\Extension\Core\View\ChoiceView` to `Symfony\Component\Form\ChoiceList\View\ChoiceView`
+- Change interface `Symfony\Component\Validator\MetadataFactoryInterface` to `Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface`
+- Change interface `Symfony\Component\Validator\ExecutionContextInterface` to `Symfony\Component\Validator\Context\ExecutionContextInterface`
+- Remove bundle StofDoctrineExtensionsBundle
+- Symfony events `FormEvents::POST_BIND` and `FormEvents::BIND` have been replaced by `FormEvents::POST_SUBMIT` and `FormEvents::SUBMIT` in `Pim\Bundle\TranslationBundle\Form\Subscriber`
+- Rename methods `bind()` and `postBind()` by `submit()` and `postSubmit()` in `Pim\Bundle\TranslationBundle\Form\Subscriber`
+- Rename method `setDefaultOptions()` to `configureOptions()` in all form types
+- Service `pim_catalog.validator.product` calls now `Symfony\Component\Validator\Validator\RecursiveValidator`, take the `pim_catalog.validator.context.factory` service as the first argument and remove the fourth and fifth argument
+- Add `Symfony\Component\HttpFoundation\RequestStack` as the fifth argument in `Pim\Bundle\UserBundle\Context\UserContext`, `$defaultLocale` become the sixth argument and `Symfony\Component\HttpFoundation\Request` is no longer called
+- Remove connections `report_source` and `report_target` from dbal in `app/config/config.yml`
+- `normalize` method of `Pim\Bundle\TransformBundle\Normalizer\Structured\ProductValueNormalizer` returns an array with a "data" key instead of "value" key
+- `Pim\Bundle\BaseConnectorBundle\Writer\Doctrine\VariantGroupWriter` and `Pim\Bundle\BaseConnectorBundle\Processor\Denormalization\VariantGroupProcessor` are deprecated
+- Change the constructor of `Pim\Bundle\VersioningBundle\EventSubscriber\AddUserSubscriber`, removed `Pim\Bundle\VersioningBundle\Manager\VersionManager`
+- Rename method `onKernelRequest` to `findUsername` on `Pim\Bundle\VersioningBundle\EventSubscriber\AddUserSubscriber`
+- Change the constructor of `Pim\Bundle\VersioningBundle\Manager\VersionManager`, added `Symfony\Component\EventDispatcher\EventDispatcherInterface` as the last argument
+- Change the constructor of `Pim/Bundle/TransformBundle/Denormalizer/Structured/ProductValuesDenormalizer`, removed `Pim\Bundle\CatalogBundle\Repository\AttributeRepositoryInterface`, added `Akeneo\Bundle\StorageUtilsBundle\Doctrine\SmartManagerRegistry` as the second argument and `pim_catalog.entity.attribute.class` as the last argument
+- Change the constructor of `Pim/Bundle/TransformBundle/Normalizer/Structured/GroupNormalizer`, added `Symfony\Component\Serializer\Normalizer\DenormalizerInterface` as the last argument
+- Change the constructor of `Pim/Bundle/CatalogBundle/Doctrine/Common/Remover/AttributeRemover` to accept `Pim/Bundle/CatalogBundle/Builder/ProductTemplateBuilder` as the fourth argument and accept `Pim/Bundle/CatalogBundle/Entity/Repository/ProductTemplateRepository` as the fifth argument
+- Move Pim/Bundle/CatalogBundle/Doctrine/MongoDBODM/{ → Repository}/CompletenessRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/MongoDBODM/{ → Repository}/ProductCategoryRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/MongoDBODM/{ → Repository}/ProductMassActionRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/MongoDBODM/{ → Repository}/ProductRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/ORM/{ → Repository}/AssociationRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/AssociationTypeRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/AttributeGroupRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/AttributeOptionRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/AttributeRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/CategoryRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/ChannelRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/ORM/{ → Repository}/CompletenessRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/CurrencyRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/FamilyRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/GroupRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/GroupTypeRepository.php
+- Move Pim/Bundle/CatalogBundle/{Entity → Doctrine/ORM}/Repository/LocaleRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/ORM/{ → Repository}/ProductCategoryRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/ORM/{ → Repository}/ProductMassActionRepository.php
+- Move Pim/Bundle/CatalogBundle/Doctrine/ORM/{ → Repository}/ProductRepository.php
+- Remove Pim/Bundle/CatalogBundle/ProductManager::createProductValue, saveProduct, saveAllProducts
+- Add AttributeRepositoryInterface, FamilyRepositoryInterface, AssociationTypeRepositoryInterface and EventDispatcherInterface as arguments of the constructor of Pim/Bundle/CatalogBundle/Builder/ProductBuilder
+- Remove ProductManager and add AttributeRepositoryInterface in arguments of the constructor of Pim/Bundle/CatalogBundle/Factory/FamilyFactory
+- Remove ProductManager, add ProductBuilderInterface, ProductRepositoryInterface, $productClass and $productValueClass in arguments of the constructor of Pim/Bundle/TransformBundle/Transformer/ProductTransformer
+- Remove ProductManager, add AttributeRepositoryInterface in arguments of the constructor of Pim/Bundle/CatalogBundle/Validator/Constraints/SingleIdentifierAttributeValidator
+- Move Pim/Bundle/CatalogBundle/Updater/Setter/AbstractValueSetter.php → Pim/Component/Catalog/Updater/Setter/AbstractAttributeSetter
+- Remove AttributeRepositoryInterface argument from constructor of Pim/Component/Catalog/Updater/Setter/SetterRegistryInterface, remove method get(
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/BooleanValueSetter -> Pim/Component/Catalog/Updater/Setter/BooleanAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/DateValueSetter -> Pim/Component/Catalog/Updater/Setter/DateAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/MediaValueSetter -> Pim/Component/Catalog/Updater/Setter/MediaAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/MetricValueSetter -> Pim/Component/Catalog/Updater/Setter/MetricAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/MultiSelectValueSetter -> Pim/Component/Catalog/Updater/Setter/MultiSelectAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/NumberValueSetter -> Pim/Component/Catalog/Updater/Setter/NumberAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/PriceCollectionValueSetter -> Pim/Component/Catalog/Updater/Setter/PriceCollectionAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/SimpleSelectValueSetter -> Pim/Component/Catalog/Updater/Setter/SimpleSelectAttributeSetter
+- Rename Pim/Bundle/CatalogBundle/Updater/Setter/TextValueSetter -> Pim/Component/Catalog/Updater/Setter/TextAttributeSetter
+- Remove setValue and supports from Pim/Component/Catalog/Updater/Setter/SetterInterface
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/CopierInterface -> Pim/Component/Catalog/Updater/Copier/AttributeCopierInterface
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/AbstractValueCopier -> src/Pim/Component/Catalog/Updater/Copier/AbstractAttributeCopier
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/BaseValueCopier -> src/Pim/Component/Catalog/Updater/Copier/BaseAttributeCopier
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/MediaValueCopier -> src/Pim/Component/Catalog/Updater/Copier/MediaAttributeCopier
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/MetricValueCopier -> src/Pim/Component/Catalog/Updater/Copier/MetricAttributeCopier
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/MultiSelectValueCopier -> src/Pim/Component/Catalog/Updater/Copier/MultiSelectAttributeCopier
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/PriceCollectionValueCopier -> src/Pim/Component/Catalog/Updater/Copier/PriceCollectionAttributeCopier
+- Rename Pim/Bundle/CatalogBundle/Updater/Copier/SimpleSelectValueCopier -> src/Pim/Component/Catalog/Updater/Copier/SimpleSelectAttributeCopier
+- Remove MediaManager from constructor of Pim\Bundle\CatalogBundle\Manager\ProductManager
+- Remove deprecated handleMedia() and handleAllMedia() from Pim\Bundle\CatalogBundle\Manager\ProductManager
+- Replace argument ProductManager by MediaManager in constructor of Pim\Bundle\BaseConnectorBundle\Writer\DirectToDB\MongoDB\ProductWriter
+- Remove deprecated Pim/Bundle/BaseConnectorBundle/Reader/ORM/CursorReader
+- Remove deprecated Pim/Bundle/BaseConnectorBundle/Reader/Doctrine/BulkProductReader and Pim/Bundle/BaseConnectorBundle/Reader/Doctrine/ObsoleteProductReader
+- Remove deprecated Pim/Bundle/CatalogBundle/Repository/ReferableEntityRepositoryInterface and Pim/Bundle/CatalogBundle/Doctrine/ReferableEntityRepository
+- Remove deprecated remove() from Pim/Bundle/CatalogBundle/Manager/AssociationTypeManager
+- Remove deprecated remove() from Pim/Bundle/CatalogBundle/Manager/AttributeManager
+- Remove deprecated remove() from Pim/Bundle/CatalogBundle/Manager/CategoryManager
+- Remove deprecated remove() from Pim/Bundle/CatalogBundle/Manager/FamilyManager
+- Remove deprecated remove() from Pim/Bundle/CatalogBundle/Manager/GroupManager
+- Change arguments of Pim/Bundle/EnrichBundle/Controller/AssociationController to use AssociationTypeRepositoryInterface, ProductRepositoryInterface, ProductBuilderInterface, EngineInterface
+- Remove arguments ChannelRepositoryInterface, LocaleRepositoryInterface, add argument AttributeValuesResolver in Pim/Bundle/CatalogBundle/Builder/ProductBuilder constructor
+- Remove arguments DenormalizerInterface, ValidatorInterface, ObjectDetacherInterface, $class from the constructor of Pim/Bundle/BaseConnectorBundle/Processor/Denormalization/AbstractProcessor
+- Add methods `getReferenceDataName` and `setReferenceDataName` to Pim\Bundle\CatalogBundle\Model\AttributeInterface.
+- Change constructor of `Pim\Bundle\EnrichBundle\Controller\MassEditActionController`, removed `Pim\Bundle\EnrichBundle\MassEditAction\OperatorRegistry`, `Pim\Bundle\DataGridBundle\Extension\MassAction\MassActionDispatcher`, `$massEditLimit`, added `Pim\Bundle\DataGridBundle\Adapter\GridFilterAdapterInterface`, `Pim\Bundle\ConnectorBundle\JobLauncher\SimpleJobLauncher`, `Akeneo\Bundle\BatchBundle\Job\DoctrineJobRepository`, `Akeneo\Bundle\BatchBundle\Connector\ConnectorRegistry`, `Pim\Bundle\EnrichBundle\MassEditAction\Operation\OperationRegistryInterface`, `Pim\Bundle\EnrichBundle\MassEditAction\MassEditFormResolver`
+- Remove `Pim\Bundle\EnrichBundle\Form\Subscriber\MassEditAction\AddSelectedOperationSubscriber`
+- Change constructor of `Pim\Bundle\EnrichBundle\Form\Type\MassEditAction\AddToGroupsType`, added `Pim\Bundle\CatalogBundle\Repository\GroupRepositoryInterface` as first argument
+- Change constructor of `Pim\Bundle\EnrichBundle\Form\Type\MassEditAction\AddToVariantGroupType`, added `Pim\Bundle\CatalogBundle\Repository\ProductMassActionRepositoryInterface` as first argument and `Pim\Bundle\CatalogBundle\Repository\GroupRepositoryInterface` as second argument
+- Change constructor of `Pim\Bundle\EnrichBundle\Form\Type\MassEditAction\ClassifyType`, added `Pim\Bundle\CatalogBundle\Manager\CategoryManager` as second argument
+- Rename `Pim\Bundle\EnrichBundle\Form\Type\MassEditChooseActionType\MassEditOperatorType` -> `Pim\Bundle\EnrichBundle\Form\Type\MassEditChooseActionType`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditAction`
+- `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToGroups` now implements `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditOperation` instead of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ProductMassEditOperation`
+- Change constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToGroups`, removed `Pim\Bundle\CatalogBundle\Repository\GroupRepositoryInterface` and `Akeneo\Component\StorageUtils\Saver\BulkSaverInterface`
+- Change `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToGroups`, updated method `setGroups` to accept `Doctrine\Common\Collections\ArrayCollection`, removed method `getWarningMessages`
+- `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToVariantGroup` now implements `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditOperation` instead of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ProductMassEditOperation`
+- Remove constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AddToVariantGroup`, removed method `setObjectsToMassEdit`, `perform`, `getWarningMessages`, `getValidVariantGroups`
+- `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ChangeFamily` now imlements `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditOperation` instead of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ProductMassEditOperation`
+- Change `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ChangeFamily`, removed method `affectsCompleteness`
+- `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ChangeStatus` now implements `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditOperation` instead of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ProductMassEditOperation`
+- `Pim\Bundle\EnrichBundle\MassEditAction\Operation\Classify` now implements `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditOperation` instead of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ProductMassEditOperation`
+- Remove constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\Classify`
+- Change `Pim\Bundle\EnrichBundle\MassEditAction\Operation\Classify`, removed method `getTrees`
+- `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes` now implements `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditOperation` instead of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ProductMassEditOperation`
+- Change constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes`, removed `Pim\Bundle\CatalogBundle\Updater\ProductUpdaterInterface`, `Pim\Bundle\CatalogBundle\Manager\ProductMassActionManager`, `Akeneo\Component\StorageUtils\Saver\BulkSaverInterface`, added `Pim\Bundle\CatalogBundle\Repository\AttributeRepositoryInterface`, `Pim\Bundle\CatalogBundle\Manager\MediaManager`, `Pim\Bundle\CatalogBundle\Manager\ProductMassActionManager` and `$uploadDir`
+- Change `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes`, removed method `affectsCompleteness`, `perform`, `getCommonAttributes`, `getWarningMessages`
+- Change interface `Pim\Bundle\EnrichBundle\MassEditAction\Operation\MassEditOperationInterface`, removed method `getFormType`, `getFormOptions`, `initialize`, `perform`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operation\ProductMassEditOperation`
+- `Pim\Bundle\EnrichBundle\MassEditAction\Operation\SetAttributeRequirements` now implements `Pim\Bundle\EnrichBundle\MassEditAction\Operation\AbstractMassEditOperation` instead of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\FamilyMassEditOperation`
+- `Pim\Bundle\BaseConnectorBundle\Writer\Doctrine\ProductWriter` now implements `Akeneo\Component\StorageUtils\Detacher\BulkObjectDetacherInterface` instead of `Pim\Bundle\TransformBundle\Cache\CacheClearer`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operator\ProductMassEditOperator`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operation\FamilyMassEditOperation`
+- Completely refactor the `\Pim\Bundle\DataGridBundle\Controller\ProductExportController`. It implement nothing instead of `\Pim\Bundle\DataGridBundle\Controller\ExportController`. Now it launched job in backend end.
+- Remove `Pim\Bundle\EnrichBundle\DependencyInjection\Compiler\RegisterMassEditOperatorsPass`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operator\AbstractMassEditOperator`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operator\FamilyMassEditOperator`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operator\MassEditOperatorInterface`
+- Remove `Pim\Bundle\EnrichBundle\MassEditAction\OperatorRegistry`
+- Remove Pim\Bundle\TransformBundle\Normalizer\Filter\NormalizerFilterInterface replaced by Pim\Bundle\CatalogBundle\Filter\CollectionFilterInterface
+- Remove Pim\Bundle\TransformBundle\Normalizer\Filter\FilterableNormalizerInterface
+- Remove `Pim\Bundle\EnrichBundle\Controller\ProductAttributeController`
+- ProductTemplateUpdater now takes ProductPropertyUpdaterInterface as argument and not anymore ProductUpdaterInterface
+- Remove fixtures_product_yml and fixtures_association_yml from the InstallerBundle, csv format is now mandatory for products
+- ProductUpdater takes ValidatorInterface as second argument
+- Rename `Pim\Bundle\TransformBundle\Builder\FieldBuilder` to `Pim\Component\Connector\ArrayConverter\Flat\AttributeColumnInfoExtractor`
+- Method `createAttribute` of Pim/Bundle/CatalogBundle/Manager/AttributeManager.php is now deprecated use `AttributeFactory::createAttribute` instead
+- Constructor of `Pim\Bundle\EnrichBundle\Controller\ChannelController` now takes a BulkSaver as last argument (to save locales)
+- Constructor of `Pim\Bundle\CatalogBundle\Manager\AttributeManager` has been changed
+- Constructor of `Pim\Bundle\CatalogBundle\Manager\AttributeGroupManager` has been changed
+- Constructor of `Pim\Bundle\CommentBundle\Manager\CommentManager` has been changed
+- Constructor of `Pim\Bundle\DatagridBundle\Manager\DatagridViewManager` has been changed
+- Constructor of `Pim\Bundle\EnrichBundle\Manager\SequentialEditManager` has been changed
+- Depreciate and change constructor of `Pim\Bundle\TransformBundle\Builder\FieldNameBuilder`
+- Replace the argument ProductManager by ProductRepositoryInterface in the constructor of `Pim\Bundle\CatalogBundle\Validator\Constraints\UniqueVariantAxisValidator`
+- Add an argument BulkSaverInterface in the constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\CategoryRemover`
+- Remove the option 'flush_only_object' from `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\ProductSaver`, `Akeneo\Bundle\StorageUtilsBundle\Doctrine\Common\Saver\BaseSaver`, `Akeneo\Bundle\StorageUtilsBundle\Doctrine\Common\Saver\BaseRemover`
+- Add an argument `Pim/Bundle/VersioningBundle/Factory/VersionFactory` in the constructor of `Pim/Bundle/VersioningBundle/Builder/VersionBuilder`
+- Add an argument `Symfony\Component\EventDispatcher\EventDispatcher` in the constructor of `Akeneo\Bundle\StorageUtilsBundle\Doctrine\Common\Remover\BaseRemover`
+
+# 1.3.x
+
+# 1.3.18 (2015-07-09)
+
+## Bug fixes
+- PIM-4528: Fix attribute field display on error during mass edit
+- PIM-4535: Fix font problems on pdf generation: you can now set a custom font by setting the %pim_pdf_generator_font% parameter.
+
+# 1.3.17 (2015-07-07)
+
+## Bug fixes
+- PIM-4494: Fix loading page when family has been sorted
+
+# 1.3.16 (2015-06-08)
+
+## Bug fixes
+- PIM-4312: Fix price indexes on MongoDB
+- PIM-4112: Not translated Error message when wrong format import
+
+# 1.3.15 (2015-06-05)
+
+## Bug fixes
+- PIM-4308: MongoDB indexes are removed on schema update
+- PIM-4314: Added missing translation keys
+
+# 1.3.14 (2015-06-03)
+
+## Bug fixes
+- PIM-4227: fix BC break introduced in 1.3.13
+- PIM-4309: Fix bug processing media with a non existing media
+
+# 1.3.13 (2015-05-29)
+
+## Bug fixes
+- PIM-4223: Fix grid sorting order initialization (changed to be consistent with Platform behavior)
+- PIM-4227: Disable product versionning on category update (never used and very slow)
+
+# 1.3.12 (2015-05-22)
+
+## Bug fixes
+- PIM-4182: Fix product values normalization when decimals are not allowed
+- PIM-4203: fix mass edit of families after sorting by label
+- PIM-4208: Fix js memory leak on a product edit form with scopable attributes
+
+# 1.3.11 (2015-05-13)
+
+## Bug fixes
+- PIM-4044: Fix pressing Enter on a Product grid filter makes the page "unclickable"
+- PIM-4146: Fix the delete confirmation message that was not translated
+- PIM-4176: Fix context not keeped after product saving
+
+# 1.3.10 (2015-05-05)
+
+## Bug fixes
+- PIM-4113: Initialize cursors on first item during creation
+- PIM-4122: Preserve variant structure during an import containing empty values from a template
+
+# 1.3.9 (2015-04-21)
+
+## Bug fixes
+- PIM-4082: Fix error translation keys when creating a job
+
+# 1.3.8 (2015-04-14)
+
+## Bug fixes
+- PIM-4045: Fix completeness computation with behat
+- PIM-4047: Missing translation key for a number value which should not be decimal in edit form
+- PIM-3848: fix completeness not well calculated after attribute requirements deletion
+- PIM-4050: Fix float val in range number error message
+
+## Technical improvements
+- rollback the visibility of the ProductRepository::buildByScope from protected to public (as in 1.2) to ensure connectors compatibility
+
+# 1.3.7 (2015-04-03)
+
+## Bug fixes
+- PIM-3961: Fix inconsistencies in unique value constraint validator
+- PIM-3416: Fix less / more than date filter
+- PIM-4019: option code is properly displayed during option deletion in attribute edit form
+
+# 1.3.6 (2015-04-01)
+
+## Bug fixes
+- PIM-2401: Association grid, add the Is associated sorter (MongoDB impl)
+- PIM-3926: Set explicit message for 403 error
+- PIM-3938: Querying products with PQB and using Sorters will not return an ordered Cursor
+- PIM-3956: Fix user can add an attribute in a group even if he does not have the permission
+- PIM-3965: Fix groups without labels are not displayed in the product grid cell
+- PIM-3971: Cache results for Select2 on product edit form
+- PIM-4017: Fix save an empty media attribute with variant group
+- PIM-3931: Remove db query from CsvReader constructor
+
+## BC breaks
+- Change the constructor of `Pim\Bundle\EnrichBundle\Form\Subscriber\AddAttributeTypeRelatedFieldsSubscriber` to include `Oro\Bundle\SecurityBundle\SecurityFacade`and `Pim\Bundle\CatalogBundle\Repository\AttributeGroupRepositoryInterface`
+
+# 1.3.5 (2015-03-19)
+
+## Bug fixes
+- PIM-2874: Fix bad title on failed submit
+- PIM-3836: Fix translations of a custom job label instance
+- PIM-3909: Keep channel filter between product datagrid and edit form
+- PIM-3925: Do not show system menu if no item allowed
+
+# 1.3.4 (2015-03-11)
+
+## Bug fixes
+- PIM-3806: Delete an attribute from a product template
+- PIM-3843: Product deletion raise an exception
+- PIM-3786: Attribute type should not be blank for import
+- PIM-3437: Fix applying datagrid views and columns when not using hash navigation
+- PIM-3817: Fix error when mass editing after refreshing the grid
+- PIM-3849, PIM-3880: Fix bad completeness scope on mass edit actions
+
+## BC breaks
+- Change the constructor of `Pim/Bundle/CatalogBundle/Doctrine/Common/Remover/AttributeRemover` to accept `Pim/Bundle/CatalogBundle/Builder/ProductTemplateBuilder` as the fourth argument and accept `Pim/Bundle/CatalogBundle/Entity/Repository/ProductTemplateRepository` as the fifth argument
+
 # 1.3.3 (2015-03-02)
 
 ## Bug fixes
@@ -10,6 +294,7 @@
 - PIM-3834: add missing cascade detach product -> associations, product -> completenesses
 - PIM-3820: Attribute option translation not well handled on import
 - PIM-3762: Fix the bug on image not well displayed on pdf export
+- PIM-3307: Fix filter dropdown rendering
 
 # 1.3.1 (2015-02-24)
 
@@ -43,6 +328,7 @@
 - PIM-3753: Fix completeness filter
 
 ## BC breaks
+- Change the constructor of `Pim/Bundle/CatalogBundle/Doctrine/Common/Remover/AttributeRemover` to accept `Pim/Bundle/CatalogBundle/Builder/ProductTemplateBuilder` as the fourth argument and accept `Pim/Bundle/CatalogBundle/Entity/Repository/ProductTemplateRepository` as the fifth argument
 - Add a TranslatorInterface argument in MetricType::__construct
 - Change of constructor of `Pim/Bundle/CommentBundle/Form/Type/CommentType` to accept `Pim\Bundle\CommentBundle\Entity` as a string for the third argument
 - Added new constructor to `Pim/Bundle/DataGridBundle/Form/Type/DatagridViewType` to accept `Pim\Bundle\DataGridBundle\Entity\DataGridView` as a string for the first argument
@@ -294,7 +580,33 @@
 - PIM-3632: Correctly show scopable attribute icons on scope change
 - PIM-3583: Fix the bad parsed filter value with spaces
 
-# 1.2.30
+# 1.2.36 (2015-07-06)
+
+## Bug fixes
+- PIM-4494: Fix js memory leak on a product edit form with scopable attributes
+
+# 1.2.35 (2015-05-29)
+
+## Bug fixes
+- PIM-4227: Disable product versionning on category update (never used and very slow)
+
+# 1.2.34 (2015-05-27)
+
+## Bug fixes
+- PIM-4223: Fix grid sorting order initialization (changed to be consistent with Platform behavior)
+
+# 1.2.33 (2015-03-16)
+
+# 1.2.32 (2015-03-11)
+
+## Bug fixes
+- PIM-3786: Attribute type should not be blank for import
+- PIM-3437: Fix applying datagrid views and columns when not using hash navigation
+- PIM-3844: Create popin keeps state in memory
+
+# 1.2.31 (2015-03-06)
+
+# 1.2.30 (2015-03-02)
 
 ## Bug fixes
 - PIM-3837: Fix XSS vulnerability on user form
