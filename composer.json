@@ -20,7 +20,10 @@
         }
     },
     "require": {
-        "akeneo/pim-community-dev": "1.4.0-ALPHA1"
+        "akeneo/pim-community-dev": "1.4.0-ALPHA1",
+        "akeneo/batch-bundle": "0.4.x-dev",
+        "akeneo/measure-bundle": "0.4.x-dev",
+        "oro/platform": "dev-pim-1.4"
     },
     "require-dev": {
         "doctrine/migrations": "1.0.0-alpha3@alpha"
