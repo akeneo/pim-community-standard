@@ -86,7 +86,7 @@ To add a pack you have to :
 Connect to your PIM application
 -------------------------------
 
-Go to http://akeneo-pim.local/ for production mode or http://akeneo-pim.local/ for production mode.
+Go to http://akeneo-pim.local/app_dev.php for development mode or to http://akeneo-pim.local/ for production mode.
 
 You can now connect as Akeneo administrator with the following credentials:
 - username: "admin"
