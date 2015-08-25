@@ -1,3 +1,9 @@
+# 1.3.22 (2015-08-25)
+
+## Bug fixes
+- PIM-4612: Error on Quick Export (MongoDB)
+- PIM-4803: Drag & Drop is too long when I filter on attribute group
+
 # 1.3.21 (2015-08-17)
 
 ## Bug fixes
