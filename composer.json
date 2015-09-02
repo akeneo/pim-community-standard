@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "akeneo/pim-community-dev": "1.4.0-BETA3",
+        "akeneo/pim-community-dev": "v1.4.0-BETA3",
         "sensio/generator-bundle": "2.3.5"
     },
     "require-dev": {
