@@ -1,14 +1,21 @@
 # 1.4.x
 
+# 1.4.0-RC1 (2015-09-04)
+
+## Technical improvements
+
+- Rename FileStorage classes and services: File (file information stored in database) => FileInfo, RawFile (physical file on the disk) => File
+- Change namespace of Classification component and bundle from Pim to Akeneo
+
 # 1.4.0-BETA3 (2015-09-02)
 
 ## BC breaks
-- Change the constructor of `Pim\Bundle\UserBundle\Context\UserContext`. Takes `Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface`, `Pim\Bundle\CatalogBundle\Repository\LocaleRepositoryInterface`, `Pim\Bundle\CatalogBundle\Repository\ChannelRepositoryInterface`, `Pim\Component\Classification\Repository\CategoryRepositoryInterface`, `Symfony\Component\HttpFoundation\RequestStack`, `Pim\Bundle\CatalogBundle\Builder\ChoicesBuilderInterface` and a `$defaultLocale` string
+- Change the constructor of `Pim\Bundle\UserBundle\Context\UserContext`. Takes `Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface`, `Pim\Bundle\CatalogBundle\Repository\LocaleRepositoryInterface`, `Pim\Bundle\CatalogBundle\Repository\ChannelRepositoryInterface`, `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface`, `Symfony\Component\HttpFoundation\RequestStack`, `Pim\Bundle\CatalogBundle\Builder\ChoicesBuilderInterface` and a `$defaultLocale` string
 - Remove deprecated `AbstractDoctrineController` parent to `Pim\Bundle\EnrichBundle\Controller\CategoryTreeControlle`. Now it extends `Symfony\Bundle\FrameworkBundle\Controller\Controller`
 - Change constructor of `Pim\Bundle\EnrichBundle\Controller\CategoryTreeController`, added `$rawConfiguration` as the last argument. Removed `Symfony\Component\HttpFoundation\Request`, `Symfony\Bundle\FrameworkBundle\Templating\EngineInterface`, `Symfony\Component\Routing\RouterInterface`, `Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface`, `Symfony\Component\Form\FormFactoryInterface`, `Symfony\Component\Validator\Validator\ValidatorInterface`, `Symfony\Component\Translation\TranslatorInterface`, `Doctrine\Common\Persistence\ManagerRegistry` and `Pim\Bundle\CatalogBundle\Manager\CategoryManager`
 - Rename service `pim_enrich.controller.category_tree` to `pim_enrich.controller.category_tree.product`
-- Change constructor of `src/Pim/Bundle/EnrichBundle/Twig/CategoryExtension` to remove `Pim\Component\Classification\Repository\CategoryRepositoryInterface` and `Pim\Component\Classification\Repository\ItemCategoryRepositoryInterface`. Added `Pim\Bundle\EnrichBundle\Doctrine\Counter\CategoryItemsCounterRegistryInterface`
-- Add `$getChildrenTreeByParentId` to `getChildrenTreeByParentId` of `Pim\Component\Classification\Repository\CategoryRepositoryInterface`
+- Change constructor of `src/Pim/Bundle/EnrichBundle/Twig/CategoryExtension` to remove `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface` and `Akeneo\Component\Classification\Repository\ItemCategoryRepositoryInterface`. Added `Pim\Bundle\EnrichBundle\Doctrine\Counter\CategoryItemsCounterRegistryInterface`
+- Add `$getChildrenTreeByParentId` to `getChildrenTreeByParentId` of `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface`
 - Move `Pim\Bundle\DataGridBundle\Datagrid\Product\ConfiguratorInterface` to `Pim\Bundle\DataGridBundle\Datagrid\Configuration\ConfiguratorInterface`
 - Move `Pim\Bundle\DataGridBundle\Datagrid\Product\ConfigurationRegistry` to `Pim\Bundle\DataGridBundle\Datagrid\Configuration\Product\ConfigurationRegistry`
 - Move `Pim\Bundle\DataGridBundle\Datagrid\Product\ContextConfigurator` to `Pim\Bundle\DataGridBundle\Datagrid\Configuration\Product\ContextConfigurator`
@@ -30,9 +37,9 @@
 - Media normalizers `Pim\Bundle\TransformBundle\Normalizer\Structured\MediaNormalizer`, `Pim\Bundle\TransformBundle\Normalizer\Flat\MediaNormalizer` have been removed
 - Media related classes `Pim\Component\Catalog\Comparator\Attribute\MediaComparator` and `Pim\Bundle\EnrichBundle\Controller\MediaController` have been removed
 - Class `Pim\Bundle\BaseConnectorBundle\Writer\File\ProductWriter` has been removed
-- Change constructor of `Pim\Component\Catalog\Updater\Setter\MediaAttributeSetter` to remove `Pim\Bundle\CatalogBundle\Manager\MediaManager`, `Pim\Bundle\CatalogBundle\Factory\MediaFactory` and the upload directory parameter and to add `Akeneo\Component\FileStorage\Repository\FileRepositoryInterface`, `Akeneo\Component\FileStorage\RawFile\RawFileStorerInterface` and `League\Flysystem\MountManager`
-- Change constructor of `Pim\Component\Catalog\Updater\Setter\MediaAttributeCopier` to remove `Pim\Bundle\CatalogBundle\Manager\MediaManager` and `Pim\Bundle\CatalogBundle\Factory\MediaFactory` and to add `Akeneo\Component\FileStorage\Repository\FileRepositoryInterface`, `Akeneo\Component\FileStorage\RawFile\RawFileStorerInterface` and `League\Flysystem\MountManager`
-- Change constructor of `Pim\Bundle\TransformBundle\Transformer\Property\MediaTransformer` to remove media class parameter and to add `Akeneo\Component\FileStorage\RawFile\RawFileStorerInterface`
+- Change constructor of `Pim\Component\Catalog\Updater\Setter\MediaAttributeSetter` to remove `Pim\Bundle\CatalogBundle\Manager\MediaManager`, `Pim\Bundle\CatalogBundle\Factory\MediaFactory` and the upload directory parameter and to add `Akeneo\Component\FileStorage\Repository\FileInfoRepositoryInterface`, `Akeneo\Component\FileStorage\File\FileStorerInterface` and `League\Flysystem\MountManager`
+- Change constructor of `Pim\Component\Catalog\Updater\Setter\MediaAttributeCopier` to remove `Pim\Bundle\CatalogBundle\Manager\MediaManager` and `Pim\Bundle\CatalogBundle\Factory\MediaFactory` and to add `Akeneo\Component\FileStorage\Repository\FileInfoRepositoryInterface`, `Akeneo\Component\FileStorage\File\FileStorerInterface` and `League\Flysystem\MountManager`
+- Change constructor of `Pim\Bundle\TransformBundle\Transformer\Property\MediaTransformer` to remove media class parameter and to add `Akeneo\Component\FileStorage\File\FileStorerInterface`
 - Change constructor of `Pim\Bundle\BaseConnectorBundle\Processor\ProductToFlatArrayProcessor` to remove the upload directory parameter and to add the media attributes types
 - Change constructor of `Pim\Bundle\BaseConnectorBundle\Writer\File\CsvProductWriter` to replace `Pim\Bundle\CatalogBundle\Manager\MediaManager` by `Pim\Component\Connector\Writer\File\FileExporterInterface`
 - Change constructor of `Pim\Bundle\BaseConnectorBundle\Writer\File\CsvVariantGroupWriter` to replace `Pim\Bundle\CatalogBundle\Manager\MediaManager` by `Pim\Component\Connector\Writer\File\FileExporterInterface`
@@ -40,9 +47,9 @@
 - Change constructor of `Pim\Bundle\BaseConnectorBundle\Archiver\InvalidItemsCsvArchiver` to remove the archive directory parameter
 - Change method `createZip` of `Pim\Bundle\BaseConnectorBundle\Filesystem\ZipFilesystemFactory` to return a `League\Flysystem\Filesystem`
 - Change method `getArchive` of `Pim\Bundle\BaseConnectorBundle\Archiver\ArchiverInterface` to return a `resource`
-- Change constructor of `Pim\Bundle\CatalogBundle\Manager\ProductTemplateMediaManager` to replace `Pim\Bundle\CatalogBundle\Manager\MediaManager` by `Akeneo\Component\FileStorage\RawFile\RawFileStorerInterface`
+- Change constructor of `Pim\Bundle\CatalogBundle\Manager\ProductTemplateMediaManager` to replace `Pim\Bundle\CatalogBundle\Manager\MediaManager` by `Akeneo\Component\FileStorage\File\FileStorerInterface`
 - Remove method `generateFilenamePrefix` of `Pim\Bundle\CatalogBundle\Manager\ProductTemplateMediaManager`
-- Change constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes` to replace `Pim\Bundle\CatalogBundle\Manager\MediaManager` by `Akeneo\Component\FileStorage\RawFile\RawFileStorerInterface` and to remove the upload directory parameter
+- Change constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes` to replace `Pim\Bundle\CatalogBundle\Manager\MediaManager` by `Akeneo\Component\FileStorage\File\FileStorerInterface` and to remove the upload directory parameter
 - Change constructor of `Akeneo\Bundle\StorageUtilsBundle\Doctrine\Common\Saver\BaseSaver` to add event dispatcher `Symfony\Component\EventDispatcher\EventDispatcherInterface`
 - Change constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\AttributeSaver` to add event dispatcher `Symfony\Component\EventDispatcher\EventDispatcherInterface`
 - Change constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\ProductSaver` to add event dispatcher `Symfony\Component\EventDispatcher\EventDispatcherInterface`
@@ -198,8 +205,8 @@
 - Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operator\FamilyMassEditOperator`
 - Remove `Pim\Bundle\EnrichBundle\MassEditAction\Operator\MassEditOperatorInterface`
 - Remove `Pim\Bundle\EnrichBundle\MassEditAction\OperatorRegistry`
-- Move `Pim\Bundle\CatalogBundle\Doctrine\ORM\Repository\CategoryRepository` → `Pim\Bundle\ClassificationBundle\Doctrine\ORM\Repository\CategoryRepository`
-- Move `Pim\Bundle\CatalogBundle\Repository\CategoryRepositoryInterface` → `Pim\Component\Classification\Repository\CategoryRepositoryInterface`
+- Move `Pim\Bundle\CatalogBundle\Doctrine\ORM\Repository\CategoryRepository` → `Akeneo\Bundle\ClassificationBundle\Doctrine\ORM\Repository\CategoryRepository`
+- Move `Pim\Bundle\CatalogBundle\Repository\CategoryRepositoryInterface` → `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface`
 - Remove Pim\Bundle\TransformBundle\Normalizer\Filter\NormalizerFilterInterface replaced by Pim\Bundle\CatalogBundle\Filter\CollectionFilterInterface
 - Remove Pim\Bundle\TransformBundle\Normalizer\Filter\FilterableNormalizerInterface
 - Remove `Pim\Bundle\EnrichBundle\Controller\ProductAttributeController`
@@ -219,17 +226,17 @@
 - Add an argument BulkSaverInterface in the constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\CategoryRemover`
 - Constructor of `Pim\Bundle/CatalogBundle/Manager/CompletenessManager` : removed dependency on `Symfony\Component\Validator\ValidatorInterface`
 - Constructor of `Pim\Bundle/CatalogBundle/Manager/CompletenessManager` : added dependency on `Pim\Component\Catalog\Completeness\Checker\ChainedProductValueCompleteChecker`
-- Change constructor of `Pim\Bundle\CatalogBundle\Manager\CategoryManager`, added `Pim\Component\Classification\Repository\CategoryRepositoryInterface` and `Pim\Bundle\CatalogBundle\Factory\CategoryFactory` as third and fourth argument.
-- Change `Pim\Bundle\CatalogBundle\Manager\CategoryManager`, updated method `getEntityRepository` to return return a `Pim\Component\Classification\Repository\CategoryRepositoryInterface`
-- Change constructor of `Pim\Bundle\EnrichBundle\Controller\CategoryTreeController`, added `Pim\Bundle\CatalogBundle\Factory\CategoryFactory` and `Pim\Component\Classification\Repository\CategoryRepositoryInterface` as last arguments
+- Change constructor of `Pim\Bundle\CatalogBundle\Manager\CategoryManager`, added `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface` and `Pim\Bundle\CatalogBundle\Factory\CategoryFactory` as third and fourth argument.
+- Change `Pim\Bundle\CatalogBundle\Manager\CategoryManager`, updated method `getEntityRepository` to return return a `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface`
+- Change constructor of `Pim\Bundle\EnrichBundle\Controller\CategoryTreeController`, added `Pim\Bundle\CatalogBundle\Factory\CategoryFactory` and `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface` as last arguments
 - Change constructor of `Pim\Bundle\EnrichBundle\Controller\ProductController`, added `Pim\Bundle\CatalogBundle\Factory\CategoryFactory` as last argument
 - Move `Pim\Bundle\FilterBundle\Filter\Product\CategoryFilter` to `Pim\Bundle\FilterBundle\Filter\CategoryFilter`
-- Change constructor of `Pim\Bundle\FilterBundle\Filter\CategoryFilter`, last argument is now a `Pim\Component\Classification\Repository\CategoryRepositoryInterface`
-- Change constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Filter\CategoryFilter`, second argument is now a `Pim\Component\Classification\Repository\CategoryFilterableRepositoryInterface`
+- Change constructor of `Pim\Bundle\FilterBundle\Filter\CategoryFilter`, last argument is now a `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface`
+- Change constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Filter\CategoryFilter`, second argument is now a `Akeneo\Component\Classification\Repository\CategoryFilterableRepositoryInterface`
 - Remove the option 'flush_only_object' from `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\ProductSaver`, `Akeneo\Bundle\StorageUtilsBundle\Doctrine\Common\Saver\BaseSaver`, `Akeneo\Bundle\StorageUtilsBundle\Doctrine\Common\Saver\BaseRemover`
 - Add an argument `Pim/Bundle/VersioningBundle/Factory/VersionFactory` in the constructor of `Pim/Bundle/VersioningBundle/Builder/VersionBuilder`
 - Add an argument `Symfony\Component\EventDispatcher\EventDispatcher` in the constructor of `Akeneo\Bundle\StorageUtilsBundle\Doctrine\Common\Remover\BaseRemover`
-- Change constructor of `Pim\Bundle\BaseConnectorBundle\Reader\ORM\CategoryReader`, argument is now a `Pim\Component\Classification\Repository\CategoryRepositoryInterface`
+- Change constructor of `Pim\Bundle\BaseConnectorBundle\Reader\ORM\CategoryReader`, argument is now a `Akeneo\Component\Classification\Repository\CategoryRepositoryInterface`
 - Change constructor of `Pim\Bundle\UserBundle\Context\UserContext`, replace `Pim\Bundle\CatalogBundle\Manager\LocaleManager` and `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Bundle\CatalogBundle\Repository\LocaleRepositoryInterface` and `Pim\Bundle\CatalogBundle\Repository\ChannelRepositoryInterface`, add `Pim\Bundle\CatalogBundle\Builder\ChoicesBuilderInterface`
 - Constructor of `Pim\Bundle\CatalogBundle\Manager\CategoryManager` has been changed
 
