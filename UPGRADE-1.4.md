@@ -52,6 +52,48 @@ Strategy is the following,
  - introduce new classes and services in the new *PimConnectorBundle* and component
  - behat and specs are runned on deprecated classes and import too
 
+## Medias
+
+### A new storage system for medias
+
+The medias management of *Akeneo PIM 1.3* had a lot of drawbacks:
+* we were not using *Gaufrette* everywhere which means it was impossible to store the medias on a remote filesystem out of the box
+* the [media management](https://github.com/akeneo/pim-community-dev/blob/1.3/src/Pim/Bundle/CatalogBundle/Manager/MediaManager.php) was not clean, buggy and complicated   
+* the business code was linked to the way files are stored 
+* it was impossible to introduce a new type of file without copy/pasting the `Pim\Bundle\CatalogBundle\Manager\MediaManager` (*Akeneo PIM Enterprise 1.4* now comes with several types of files to handle: asset variations) 
+* `Gaufrette`is quite outdated, monolithic and not very maintained anymore 
+
+All these reasons bring to us to take a few radical solutions:
+* we changed the way medias are stored 
+* we now use [Flysystem](http://flysystem.thephpleague.com/) instead of `Gaufrette`. `Flysystem` has the following advantages:
+  + it is actively maintained and followed
+  + its code is really nice, clean and not monolithic
+  + it has a good and up-to-date documentation
+  + it's possible to copy/paste files between several adapters thanks to the [mount manager](http://flysystem.thephpleague.com/mount-manager/)
+* all files information are stored in the table `akeneo_file_storage_file_info`, the table `pim_catalog_product_media` does not exist anymore
+* the [Pim\Bundle\CatalogBundle\Manager\MediaManager](https://github.com/akeneo/pim-community-dev/blob/1.3/src/Pim/Bundle/CatalogBundle/Manager/MediaManager.php) has been deleted 
+
+When we built that new system, we kept the following constraints in mind:
+* don't mix the business logic and the way files are stored
+* be able to store files anywhere just by editing the configuration
+* be able to store any kind of file (ie: not only medias that are related to products)
+
+### How to migrate?
+
+We provide you the script to migrate your medias from 1.3 to 1.4. Please note that this scripts will only work if you medias are stored locally. If you did any customization on the way medias are stored, you'll surely need to take inspiration from this script and make you own.
+
+Depending on the way the products are stored, please launch either `upgrades/1.3-1.4/orm/migrate_medias.php` or `upgrades/1.3-1.4/mongodb/migrate_medias.php` via
+
+```
+#for products that stored with ORM
+php upgrades/1.3-1.4/orm/migrate_medias.php
+#for products that stored with Mongo
+php upgrades/1.3-1.4/mongodb/migrate_medias.php
+```
+
+If you do not use the default product tables or the default media directory, please read the scripts to know which options are available for you.
+
+
 ## Migration to Symfony  2.7
 
 PIM has been migrated to Symfony 2.7.
