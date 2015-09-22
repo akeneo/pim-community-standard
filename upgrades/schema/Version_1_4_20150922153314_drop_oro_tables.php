@@ -89,6 +89,6 @@ class Version_1_4_20150922153314_drop_oro_tables extends AbstractMigration
      */
     public function down(Schema $schema)
     {
-        throw new \RuntimeException('No revert is provided for the migrations.');
+        $this->throwIrreversibleMigrationException();
     }
 }

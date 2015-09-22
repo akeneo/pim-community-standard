@@ -406,7 +406,7 @@ class SymfonyRequirements extends RequirementCollection
             is_dir(__DIR__.'/../vendor/composer'),
             'Vendor libraries must be installed',
             'Vendor libraries are missing. Install composer following instructions from <a href="http://getcomposer.org/">http://getcomposer.org/</a>. '.
-                'Then run "<strong>php composer.phar install</strong>" to install them.'
+            'Then run "<strong>php composer.phar install</strong>" to install them.'
         );
 
         $cacheDir = is_dir(__DIR__.'/../var/cache') ? __DIR__.'/../var/cache' : __DIR__.'/cache';

@@ -4,8 +4,8 @@ use Pim\Upgrade\SchemaHelper;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-require_once __DIR__.'/../../app/bootstrap.php.cache';
-require_once __DIR__.'/../../app/AppKernel.php';
+require_once __DIR__.'/../../../app/bootstrap.php.cache';
+require_once __DIR__.'/../../../app/AppKernel.php';
 
 class MigrationProductTemplate
 {
