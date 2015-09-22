@@ -26,7 +26,7 @@ This has an impact on the table `pim_catalog_product_template` which is used by 
     php upgrades/common/migrate_product_template.php --env=YOUR_ENV
 ```
 
-## UPGRADE IMPORT/EXPORT
+## Upgrade import/export
 
 The Import/Export system has been reworked.
 
@@ -35,24 +35,24 @@ The current system has been introduced with the 1.0 and become more and more com
 The challenge is, in one hand to provide a more straightforward and extensible system and in other hand ensure the backward compatibility.
 
 With the current system:
- - BatchBundle is responsible to provide the batch architecture and base classes (inspired by Spring Batch)
- - BaseConnector provides Readers, Processors, Writers, others technicals classes and DI which allows to import and export Catalog Data
- - TransformBundle provides Normalizers and Denormalizers to transform array to object and object to array, some Transformers kind of "extended Denormalizers"
- - ImportExportBundle provides controllers, form and UI
+ - *AkeneoBatchBundle* is responsible to provide the batch architecture and base classes (inspired by Spring Batch)
+ - *PimBaseConnector* provides Readers, Processors, Writers, others technicals classes and DI which allows to import and export Catalog Data
+ - *PimTransformBundle* provides Normalizers and Denormalizers to transform array to object and object to array, some Transformers kind of "extended Denormalizers"
+ - *PimImportExportBundle* provides controllers, form and UI
 
 Responsibilities are not that clear, for instance, we have different implementations for a same service, successively introduced and kept for BC concerns.
 
 This part is often used and extended in custom projects and backward compatibility must be handled on classes and DI levels.
 
-To make the new system more understandable, we introduce it in a new ConnectorBundle and depreciate the BaseConnectorBundle.
+To make the new system more understandable, we introduce it in a new *PimConnectorBundle* and depreciate the *PimBaseConnectorBundle*.
 
 Strategy is the following,
- - remove the deprecated batch_jobs.yml in the BaseConnectorBundle (to avoid automatic loading)
- - keep old services and classes in the BaseConnector to be backward compatible
- - introduce new classes and services in the new Connector bundle and component
+ - remove the deprecated *batch_jobs.yml* in the *PimBaseConnectorBundle* (to avoid automatic loading)
+ - keep old services and classes in the *PimBaseConnectorBundle* to be backward compatible
+ - introduce new classes and services in the new *PimConnectorBundle* and component
  - behat and specs are runned on deprecated classes and import too
 
-## MIGRATION TO SYMFONY 2.7
+## Migration to Symfony  2.7
 
 PIM has been migrated to Symfony 2.7.
 You can read this guide to see all modifications: https://gist.github.com/mickaelandrieu/5211d0047e7a6fbff925.
