@@ -4,22 +4,22 @@
 
 > Please perform a backup of your codebase if you don't use any VCS.
 
-## ENHANCED UPDATER API
+## Enhanced updater API
 
 The 1.4 enhances the Updater API (introduced in 1.3).
 
 In 1.3, the API covers only update of values of a product (set and copy), with the 1.4 we:
- - provide updaters for other objects (ObjectUpdaterInterface::update)
- - provide a way to set fields and attribute values of product (PropertySetterInterface::setData)
- - provide a way to add data in fields and attribute values of product (PropertyAdderInterface::addData)
- - provide a way to remove data in fields and attribute values of product (PropertyRemoverInterface::removeData)
- - provide a way to copy data in fields and attribute values of product (PropertyCopierInterface::copyData)
+ - provide a way to set fields and attribute values of product (`Akeneo\Component\StorageUtils\Updater\PropertySetterInterface::setData`)
+ - provide a way to add data in fields and attribute values of product (`Akeneo\Component\StorageUtils\Updater\PropertyAdderInterface::addData`)
+ - provide a way to remove data in fields and attribute values of product (`Akeneo\Component\StorageUtils\Updater\PropertyRemoverInterface::removeData`)
+ - provide a way to copy data in fields and attribute values of product (`Akeneo\Component\StorageUtils\Updater\PropertyCopierInterface::copyData`)
+ - provide updaters for other objects (`Akeneo\Component\StorageUtils\Updater\ObjectUpdaterInterface::update`)
 
 The goal of this API is to give a straightforward and normalized way to update objects of the PIM to enhance the Developer Experience.
 
-To achieve a consistent API and avoid BC Breaks, we depreciate few methods from ProductUpdater.
+To achieve a consistent API and avoid BC Breaks, we depreciated a few methods from `Pim\Component\Catalog\Updater\ProductUpdater`.
 
-To have a better consistence between updaters and normalizers, `Pim\Bundle\TransformBundle\Normalizer\Structured\ProductValueNormalizer` now returns an array with a "data" key instead of "value" key.
+To have a better consistence between updaters and normalizers, `Pim\Bundle\TransformBundle\Normalizer\Structured\ProductValueNormalizer` now returns an array with a __*data*__ key instead of __*value*__ key.
 This has an impact on the table `pim_catalog_product_template` which is used by the variant groups for instance. To convert the database structure of this table, you can execute the following command in your project folder:
 
 ```

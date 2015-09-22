@@ -1,6 +1,6 @@
 <?php
 
-use Symfony\Component\Console\Helper\TableHelper;
+use Pim\Upgrade\SchemaHelper;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -9,12 +9,11 @@ require_once __DIR__.'/../../app/AppKernel.php';
 
 class MigrationProductTemplate
 {
-    const PIM_CATALOG_PRODUCT_TEMPLATE = 'pim_catalog_product_template';
-
     protected $output;
     protected $env;
     protected $container;
     protected $kernel;
+    protected $productTemplateTable;
 
     public function __construct(ConsoleOutput $output, ArgvInput $input)
     {
@@ -26,6 +25,9 @@ class MigrationProductTemplate
         }
 
         $this->kernel($env);
+
+        $schemaHelper = new SchemaHelper($this->container);
+        $this->productTemplateTable = $schemaHelper->getTableOrCollection('product_template');
     }
 
     public function execute()
@@ -65,7 +67,7 @@ class MigrationProductTemplate
             }
 
             if (!empty($data)) {
-                $sql = sprintf("UPDATE %s SET valuesData=:data WHERE id = :id", self::PIM_CATALOG_PRODUCT_TEMPLATE);
+                $sql = sprintf("UPDATE %s SET valuesData=:data WHERE id = :id", $this->productTemplateTable);
 
                 $stmt = $connection->prepare($sql);
                 $stmt->bindValue('data', json_encode($data));
