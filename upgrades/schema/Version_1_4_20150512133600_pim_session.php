@@ -4,8 +4,6 @@ namespace Pim\Upgrade\Schema;
 
 use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Migration 1.3 => 1.4
@@ -14,15 +12,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @copyright 2015 Akeneo SAS (http://www.akeneo.com)
  * @license   http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
-class Version_1_4_20150512133600_pim_session extends AbstractMigration implements ContainerAwareInterface
+class Version_1_4_20150512133600_pim_session extends AbstractMigration
 {
-    /** @var ContainerInterface */
-    protected $container;
-
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }
+    /**
+     * @param Schema $schema
+     *
+     * @throws \Doctrine\DBAL\Migrations\AbortMigrationException
+     */
     public function up(Schema $schema)
     {
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \'mysql\'.');
@@ -36,8 +32,12 @@ class Version_1_4_20150512133600_pim_session extends AbstractMigration implement
 
         $this->addSql($sessionTableSql);
     }
+
+    /**
+     * @param Schema $schema
+     */
     public function down(Schema $schema)
     {
-        throw new \RuntimeException('No revert is provided for the migrations.');
+        $this->throwIrreversibleMigrationException();
     }
 }

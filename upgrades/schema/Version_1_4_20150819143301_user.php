@@ -29,6 +29,6 @@ class Version_1_4_20150819143301_user extends AbstractMigration
      */
     public function down(Schema $schema)
     {
-        throw new \RuntimeException('No revert is provided for the migrations.');
+        $this->throwIrreversibleMigrationException();
     }
 }

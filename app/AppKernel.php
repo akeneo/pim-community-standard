@@ -91,7 +91,6 @@ class AppKernel extends Kernel
             new Pim\Bundle\PdfGeneratorBundle\PimPdfGeneratorBundle(),
             new Pim\Bundle\ReferenceDataBundle\PimReferenceDataBundle(),
             new Pim\Bundle\ConnectorBundle\PimConnectorBundle(),
-            new Akeneo\Bundle\ClassificationBundle\AkeneoClassificationBundle(),
         ];
     }
 
@@ -110,6 +109,7 @@ class AppKernel extends Kernel
             new Akeneo\Bundle\MeasureBundle\AkeneoMeasureBundle(),
             new Akeneo\Bundle\BatchBundle\AkeneoBatchBundle(),
             new Akeneo\Bundle\StorageUtilsBundle\AkeneoStorageUtilsBundle(),
+            new Akeneo\Bundle\ClassificationBundle\AkeneoClassificationBundle(),
             new Akeneo\Bundle\FileStorageBundle\AkeneoFileStorageBundle(),
         ];
     }
