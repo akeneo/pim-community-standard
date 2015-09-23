@@ -1,5 +1,36 @@
 # 1.4.x
 
+# 1.4.0 (2015-09-23)
+
+## BC breaks
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\AssociationTypeRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\AttributeOptionRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\AttributeRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\CategoryRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\FamilyRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\GroupRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\ProductRemover`
+- Removed `Pim\Bundle\CatalogBundle\Event\AssociationTypeEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\AttributeEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\AttributeOptionEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\CategoryEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\FamilyEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\GroupEvents`
+- Removed event `pim_catalog.pre_remove.association_type` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.attribute` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.post_remove.attribute` use `akeneo.storage.post_remove` instead
+- Removed event `pim_catalog.pre_remove.attribute_option` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.category` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.tree` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.family` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.group` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.product` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.post_remove.product` use `akeneo.storage.post_remove` instead
+- Added function `isBackendTypeReferenceData` to the `Pim\Bundle\CatalogBundle\Model\AttributeInterface`
+
+## Bug fixes
+- PIM-4882: Cannot import products into a variant group if an axis is a reference data
+
 # 1.4.0-RC1 (2015-09-04)
 
 ## Technical improvements
