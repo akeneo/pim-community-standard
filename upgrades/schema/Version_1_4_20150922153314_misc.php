@@ -23,7 +23,6 @@ class Version_1_4_20150922153314_misc extends AbstractMigration
 
         $this->addSql('CREATE TABLE pim_job_configuration (id INT AUTO_INCREMENT NOT NULL, job_execution_id INT DEFAULT NULL, configuration LONGTEXT NOT NULL, UNIQUE INDEX UNIQ_47542A125871C06B (job_execution_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('ALTER TABLE pim_job_configuration ADD CONSTRAINT FK_47542A125871C06B FOREIGN KEY (job_execution_id) REFERENCES akeneo_batch_job_execution (id) ON DELETE CASCADE');
-        $this->addSql('CREATE INDEX resource_name_idx ON pim_versioning_version (resource_name)');
     }
 
     /**
@@ -31,6 +30,6 @@ class Version_1_4_20150922153314_misc extends AbstractMigration
      */
     public function down(Schema $schema)
     {
-        throw new \RuntimeException('No revert is provided for the migrations.');
+        $this->throwIrreversibleMigrationException();
     }
 }
