@@ -55,7 +55,7 @@ A lot of our dependencies are coming from GitHub and this reaches the max limit 
 from anonymous users.
 
 ```
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "1.3.*@stable"
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "1.4.*@stable"
 ```
 
 After that, follow the instructions here:
