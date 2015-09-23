@@ -112,8 +112,7 @@ Based on a PIM standard installation, execute the following command in your proj
 
 ## Migration to Symfony  2.7
 
-PIM has been migrated to Symfony 2.7.
-You can read this guide to see all modifications: https://gist.github.com/mickaelandrieu/5211d0047e7a6fbff925.
+PIM now uses Symfony 2.7. To ease your migration, you can read this guide: https://gist.github.com/mickaelandrieu/5211d0047e7a6fbff925.
  
 You can execute the following commands in your project folder:
 
