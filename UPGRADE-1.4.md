@@ -16,12 +16,12 @@ Download the latest [PIM community standard](http://www.akeneo.com/download/) an
 
 Copy the following files to your PIM installation:
 
-``` 
+```
  export PIM_DIR=/path/to/your/pim/installation
  cp app/PimRequirements.php $PIM_DIR/app
  cp app/SymfonyRequirements.php $PIM_DIR/app
  cp app/config/pim_parameters.yml $PIM_DIR/app/config
- rm $PIM_DIR/upgrades/schema/Version_1_3* 
+ rm $PIM_DIR/upgrades/schema/Version_1_3*
  cp -Rf upgrades $PIM_DIR
  cp composer.json $PIM_DIR
 ```
@@ -38,9 +38,9 @@ And don't forget to add your own dependencies to your *composer.json* in case yo
 Merge the following files into your PIM installation:
  - *app/AppKernel.php*: we have registered some new bundles (*PimAnalyticsBundle*, *PimReferenceDataBundle*, *PimConnectorBundle*, *AkeneoClassificationBundle*, *OneupFlysystemBundle*, AkeneoFileStorageBundle). We also removed a lot of Oro bundles and dependencies. The easiest way to merge is to copy the PIM-1.4 *AppKernel.php* file into your installation (`cp app/AppKernel.php $PIM_DIR/app/`), and then register your custom bundles. Don't forget to register *DoctrineMongoDBBundle* in case your products are stored with *MongoDB*.
  - *app/config/routing.yml*: we have added the entries *pim_analytics*, *pim_user*, *pim_reference_data* and *_liip_imagine*. The entry *_imagine* has been removed. The easiest way to merge is copy the PIM-1.4 *routing.yml* file into your installation (`cp app/config/routing.yml $PIM_DIR/app/config/`), and then register your custom routes.
- - *app/config/config.yml*: the entry *framework* has changed. The entries *doctrine.dbal.connections.report_source*, *doctrine.dbal.connections.report_target* and *doctrine.orm.class_metadata_factory_name* have been deleted, whereas **doctrine.dbal.connections.session* has been added. The entries *pim_reference_data* and *akeneo_storage_utils* have been added. The easiest way to merge is copy the PIM-1.4 *config.yml* file into your installation (`cp app/config/config.yml $PIM_DIR/app/config/`), and then register your own bundles' configuration.    
+ - *app/config/config.yml*: the entry *framework* has changed. The entries *doctrine.dbal.connections.report_source*, *doctrine.dbal.connections.report_target* and *doctrine.orm.class_metadata_factory_name* have been deleted, whereas **doctrine.dbal.connections.session* has been added. The entries *pim_reference_data* and *akeneo_storage_utils* have been added. The easiest way to merge is copy the PIM-1.4 *config.yml* file into your installation (`cp app/config/config.yml $PIM_DIR/app/config/`), and then register your own bundles' configuration.
  - *app/config/security.yml*: the entries *security.providers* and *security.encoders* have changed. The easiest way to merge is copy the PIM-1.4 *security.yml* file into your installation (`cp app/config/security.yml $PIM_DIR/app/config`), and then register your own security configuration.
- 
+
 Now you're ready to update your dependencies:
 
 ```
@@ -113,7 +113,7 @@ Based on a PIM standard installation, execute the following command in your proj
 ## Migration to Symfony  2.7
 
 PIM now uses Symfony 2.7. To ease your migration, you can read this guide: https://gist.github.com/mickaelandrieu/5211d0047e7a6fbff925.
- 
+
 You can execute the following commands in your project folder:
 
 ```
@@ -208,6 +208,13 @@ Strategy is the following,
  - introduce new classes and services in the new *PimConnectorBundle* and component
  - behat and specs are runned on deprecated classes and import too
 
+## Product edit form
+
+With Akeneo PIM 1.4 version, we introduced a new form system on the product edit form. This new system is way faster, more flexible, more dynamic and better looking. To achieve that we built an entire new architecture based on Backbonejs and REST calls to the backend.
+
+We rebuilt this form with extensibility as our first technical goal to ease its customization. To achieve that, we developped this new form as we were integrators. It helped us to identify needs for extensibility points and create them for everyone use.
+
+Every modifications or customizations made on the old product edit form will not be compatible with 1.4. You can follow [the cookbooks about the new product edit form](http://docs.akeneo.com/master/cookbook/ui.html) to update them.
 
 ## Medias
 
@@ -215,20 +222,20 @@ Strategy is the following,
 
 The medias management of *Akeneo PIM 1.3* had a lot of drawbacks:
 * we were not using *Gaufrette* everywhere which means it was impossible to store the medias on a remote filesystem out of the box
-* the [media management](https://github.com/akeneo/pim-community-dev/blob/1.3/src/Pim/Bundle/CatalogBundle/Manager/MediaManager.php) was not clean, buggy and complicated   
-* the business code was linked to the way files are stored 
-* it was impossible to introduce a new type of file without copy/pasting the `Pim\Bundle\CatalogBundle\Manager\MediaManager` (*Akeneo PIM Enterprise 1.4* now comes with several types of files to handle: asset variations) 
-* `Gaufrette`is quite outdated, monolithic and not very maintained anymore 
+* the [media management](https://github.com/akeneo/pim-community-dev/blob/1.3/src/Pim/Bundle/CatalogBundle/Manager/MediaManager.php) was not clean, buggy and complicated
+* the business code was linked to the way files are stored
+* it was impossible to introduce a new type of file without copy/pasting the `Pim\Bundle\CatalogBundle\Manager\MediaManager` (*Akeneo PIM Enterprise 1.4* now comes with several types of files to handle: asset variations)
+* `Gaufrette`is quite outdated, monolithic and not very maintained anymore
 
 All these reasons bring to us to take a few radical solutions:
-* we changed the way medias are stored 
+* we changed the way medias are stored
 * we now use [Flysystem](http://flysystem.thephpleague.com/) instead of `Gaufrette`. `Flysystem` has the following advantages:
   + it is actively maintained and followed
   + its code is really nice, clean and not monolithic
   + it has a good and up-to-date documentation
   + it's possible to copy/paste files between several adapters thanks to the [mount manager](http://flysystem.thephpleague.com/mount-manager/)
 * all files information are stored in the table `akeneo_file_storage_file_info`, the table `pim_catalog_product_media` does not exist anymore
-* the [Pim\Bundle\CatalogBundle\Manager\MediaManager](https://github.com/akeneo/pim-community-dev/blob/1.3/src/Pim/Bundle/CatalogBundle/Manager/MediaManager.php) has been deleted 
+* the [Pim\Bundle\CatalogBundle\Manager\MediaManager](https://github.com/akeneo/pim-community-dev/blob/1.3/src/Pim/Bundle/CatalogBundle/Manager/MediaManager.php) has been deleted
 
 When we built that new system, we kept the following constraints in mind:
 * don't mix the business logic and the way files are stored
