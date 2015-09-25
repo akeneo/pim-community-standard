@@ -71,6 +71,9 @@ class MediaMigration
         }
     }
 
+    /**
+     * Create the akeneo_file_storage_file_info table with temporary fields to ease the migration.
+     */
     public function createFileInfoTable()
     {
         $this->output->writeln('Creating table <comment>akeneo_file_storage_file_info</comment>...');
@@ -105,6 +108,12 @@ class MediaMigration
         }
     }
 
+    /**
+     * Set back the original filename to medias.
+     *
+     * @param string $productValueTable
+     * @param string $productMediaTable
+     */
     public function setOriginalFilenameToMedias($productValueTable, $productMediaTable)
     {
         $this->output->writeln('Setting original filenames to medias files...');
@@ -116,6 +125,8 @@ class MediaMigration
     }
 
     /**
+     * Link files to the product values.
+     *
      * @param string $productValueTable
      * @param string $productMediaTable
      * @param string $fkMedia
@@ -129,18 +140,29 @@ class MediaMigration
         }
     }
 
+    /**
+     * Remove temporary fields to akeneo_file_storage_file_info
+     */
     public function cleanFileInfoTable()
     {
         $this->output->writeln('Removing temporary fields to table <comment>akeneo_file_storage_file_info</comment>...');
         $this->ormConnection->exec('ALTER TABLE akeneo_file_storage_file_info DROP old_file_key');
     }
 
+    /**
+     * Remove old media table
+     *
+     * @param string $productMediaTable
+     */
     public function dropFormerMediaTable($productMediaTable)
     {
         $this->output->writeln(sprintf('Dropping table <comment>%s</comment>...', $productMediaTable));
         $this->ormConnection->exec(sprintf('DROP TABLE %s', $productMediaTable));
     }
 
+    /**
+     * End migration
+     */
     public function close()
     {
         $this->output->writeln('');
@@ -163,6 +185,11 @@ class MediaMigration
         return $this->schemaHelper;
     }
 
+    /**
+     * Set back the original filename to Mongo medias.
+     *
+     * @param string $productTable
+     */
     protected function setOriginalFilenameToMediasMongo($productTable)
     {
         $db = $this->getMongoDatabase();
@@ -187,6 +214,11 @@ class MediaMigration
         }
     }
 
+    /**
+     * Set back the original filename to ORM medias.
+     *
+     * @param string $productMediaTable
+     */
     protected function setOriginalFilenameToMediasOrm($productMediaTable)
     {
         $this->ormConnection->exec(sprintf(
@@ -198,6 +230,8 @@ class MediaMigration
     }
 
     /**
+     * Link files to the ORM product values.
+     *
      * @param string $productValueTable
      * @param string $productMediaTable
      * @param string $fkMedia
@@ -232,6 +266,11 @@ class MediaMigration
         $this->ormConnection->exec(sprintf('DROP INDEX new_media_id ON %s', $productValueTable));
     }
 
+    /**
+     * Link files to the Mongo product values.
+     *
+     * @param string $productTable
+     */
     protected function migrateMediasOnProductValueMongo($productTable)
     {
         $db = $this->getMongoDatabase();
