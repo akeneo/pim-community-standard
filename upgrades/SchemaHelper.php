@@ -18,7 +18,9 @@ class SchemaHelper
     /** @var array */
     protected $classMapping = [
         'product'          => 'pim_catalog.entity.product.class',
+        'product_value'    => 'pim_catalog.entity.product_value.class',
         'product_media'    => 'pim_catalog.entity.product_media.class',
+        'product_template' => 'pim_catalog.entity.product_template.class',
         'attribute'        => 'pim_catalog.entity.attribute.class',
         'attribute_option' => 'pim_catalog.entity.attribute_option.class',
         'group'            => 'pim_catalog.entity.group.class',
@@ -26,7 +28,7 @@ class SchemaHelper
 
     /** @var array resources linked to product (ie that are stored in same storage that the products) */
     protected $productResources = [
-        'product', 'product_media'
+        'product', 'product_value', 'product_media',
     ];
 
     /** @var ContainerInterface */
