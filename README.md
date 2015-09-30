@@ -105,6 +105,7 @@ just change the following config line in app/config/parameters.yml:
 ```
 
 Then relaunch the install with the db option:
+
 ```
 $ php app/console pim:installer:db --env=prod
 ```
