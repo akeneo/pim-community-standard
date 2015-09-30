@@ -242,7 +242,7 @@ When we built that new system, we kept the following constraints in mind:
 * be able to store files anywhere just by editing the configuration
 * be able to store any kind of file (ie: not only medias that are related to products)
 
-### How to migrate?
+### How to migrate your medias?
 
 We provide you the script to migrate your medias from 1.3 to 1.4. Please note that this scripts will only work if you medias are stored locally. If you did any customization on the way medias are stored, you'll surely need to take inspiration from this script and make you own.
 
@@ -257,6 +257,15 @@ php upgrades/1.3-1.4/mongodb/migrate_medias.php
 ```
 
 If you do not use the default product tables or the default media directory, please read the scripts to know which options are available for you.
+
+### What if you were using *Gaufrette*?
+
+Replace *Gaufrette* filesystems' by *Flysystem* ones':
+* replace the services `@gaufrette.pim_archivist_filesystem` and `@pim_archivist_filesystem` by `@oneup_flysystem.archivist_filesystem`
+* replace the services `@gaufrette.pim` and `@pim_filesystem` by `@oneup_flysystem.storage_filesystem`
+* replace `use Gaufrette\Filesystem` by `use League\Flysystem\Filesystem` and change the calls to all methods of the `Gaufrette\Filesystem`
+
+You can have an example of the changes you have to apply from *Gaufrette* to *Flysystem* with this [commit](https://github.com/akeneo/pim-community-dev/commit/346028d125b2e06525f66acebe133a905e6dc8e4).
 
 
 ## Upgrade the database
