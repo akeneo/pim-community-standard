@@ -9,7 +9,7 @@
 Download the latest [PIM community standard](http://www.akeneo.com/download/) and extract it:
 
 ```
- wget http://www.akeneo.com/pim-community-standard-v1.4-latest.tar.gz
+ wget http://download.akeneo.com/pim-community-standard-v1.4-latest.tar.gz
  tar -zxf pim-community-standard-v1.4-latest.tar.gz
  cd pim-community-standard-v1.4.*/
 ```
@@ -45,6 +45,7 @@ Now you're ready to update your dependencies:
 
 ```
  cd $PIM_DIR
+ rm -rf app/cache/*
  composer update
 ```
 
