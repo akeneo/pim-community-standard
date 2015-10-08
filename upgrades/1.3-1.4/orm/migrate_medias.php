@@ -35,7 +35,7 @@ $migration->storeLocalMedias();
 
 $migration->setOriginalFilenameToMedias($mediaTable);
 $migration->migrateMediasOnProductValue($valueTable, $mediaTable, 'FK_93A1BBF3EA9FDD75');
-$migration->migrateMediasOnProductTemplate($productTemplateTable, $mediaTable);
+$migration->migrateMediasOnProductTemplate($productTemplateTable);
 
 $migration->cleanFileInfoTable();
 $migration->dropFormerMediaTable($mediaTable);

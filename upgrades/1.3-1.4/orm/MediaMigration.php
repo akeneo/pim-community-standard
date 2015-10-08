@@ -90,9 +90,8 @@ class MediaMigration extends AbstractMediaMigration
      * Link files to the ORM product templates.
      *
      * @param string $productTemplateTable
-     * @param string $productMediaTable
      */
-    public function migrateMediasOnProductTemplate($productTemplateTable, $productMediaTable)
+    public function migrateMediasOnProductTemplate($productTemplateTable)
     {
         $this->output->writeln('Start migration of product template media');
         // fetch all product templates with filepath
@@ -101,7 +100,6 @@ class MediaMigration extends AbstractMediaMigration
         );
         $selectTemplates->execute();
 
-        $findProductMedia = $this->prepareFindProductMedia($productMediaTable);
         $findFileInfo     = $this->prepareFindFileInfo();
         $updateFileInfo   = $this->prepareUpdateFileInfo();
 
@@ -110,7 +108,7 @@ class MediaMigration extends AbstractMediaMigration
         $this->output->writeln('Update product template data');
         while ($productTemplate = $selectTemplates->fetch(\PDO::FETCH_ASSOC)) {
             $valuesData    = json_decode($productTemplate['valuesData']);
-            $newValuesData = $this->updateTemplateData($valuesData, $findProductMedia, $findFileInfo, $updateFileInfo);
+            $newValuesData = $this->updateTemplateData($valuesData, $findFileInfo, $updateFileInfo);
             if (null !== $newValuesData) {
                 $updateSpool[$productTemplate['id']] = $newValuesData;
             }
@@ -158,7 +156,6 @@ class MediaMigration extends AbstractMediaMigration
      */
     protected function updateTemplateData(
         \stdClass $valuesData,
-        Statement $findProductMedia,
         Statement $findFileInfo,
         Statement $updateFileInfo
     ) {
@@ -170,7 +167,11 @@ class MediaMigration extends AbstractMediaMigration
             if (isset($currentData->data->filePath)) {
                 // find old media with old file key = basename(filePath)
                 $filename = basename($currentData->data->filePath);
-                $productMedia = $this->findProductMedia($findProductMedia, $filename);
+                // original filename is stored in the product template
+                $productMedia = [
+                    'original_filename' => $currentData->data->originalFilename
+                ];
+
                 $fileInfo     = $this->findFileInfo($findFileInfo, $filename);
 
                 $this->updateFileInfo($updateFileInfo, $productMedia, $filename);
