@@ -1,3 +1,11 @@
+# 1.4.3 (2015-10-09)
+
+## Bug fixes
+- PIM-4955: Fixed regression on completeness computation when locales are removed from a channel
+- PIM-4622: Fix CSS for product comments
+- PIM-4973: Fix product removal from edit form (in mongo storage)
+- PIM-4977: Revert PIM-4443 by re-allowing full numeric entity codes
+
 # 1.4.2 (2015-10-01)
 
 ## Bug fixes
@@ -10,6 +18,7 @@
 - PIM-4936: Fixes performances problems and memory leak at import time
 - PIM-4935: Fix inconsistent data on import using comparison optimisation
 - PIM-4914: Fixed Quick export file name
+- PIM-4458: Fix name display in pinbar for product edit pages
 
 ## BC breaks
 - Change the constructor of `Pim\Bundle\EnrichBundle\Controller\MassEditActionController`, added `$gridNameRouteMapping` as the last argument.
@@ -24,6 +33,7 @@
 - PIM-4882: Fix pinbar issue (bump oro/platform version)
 - PIM-4880: Fix PDF download for product with media
 - PIM-4911: Fix product edit form string escaping
+- PIM-4839: Fix the random skip of the carriage returns during an import
 
 # 1.4.0 (2015-09-23)
 
