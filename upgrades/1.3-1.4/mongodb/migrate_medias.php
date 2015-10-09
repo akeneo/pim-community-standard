@@ -1,5 +1,6 @@
 <?php
 
+use Pim\Upgrade\MongoDB\MediaMigration;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
@@ -7,7 +8,8 @@ require_once __DIR__ . '/../../../app/bootstrap.php.cache';
 require_once __DIR__ . '/../../../app/AppKernel.php';
 require_once __DIR__ . '/../../SchemaHelper.php';
 require_once __DIR__ . '/../../UpgradeHelper.php';
-require_once __DIR__ . '/../common/MediaMigration.php';
+require_once __DIR__ . '/../common/AbstractMediaMigration.php';
+require_once __DIR__ . '/MediaMigration.php';
 
 // TO BE LAUNCHED AFTER HAVING UPDATED THE DEPENDENCIES OF YOUR PROJECT
 // NOT ABLE TO USE DOCTRINE ORM/MONGODB AS DEPENDENCIES HAVE BEEN UPDATED BUT NOT THE DATABASE AT THIS POINT
@@ -27,7 +29,9 @@ $valueTable = $migration->getSchemaHelper()->getTableOrCollection('product_value
 
 $migration->createFileInfoTable();
 $migration->storeLocalMedias();
-$migration->setOriginalFilenameToMedias($valueTable, null);
-$migration->migrateMediasOnProductValue($valueTable, null, null);
+
+$migration->setOriginalFilenameToMedias($valueTable);
+$migration->migrateMediasOnProductValue($valueTable);
+
 $migration->cleanFileInfoTable();
 $migration->close();
