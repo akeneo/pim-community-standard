@@ -44,7 +44,7 @@ class MediaMigration extends AbstractMediaMigration
      */
     public function migrateMediasOnProductValue($productValueTable, $productMediaTable, $fkMedia)
     {
-        $this->output->writeln(sprintf('Adding temporary fields to table <comment>%s</comment>...',
+        $this->writeConsole(sprintf('Adding temporary fields to table <comment>%s</comment>...',
             $productValueTable));
         $this->ormConnection->exec(sprintf(
             'ALTER TABLE %s ADD new_media_id INT(11) NULL DEFAULT NULL AFTER media_id, ADD INDEX (new_media_id)',
@@ -68,7 +68,7 @@ class MediaMigration extends AbstractMediaMigration
             $productMediaTable
         ));
 
-        $this->output->writeln(sprintf(
+        $this->writeConsole(sprintf(
             'Cleaning temporary fields of table <comment>%s</comment>...',
             $productValueTable
         ));
@@ -93,7 +93,7 @@ class MediaMigration extends AbstractMediaMigration
      */
     public function migrateMediasOnProductTemplate($productTemplateTable)
     {
-        $this->output->writeln('Start migration of product template media');
+        $this->writeConsole('Start migration of product template media');
         // fetch all product templates with filepath
         $selectTemplates = $this->ormConnection->prepare(
             sprintf('SELECT id, valuesData from %s WHERE valuesData REGEXP \'"filepath":\'', $productTemplateTable)
@@ -105,7 +105,7 @@ class MediaMigration extends AbstractMediaMigration
 
         $updateSpool = [];
 
-        $this->output->writeln('Update product template data');
+        $this->writeConsole('Update product template data');
         while ($productTemplate = $selectTemplates->fetch(\PDO::FETCH_ASSOC)) {
             $valuesData    = json_decode($productTemplate['valuesData']);
             $newValuesData = $this->updateTemplateData($valuesData, $findFileInfo, $updateFileInfo);
@@ -118,7 +118,7 @@ class MediaMigration extends AbstractMediaMigration
         $updateTemplate = $this->ormConnection->prepare(
             sprintf('UPDATE %s SET valuesData = :valuesData WHERE id =  :id', $productTemplateTable)
         );
-        $this->output->writeln('Update product templates');
+        $this->writeConsole('Update product templates');
         foreach ($updateSpool as $id => $valuesData) {
             $updateTemplate->execute(
                 [
@@ -127,7 +127,7 @@ class MediaMigration extends AbstractMediaMigration
                 ]
             );
         }
-        $this->output->writeln('Product template media migration <info>Done</info>.');
+        $this->writeConsole('Product template media migration <info>Done</info>.');
     }
 
     /**
