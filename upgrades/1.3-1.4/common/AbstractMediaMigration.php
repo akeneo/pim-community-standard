@@ -85,7 +85,7 @@ abstract class AbstractMediaMigration
      */
     public function createFileInfoTable()
     {
-        $this->output->writeln('Creating table <comment>akeneo_file_storage_file_info</comment>...');
+        $this->writeConsole('Creating table <comment>akeneo_file_storage_file_info</comment>...');
         $this->ormConnection->exec(
             'CREATE TABLE akeneo_file_storage_file_info (
                 id INT AUTO_INCREMENT NOT NULL,
@@ -101,7 +101,7 @@ abstract class AbstractMediaMigration
             ) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB'
         );
 
-        $this->output->writeln('Adding temporary fields to table <comment>akeneo_file_storage_file_info</comment>...');
+        $this->writeConsole('Adding temporary fields to table <comment>akeneo_file_storage_file_info</comment>...');
         $this->ormConnection->exec('ALTER TABLE akeneo_file_storage_file_info ADD old_file_key VARCHAR(255)');
         $this->ormConnection->exec('CREATE UNIQUE INDEX old_file_key ON akeneo_file_storage_file_info (old_file_key)');
     }
@@ -115,21 +115,28 @@ abstract class AbstractMediaMigration
      */
     public function storeLocalMedias()
     {
-        $this->output->writeln(sprintf(
+        $this->writeConsole(sprintf(
             'Storing medias located in <comment>%s</comment> to the catalog filesystem...',
             $this->mediaDirectory
         ));
 
         $storer = $this->container->get('akeneo_file_storage.file_storage.file.file_storer');
+        $em     = $this->container->get('doctrine.orm.entity_manager');
 
-        $finder = new Finder();
+        $finder      = new Finder();
+        $storedFiles = 1;
         foreach ($finder->files()->followLinks()->in($this->mediaDirectory) as $file) {
             $fileInfo = $storer->store($file, FileStorage::CATALOG_STORAGE_ALIAS);
+            $em->clear();
             $this->ormConnection->update(
                 'akeneo_file_storage_file_info',
                 ['old_file_key' => $file->getFilename()],
                 ['id' => $fileInfo->getId()]
             );
+            $storedFiles++;
+            if (0 === $storedFiles % 500) {
+                $this->writeConsole(sprintf('Stored files = %d', $storedFiles));
+            }
         }
     }
 
@@ -138,7 +145,7 @@ abstract class AbstractMediaMigration
      */
     public function cleanFileInfoTable()
     {
-        $this->output->writeln('Removing temporary fields to table <comment>akeneo_file_storage_file_info</comment>...');
+        $this->writeConsole('Removing temporary fields to table <comment>akeneo_file_storage_file_info</comment>...');
         $this->ormConnection->exec('ALTER TABLE akeneo_file_storage_file_info DROP old_file_key');
     }
 
@@ -149,7 +156,7 @@ abstract class AbstractMediaMigration
      */
     public function dropFormerMediaTable($productMediaTable)
     {
-        $this->output->writeln(sprintf('Dropping table <comment>%s</comment>...', $productMediaTable));
+        $this->writeConsole(sprintf('Dropping table <comment>%s</comment>...', $productMediaTable));
         $this->ormConnection->exec(sprintf('DROP TABLE %s', $productMediaTable));
     }
 
@@ -158,8 +165,8 @@ abstract class AbstractMediaMigration
      */
     public function close()
     {
-        $this->output->writeln('');
-        $this->output->writeln('<info>Done!</info>');
+        $this->writeConsole('');
+        $this->writeConsole('<info>Done!</info>');
     }
 
     /**
@@ -192,5 +199,13 @@ abstract class AbstractMediaMigration
         $kernel->boot();
 
         return $kernel;
+    }
+
+    /**
+     * @param string $message
+     */
+    protected function writeConsole($message)
+    {
+        $this->output->writeln(sprintf('<info>%s -</info> %s', date('Y-m-d H:i:s'), $message));
     }
 }

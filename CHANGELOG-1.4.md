@@ -1,3 +1,8 @@
+# 1.4.x
+
+## Bug fixes
+- PIM-5017: Fix media migration with lots of files
+
 # 1.4.3 (2015-10-09)
 
 ## Bug fixes
