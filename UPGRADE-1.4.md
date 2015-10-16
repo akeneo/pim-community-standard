@@ -8,8 +8,22 @@
 
 Download the latest [PIM community standard](http://www.akeneo.com/download/) and extract it:
 
+In 1.3, the API covers only update of values of a product (set and copy), with the 1.4 we:
+ - provide updaters for other objects (ObjectUpdaterInterface::update)
+ - provide a way to set fields and attribute values of product (PropertySetterInterface::setData)
+ - provide a way to add data in fields and attribute values of product (PropertyAdderInterface::addData)
+ - provide a way to remove data in fields and attribute values of product (PropertyRemoverInterface::removeData)
+ - provide a way to copy data in fields and attribute values of product (PropertyCopierInterface::copyData)
+
+The goal of this API is to give a straightforward and normalized way to update objects of the PIM to enhance the Developer Experience.
+
+To achieve a consistent API and avoid BC Breaks, we depreciate few methods from ProductUpdater.
+
+To have a better consistence between updaters and normalizers, `Pim\Bundle\TransformBundle\Normalizer\Structured\ProductValueNormalizer` now returns an array with a "data" key instead of "value" key.
+This has an impact on the table `pim_catalog_product_template` which is used by the variant groups for instance. To convert the database structure of this table, you can execute the following command in your project folder:
+
 ```
- wget http://www.akeneo.com/pim-community-standard-v1.4-latest.tar.gz
+ wget http://download.akeneo.com/pim-community-standard-v1.4-latest.tar.gz
  tar -zxf pim-community-standard-v1.4-latest.tar.gz
  cd pim-community-standard-v1.4.*/
 ```
@@ -45,9 +59,9 @@ Now you're ready to update your dependencies:
 
 ```
  cd $PIM_DIR
+ rm -rf app/cache/*
  composer update
 ```
-
 
 ## Partially fix BC breaks
 
@@ -242,7 +256,7 @@ When we built that new system, we kept the following constraints in mind:
 * be able to store files anywhere just by editing the configuration
 * be able to store any kind of file (ie: not only medias that are related to products)
 
-### How to migrate?
+### How to migrate your medias?
 
 We provide you the script to migrate your medias from 1.3 to 1.4. Please note that this scripts will only work if you medias are stored locally. If you did any customization on the way medias are stored, you'll surely need to take inspiration from this script and make you own.
 
@@ -257,6 +271,15 @@ php upgrades/1.3-1.4/mongodb/migrate_medias.php
 ```
 
 If you do not use the default product tables or the default media directory, please read the scripts to know which options are available for you.
+
+### What if you were using *Gaufrette*?
+
+Replace *Gaufrette* filesystems' by *Flysystem* ones':
+* replace the services `@gaufrette.pim_archivist_filesystem` and `@pim_archivist_filesystem` by `@oneup_flysystem.archivist_filesystem`
+* replace the services `@gaufrette.pim` and `@pim_filesystem` by `@oneup_flysystem.storage_filesystem`
+* replace `use Gaufrette\Filesystem` by `use League\Flysystem\Filesystem` and change the calls to all methods of the `Gaufrette\Filesystem`
+
+You can have an example of the changes you have to apply from *Gaufrette* to *Flysystem* with this [commit](https://github.com/akeneo/pim-community-dev/commit/346028d125b2e06525f66acebe133a905e6dc8e4).
 
 
 ## Upgrade the database
