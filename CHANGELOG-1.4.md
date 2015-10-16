@@ -1,5 +1,77 @@
 # 1.4.x
 
+## Bug fixes
+- PIM-5017: Fix media migration with lots of files
+
+# 1.4.3 (2015-10-09)
+
+## Bug fixes
+- PIM-4955: Fixed regression on completeness computation when locales are removed from a channel
+- PIM-4622: Fix CSS for product comments
+- PIM-4973: Fix product removal from edit form (in mongo storage)
+- PIM-4977: Revert PIM-4443 by re-allowing full numeric entity codes
+
+# 1.4.2 (2015-10-01)
+
+## Bug fixes
+- PIM-4760: Fix error if quick export not well configured
+- PIM-4880: Fix media not displayed in product PDF download
+- PIM-4887: Fixed locales active status when removed from channels
+- PIM-4911: Fix escaping of property with locale and scope
+- PIM-4922: Fix media attribute preview
+- PIM-4925: Fix dashboard patch information
+- PIM-4936: Fixes performances problems and memory leak at import time
+- PIM-4935: Fix inconsistent data on import using comparison optimisation
+- PIM-4914: Fixed Quick export file name
+- PIM-4458: Fix name display in pinbar for product edit pages
+
+## BC breaks
+- Change the constructor of `Pim\Bundle\EnrichBundle\Controller\MassEditActionController`, added `$gridNameRouteMapping` as the last argument.
+
+# 1.4.1 (2015-09-24)
+
+## BC breaks
+- Change constructor of `Pim\Bundle\PdfGeneratorBundle\Renderer\ProductPdfRenderer`.
+  Added `Liip\ImagineBundle\Imagine\Cache\CacheManager`, `Liip\ImagineBundle\Imagine\Data\DataManager` and `Liip\ImagineBundle\Imagine\Filter\FilterManager`
+
+## Bug fixes
+- PIM-4882: Fix pinbar issue (bump oro/platform version)
+- PIM-4880: Fix PDF download for product with media
+- PIM-4911: Fix product edit form string escaping
+- PIM-4839: Fix the random skip of the carriage returns during an import
+
+# 1.4.0 (2015-09-23)
+
+## BC breaks
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\AssociationTypeRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\AttributeOptionRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\AttributeRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\CategoryRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\FamilyRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\GroupRemover`
+- Removed `Pim\Bundle\CatalogBundle\Doctrine\Common\Remover\ProductRemover`
+- Removed `Pim\Bundle\CatalogBundle\Event\AssociationTypeEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\AttributeEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\AttributeOptionEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\CategoryEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\FamilyEvents`
+- Removed `Pim\Bundle\CatalogBundle\Event\GroupEvents`
+- Removed event `pim_catalog.pre_remove.association_type` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.attribute` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.post_remove.attribute` use `akeneo.storage.post_remove` instead
+- Removed event `pim_catalog.pre_remove.attribute_option` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.category` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.tree` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.family` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.group` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.pre_remove.product` use `akeneo.storage.pre_remove` instead
+- Removed event `pim_catalog.post_remove.product` use `akeneo.storage.post_remove` instead
+- Added function `isBackendTypeReferenceData` to the `Pim\Bundle\CatalogBundle\Model\AttributeInterface`
+
+## Bug fixes
+- PIM-4882: Cannot import products into a variant group if an axis is a reference data
+- PIM-4917: Fix the issue with decimal storage for prices and number and add the related number comparator
+
 # 1.4.0-RC1 (2015-09-04)
 
 ## Technical improvements
