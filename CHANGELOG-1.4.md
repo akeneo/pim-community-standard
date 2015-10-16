@@ -1,7 +1,10 @@
-# 1.4.x
+# 1.4.4 (2015-10-16)
 
 ## Bug fixes
 - PIM-5017: Fix media migration with lots of files
+- PIM-5016: Fix import product with only sku and family columns
+- PIM-5000: Fix the products on which mass actions are applied
+- PIM-5006: Fix the API key generation
 
 # 1.4.3 (2015-10-09)
 
