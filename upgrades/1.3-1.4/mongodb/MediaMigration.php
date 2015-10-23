@@ -58,7 +58,10 @@ class MediaMigration extends AbstractMediaMigration
 
         foreach ($productsWithMedia as $product) {
             foreach ($product['values'] as $value) {
-                if (isset($value['media'])) {
+                if (isset($value['media']) &&
+                    isset($value['media']['originalFilename']) &&
+                    isset($value['media']['filename'])
+                ) {
                     $stmt->bindValue(1, $value['media']['originalFilename']);
                     $stmt->bindValue(2, $value['media']['filename']);
                     $stmt->execute();
@@ -83,7 +86,7 @@ class MediaMigration extends AbstractMediaMigration
 
         foreach ($productsWithMedia as $product) {
             foreach ($product['values'] as $index => $value) {
-                if (isset($value['media'])) {
+                if (isset($value['media']) && isset($value['media']['filename'])) {
                     $stmt->bindValue(1, $value['media']['filename']);
                     $stmt->execute();
                     $fileInfo = $stmt->fetch();
