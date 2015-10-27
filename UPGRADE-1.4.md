@@ -259,6 +259,13 @@ php upgrades/1.3-1.4/mongodb/migrate_medias.php
 
 If you do not use the default product tables or the default media directory, please read the scripts to know which options are available for you.
 
+If you migrated your medias from a 1.3 Mongo install to a 1.4 version prior to 1.4.6 and you get a "The identifier id is missing for a query of Akeneo\Component\FileStorage\Model\FileInfo" error in the application, it could be related to the different ways deleted medias are stored in product values between 1.3 and 1.4.
+Launch the following queries on your Mongo database to clean your product values :
+
+```
+db.pim_catalog_product.update({"values.media": {$exists: 1}}, {$pull: {"values": {"media._id": {$exists: 1}}}}, {"multi": 1})
+```
+
 ### What if you were using *Gaufrette*?
 
 Replace *Gaufrette* filesystems' by *Flysystem* ones':

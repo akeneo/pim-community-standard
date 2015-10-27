@@ -112,6 +112,36 @@ class MediaMigration extends AbstractMediaMigration
     }
 
     /**
+     * Clean product values that contained deleted media. These values were keeped in 1.3 but should be deleted for 1.4.
+     *
+     * Important : Should always be executed AFTER migrateMediasOnProductValue()
+     *
+     * @param string $productValueTable
+     */
+    public function removeEmptyProductValues($productValueTable)
+    {
+        $db              = $this->getMongoDatabase();
+        $valueCollection = new \MongoCollection($db, $productValueTable);
+
+        /*
+         db.pim_catalog_product.update(
+            {"values.media": {$exists: 1}},
+            {$pull: {"values": {"media._id": {$exists: 1}}}},
+            {"multi": 1}
+        )
+         */
+        $valueCollection->update(
+            ['values.media' => ['$exists' => true]],
+            [
+                '$pull' => [
+                    'values' => ['media._id' => ['$exists' => true]]
+                ]
+            ],
+            ['multiple' => true]
+        );
+    }
+
+    /**
      * @return \MongoDB
      */
     protected function getMongoDatabase()

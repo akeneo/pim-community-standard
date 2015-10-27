@@ -32,6 +32,7 @@ $migration->storeLocalMedias();
 
 $migration->setOriginalFilenameToMedias($valueTable);
 $migration->migrateMediasOnProductValue($valueTable);
+$migration->removeEmptyProductValues($valueTable);
 
 $migration->cleanFileInfoTable();
 $migration->close();
