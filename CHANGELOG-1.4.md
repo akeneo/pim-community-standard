@@ -1,3 +1,8 @@
+# 1.4.x
+
+## Bug fixes
+- PIM-5055: Fix medias migration for removed medias in product values
+
 # 1.4.5 (2015-10-23)
 
 ## Bug fixes
