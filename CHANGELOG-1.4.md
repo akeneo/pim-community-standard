@@ -1,6 +1,7 @@
-# 1.4.x
+# 1.4.6 (2015-10-27)
 
 ## Bug fixes
+- PIM-5051: Fix mass delete products error on versionning
 - PIM-5055: Fix medias migration for removed medias in product values
 
 # 1.4.5 (2015-10-23)
@@ -42,6 +43,7 @@
 
 ## BC breaks
 - Change the constructor of `Pim\Bundle\EnrichBundle\Controller\MassEditActionController`, added `$gridNameRouteMapping` as the last argument.
+- Change the constructor of `Pim\Bundle\EnrichBundle\Controller`, added `$gridNameRouteMapping` as the last argument.
 
 # 1.4.1 (2015-09-24)
 
