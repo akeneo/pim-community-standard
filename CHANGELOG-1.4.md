@@ -1,3 +1,8 @@
+# 1.4.x
+
+## Bug fixes
+- PIM-5079: Add batch jobs script for 1.3 to 1.4 migration
+
 # 1.4.6 (2015-10-27)
 
 ## Bug fixes
