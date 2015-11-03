@@ -20,7 +20,7 @@
         }
     },
     "require": {
-        "akeneo/pim-community-dev": "1.3.x-dev@dev"
+        "akeneo/pim-community-dev": "~1.3.30"
     },
     "require-dev": {
         "doctrine/migrations": "1.0.*@dev",
