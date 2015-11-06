@@ -10,69 +10,37 @@ https://github.com/akeneo/pim-community-dev
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/badges/quality-score.png?s=05ef3d5d2bbfae2f9a659060b21711d275f0c1ff)](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/)
 
-Requirements
-------------
-## System
- - PHP 5.4.* above 5.4.4
- - PHP Modules:
-    - php5-curl
-    - php5-gd
-    - php5-intl
-    - php5-mysql
-    - php5-mcrypt
-    - php-apc for PHP 5.4 (opcode and data cache)
-    - php5-apcu for PHP 5.5 (for data cache, as opcode cache usually included)
- - PHP memory_limit at least at 256 MB on Apache side and 728 MB on CLI side (needed for installation, can be lowered to 512MB after installation for PHP-CLI)
- - MySQL 5.1 or above
- - Apache mod rewrite enabled
+| [1.4][1.4] | [1.3][1.3] | [1.2][1.2] |
+|:----------:|:----------:|:----------:|
+| [![Build status][1.4 image]][1.4] | [![Build status][1.3 image]][1.3] | [![Build status][1.2 image]][1.2] |
 
-## Web browsers
- - tested: Chrome & Firefox
- - should work: IE 10, Safari
- - will not work: IE < 10
+  [1.4 image]: https://travis-ci.org/akeneo/pim-community-dev.svg?branch=1.4
+  [1.4]: https://github.com/akeneo/pim-community-dev/tree/1.4
+  [1.3 image]: https://travis-ci.org/akeneo/pim-community-dev.svg?branch=1.3
+  [1.3]: https://github.com/akeneo/pim-community-dev/tree/1.3
+  [1.2 image]: https://travis-ci.org/akeneo/pim-community-dev.svg?branch=1.2
+  [1.2]: https://github.com/akeneo/pim-community-dev/tree/1.2
+
+Application Technical Information
+---------------------------------
+
+The following document is designed for both clients and partners and provides all technical information required to define required server(s) to run Akeneo PIM application, check that end users workstation is compatible with Akeneo PIM application:
+http://docs.akeneo.com/1.4/reference/technical_information/index.html
 
 Installation instructions
 -------------------------
-### Recommended installation
+
 To install Akeneo PIM for a PIM project or for evaluation, please follow:
-http://docs.akeneo.com/master/installation/installation_workstation.html
+http://docs.akeneo.com/1.4/developer_guide/installation/installation_workstation.html
 
-### Create a Akeneo PIM project with Composer
+Upgrade instructions
+-------------------------
 
-Alternatively, you can install Akeneo PIM with Composer, but please make sure that all requirements are fulfilled.
+To upgrade Akeneo PIM to a newer version, please follow:
+http://docs.akeneo.com/1.4/developer_guide/migration/index.html
 
-If you don't have Composer yet, download it following the instructions on
-http://getcomposer.org/ or just run the following command:
-
-```
-    $ curl -s https://getcomposer.org/installer | php
-```
-
-Due to some Oro Platform limitations, you **MUST** create your database before launching composer.
-
-Please note that you will certainly need to provide your GitHub credentials with this method,
-A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls
-from anonymous users.
-
-```
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "1.4.*@stable"
-```
-
-After that, follow the instructions here:
-http://docs.akeneo.com/master/installation/installation_workstation.html#installing-akeneo
-
-#### Write permissions
-
-The following directories must be writable for both the CLI user and the Apache user:
-- app/cache
-- app/logs
-- web/bundles
-- app/uploads/product
-- app/archive
-
-See http://docs.akeneo.com/master/installation/installation_workstation.html#apache for an alternative solution.
-
-### Add translation packs (optional)
+Add translation packs (optional)
+--------------------------------
 
 You can download translation packs from crowdin: http://crowdin.net/project/akeneo
 
