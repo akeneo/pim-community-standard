@@ -1,3 +1,12 @@
+# 1.3.32 (2015-11-19)
+
+## Technical improvements
+- Introduction of a command to purge completenesses: `pim:completeness:purge`
+
+## Bug fixes
+- PIM-5190: Fix calculation error for MongoDB completeness with empty media attributes
+- PIM-5197: Improve products export memory usage (backport PIM-5127 into 1.3)
+
 # 1.3.31 (2015-11-12)
 
 ## Technical improvements
