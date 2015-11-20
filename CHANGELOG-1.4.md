@@ -1,3 +1,9 @@
+# 1.4.10 (2015-11-20)
+
+## Bug fixes
+- PIM-5163: Fix the VersionRepository on MongoDB to take the most recent entry for product resources
+- PIM-5169: Fix mass edit attribute selection while using a small screen resolution
+
 # 1.4.9 (2015-11-12)
 
 ## Bug fixes
