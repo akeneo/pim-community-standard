@@ -84,4 +84,8 @@ swiftmailer:
 
 pim_reference_data: ~
 
-akeneo_storage_utils: ~
+akeneo_storage_utils:
+    mapping_overrides:
+        -
+            original: Pim\Bundle\CatalogBundle\Model\Metric
+            override: Acme\Bundle\MetricBundle\Model\Metric
