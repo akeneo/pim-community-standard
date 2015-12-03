@@ -1,3 +1,11 @@
+# 1.4.12 (2015-12-03)
+
+## Bug fixes
+- PIM-5235: Fix empty reference data name on attributes import
+- PIM-5208: Fix the datagrid performance issue related to large number of attributes, only attribute usable in grid will be available
+- PIM-5215: Create empty product values for new family attributes after product import with family change
+- PIM-5268: Fix PDF display to be able to display long attribute name
+
 # 1.4.11 (2015-11-27)
 
 ## BC Breaks
@@ -13,12 +21,14 @@
 - PIM-5171: Apply ACLs on mass edit actions
 - PIM-5240: Fix Mongo normalization that creates a nullable family field
 - PIM-5159: Attribute values appearing/disappearing when you change attribute groups
+- PIM-5241: Fix search input field with strange display on Firefox / Mass Edit on common attributes
 
 # 1.4.10 (2015-11-20)
 
 ## Bug fixes
 - PIM-5163: Fix the VersionRepository on MongoDB to take the most recent entry for product resources
 - PIM-5169: Fix mass edit attribute selection while using a small screen resolution
+- PIM-5194: Fix performance issues on families loading in PEF
 
 # 1.4.9 (2015-11-12)
 
