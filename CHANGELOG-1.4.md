@@ -1,3 +1,21 @@
+# 1.4.13 (2015-12-10)
+
+## BC Breaks
+- Changed constructor of `Pim\Bundle\TransformBundle\Normalizer\MongoDB\ProductValueNormalizer`to add a `Doctrine\Common\Persistence\ManagerRegistry` (instead of a DocumentManager to avoid circular references)
+  It is required because normalization of reference data in product values is based on Doctrine metadata.
+- In case you wrote your own associations import, please add the parameter `batch_size: 1` to the `import_associations` step element of your `batch_jobs.yml`.
+
+## Bug fixes
+- PIM-5238: Fix scroll on multiselect for mass edit
+- PIM-5177: Fix login redirection
+- PIM-5276: Fix attribute ordering in the product view
+- PIM-5276: Fix reload freeze
+- PIM-5276: Fix date filter picker
+
+## Performance improvements
+- PIM-5218: Use DirectToMongoDB bulk product saver natively. This considerably speeds up all bulk actions on a MongoDB storage install (imports, mass edit, rules application, etc.).
+- PIM-5170: Fixes memory leak on MongoDB at association import time
+
 # 1.4.12 (2015-12-03)
 
 ## Bug fixes
@@ -5,6 +23,7 @@
 - PIM-5208: Fix the datagrid performance issue related to large number of attributes, only attribute usable in grid will be available
 - PIM-5215: Create empty product values for new family attributes after product import with family change
 - PIM-5268: Fix PDF display to be able to display long attribute name
+- PIM-5194: Fix performance issues on families loading in PEF
 
 # 1.4.11 (2015-11-27)
 
@@ -28,7 +47,6 @@
 ## Bug fixes
 - PIM-5163: Fix the VersionRepository on MongoDB to take the most recent entry for product resources
 - PIM-5169: Fix mass edit attribute selection while using a small screen resolution
-- PIM-5194: Fix performance issues on families loading in PEF
 
 # 1.4.9 (2015-11-12)
 
