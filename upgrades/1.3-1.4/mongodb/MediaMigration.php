@@ -142,6 +142,51 @@ class MediaMigration extends AbstractMediaMigration
     }
 
     /**
+     * Repair normalized data of a product value in case of media
+     *
+     * @param string $productValueTable
+     */
+    public function migrateMediasNormalizedData($productValueTable)
+    {
+        $db         = $this->getMongoDatabase();
+        $collection = new \MongoCollection($db, $productValueTable);
+
+        $values = $collection->aggregate([
+            ['$match' => ['values' => ['$elemMatch' => ['media' => ['$exists' => true, '$ne' => null]]]]],
+            ['$unwind' => '$values'],
+            ['$match' => ['values.media' => ['$exists' => true, '$ne' => null]]],
+            ['$project' => ['values.attribute' => 1, 'values.media' => 1]],
+        ]);
+
+        $stmtFile = $this->ormConnection->prepare('SELECT file_key, original_filename FROM akeneo_file_storage_file_info WHERE id = ?');
+        $stmtAttribute = $this->ormConnection->prepare('SELECT code FROM pim_catalog_attribute WHERE id = ?');
+        $codes = [];
+
+        foreach ($values['result'] as $value) {
+            $stmtFile->bindValue(1, $value['values']['media']);
+            $stmtFile->execute();
+            $file = $stmtFile->fetch();
+
+            if (!isset($codes[$value['values']['attribute']])) {
+                $stmtAttribute->bindValue(1, $value['values']['attribute']);
+                $stmtAttribute->execute();
+                $codes[$value['values']['attribute']] = $stmtAttribute->fetch()['code'];
+            }
+
+            $collection->update(
+                ['_id' => $value['_id']],
+                ['$set' => [
+                    "normalizedData." . $codes[$value['values']['attribute']] => [
+                        "id"               => $value['values']['media'],
+                        "key"              => $file['file_key'],
+                        "originalFilename" => $file['original_filename']
+                    ]
+                ]]
+            );
+        }
+    }
+
+    /**
      * @return \MongoDB
      */
     protected function getMongoDatabase()

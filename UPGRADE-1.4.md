@@ -255,6 +255,7 @@ php upgrades/1.3-1.4/orm/migrate_medias.php
 
 # for products that are stored with Mongo
 php upgrades/1.3-1.4/mongodb/migrate_medias.php
+php upgrades/1.3-1.4/mongodb/repair_medias_normalized_data.php
 ```
 
 > Please note that these scripts need to be modified if you do not use the regular PIM tables, collections or the default media directory. This can happen for example, when you override an entity in a custom project, or when you use the CustomEntityBundle. Please read the scripts to know which options are available for you.
