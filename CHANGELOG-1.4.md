@@ -1,3 +1,17 @@
+# 1.4.15 (2015-12-30)
+
+## Improvements
+- PIM-4897: Added MongoDB status on SF debug toolbar
+
+## Scalability improvements
+- PIM-5170: Fix memory leak on bulk detach
+
+## Bug fixes
+- PIM-5295: Fix association product grid category filter
+- PIM-5348: fix group count on behats
+- PIM-5347: fix mongo database in case of attribute removal
+- PIM-5387: Fix memory leak in quick export
+
 # 1.4.14 (2015-12-17)
 
 ## Scalability improvements
@@ -28,7 +42,7 @@
 - In case you wrote your own associations import, please add the parameter `batch_size: 1` to the `import_associations` step element of your `batch_jobs.yml`.
 - Changed constructor of `Pim\Bundle\EnrichBundle\Connector\Processor\MassEdit\Product\EditCommonAttributesProcessor` to add a `Akeneo\Component\StorageUtils\Updater\ObjectUpdaterInterface`.
   Required, because we now use the standard ProductUpdater to be consistent.
-- Changed constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes` to add 
+- Changed constructor of `Pim\Bundle\EnrichBundle\MassEditAction\Operation\EditCommonAttributes` to add
     `Akeneo\Component\StorageUtils\Updater\ObjectUpdaterInterface`,
     `Symfony\Component\Validator\Validator\ValidatorInterface`,
     `Symfony\Component\Serializer\Normalizer\NormalizerInterface`.
