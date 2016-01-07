@@ -1,3 +1,9 @@
+# 1.4.16 (2016-01-07)
+
+## Bug fixes
+- PIM-5405: Fix content type for stream upload
+- PIM-5331: Fix product save issue when categories have code as integer
+
 # 1.4.15 (2015-12-30)
 
 ## Improvements
