@@ -406,7 +406,7 @@ class SymfonyRequirements extends RequirementCollection
             is_dir(__DIR__.'/../vendor/composer'),
             'Vendor libraries must be installed',
             'Vendor libraries are missing. Install composer following instructions from <a href="http://getcomposer.org/">http://getcomposer.org/</a>. '.
-            'Then run "<strong>php composer.phar install</strong>" to install them.'
+                'Then run "<strong>php composer.phar install</strong>" to install them.'
         );
 
         $cacheDir = is_dir(__DIR__.'/../var/cache') ? __DIR__.'/../var/cache' : __DIR__.'/cache';
@@ -445,6 +445,12 @@ class SymfonyRequirements extends RequirementCollection
                 'Your default timezone is not supported by PHP. Check for typos in your <strong>php.ini</strong> file and have a look at the list of deprecated timezones at <a href="http://php.net/manual/en/timezones.others.php">http://php.net/manual/en/timezones.others.php</a>.'
             );
         }
+
+        $this->addRequirement(
+            function_exists('iconv'),
+            'iconv() must be available',
+            'Install and enable the <strong>iconv</strong> extension.'
+        );
 
         $this->addRequirement(
             function_exists('json_encode'),
@@ -546,10 +552,10 @@ class SymfonyRequirements extends RequirementCollection
             require_once __DIR__.'/../vendor/autoload.php';
 
             try {
-                $r = new \ReflectionClass('Sensio\Bundle\DistributionBundle\SensioDistributionBundle');
+                $r = new ReflectionClass('Sensio\Bundle\DistributionBundle\SensioDistributionBundle');
 
                 $contents = file_get_contents(dirname($r->getFileName()).'/Resources/skeleton/app/SymfonyRequirements.php');
-            } catch (\ReflectionException $e) {
+            } catch (ReflectionException $e) {
                 $contents = '';
             }
             $this->addRecommendation(
