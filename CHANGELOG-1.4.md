@@ -1,9 +1,17 @@
+# 1.4.19 (2016-02-11)
+
+## Bug fixes
+- PIM-5476: Fix issue with native csv product import, new products are created with extra optional values for media, metric, price
+- PIM-5470: Fix Doctrine memory leak
+- PIM-5354: Fix select/boolean filter value display after navigation
+
 # 1.4.18 (2016-01-28)
 
 ## Bug fixes
 - PIM-5478: Fix attribute permissions issue in attribute searchable repository
 - PIM-5492: Fix complete group loading on useless cases
 - Fix `Akeneo\Component\Console\CommandLauncher` to launch as a backend task
+- PIM-5471: Close & destroy select2 on page change with hash-navigation
 
 # 1.4.17 (2016-01-19)
 
