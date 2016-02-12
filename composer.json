@@ -57,7 +57,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "php app/console fos:js-routing:dump --target=web/js/routes.js"
+            "php app/console fos:js-routing:dump --target=web/js/routes.js",
+            "Pim\\Bundle\\InstallerBundle\\ComposerScripts::copyUpgradesFiles"
         ]
     },
     "config": {
