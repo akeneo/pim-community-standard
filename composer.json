@@ -19,7 +19,7 @@
         }
     },
     "require": {
-        "akeneo/pim-community-dev": "v1.5.0-ALPHA1@alpha",
+        "akeneo/pim-community-dev": "v1.5.0-BETA1@beta",
         "sensio/generator-bundle": "2.3.5"
     },
     "require-dev": {
@@ -81,7 +81,8 @@
             }
         },
         "branch-alias": {
-            "dev-master": "1.5.x-dev",
+            "dev-master": "1.6.x-dev",
+            "dev-1.5": "1.5.x-dev",
             "dev-1.4": "1.4.x-dev",
             "dev-1.3": "1.3.x-dev",
             "dev-1.2": "1.2.x-dev",
