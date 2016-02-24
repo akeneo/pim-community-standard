@@ -1,3 +1,11 @@
+# 1.4.20 (2016-02-24)
+
+## Improvements
+- PIM-5579: Enable `Pim\Bundle\BaseConnectorBundle\Archiver\FileWriterArchiver` even for exports with several files
+
+## Scalability improvements
+- PIM-5575: Remove families JS fetchers warmup
+
 # 1.4.19 (2016-02-11)
 
 ## Bug fixes
