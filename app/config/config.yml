@@ -86,14 +86,15 @@ pim_reference_data: ~
 
 akeneo_storage_utils: ~
 
-pim_localization:
-    decimal_separators:
-        - { value: '.', label: 'dot (.)' }
-        - { value: ',', label: 'comma (,)' }
-        - { value: '٫', label: 'arabic decimal separator (٫)' }
-    date_formats:
-        - { value: 'yyyy-MM-dd', label: 'yyyy-mm-dd' }
-        - { value: 'yyyy/MM/dd', label: 'yyyy/mm/dd' }
-        - { value: 'MM/dd/yyyy', label: 'mm/dd/yyyy' }
-        - { value: 'dd/MM/yyyy', label: 'dd/mm/yyyy' }
-        - { value: 'dd.MM.yyyy', label: 'dd.mm.yyyy' }
+pim_catalog:
+    localization:
+        decimal_separators:
+            - { value: '.', label: 'dot (.)' }
+            - { value: ',', label: 'comma (,)' }
+            - { value: '٫', label: 'arabic decimal separator (٫)' }
+        date_formats:
+            - { value: 'yyyy-MM-dd', label: 'yyyy-mm-dd' }
+            - { value: 'yyyy/MM/dd', label: 'yyyy/mm/dd' }
+            - { value: 'MM/dd/yyyy', label: 'mm/dd/yyyy' }
+            - { value: 'dd/MM/yyyy', label: 'dd/mm/yyyy' }
+            - { value: 'dd.MM.yyyy', label: 'dd.mm.yyyy' }
