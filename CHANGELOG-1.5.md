@@ -1,3 +1,9 @@
+# 1.5.1 (2016-03-09)
+
+## Bug fixes
+
+- Only UPGRADE-*.md files are now copied from the development version to the standard edition during `php composer.phar update`
+
 # 1.5.0 (2016-03-08)
 
 ## Bug fixes
