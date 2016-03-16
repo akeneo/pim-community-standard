@@ -72,7 +72,6 @@ Copy the following files to your PIM installation:
 ```
  export PIM_DIR=/path/to/your/pim/installation
  cp app/SymfonyRequirements.php $PIM_DIR/app
- cp app/config/config.yml $PIM_DIR/app/config/
  cp composer.json $PIM_DIR/
 ```
 
