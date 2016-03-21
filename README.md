@@ -31,8 +31,28 @@ http://docs.akeneo.com/1.5/reference/technical_information/index.html
 Installation instructions
 -------------------------
 
-To install Akeneo PIM for a PIM project or for evaluation, please follow:
-http://docs.akeneo.com/1.5/developer_guide/installation/installation_workstation.html
+### Recommended installation
+
+To install Akeneo PIM for a PIM project or for evaluation, please follow: http://docs.akeneo.com/1.5/developer_guide/installation/installation_workstation.html
+
+### Create a Akeneo PIM project with Composer
+
+Alternatively, you can install Akeneo PIM with Composer, but please make sure that all requirements are fulfilled.
+
+If you don't have Composer yet, download it following the instructions on http://getcomposer.org/ or just run the following command:
+
+```
+    $ curl -s https://getcomposer.org/installer | php
+```
+
+Please note that you will certainly need to provide your GitHub credentials with this method.
+A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls from anonymous users.
+
+```
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "1.5.*@stable"
+```
+
+After that, follow the instructions here: http://docs.akeneo.com/1.5/developer_guide/installation/installation_workstation.html
 
 Upgrade instructions
 --------------------
