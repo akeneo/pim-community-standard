@@ -84,7 +84,11 @@ swiftmailer:
 
 pim_reference_data: ~
 
-akeneo_storage_utils: ~
+akeneo_storage_utils:
+    mapping_overrides:
+        -
+            original: Pim\Bundle\CatalogBundle\Entity\Category
+            override: Acme\Bundle\AppBundle\Entity\Category
 
 pim_catalog:
     localization:
