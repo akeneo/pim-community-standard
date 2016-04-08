@@ -62,7 +62,7 @@ akeneo_storage_utils:
 Download the latest [PIM community standard](http://www.akeneo.com/download/) and extract it:
 
 ```
- wget http://www.akeneo.com/pim-community-standard-v1.5-latest.tar.gz
+ wget http://download.akeneo.com/pim-community-standard-v1.5-latest.tar.gz
  tar -zxf pim-community-standard-v1.5-latest.tar.gz
  cd pim-community-standard-v1.5.*/
 ```
