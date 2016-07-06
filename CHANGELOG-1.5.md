@@ -1,3 +1,9 @@
+# 1.5.6 (2016-07-06)
+
+## Bug fixes
+
+- PIM-5864: "Attribute used as label" not displayed after being changed in the Family
+
 # 1.5.5 (2016-06-16)
 
 - PIM-5711: Don't create empty attribute translations if attributes are imported with empty labels
@@ -18,7 +24,6 @@
 - PIM-5802: Keep data previously filled in select2 filter
 - PIM-5824: Fix memory leak on products export
 - PIM-5712: Keep reference in "akeneo_file_storage_file_info" table after removing a media attribute from a product
-- PIM-5643: Fix default system locale was not fixed by the last PIM-5643 ticket, tagged in 1.5.2
 
 # 1.5.3 (2016-05-13)
 
@@ -37,6 +42,10 @@
 
 - PIM-5762: Removed unused category filters on product datagrids
 - Upgrade "akeneo/measure-bundle" from "0.4.1" to "0.5.0", details in the release note https://github.com/akeneo/MeasureBundle/releases/tag/0.5.0
+
+## Bug fixes
+
+- PIM-5643: Fix default system locale was not fixed by the last PIM-5643 ticket, tagged in 1.5.2
 
 # 1.5.2 (2016-04-25)
 
