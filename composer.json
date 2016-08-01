@@ -19,22 +19,18 @@
         }
     },
     "require": {
-        "akeneo/pim-community-dev": "v1.5.0-ALPHA1@alpha",
+        "akeneo/pim-community-dev": "v1.6.0-ALPHA1",
+        "symfony/intl": "3.1.2",
         "sensio/generator-bundle": "2.3.5"
     },
     "require-dev": {
-        "doctrine/migrations": "1.0.0-alpha3@alpha",
-        "doctrine/doctrine-migrations-bundle": "1.0.0"
+        "doctrine/migrations": "1.2.2",
+        "doctrine/doctrine-migrations-bundle": "1.1.0"
     },
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/akeneo/pim-community-dev.git",
-            "branch": "master"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/akeneo/platform.git",
             "branch": "master"
         }
     ],

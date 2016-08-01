@@ -14,13 +14,16 @@ parameters:
     websocket_host:       "127.0.0.1"
     websocket_port:       8080
 
-    upload_dir:           %kernel.root_dir%/uploads/product
-    archive_dir:          %kernel.root_dir%/archive
-    catalog_storage_dir:  %kernel.root_dir%/file_storage/catalog
+    upload_dir:           '%kernel.root_dir%/uploads/product'
+    archive_dir:          '%kernel.root_dir%/archive'
+    catalog_storage_dir:  '%kernel.root_dir%/file_storage/catalog'
     tmp_storage_dir:      /tmp/pim/file_storage
 
     installed:            ~
 
+    # You can use installer_data to install an outside catalog (like one from akeneo/catalogs)
+    # installer_data: %kernel.root_dir%/../vendor/akeneo/catalogs/master/community/small/fixtures
+    # or you can use one of the provided catalogs
     # use PimInstallerBundle:minimal for minimal data set
     installer_data:       PimInstallerBundle:icecat_demo_dev
 
@@ -35,7 +38,7 @@ parameters:
     # mongodb_server: 'mongodb://localhost:27017'
     # mongodb_database: akeneo_pim
 
-    doctrine_migrations_dir: %kernel.root_dir%/../upgrades/schema
+    doctrine_migrations_dir: '%kernel.root_dir%/../upgrades/schema'
 
     security.exception_listener.class: Pim\Bundle\UserBundle\Security\FirewallExceptionListener
 
