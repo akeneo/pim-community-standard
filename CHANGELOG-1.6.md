@@ -2,6 +2,13 @@
 
 ## Bug fixes
 
+# 1.6.0-RC1 (2016-08-29)
+
+## Bug fixes
+
+- #4879: Fix collision when using several popins on the same page, cheers @dimitri-koenig!
+- PIM-5928: Export products without media
+
 # 1.6.0-ALPHA2 (2016-08-23)
 
 ## Bug fixes
@@ -16,6 +23,9 @@
 - PIM-5854: The family code is not displayed at all in the product grid when no family labels
 - PIM-5888: Fix an outline glitch on some buttons
 - PIM-5869: Allow any codes to be used for attributes
+- PIM-5915: Fix the import of localizable and scopable variant group attributes
+- PIM-5852: Fix sort order overwriting when importing existing attribute options without sort order column
+- PIM-5852: Fix sort order overwriting when importing existing attribute options without sort order column
 
 ## Functional improvements
 
@@ -35,7 +45,7 @@
 - PIM-5641: As Mary, I would like to define a limit number of lines for the Excel files in order to manage them easily in Excel
 - PIM-5612: As Peter, I would like to know the Excel versions supported by our Excel connector
 
-###  Export Builder
+###  Export Builder
 
 - PIM-5833: As Peter, I would like to choose for which categories the products are exported - Back End
 - PIM-5653: As Filips, I would like to export products and configure the filters with Product QUery Builder
@@ -54,6 +64,7 @@
 - PIM-5109: As Peter, I would like to choose the products attributes to export
 - PIM-5634: As Peter, I would like to filter on a list attribute to export products
 - PIM-5635: As Peter, I would like to filter on all attributes types to export products
+- PIM-5798: As Peter, I would like to manage permission on "Content" tab
 
 ### User Productivity
 
@@ -105,14 +116,15 @@
 - PIM-5781: Introduce a new command to get system information from the command line
 - TIP-535: Remove the flush option from SaverInterface, BulkSaverInterface, RemoverInterface, BulkRemoverInterface, thank you @iulyanp!
 
-## BC breaks
+## BC breaks
 
+- Change constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\GroupSaver`. Add `Akeneo\Component\StorageUtils\Detacher\BulkObjectDetacherInterface`.
 - Remove services `pim_serializer.normalizer.flat.*`, `pim_serializer.denormalizer.flat.*` and `pim_reference_data.denormalizer.flat.`
 - Change constructor of `Pim\Component\Catalog\Normalizer\Structured\ProductValueNormalizer`. Remove argument `Pim\Component\Catalog\Localization\Localizer\LocalizerRegistryInterface`
 - Add method `convertToLocalizedFormats` to `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
 - Remove `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductToFlatArrayProcessor`. Please use `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductProcessor`
-- Change constructor or `Pim\Bundle\EnrichBundle\Normalizer\GroupNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
-- Change constructor or `Pim\Bundle\EnrichBundle\Normalizer\ProductNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
+- Change constructor of `Pim\Bundle\EnrichBundle\Normalizer\GroupNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
+- Change constructor of `Pim\Bundle\EnrichBundle\Normalizer\ProductNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
 - Change constructor of `Pim\Component\Connector\Processor\Normalization\VariantGroupProcessor`. Remove second argument `Symfony\Component\Serializer\Normalizer\DenormalizerInterface` and replace fourth and fifth argument by `Pim\Component\Connector\Processor\BulkMediaFetcher` and `Akeneo\Component\StorageUtils\Updater\ObjectUpdaterInterface`
 - Move `Pim\Bundle\BaseConnectorBundle\DependencyInjection\Compiler\RegisterArchiversPass` to `Pim\Bundle\ConnectorBundle\DependencyInjection\Compiler\RegisterArchiversPass`
 - Move `Pim\Bundle\BaseConnectorBundle\EventListener\InvalidItemsCollector` to `Pim\Bundle\ConnectorBundle\EventListener\InvalidItemsCollector`
@@ -150,7 +162,7 @@
 - Remove properties editTemplate, showTemplate from `src\Akeneo\Component\Batch\Job\Job`.
 - Remove methods setShowTemplate, setEditTemplate from `src\Akeneo\Component\Batch\Job\Job`.
 - Change constructor of `Pim\Bundle\ImportExportBundle\Controller\JobProfileController`. Add `Akeneo\Bundle\BatchBundle\Connector\JobTemplateProviderInterface`
-- Change constructor of `Pim\Component\Connector\Writer\File\Csv\Writer` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher` 
+- Change constructor of `Pim\Component\Connector\Writer\File\Csv\Writer` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher`
 - Change constructor of `Pim\Component\Connector\Writer\File\Csv\ProductWriter` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher`, `Pim\Component\Connector\ArrayConverter\ArrayConverterInterface`, `Pim\Component\Catalog\Repository\AttributeRepositoryInterface`, `Pim\Component\Connector\Writer\File\FileExporterPathGeneratorInterface` and array `$mediaAttributeTypes`
 - Change constructor of `Pim\Component\Connector\Writer\File\Csv\VariantGroupWriter` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher`, `Pim\Component\Connector\ArrayConverter\ArrayConverterInterface`, `Pim\Component\Catalog\Repository\AttributeRepositoryInterface`, `Pim\Component\Connector\Writer\File\FileExporterPathGeneratorInterface` and array `$mediaAttributeTypes`
 - Remove method `setAvailableLocales` in `Pim\Component\Catalog\Model\AttributeInterface` and `Pim\Component\Catalog\Model\AbstractAttribute`
@@ -261,7 +273,7 @@
 - Change constructor of `Pim\Bundle\CatalogBundle\Factory\FamilyFactory` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\CatalogBundle\Manager\ChannelManager` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductToFlatArrayProcessor` replace `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
-- Change constructor of `Pim\Bundle\EnrichBundle\Controller\CompletenessController` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
+- Change constructor of `Pim\Bundle\EnrichBundle\Controller\CompletenessController` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`, add `Doctrine\Common\Persistence\ObjectManager` and the parameter `pim_catalog_product_storage_driver` (string).
 - Change constructor of `Pim\Bundle\EnrichBundle\Controller\FamilyController` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\EnrichBundle\Form\Subscriber\AddAttributeRequirementsSubscriber` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\EnrichBundle\Form\Type\ProductTemplateType` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
@@ -474,3 +486,4 @@
 - Remove argument `Akeneo\Component\StorageUtils\Saver\SavingOptionsResolverInterface` from `CatalogBundle\Doctrine\Common\Saver\ProductSaver`
 - Remove argument `Akeneo\Component\StorageUtils\Saver\SavingOptionsResolverInterface` from `CatalogBundle\Doctrine\MongoDBODM\Saver\ProductSaver`
 - Remove class `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\ProductSavingOptionsResolver`
+- Change constructor of `Pim\Bundle\ImportExportBundle\Form\Type\JobInstanceFormType`, add `Oro\Bundle\SecurityBundle\SecurityFacade` as last parameter
