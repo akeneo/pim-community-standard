@@ -728,7 +728,7 @@ In the v1.6, these 3 different concerns have been extracted to be able to provid
 
 You need to define a `DefaultValuesProviderInterface` and a `ConstraintCollectionProviderInterface` to be able to run your Job.
 
-You'll find an example in the doc  https://docs.akeneo.com/master/cookbook/import_export/create-connector.html#configure-our-jobparameters
+You'll find an example in the doc  https://docs.akeneo.com/1.6/cookbook/import_export/create-connector.html#configure-our-jobparameters
 
 Case 1 - You wrote a custom import (or export) which uses the same parameters as a default import (or export).
 
@@ -827,7 +827,7 @@ If your Job needs to be configured through the UI, you also need to define a `Fo
 
 This class will allow to provide the configuration for each form field.
 
-You'll find an example in the doc https://docs.akeneo.com/master/cookbook/import_export/create-connector.html#configure-the-ui-for-our-jobparameters
+You'll find an example in the doc https://docs.akeneo.com/1.6/cookbook/import_export/create-connector.html#configure-the-ui-for-our-jobparameters
 
 You can follow the strategy described in the previous chapter, for instance, re-use existing classes for the case 1:
 
