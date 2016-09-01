@@ -1,6 +1,15 @@
-# 1.6.x
+# 1.6.1 (2016-09-01)
 
 ## Bug fixes
+
+- PIM-5935: Fix view all button in dashboard
+- PIM-5945: Fix tabs on user profile, DOM was not well structured
+- TIP-568: Detach version entity to improve performances on products import
+- PIM-5940: Add a flash message in case of product export builder error
+- PIM-5922: Fix the scope switcher in variant group page grid
+- PIM-5959: Change wording of XLSX to Excel on mass actions
+- PIM-5938: Fix typos in import/export tooltips
+- PIM-5966: Fix style about category filter on product export builder
 
 # 1.6.0 (2016-08-30)
 
@@ -53,7 +62,7 @@
 - PIM-5641: As Mary, I would like to define a limit number of lines for the Excel files in order to manage them easily in Excel
 - PIM-5612: As Peter, I would like to know the Excel versions supported by our Excel connector
 
-###  Export Builder
+###  Export Builder
 
 - PIM-5833: As Peter, I would like to choose for which categories the products are exported - Back End
 - PIM-5653: As Filips, I would like to export products and configure the filters with Product QUery Builder
@@ -124,7 +133,7 @@
 - PIM-5781: Introduce a new command to get system information from the command line
 - TIP-535: Remove the flush option from SaverInterface, BulkSaverInterface, RemoverInterface, BulkRemoverInterface, thank you @iulyanp!
 
-## BC breaks
+## BC breaks
 
 - Change constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\GroupSaver`. Add `Akeneo\Component\StorageUtils\Detacher\BulkObjectDetacherInterface`.
 - Remove services `pim_serializer.normalizer.flat.*`, `pim_serializer.denormalizer.flat.*` and `pim_reference_data.denormalizer.flat.`
