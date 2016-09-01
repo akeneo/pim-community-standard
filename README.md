@@ -33,7 +33,7 @@ Installation instructions
 
 ### Recommended installation
 
-To install Akeneo PIM for a PIM project or for evaluation, please follow: http://docs.akeneo.com/1.6/developer_guide/installation/installation_workstation.html
+To install Akeneo PIM for a PIM project or for evaluation, please follow: https://docs.akeneo.com/1.6/developer_guide/installation/system_requirements/system_requirements.html
 
 ### Using Composer to create the project
 
@@ -52,7 +52,7 @@ A lot of our dependencies are coming from GitHub and this reaches the max limit 
     $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "1.6.*@stable"
 ```
 
-After that, follow the instructions here: https://docs.akeneo.com/1.6/developer_guide/installation/system_requirements/system_requirements.html
+After that, follow the instructions here: https://docs.akeneo.com/1.6/developer_guide/installation/index.html
 
 Upgrade instructions
 --------------------
