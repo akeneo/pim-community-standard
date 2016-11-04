@@ -1,5 +1,8 @@
+# 1.5.12 (2016-11-04)
+
+- PIM-5995: Fix issue with locale specific attributes added to variant groups
+
 # 1.5.11 (2016-10-31)
-# 1.5.x
 
 ## Bug fixes
 
