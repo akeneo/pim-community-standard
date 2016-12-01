@@ -1,10 +1,25 @@
+# 1.5.14 (2016-12-01)
+
+## Bug fixes
+
+- PIM-5990: Fix persist order causing issue on variant group import with associated products
+- PIM-5989: Fix attribute options on localizable and scopable attributes simple select
+- PIM-6013: Fix attribute options on localizable and scopable attributes simple select and multi select
+- PIM-6002: Fix characters escapment with usage of quote in attribute option
+- PIM-5997: Restrict to 25 characters the role label
+- PIM-5862: Fix product grid display on a custom user view
+
 # 1.5.13 (2016-11-18)
+
+## Bug fixes
 
 - PIM-6005: Boost product export performances by loading less products at the same time
 - PIM-5995: Fix issue with product count on group save
 - PIM-6006: Fix small memory leak when iterating over products cursor
 
 # 1.5.12 (2016-11-04)
+
+## Bug fixes
 
 - PIM-5995: Fix issue with locale specific attributes added to variant groups
 
@@ -30,7 +45,6 @@
 
 - PIM-5777: Fix attribute refresh when locale change in Product Edit Form
 - TIP-307: Fix issues with Mongo 2.6
-- PIM-5862: Fix product grid display on a custom user view
 
 # 1.5.8 (2016-08-25)
 
