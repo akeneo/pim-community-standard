@@ -1,3 +1,11 @@
+# 1.6.6 (2016-12-08)
+
+## Bug fixes
+
+- PIM-6027: Fix export builder filter on category with code as integer
+- PIM-6018: Prevent the import of an attribute identifier if not usable as grid filter
+- PIM-6022: Fix shell command injection in mass-edit
+
 # 1.6.5 (2016-11-25)
 
 ## Bug fixes
@@ -6,6 +14,7 @@
 - PIM-6000: Fix migration from 1.5 on quick exports
 - #5198: Fix issue with the export builder time condition, cheers @Schwierig
 - #5192: Add upgrade script for missing export job, cheers @masmrlar!
+- PIM-6017: Fix attribute options on localizable and scopable attributes multi select
 
 # 1.6.4 (2016-10-20)
 
