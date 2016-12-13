@@ -48,7 +48,7 @@ class MediaMigration extends AbstractMediaMigration
         $db              = $this->getMongoDatabase();
         $valueCollection = new \MongoCollection($db, $productValueTable);
 
-        $productsWithMedia = $valueCollection->find(['values.media' => ['$ne' => null]]);
+        $productsWithMedia = $valueCollection->find(['values.media' => ['$type' => 3]]);
 
         $stmt = $this->ormConnection->prepare(
             'UPDATE akeneo_file_storage_file_info fi
@@ -80,7 +80,7 @@ class MediaMigration extends AbstractMediaMigration
         $db              = $this->getMongoDatabase();
         $valueCollection = new \MongoCollection($db, $productValueTable);
 
-        $productsWithMedia = $valueCollection->find(['values.media' => ['$ne' => null]]);
+        $productsWithMedia = $valueCollection->find(['values.media' => ['$type' => 3]]);
 
         $stmt = $this->ormConnection->prepare('SELECT fi.id FROM akeneo_file_storage_file_info fi WHERE fi.old_file_key = ?');
 
@@ -152,9 +152,9 @@ class MediaMigration extends AbstractMediaMigration
         $collection = new \MongoCollection($db, $productValueTable);
 
         $values = $collection->aggregate([
-            ['$match' => ['values' => ['$elemMatch' => ['media' => ['$exists' => true, '$ne' => null]]]]],
+            ['$match' => ['$or' => [['values.media' => ['$type' => 16]], ['values.media' => ['$type' => 18]]]]],
             ['$unwind' => '$values'],
-            ['$match' => ['values.media' => ['$exists' => true, '$ne' => null]]],
+            ['$match' => ['values.media' => ['$exists' => true]]],
             ['$project' => ['values.attribute' => 1, 'values.media' => 1]],
         ]);
 
