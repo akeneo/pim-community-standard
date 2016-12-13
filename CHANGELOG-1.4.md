@@ -1,3 +1,9 @@
+# 1.4.28 (2016-12-13)
+
+## Bug fixes
+- PIM-6008: Fix mass edit execution when using specials chars in text field edition
+- PIM-6022: Fix shell injection in mass-edit form
+
 # 1.4.27 (2016-08-31)
 
 # 1.4.26 (2016-07-05)
