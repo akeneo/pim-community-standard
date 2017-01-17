@@ -1,3 +1,9 @@
+# 1.6.9 (2017-01-17)
+
+## Bug fixes
+
+- PIM-6110: Saving a product value clears the saved associations
+
 # 1.6.8 (2017-01-05)
 
 ## Bug fixes
