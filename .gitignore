@@ -5,6 +5,7 @@ web/js/*
 app/archive/*
 app/cache/*
 app/config/parameters.yml
+app/config/*_local.yml
 app/logs/*
 app/import/*
 app/export/*
