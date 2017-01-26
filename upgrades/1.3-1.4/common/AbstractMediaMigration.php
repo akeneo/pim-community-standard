@@ -115,6 +115,8 @@ abstract class AbstractMediaMigration
      */
     public function storeLocalMedias()
     {
+        $em = $this->container->get('doctrine.orm.entity_manager');
+
         $this->writeConsole(sprintf(
             'Storing medias located in <comment>%s</comment> to the catalog filesystem...',
             $this->mediaDirectory
@@ -125,6 +127,7 @@ abstract class AbstractMediaMigration
 
         $finder      = new Finder();
         $storedFiles = 1;
+        $batch = 500;
         foreach ($finder->files()->followLinks()->in($this->mediaDirectory) as $file) {
             $fileInfo = $storer->store($file, FileStorage::CATALOG_STORAGE_ALIAS);
             $em->clear();
@@ -133,11 +136,20 @@ abstract class AbstractMediaMigration
                 ['old_file_key' => $file->getFilename()],
                 ['id' => $fileInfo->getId()]
             );
-            $storedFiles++;
-            if (0 === $storedFiles % 500) {
+
+            $em->detach($fileInfo);
+            unset($fileInfo);
+            unset($file);
+
+            if (0 === $storedFiles % $batch) {
                 $this->writeConsole(sprintf('Stored files = %d', $storedFiles));
+                $em->clear();
             }
+
+            $storedFiles++;
         }
+
+        $em->clear();
     }
 
     /**
