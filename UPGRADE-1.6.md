@@ -2,14 +2,14 @@
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents
+**Table of Contents:**
 
 - [Disclaimer](#disclaimer)
 - [Migrate your system requirements](#migrate-your-system-requirements)
   - [PHP 5.6 as minimum version and PHP 7 in experimental mode](#php-56-as-minimum-version-and-php-7-in-experimental-mode)
 - [Migrate your standard project](#migrate-your-standard-project)
 - [Migrate your custom code](#migrate-your-custom-code)
-  - [Global updates for any projects](#global-updates-for-any-projects)
+  - [Global updates for any project](#global-updates-for-any-project)
     - [Update references to moved `Pim\Bundle\CatalogBundle\AttributeType\AbstractAttributeType` constants](#update-references-to-moved-pim%5Cbundle%5Ccatalogbundle%5Cattributetype%5Cabstractattributetype-constants)
     - [Update references to moved `Pim\Component\Catalog` business classes](#update-references-to-moved-pim%5Ccomponent%5Ccatalog-business-classes)
     - [Update references to moved `PimEnterprise\Component\Catalog` business classes](#update-references-to-moved-pimenterprise%5Ccomponent%5Ccatalog-business-classes)
@@ -68,9 +68,9 @@ This modification introduces a new constraint, the minimum version of PHP for Ak
     * For the **Community Edition**, download it from the website [PIM community standard](http://www.akeneo.com/download/) and extract:
 
     ```
-     wget http://www.akeneo.com/pim-community-standard-v1.6-latest.tar.gz
+     wget http://download.akeneo.com/pim-community-standard-v1.6-latest.tar.gz
      tar -zxf pim-community-standard-v1.6-latest.tar.gz
-     cd pim-community-standard-v1.6.*/
+     cd pim-community-standard/
     ```
 
     * For the **Enterprise Edition**, download the archive from the Partner Portal and extract:
@@ -131,7 +131,7 @@ This modification introduces a new constraint, the minimum version of PHP for Ak
 
 6. Then remove your old upgrades folder:
     ```
-     rm $PIM_DIR/upgrades/schema -rf
+     rm -rf $PIM_DIR/upgrades/schema
     ```
 
 7. Now you're ready to update your dependencies:
@@ -161,11 +161,11 @@ This modification introduces a new constraint, the minimum version of PHP for Ak
         }
         ```
 
-        If your project uses the https://github.com/akeneo-labs/ExcelConnectorBundle, please use the following version,
+        If your project uses the https://github.com/akeneo-labs/ExcelConnectorBundle, this bundle is not compatible anymore and you must replace it by the https://github.com/akeneo/ExcelInitBundle,
 
         ```
         "require": {
-            "akeneo-labs/excel-connector-bundle": "1.7.*"
+            "akeneo-labs/excel-init-bundle": "1.0.*"
         }
         ```
 
@@ -181,7 +181,7 @@ This modification introduces a new constraint, the minimum version of PHP for Ak
 
         ```
         "require": {
-            "akeneo/elasticsearch-bundle": "1.3.*"
+            "akeneo/inner-variation-bundle": "1.3.*"
         }
         ```
 
@@ -215,7 +215,7 @@ This modification introduces a new constraint, the minimum version of PHP for Ak
 9. Then, generate JS translations and re-generate the PIM assets:
 
     ```
-     rm $PIM_DIR/web/js/translation/ -rf
+     rm -rf $PIM_DIR/web/js/translation/
      php app/console pim:installer:assets
     ```
 
@@ -728,7 +728,7 @@ In the v1.6, these 3 different concerns have been extracted to be able to provid
 
 You need to define a `DefaultValuesProviderInterface` and a `ConstraintCollectionProviderInterface` to be able to run your Job.
 
-You'll find an example in the doc  https://docs.akeneo.com/master/cookbook/import_export/create-connector.html#configure-our-jobparameters
+You'll find an example in the doc  https://docs.akeneo.com/1.6/cookbook/import_export/create-connector.html#configure-our-jobparameters
 
 Case 1 - You wrote a custom import (or export) which uses the same parameters as a default import (or export).
 
@@ -827,7 +827,7 @@ If your Job needs to be configured through the UI, you also need to define a `Fo
 
 This class will allow to provide the configuration for each form field.
 
-You'll find an example in the doc https://docs.akeneo.com/master/cookbook/import_export/create-connector.html#configure-the-ui-for-our-jobparameters
+You'll find an example in the doc https://docs.akeneo.com/1.6/cookbook/import_export/create-connector.html#configure-the-ui-for-our-jobparameters
 
 You can follow the strategy described in the previous chapter, for instance, re-use existing classes for the case 1:
 
@@ -988,6 +988,19 @@ You can now notice a `filters` key containing `data` and `structure`.
 We provide doctrine migrations to handle this change in your existing data.
 
 In case you have custom products export using the native processor, you may need to update this migration script to update your job instances.
+
+#### Updates to access the "Content" and "General Property" tab in the export job profiles
+
+In order to access the "Content" and "General Property" tabs for already existing user roles. An admin has to set access to those roles.
+
+Go to the role profile and activate the following permissions situated in the "Permission" tab and the "Export Profile" section:
+
+- "Show an export profile general properties"
+- "Edit an export profile general properties"
+- "Show an export profile content"
+- "Edit an export profile content"
+
+If you want to display the "Content" tab for you custom product export job profiles, you can follow the cookbook "Configure the job profile" in the documentation (https://docs.akeneo.com/1.6/cookbook/import_export/create-custom-step.html#configure-the-job-profile).
 
 ### Updates for projects adding custom Mass Edit Action
 
