@@ -116,6 +116,7 @@ class AppKernel extends Kernel
             new Akeneo\Bundle\FileStorageBundle\AkeneoFileStorageBundle(),
             new Akeneo\Bundle\MeasureBundle\AkeneoMeasureBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Oneup\FlysystemBundle\OneupFlysystemBundle(),
         ];
     }
