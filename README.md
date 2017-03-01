@@ -49,14 +49,14 @@ Please note that you will certainly need to provide your GitHub credentials with
 A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls from anonymous users.
 
 ```
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "1.5.*@stable"
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "1.7.*@stable"
 ```
 
-After that, follow the instructions here: http://docs.akeneo.com/1.5/developer_guide/installation/installation_workstation.html
+After that, follow the instructions here: http://docs.akeneo.com/1.7/developer_guide/installation/installation_workstation.html
 
 Upgrade instructions
 --------------------
 
 To upgrade Akeneo PIM to a newer version, please follow:
-http://docs.akeneo.com/1.5/developer_guide/migration/index.html
+http://docs.akeneo.com/1.7/developer_guide/migration/index.html
 
