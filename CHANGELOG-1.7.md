@@ -1,3 +1,35 @@
+# 1.7.0 (2017-03-14)
+
+## Functional improvements
+
+- API-84: As Julia, I would like to list/get/download a media file
+- API-85: As Julia, I would like to create a media file
+- API-76: As Julia, I would like to list locales
+- API-31: As Julia, I would like to list attribute options
+- API-126: Change attribute form "scope" input to a yes/no switch
+
+## Bug Fixes
+
+- PIM-6210: fix unused fields on import profiles
+- PIM-6203: Fix various design bugs
+- PIM-6200: Only the owner of a view can save and remove it.
+
+## BC breaks
+
+### Methods
+
+- Remove `getApi` and `setApi` methods from `Pim\Bundle\UserBundle\Entity\UserInterface`
+
+### Classes
+
+- Remove class `Oro\Bundle\UserBundle\Entity\UserApi`
+- Remove class `Oro\Bundle\UserBundle\Form\EventListener\UserApiSubscriber`
+- Remove class `Oro\Bundle\UserBundle\Form\Type\UserApiType`
+- Remove class `Oro\Bundle\UserBundle\Command\GenerateWSSEHeaderCommand`
+- Remove class `Oro\Bundle\UserBundle\Security\WsseAuthListener`
+- Remove class `Oro\Bundle\UserBundle\Security\WsseUserProvider`
+- Remove Class `Pim\Bundle\UserBundle\Security\WsseUserProvider`
+
 # 1.7.0-BETA2 (2017-03-06)
 
 # 1.7.0-BETA1 (2017-03-02)
