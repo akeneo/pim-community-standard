@@ -180,7 +180,7 @@
 9. Then you can migrate your database using:
 
     ```bash
-    php app/console cache:clear --env=prod
+    rm -rf app/cache/*
     php app/console doctrine:migration:migrate --env=prod
     ```
 
