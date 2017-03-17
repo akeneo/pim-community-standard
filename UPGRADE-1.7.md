@@ -33,9 +33,7 @@
 
 ## Migrate your standard project
 
-1. Download and extract the latest standard archive,
-
-    * Download it from the website [PIM community standard](http://www.akeneo.com/download/) and extract:
+1. Download it from the website [PIM community standard](http://www.akeneo.com/download/) and extract:
 
     ```bash
     wget http://download.akeneo.com/pim-community-standard-v1.7-latest.tar.gz
