@@ -7,7 +7,9 @@ This repository is used to create a new PIM project based on Akeneo PIM.
 
 If you want to contribute to the Akeneo PIM (and we will be pleased if you do!), you can fork the repository https://github.com/akeneo/pim-community-dev and submit a pull request.
 
-[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/badges/quality-score.png?s=05ef3d5d2bbfae2f9a659060b21711d275f0c1ff)](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/)
+1.7 | 1.6 | 1.5 | Scrutinizer | Crowdin
+--- | --- | --- | ----------- | -------
+[![1.7 status](https://core-ci.akeneo.com/buildStatus/icon?job=akeneo/pim-community-dev/1.7)](https://core-ci.akeneo.com/blue/organizations/jenkins/akeneo%2Fpim-community-dev/branches) | [![1.6 status](https://core-ci.akeneo.com/buildStatus/icon?job=akeneo/pim-community-dev/1.6)](https://core-ci.akeneo.com/blue/organizations/jenkins/akeneo%2Fpim-community-dev/branches) | [![1.5 status](https://core-ci.akeneo.com/buildStatus/icon?job=akeneo/pim-community-dev/1.5)](https://core-ci.akeneo.com/blue/organizations/jenkins/akeneo%2Fpim-community-dev/branches) | [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/badges/quality-score.png?s=05ef3d5d2bbfae2f9a659060b21711d275f0c1ff)](https://scrutinizer-ci.com/g/akeneo/pim-community-dev/) | [![Crowdin](https://d322cqt584bo4o.cloudfront.net/akeneo/localized.svg)](https://crowdin.com/project/akeneo)
 
 Application Technical Information
 ---------------------------------
@@ -22,7 +24,7 @@ Installation instructions
 
 To install Akeneo PIM for a PIM project or for evaluation, please follow: https://docs.akeneo.com/1.7/developer_guide/installation/installation_ce_archive.html
 
-### Using Composer to create the project
+### Using Composer to create the project
 
 Alternatively, you can install Akeneo PIM with Composer, but please make sure that all requirements are fulfilled.
 
