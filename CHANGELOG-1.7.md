@@ -1,3 +1,20 @@
+# 1.7.1 (2017-03-23)
+
+## Bug Fixes
+
+- PIM-6085: Association import step is not working with custom column name.
+- PIM-6207: Correctly dismiss "Unsaved changes" message on system configuration.
+- PIM-6213: Remove ticks on published form
+- PIM-6242: Fix UI glitch on TWA completeness filter search field
+- PIM-6239: Translate scope with catalog locale
+- GITHUB-3435: Sort order products datagrid `Manage filter` options
+- PIM-6250: Fix attribute export.
+- GITHUB-5538: User without permissions access to import/export jobs through `Process tracker`
+- PIM-6258: Fix permissions issue for listing locales, associations, families to display correctly the pef
+- PIM-6253: Add missing permissions on entities of the API
+- PIM-6252: Fix Summernote (WYSIWYG) style
+- PIM-6249: Correctly load more results from select2 when needed in the View Selector
+
 # 1.7.0 (2017-03-14)
 
 ## Functional improvements
@@ -8,13 +25,13 @@
 - API-31: As Julia, I would like to list attribute options
 - API-126: Change attribute form "scope" input to a yes/no switch
 
-## Bug Fixes
+## Bug Fixes
 
 - PIM-6210: fix unused fields on import profiles
 - PIM-6203: Fix various design bugs
 - PIM-6200: Only the owner of a view can save and remove it.
 
-## BC breaks
+## BC breaks
 
 ### Methods
 
@@ -56,7 +73,7 @@
 
 # 1.7.0-ALPHA1 (2017-02-23)
 
-## Bug Fixes
+## Bug Fixes
 
 - PIM-6161: Fix Tooltips and errors rendering on Import/Export Builder
 - GITHUB-5038: Fixed job name visibility checker to also check additional config
@@ -110,7 +127,7 @@
 - `Pim\Component\Catalog\Model\AttributeInterface::setAttributeType()` has been deprecated in favor of `Pim\Component\Catalog\Model\AttributeInterface::setType()`
 - `Pim\Component\Catalog\Model\AttributeInterface::getAttributeType()` has been deprecated in favor of `Pim\Component\Catalog\Model\AttributeInterface::getType()`
 
-## BC breaks
+## BC breaks
 
 ### Bundles
 
@@ -153,6 +170,7 @@
 - Rename service `pim_serializer.normalizer.locale` to `pim_catalog.normalizer.standard.locale`
 - Rename service `pim_serializer.normalizer.label_translation` to `pim_catalog.normalizer.standard.translation`
 - Rename service `pim_serializer.normalizer.comment` to `pim_comment.normalizer.standard.comment`
+
 
 ### Classes
 
@@ -310,7 +328,7 @@
 - Change exception `\InvalidArgumentException` by `Akeneo\Component\StorageUtils\Exception\PropertyException` thrown by `Akeneo\Component\StorageUtils\Updater\ObjectUpdaterInterface:update()`
 - Change exception `Pim\Component\Catalog\Exception\InvalidArgumentException` and `\RuntimeException` by `Akeneo\Component\StorageUtils\Exception\PropertyException` thrown by `Pim\Component\Catalog\Updater\Copier\AttributeCopierInterface:copyAttributeData()`
 - Change exception `Pim\Component\Catalog\Exception\InvalidArgumentException` and `\RuntimeException` by `Akeneo\Component\StorageUtils\Exception\PropertyException` thrown by `Pim\Component\Catalog\Updater\Copier\FieldCopierInterface:copyFieldData()`
-- Replace arguments `$action, $type` by `$className` (string) on `Pim\Component\Catalog\Exception\InvalidArgumentException` 
+- Replace arguments `$action, $type` by `$className` (string) on `Pim\Component\Catalog\Exception\InvalidArgumentException`
 - Add exception `Akeneo\Component\StorageUtils\Exception\PropertyException` thrown by `Pim\Component\Catalog\Updater\Adder\AttributeAdderInterface:addAttributeData()`
 - Add exception `Akeneo\Component\StorageUtils\Exception\PropertyException` thrown by `Pim\Component\Catalog\Updater\Adder\FieldAdderInterface:addFieldData()`
 - Add exception `Akeneo\Component\StorageUtils\Exception\PropertyException` thrown by `Pim\Component\Catalog\Updater\Remover\AttributeRemoverInterface:removeAttributeData()`
