@@ -304,6 +304,7 @@ services:
     acme.job_parameters.form_configuration_provider.simple_csv_import:
         class: '%pim_import_export.job_parameters.form_configuration_provider.simple_csv_import.class%'
         arguments:
+            - '@pim_import_export.job_parameters.form_configuration_provider.simple_csv_import'
             -
                 - 'my_custom_import_job_name'
         tags:
