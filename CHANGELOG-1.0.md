@@ -33,9 +33,9 @@
 - Create check-requirements, assets and database/fixtures commands and simplify install one
 - Make documentation tested linking it to our behat scenarios
 
-## Bug fixes
+## Bug fixeste
 - Fixed non-updated values being displayed in the the audit history
-- Fixed attribute group form state not being saved
+- Fixed attribute tegroup form state not being saved
 - Do not display Id as an eligible attribute as label
 - Fixed select field missing for scopable simple/multi select attributes in the product form
 - Restored missing attributes translation
