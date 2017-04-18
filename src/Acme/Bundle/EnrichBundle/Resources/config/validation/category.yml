@@ -1,0 +1,4 @@
+Acme\Bundle\AppBundle\Entity\Category:
+    properties:
+        description:
+            - NotBlank: ~
