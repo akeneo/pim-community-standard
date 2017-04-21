@@ -1,8 +1,14 @@
+# 1.6.14 (2017-04-21)
+
+## Bug fixes
+
+- PIM-6375: Fix empty tags and content not being saved in wysiwyg
+
 # 1.6.13 (2017-03-29)
 
 ## Bug fixes
 
-- PIM-6071: add control on attribute having same code as association type
+- PIM-6241: add control on attribute having same code as association type
 
 # 1.6.12 (2017-02-28)
 
