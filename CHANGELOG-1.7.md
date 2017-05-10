@@ -1,3 +1,17 @@
+# 1.7.4 (2017-05-10)
+
+## Bug Fixes
+
+- PIM-6322: Add output for attribute option form validation
+- PIM-6378: Fix translations for channel labels in export builder
+- PIM-6377: Fix potential notice in price property formatter
+- PIM-6387: Fix HTTP code returned when the token is invalid or expired
+- PIM-6388: Fix parameters inversion in Pim\Component\Catalog\Builder\ProductBuilder::createProductValue
+- PIM-6314: Fix parameters inversion in Pim\Component\Catalog\Builder\ProductBuilder::createProductValue
+- PIM-6381: Fix `Delete` button is visible on channel create screen
+- PIM-6398: Fix Summernote (WYSIWYG) style (backport GITHUB-6101 into 1.7)
+- PIM-6402: Clean attribute properties according to new validation rules during migration
+
 # 1.7.3 (2017-04-14)
 
 ## Bug Fixes
@@ -6,6 +20,7 @@
 - PIM-6324: Fix invalid field focus after creating an attribute with missing data
 - PIM-6286: Fix User repository
 - GITHUB-6061: Fix menu display for big words
+- PIM-5709: Fix clicking date picker also opens date picker in compare panel
 
 # 1.7.2 (2017-04-07)
 
