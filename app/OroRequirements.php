@@ -40,12 +40,6 @@ class OroRequirements extends SymfonyRequirements
         );
 
         $this->addOroRequirement(
-            function_exists('mcrypt_encrypt'),
-            'mcrypt_encrypt() should be available',
-            'Install and enable the <strong>Mcrypt</strong> extension.'
-        );
-
-        $this->addOroRequirement(
             class_exists('Locale'),
             'intl extension should be available',
             'Install and enable the <strong>intl</strong> extension.'
@@ -180,15 +174,15 @@ class OroRequirements extends SymfonyRequirements
             case 'g':
             case 'gb':
                 $val *= 1024;
-                // no break
+            // no break
             case 'm':
             case 'mb':
                 $val *= 1024;
-                // no break
+            // no break
             case 'k':
             case 'kb':
                 $val *= 1024;
-                // no break
+            // no break
         }
 
         return (float) $val;

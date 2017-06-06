@@ -12,12 +12,16 @@ web_profiler:
 monolog:
     handlers:
         main:
-            type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
-            level: debug
+            type:     stream
+            path:     "%kernel.logs_dir%/%kernel.environment%.log"
+            level:    debug
+            channels: [!event]
         firephp:
-            type:  firephp
-            level: info
+            type:     firephp
+            level:    info
+        console:
+            type:     console
+            channels: [!event, !doctrine]
 
 oro_assetic:
     css_debug:      ~
@@ -25,6 +29,3 @@ oro_assetic:
 
 swiftmailer:
     disable_delivery: true
-
-parameters:
-    apy_js_form_validation.yui_js: false
