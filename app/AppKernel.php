@@ -76,7 +76,6 @@ class AppKernel extends Kernel
         return [
             // BAP overriden bundles
             new Pim\Bundle\FilterBundle\PimFilterBundle(),
-            new Pim\Bundle\JsFormValidationBundle\PimJsFormValidationBundle(),
             new Pim\Bundle\NavigationBundle\PimNavigationBundle(),
             new Pim\Bundle\UserBundle\PimUserBundle(),
 
@@ -109,12 +108,12 @@ class AppKernel extends Kernel
     protected function getPimDependenciesBundles()
     {
         return [
-            new APY\JsFormValidationBundle\APYJsFormValidationBundle(),
+            new Akeneo\Bundle\ElasticsearchBundle\AkeneoElasticsearchBundle(),
             new Akeneo\Bundle\BatchBundle\AkeneoBatchBundle(),
             new Akeneo\Bundle\BufferBundle\AkeneoBufferBundle(),
-            new Akeneo\Bundle\StorageUtilsBundle\AkeneoStorageUtilsBundle(),
             new Akeneo\Bundle\FileStorageBundle\AkeneoFileStorageBundle(),
             new Akeneo\Bundle\MeasureBundle\AkeneoMeasureBundle(),
+            new Akeneo\Bundle\StorageUtilsBundle\AkeneoStorageUtilsBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Oneup\FlysystemBundle\OneupFlysystemBundle(),
@@ -130,6 +129,7 @@ class AppKernel extends Kernel
     {
         return [
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
             // Uncomment the following line to use MongoDB implementation
             // new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
@@ -172,7 +172,6 @@ class AppKernel extends Kernel
             new Oro\Bundle\ConfigBundle\OroConfigBundle(),
             new Oro\Bundle\DataGridBundle\OroDataGridBundle(),
             new Oro\Bundle\FilterBundle\OroFilterBundle(),
-            new Oro\Bundle\NavigationBundle\OroNavigationBundle(),
             new Oro\Bundle\RequireJSBundle\OroRequireJSBundle(),
             new Oro\Bundle\SecurityBundle\OroSecurityBundle(),
             new Oro\Bundle\TranslationBundle\OroTranslationBundle(),

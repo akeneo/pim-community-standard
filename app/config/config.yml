@@ -45,6 +45,17 @@ assetic:
     filters:
         cssrewrite: ~
 
+doctrine_cache:
+    providers:
+        pim_apcu:
+            apcu: ~
+        pim_array:
+            array: ~
+        pim:
+            chain:
+                providers: [doctrine_cache.providers.pim_apcu, doctrine_cache.providers.pim_array]
+
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -70,6 +81,9 @@ doctrine:
                 charset:      UTF8
         types:
             datetime: Akeneo\Bundle\StorageUtilsBundle\Doctrine\DBAL\Types\UTCDateTimeType
+            native_json:
+                class: Akeneo\Bundle\StorageUtilsBundle\Doctrine\DBAL\Types\JsonType
+                commented: true
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
@@ -95,3 +109,5 @@ fos_oauth_server:
 pim_reference_data: ~
 
 akeneo_storage_utils: ~
+
+akeneo_elasticsearch: ~
