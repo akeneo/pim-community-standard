@@ -19,3 +19,8 @@ vendor
 bin
 composer.phar
 composer.lock
+
+node_modules
+web/dist/*
+web/cache/*
+npm-debug.log
