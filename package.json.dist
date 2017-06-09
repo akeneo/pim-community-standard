@@ -7,5 +7,5 @@
         "install": "npm install vendor/akeneo/pim-community-dev",
         "webpack": "webpack --display-error-details --config vendor/akeneo/pim-community-dev/webpack.config.js --progress --display-modules",
         "webpack-watch": "webpack --progress --config vendor/akeneo/pim-community-dev/webpack.config.js --watch"
-  },
+  }
 }
