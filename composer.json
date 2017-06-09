@@ -22,8 +22,8 @@
         "akeneo/pim-community-dev": "1.8.x-dev@dev"
     },
     "require-dev": {
-        "doctrine/migrations": "1.2.2",
-        "doctrine/doctrine-migrations-bundle": "1.1.0"
+        "doctrine/migrations": "1.5.0",
+        "doctrine/doctrine-migrations-bundle": "1.2.1"
     },
     "repositories": [
         {

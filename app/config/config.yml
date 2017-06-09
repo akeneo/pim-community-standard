@@ -70,6 +70,9 @@ doctrine:
                 user:         "%database_user%"
                 password:     "%database_password%"
                 charset:      UTF8
+                server_version: 5.7
+                mapping_types:
+                    json: string
             session:
                 driver:       "%database_driver%"
                 host:         "%database_host%"
@@ -110,4 +113,7 @@ pim_reference_data: ~
 
 akeneo_storage_utils: ~
 
-akeneo_elasticsearch: ~
+akeneo_elasticsearch:
+    index_name: "%index_name%"
+    hosts: "%index_hosts%"
+    configuration_files: "%elasticsearch_index_configuration_files%"
