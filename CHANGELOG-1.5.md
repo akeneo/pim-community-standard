@@ -1,3 +1,9 @@
+# 1.5.24 (2017-06-28)
+
+## Bug fixes
+
+- PIM-6462: Fix a memory leak when import products with files in ODM
+
 # 1.5.23 (2017-06-23)
 
 ## Bug fixes
