@@ -1,15 +1,22 @@
+# 1.6.17 (2017-06-30)
+
+## Bug fixes
+
+- PIM-6473: Fix not visible attributes in the attribute popin on export builder (firefox only)
+- PIM-6433: Fix product import reference data multi with duplicate code options
+
 # 1.6.16 (2017-05-24)
 
 ## Bug fixes
 
 - PIM-6418: Fix URL too long in variant group datagrid
+- GITHUB-5451: Update akeneo_batch.yml sender email, cheers @julienquetil!
 
 # 1.6.15 (2017-05-18)
 
 ## Bug fixes
 
 - PIM-6376: Fix slow MongoDB queries when editing attribute options
-- GITHUB-5451: Update akeneo_batch.yml sender email, cheers @julienquetil!
 
 # 1.6.14 (2017-04-21)
 
