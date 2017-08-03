@@ -1,3 +1,11 @@
+# 1.7.7 (2017-08-03)
+
+## Bug Fixes
+
+- PIM-6525: Fix issue with select attribute type which never open in PEF.
+- PIM-6420: Fix simple and multi select auto sorting.
+- PIM-6620: Fix simple select attribute option sorting in products grid.
+
 # 1.7.6 (2017-06-30)
 
 ## Bug Fixes
