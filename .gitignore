@@ -16,11 +16,26 @@ app/file_storage/*
 app/bootstrap.php.cache
 build/
 vendor
-bin
+/bin/*
+!/bin/docker
+/bin/docker/*
+!/bin/docker/pim-initialize.sh
+!/bin/docker/pim-front.sh
+!/bin/merge-coverage
+!bin/console
 composer.phar
 composer.lock
+
+var/cache/*
+var/logs/*
+var/bootstrap.php.cache
 
 node_modules
 web/dist/*
 web/cache/*
 npm-debug.log
+
+/docker/*
+!/docker/akeneo.conf
+!/docker/httpd.conf
+docker-compose.yml

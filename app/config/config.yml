@@ -7,7 +7,7 @@ imports:
 framework:
     #esi:             ~
     translator:      { fallback: en }
-    secret:          %secret%
+    secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: "%kernel.debug%"
@@ -16,10 +16,8 @@ framework:
     validation:
         enable_annotations: true
         enabled: true
-        api: 2.5
     templating:      { engines: ['twig', 'php'] } #assets_version: SomeVersionScheme
-    default_locale:           "%locale%"
-    trusted_proxies:          ~
+    default_locale:  "%locale%"
     session:
         name:                 BAPID
         handler_id:           session.handler.pdo
@@ -36,7 +34,7 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     globals:
-        uservoice_key: %uservoice_key%
+        uservoice_key: "%uservoice_key%"
 
 # Assetic Configuration
 assetic:
