@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
 <phpunit
-    backupGlobals               = "false"
-    backupStaticAttributes      = "false"
-    colors                      = "true"
-    convertErrorsToExceptions   = "true"
-    convertNoticesToExceptions  = "true"
-    convertWarningsToExceptions = "true"
-    processIsolation            = "false"
-    stopOnFailure               = "false"
-    syntaxCheck                 = "false"
-    bootstrap                   = "bootstrap.php.cache" >
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="true"
+    stopOnFailure="false"
+    syntaxCheck="false"
+    bootstrap="./autoload.php">
+
+    <php>
+        <ini name="date.timezone" value="Europe/Paris"/>
+        <ini name="intl.default_locale" value="en"/>
+        <ini name="intl.error_level" value="0"/>
+        <ini name="memory_limit" value="-1"/>
+        <ini name="zend.enable_gc" value="1"/>
+    </php>
 
     <testsuites>
-        <testsuite name="Project Test Suite">
-            <directory>../src/*/*Bundle/Tests</directory>
-            <directory>../src/*/Bundle/*Bundle/Tests</directory>
+
+        <!-- Legacy PIM phpunit unit tests -->
+        <testsuite name="PIM_Unit_Test">
+            <directory suffix="Test.php">../src/Pim/Bundle/*Bundle/Tests/Unit</directory>
+            <directory suffix="Test.php">../src/Pim/Bundle/*Bundle/tests/Unit</directory>
+        </testsuite>
+
+        <!-- Complete suite for PIM integration tests -->
+        <testsuite name="PIM_Integration_Test">
+            <file></file>
         </testsuite>
     </testsuites>
-
-    <!--
-    <php>
-        <server name="KERNEL_DIR" value="/path/to/your/app/" />
-    </php>
-    -->
-
-    <filter>
-        <whitelist>
-            <directory>../src</directory>
-            <exclude>
-                <directory>../src/*/*Bundle/Resources</directory>
-                <directory>../src/*/*Bundle/Tests</directory>
-                <directory>../src/*/Bundle/*Bundle/Resources</directory>
-                <directory>../src/*/Bundle/*Bundle/Tests</directory>
-            </exclude>
-        </whitelist>
-    </filter>
-
 </phpunit>

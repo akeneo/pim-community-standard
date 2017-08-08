@@ -1,0 +1,64 @@
+version: '2'
+
+services:
+  fpm:
+    image: akeneo/fpm:php-7.1
+    depends_on:
+      - mysql
+      - elasticsearch
+    environment:
+      COMPOSER_HOME: /home/docker/.composer
+    user: docker
+    volumes:
+      - ./:/srv/pim
+      - ~/.config/composer:/home/docker/.composer
+    working_dir: /srv/pim
+    networks:
+      - akeneo
+
+  node:
+    image: node:8
+    user: node
+    volumes:
+      - ./:/srv/pim
+      - ~/.npm:/home/node/.npm
+    working_dir: /srv/pim
+    networks:
+      - akeneo
+
+  httpd:
+    image: httpd:2.4
+    depends_on:
+      - fpm
+    ports:
+      - '8080:80'
+    volumes:
+      - ./:/srv/pim:ro
+      - ./docker/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./docker/akeneo.conf:/usr/local/apache2/conf/vhost.conf
+    networks:
+      - akeneo
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=akeneo_pim
+      - MYSQL_PASSWORD=akeneo_pim
+      - MYSQL_DATABASE=akeneo_pim
+    ports:
+      - '3306:3306'
+    networks:
+      - akeneo
+
+  elasticsearch:
+    image: elasticsearch:5
+    environment:
+      ES_JAVA_OPTS: '-Xms256m -Xmx256m'
+    ports:
+      - '9200:9200'
+    networks:
+      - akeneo
+
+networks:
+  akeneo: ~
