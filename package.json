@@ -2,8 +2,7 @@
   "name": "pim-community-standard",
   "version": "1.8.0",
   "description": "The \"Akeneo Community Standard Edition\" distribution",
-  "dependencies": {
-  },
+  "dependencies": {},
   "scripts": {
     "install": "npm install vendor/akeneo/pim-community-dev",
     "webpack": "webpack --display-error-details --config vendor/akeneo/pim-community-dev/webpack.config.js --progress --display-modules",
