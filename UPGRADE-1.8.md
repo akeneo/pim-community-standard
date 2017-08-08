@@ -193,25 +193,10 @@ find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_reference_data\.product_val
 1. Install nodejs (tested with >=6.11.0 until 8.2.1) and npm 5.0.3, you can follow the instructions here - https://nodejs.org/en/download/package-manager/ or install with homebrew - `brew install node@6` should install both these versions.
 2. Run `php bin/console pim:installer:dump-require-paths`
 3. Run `php bin/console assets:install --symlink`
-4. Create a file in your project root called `package.json` with the following contents:
-
-```json
-{
-  "name": "your-project-name",
-  "version": "1.0.0",
-  "description": "your-project-description",
-  "scripts": {
-    "install": "npm install vendor/akeneo/pim-community-dev",
-    "webpack": "webpack --display-error-details --config vendor/akeneo/pim-community-dev/webpack.config.js --progress --display-modules",
-    "webpack-watch": "webpack --progress --config vendor/akeneo/pim-community-dev/webpack.config.js --watch"
-  }
-}
-```
-
-5. Run `npm install` inside your project root
-6. Run `npm run webpack`
-7. Run `php bin/console cache:clear`
-8. Add to your .gitignore the following lines:
+4. Run `npm install` inside your project root
+5. Run `npm run webpack`
+6. Run `php bin/console cache:clear`
+7. Add to your .gitignore the following lines:
 
 ```
   node_modules
