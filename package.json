@@ -3,7 +3,6 @@
   "version": "1.8.0",
   "description": "The \"Akeneo Community Standard Edition\" distribution",
   "dependencies": {
-    "pim-community-dev": "file:vendor/akeneo/pim-community-dev"
   },
   "scripts": {
     "install": "npm install vendor/akeneo/pim-community-dev",
