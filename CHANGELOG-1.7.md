@@ -1,3 +1,15 @@
+# 1.7.8 (2017-08-22)
+
+## Bug Fixes
+
+- PIM-6568: Fix import items invalid data that were no longer saved
+- PIM-6744: Fix field configuration of xlsx product import job edit form
+- PIM-6757: Fix scalability issue on product deletion
+
+## Improvements
+
+- GITHUB-6570: Make Attribute option labels longer, cheers @fitn!
+
 # 1.7.7 (2017-08-03)
 
 ## Bug Fixes
