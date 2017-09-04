@@ -4,7 +4,7 @@
   "description": "The \"Akeneo Community Standard Edition\" distribution",
   "scripts": {
     "install": "node webpack/install.js",
-    "webpack": "NODE_PATH=node_modules webpack --config vendor/akeneo/pim-community-dev/webpack.config.js",
+    "webpack": "NODE_PATH=node_modules webpack --config vendor/akeneo/pim-community-dev/webpack.config.js --env=prod",
     "webpack-watch": "NODE_PATH=node_modules webpack --progress --config vendor/akeneo/pim-community-dev/webpack.config.js --watch"
   },
   "devDependencies": {
