@@ -3,10 +3,8 @@ web/media/*
 web/css/*
 web/js/*
 app/archive/*
-app/cache/*
 app/config/parameters.yml
 app/config/*_local.yml
-app/logs/*
 app/import/*
 app/export/*
 app/emails/*
@@ -19,10 +17,10 @@ vendor
 /bin/*
 !/bin/docker
 /bin/docker/*
-!/bin/docker/pim-initialize.sh
+!/bin/docker/pim-dependencies.sh
 !/bin/docker/pim-front.sh
-!/bin/merge-coverage
-!bin/console
+!/bin/docker/pim-initialize.sh
+!/bin/console
 composer.phar
 composer.lock
 
