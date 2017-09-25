@@ -1,6 +1,185 @@
-# 1.6.x
+# 1.6.19 (2017-09-05)
+
+# 1.6.18 (2017-07-17)
 
 ## Bug fixes
+
+- PIM-6529: allow more than 100 elements to be exported with YAML export
+- PIM-6526: Prevent MySQL exclusive locks on completeness calculation requests
+
+# 1.6.17 (2017-06-30)
+
+## Bug fixes
+
+- PIM-6473: Fix not visible attributes in the attribute popin on export builder (firefox only)
+- PIM-6433: Fix product import reference data multi with duplicate code options
+
+# 1.6.16 (2017-05-24)
+
+## Bug fixes
+
+- PIM-6418: Fix URL too long in variant group datagrid
+- GITHUB-5451: Update akeneo_batch.yml sender email, cheers @julienquetil!
+
+# 1.6.15 (2017-05-18)
+
+## Bug fixes
+
+- PIM-6376: Fix slow MongoDB queries when editing attribute options
+
+# 1.6.14 (2017-04-21)
+
+## Bug fixes
+
+- PIM-6375: Fix empty tags and content not being saved in wysiwyg
+
+# 1.6.13 (2017-03-29)
+
+## Bug fixes
+
+- PIM-6241: add control on attribute having same code as association type
+
+# 1.6.12 (2017-02-28)
+
+## Bug fixes
+
+- PIM-6162: Fix families rendering when editing product export
+
+## Improvements
+
+- TIP-500: Dispatch events during installation process
+
+# 1.6.11 (2017-02-14)
+
+## Improvements
+
+- PIM-6149: Remove version number displayed on login page
+- PIM-6157: Improve product exports speed
+- PIM-6159: Fix number comparator when removing numeric value in the PEF
+
+## Bug fixes
+
+- PIM-6152: Fix fatal error on import in case of wrong column count
+
+# 1.6.10 (2017-02-02)
+
+## Bug fixes
+
+- PIM-6113: Fix wrong context switch on association groups
+- PIM-6062: Fix potential Unix commands injection
+- PIM-5085: Fix update of the normalized data on family update (mongodb)
+- PIM-6080: Fix simple and multi select removal on product export builder
+- PIM-6124: Importing family with missing requirement column does not remove associated requirements anymore
+- PIM-6140: Fix 'equals to' filters on job tracker page
+
+# 1.6.9 (2017-01-17)
+
+## Bug fixes
+
+- PIM-6110: Saving a product value clears the saved associations
+- PIM-6086: Command that removes obsolete relations and migrates normalizedData for MongoDB documents.
+
+# 1.6.8 (2017-01-05)
+
+## Bug fixes
+
+- PIM-6033: Fix validation issue when you add a blank attribute option line
+- PIM-6042: Successfully import product associations without removing already existing associations when option "compare values" is set to true
+- PIM-6041: Fix wrong conversion units output for channel export profiles csv and xlsx
+- PIM-6047: Do not export conversion units of channels if no conversion is set
+- PIM-6038: Fix product imports that do not change the product update date correctly (mongodb)
+
+# 1.6.7 (2016-12-20)
+
+## Bug fixes
+
+- PIM-6031: Deleted families are still visible on the product grid
+- PIM-6025: Fix a bug that prevents to completely change the channel's locales
+
+# 1.6.6 (2016-12-08)
+
+## Bug fixes
+
+- PIM-6027: Fix export builder filter on category with code as integer
+- PIM-6018: Prevent the import of an attribute identifier if not usable as grid filter
+- PIM-6022: Fix shell command injection in mass-edit
+
+# 1.6.5 (2016-11-25)
+
+## Bug fixes
+
+- PIM-5994: fix duplication of attributes in the product export
+- PIM-6000: Fix migration from 1.5 on quick exports
+- #5198: Fix issue with the export builder time condition, cheers @Schwierig
+- #5192: Add upgrade script for missing export job, cheers @masmrlar!
+- PIM-6017: Fix attribute options on localizable and scopable attributes multi select
+
+# 1.6.4 (2016-10-20)
+
+## Bug fixes
+
+- #4987: Fix hardcoded image URLs in the dashboard, cheers @julienanquetil!
+- PIM-5982: Missing job instance parameters when using custom configuration in command line
+- PIM-5977: Fix missing products in the variant group edit form
+- PIM-5893: Fix products and assets category display issue on Firefox
+- PIM-5536: Fix search of an attribute by its code
+- #5129: Remove useless "league/flysystem-sftp" dependency, if you use "League\Flysystem\Sftp\SftpAdapter" in your own project code, please add this dependency in the composer.json of your project, cheers @mathewrapid!
+
+# 1.6.3 (2016-09-22)
+
+## Bug fixes
+
+- PIM-5947: Add default file path in new export jobs
+- PIM-5964: Index category labels by locale code in channel normalization
+- PIM-5968: Fix default translation for attribute options when value is null
+- PIM-5897: Fix the does not contain filter to filter on product without product values
+- PIM-5566: Fix version number displayed as decimals
+- PIM-5976: Fix adding products to a group (regression following variant group ajaxification)
+- PIM-5975 & #5016: Fix attribute groups order not kept in product edit form, cheers @julienanquetil!
+- #4994: Fix grid filter selection in the user profile, cheers @julienanquetil!
+- PIM-5978: Fix missing currencies
+- #4993: Fix XLSX product import with numeric value for simpleselect codes, cheers @julienanquetil!
+
+## Functionnal improvements
+
+- PIM-5782: User can now change the attribute order on the product export builder
+
+# 1.6.2 (2016-09-02)
+
+## Bug fixes
+
+- PIM-5958: Fix tooltip for the field "attributes" in the tab "Content" of an export profile
+- PIM-5963: Fix installation on MySQL 5.7
+
+# 1.6.1 (2016-09-01)
+
+## Bug fixes
+
+- PIM-5935: Fix view all button in dashboard
+- PIM-5945: Fix tabs on user profile, DOM was not well structured
+- TIP-568: Detach version entity to improve performances on products import
+- PIM-5940: Add a flash message in case of product export builder error
+- PIM-5922: Fix the scope switcher in variant group page grid
+- PIM-5959: Change wording of XLSX to Excel on mass actions
+- PIM-5938: Fix typos in import/export tooltips
+- PIM-5966: Fix style about category filter on product export builder
+- PIM-5952: Add the information "No condition on families" in the family field of the Export Builder
+- PIM-5965: Fix the display order of the default product export filters
+
+# 1.6.0 (2016-08-30)
+
+## Bug fixes
+
+# 1.6.0-RC1 (2016-08-29)
+
+## Bug fixes
+
+- #4879: Fix collision when using several popins on the same page, cheers @dimitri-koenig!
+- PIM-5928: Export products without media
+
+## Functional improvements
+
+- PIM-5701: Add CSV and XLSX import jobs for currencies, channels, locales, group types and attribute groups
 
 # 1.6.0-ALPHA2 (2016-08-23)
 
@@ -16,6 +195,9 @@
 - PIM-5854: The family code is not displayed at all in the product grid when no family labels
 - PIM-5888: Fix an outline glitch on some buttons
 - PIM-5869: Allow any codes to be used for attributes
+- PIM-5915: Fix the import of localizable and scopable variant group attributes
+- PIM-5852: Fix sort order overwriting when importing existing attribute options without sort order column
+- PIM-5852: Fix sort order overwriting when importing existing attribute options without sort order column
 
 ## Functional improvements
 
@@ -54,6 +236,7 @@
 - PIM-5109: As Peter, I would like to choose the products attributes to export
 - PIM-5634: As Peter, I would like to filter on a list attribute to export products
 - PIM-5635: As Peter, I would like to filter on all attributes types to export products
+- PIM-5798: As Peter, I would like to manage permission on "Content" tab
 
 ### User Productivity
 
@@ -107,12 +290,13 @@
 
 ## BC breaks
 
+- Change constructor of `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\GroupSaver`. Add `Akeneo\Component\StorageUtils\Detacher\BulkObjectDetacherInterface`.
 - Remove services `pim_serializer.normalizer.flat.*`, `pim_serializer.denormalizer.flat.*` and `pim_reference_data.denormalizer.flat.`
 - Change constructor of `Pim\Component\Catalog\Normalizer\Structured\ProductValueNormalizer`. Remove argument `Pim\Component\Catalog\Localization\Localizer\LocalizerRegistryInterface`
 - Add method `convertToLocalizedFormats` to `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
 - Remove `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductToFlatArrayProcessor`. Please use `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductProcessor`
-- Change constructor or `Pim\Bundle\EnrichBundle\Normalizer\GroupNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
-- Change constructor or `Pim\Bundle\EnrichBundle\Normalizer\ProductNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
+- Change constructor of `Pim\Bundle\EnrichBundle\Normalizer\GroupNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
+- Change constructor of `Pim\Bundle\EnrichBundle\Normalizer\ProductNormalizer`. Add `Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface`
 - Change constructor of `Pim\Component\Connector\Processor\Normalization\VariantGroupProcessor`. Remove second argument `Symfony\Component\Serializer\Normalizer\DenormalizerInterface` and replace fourth and fifth argument by `Pim\Component\Connector\Processor\BulkMediaFetcher` and `Akeneo\Component\StorageUtils\Updater\ObjectUpdaterInterface`
 - Move `Pim\Bundle\BaseConnectorBundle\DependencyInjection\Compiler\RegisterArchiversPass` to `Pim\Bundle\ConnectorBundle\DependencyInjection\Compiler\RegisterArchiversPass`
 - Move `Pim\Bundle\BaseConnectorBundle\EventListener\InvalidItemsCollector` to `Pim\Bundle\ConnectorBundle\EventListener\InvalidItemsCollector`
@@ -150,7 +334,7 @@
 - Remove properties editTemplate, showTemplate from `src\Akeneo\Component\Batch\Job\Job`.
 - Remove methods setShowTemplate, setEditTemplate from `src\Akeneo\Component\Batch\Job\Job`.
 - Change constructor of `Pim\Bundle\ImportExportBundle\Controller\JobProfileController`. Add `Akeneo\Bundle\BatchBundle\Connector\JobTemplateProviderInterface`
-- Change constructor of `Pim\Component\Connector\Writer\File\Csv\Writer` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher` 
+- Change constructor of `Pim\Component\Connector\Writer\File\Csv\Writer` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher`
 - Change constructor of `Pim\Component\Connector\Writer\File\Csv\ProductWriter` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher`, `Pim\Component\Connector\ArrayConverter\ArrayConverterInterface`, `Pim\Component\Catalog\Repository\AttributeRepositoryInterface`, `Pim\Component\Connector\Writer\File\FileExporterPathGeneratorInterface` and array `$mediaAttributeTypes`
 - Change constructor of `Pim\Component\Connector\Writer\File\Csv\VariantGroupWriter` . Add parameter `Pim\Component\Connector\Writer\File\FlatItemBufferFlusher`, `Pim\Component\Connector\ArrayConverter\ArrayConverterInterface`, `Pim\Component\Catalog\Repository\AttributeRepositoryInterface`, `Pim\Component\Connector\Writer\File\FileExporterPathGeneratorInterface` and array `$mediaAttributeTypes`
 - Remove method `setAvailableLocales` in `Pim\Component\Catalog\Model\AttributeInterface` and `Pim\Component\Catalog\Model\AbstractAttribute`
@@ -261,7 +445,7 @@
 - Change constructor of `Pim\Bundle\CatalogBundle\Factory\FamilyFactory` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\CatalogBundle\Manager\ChannelManager` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductToFlatArrayProcessor` replace `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
-- Change constructor of `Pim\Bundle\EnrichBundle\Controller\CompletenessController` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
+- Change constructor of `Pim\Bundle\EnrichBundle\Controller\CompletenessController` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`, add `Doctrine\Common\Persistence\ObjectManager` and the parameter `pim_catalog_product_storage_driver` (string).
 - Change constructor of `Pim\Bundle\EnrichBundle\Controller\FamilyController` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\EnrichBundle\Form\Subscriber\AddAttributeRequirementsSubscriber` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
 - Change constructor of `Pim\Bundle\EnrichBundle\Form\Type\ProductTemplateType` replace argument `Pim\Bundle\CatalogBundle\Manager\ChannelManager` by `Pim\Component\Catalog\Repository\ChannelRepositoryInterface`.
@@ -474,3 +658,4 @@
 - Remove argument `Akeneo\Component\StorageUtils\Saver\SavingOptionsResolverInterface` from `CatalogBundle\Doctrine\Common\Saver\ProductSaver`
 - Remove argument `Akeneo\Component\StorageUtils\Saver\SavingOptionsResolverInterface` from `CatalogBundle\Doctrine\MongoDBODM\Saver\ProductSaver`
 - Remove class `Pim\Bundle\CatalogBundle\Doctrine\Common\Saver\ProductSavingOptionsResolver`
+- Change constructor of `Pim\Bundle\ImportExportBundle\Form\Type\JobInstanceFormType`, add `Oro\Bundle\SecurityBundle\SecurityFacade` as last parameter
