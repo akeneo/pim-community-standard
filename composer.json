@@ -20,7 +20,7 @@
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
     "require": {
-        "akeneo/pim-community-dev": "2.0.x-dev@dev"
+        "akeneo/pim-community-dev": "2.0.0-ALPHA1@alpha"
     },
     "require-dev": {
         "doctrine/migrations": "1.5.0",
@@ -75,7 +75,7 @@
             }
         },
         "branch-alias": {
-            "dev-master": "1.8.x-dev",
+            "dev-master": "2.0.x-dev",
             "dev-1.7": "1.7.x-dev",
             "dev-1.6": "1.6.x-dev",
             "dev-1.5": "1.5.x-dev",
