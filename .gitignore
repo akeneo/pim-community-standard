@@ -15,6 +15,14 @@ app/file_storage/*
 app/bootstrap.php.cache
 build/
 vendor
-bin
+!bin
+bin/*
+!bin/docker/pim-dependencies.sh
+!bin/docker/pim-front.sh
+!bin/docker/pim-initialize.sh
+!docker
+docker/*
+!docker/akeneo.conf
 composer.phar
 composer.lock
+docker-compose.yml
