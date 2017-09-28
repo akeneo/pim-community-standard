@@ -1,6 +1,8 @@
+# 2.0.0-BETA1 (2017-09-28)
+
 # 2.0.0-ALPHA1 (2017-09-25)
 
-## Better manage products with variants!
+## Better manage products with variants!
 
 - PIM-6330: Family variant - As Julia I would like to import a new variant of a family
 - PIM-6331: Family variant - As Julia, I would like to export a family variant
@@ -8,31 +10,28 @@
 - PIM-6335: Import - As Julia, I would like to import variant products from my ERP
 - PIM-6336: Export - As Julia, I would like to export variant products
 - PIM-6338: Product model - As Julia I would like to enrich a product model
+- PIM-6347: Variant product - As Julia, I would like to have a global completeness on a variant product
+- PIM-6348: Variant product - As Julia, I would like to navigate to my product model and variant products
 - PIM-6352: Grid - As Julia, I would like to display the products models in the grid
 - PIM-6353: Grid - As Julia, I would like to search products with variants on custom attributes
 - PIM-6360: Bulk actions - As Julia, I would like to edit some products models sequentially
-- PIM-6410: POC Products models
-- PIM-6411: POC Family variant
 - PIM-6441: Fixtures catalog
-- PIM-6442: TECH - Extract values behavior from product
+- PIM-6442: Extract values behavior from product
 - PIM-6444: No variant group - Remove the entry menu + the screens
-- PIM-6445: TECH - Family variant design
-- PIM-6446: TECH - Family variant CRUD API
-- PIM-6447: TECH - Product model design
-- PIM-6448: TECH - Product model CRUD API
-- PIM-6454: POC Search products and products models
 - PIM-6455: Family variant - As Julia, I would like to update a family variant by import
-- PIM-6479: TECH - Rename ProductValue in Value
 - PIM-6669: Product model - As Julia I would like to enrich a sub product model
 - PIM-6674: No bulk actions managed with products models
 - PIM-6732: No variant group - Remove the bulk operation "Add to a variant group"
 - PIM-6734: No variant group - Remove the CE permissions for variant groups
 - PIM-6735: No variant group - Remove the variant groups exports and imports
 - PIM-6737: Export - As Julia, I would like to export products models
+- PIM-6741: Product model - Add product model code in the PEF header
 - PIM-6742: Import - As Julia, I would like to update products models by import from my ERP
 - PIM-6743: Import - As Julia I would like to update variant products from my ERP
 - PIM-6768: Grid - ID column with "product model code" or "product identifier"
-- PIM-6801: Settings - As Julia I would like to create an attribute
+- PIM-6793: Grid - Different display for products models
+- PIM-6801: Settings - As Julia I would like to create an attribute with the code "parent"
+- PIM-6818: No mass delete with product models
 
 ## Better UI\UX!
 
@@ -101,49 +100,13 @@
 - PIM-6758: PEF - As Julia, I would like to see the missing required attributes in the PEF header
 - PIM-6778: PEF HEADER - As Julia, I would like to view the identifier in the PEF header
 
-## New API End Points 
+## New API endpoints 
 
-- API-362: Push job executions into a queue that will be consumed by a daemon
-- API-349: Apply permissions on published products export
-- API-298: Update partially a list of products with EE permissions	
-- API-358: As Philips, I want to know how to use the new draft/proposal endpoints
-- API-354: As Philip, I want to find the documentation of the published product endpoints
-- API-299: I want to be able to get a product and post/patch it back again
-- API-304: Update partially a product that is not classified at all
-- API-363: Add a parameter "is_user_authenticated" in the job parameters to apply user permissions in a batch
-- API-348: As Philip, I want to be able to get pages of published products/products
-- API-225: Update partially a product whose code does not exist
-- API-223: Try to update partially a product that can only be viewed through categories
-- API-359: Configure notification user of a job in the raw_parameters instead of user column
-- API-91: Update partially a product that can only be edited through categories
-- API-70: Create a product with EE permissions
-- API-297: Post a media with EE permissions
 - API-347: [Migration script] Label is now mandatory when generating clientId via cmd line
-- API-334: Execution jobs should have all the information to be launched in background
 - API-351: As Peter/Philip, I want that API connection revocation takes effect instantly
-- API-350: API connection Style
 - API-324: Label is now mandatory when generating client Id via command line
-- API-72: Update partially a product that is owned through categories
-- API-340: In products/published products, use of an attribute which is not viewable
-- API-260: Get a filtered list of published products
 - API-335: Refactor the ProductController in ApiBundle
-- API-259: Get a list of published products
-- API-314: As Peter, I want to revoke one given API connection
-- API-311: As Peter, I want to create an API connection
-- API-320: As Peter, I want to restrict who can view/create/revoke API connections
-- API-312: As Peter, I want to list all my API connections
-- API-303: Apply permissions on mass product deletion
-- API-296: Transform behat tests on product query builder into integration tests
-- API-247: Apply permissions on products export
-- API-331: As a devops, I should be able to configure where files generated by jobs are archived
-- API-224: Try to update partially a product that cannot be viewed through categories
-- API-228: Submit a draft for approval
-- API-74: Delete a product with EE permissions
-- API-213: Filter product and product values with EE permissions
-- API-71: Get a single product with EE permissions
-- API-69: Get a list of products with EE permissions
-- API-240: Know the status of a working copy
-- API-229: Get a draft
+- API-312: Add UI to manage (create/revoke) API connections
 - API-218: Get the list of measure families with their respecting units
 - API-252: Get a single measure family
 - API-161: Update partially a list of channels
@@ -165,7 +128,6 @@
 ## Other Functional Improvements
 
 - API-324: Convert label option to mandatory argument in command `pim:oauth-server:create-client`
-- API-312: Add UI to manage (create/revoke) API connections
 - TIP-718: Update group types form
 - PIM-6291: Adds attribute used as the main picture in the UI for each family (attribute_as_image)
 - GITHUB-4877: Update some tooltips messages of the export builder, Cheers @Milie44!
@@ -175,8 +137,6 @@
 
 ## Technical improvements
 
-- PIM-6445: Family variant design
-- PIM-6446: Family variant CRUD API
 - TIP-711: Rework job execution reporting page with the new PEF architecture
 - TIP-724: Refactoring of the 'Settings\Association types' index screen using 'pim\common\grid'
 - TIP-725: Generalization of the refactoring made in the TIP-724 for all screen containing a simple grid
@@ -190,6 +150,10 @@
 - API-359: Move notified user of a job into the configuration parameters of the job
 - TIP-733: Replace `oro/datafilter-builder` with `filters-list` and `filters-button`
 - PIM-6645: removed all backend related sequential edit classes. It's now managed in the frontend.
+- API-331: As a devops, I should be able to configure where files generated by jobs are archived
+- API-334: Execution jobs should have all the information to be launched in background
+- API-362: Push job executions into a queue that will be consumed by a daemon
+- API-359: Configure notification user of a job in the raw_parameters instead of user column
 
 ## Remove MongoDB product storage
 
@@ -522,7 +486,7 @@
 - Change the constructor of `Pim\Component\Catalog\Manager\CompletenessManager` to remove the completeness class.
 - Change the constructor of `Pim\Component\Catalog\Updater\FamilyUpdater` to add `Akeneo\Component\Localization\TranslatableUpdater`
 - Change the constructor of `Pim\Component\Catalog\Updater\AttributeUpdater` to add `Akeneo\Component\Localization\TranslatableUpdater`
-- Change the constructor of `Akeneo\Bundle\BatchBundle\Launcher\SimpleJobLauncher` to add `kernel.logs_dir`
+- Change the constructor of `Akeneo\Bundle\BatchBundle\Launcher\SimpleJobLauncher` to add `logDir` (string)
 - Change the constructor of `Pim\Bundle\EnrichBundle\Twig\AttributeExtension` to remove `pim_enrich.attribute_icons`
 - Remove OroNotificationBundle
 - Remove createAction from `Pim\Bundle\EnrichBundle/Controller/AssociationTypeController.php`
