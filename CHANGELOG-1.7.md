@@ -1,3 +1,10 @@
+# 1.7.12 (2017-10-25)
+
+## Bug Fixes
+
+PIM-6939: fix sort order on export
+SDS-1772: Removes query cache use on PQB to avoid memory leak
+
 # 1.7.11 (2017-10-16)
 
 ## Bug Fixes
