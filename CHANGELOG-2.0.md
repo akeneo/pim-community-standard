@@ -1,3 +1,38 @@
+# 2.0.6 (2017-11-03)
+
+## Better manage products with variants!
+
+- PIM-6354: Adds product models during quick exports.
+- PIM-6449: Adds a sub product model to a product model.
+- PIM-6450: Adds a variant product to a product model.
+
+## Bug fixes
+
+- PIM-6948: Use search after method for products and product models indexing instead of offset limit
+- PIM-6922: Fix sort order on attribute groups
+- PIM-6880: Remove the old variation asset icon
+
+## Improvements
+
+- TIP-824: Increase CLI products indexing performance by 20%
+
+## BC breaks
+
+- Rename `Pim\Bundle\EnrichBundle\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductQuickExport` to `ProductAndProductModelQuickExport`
+- Rename `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductProcessor` to `ProductAndProductModelProcessor`
+- Updates quick export configurations to remove `filePath` and add `filePathProduct` and `filePathProductModel`.
+- Adds `Pim\Component\Catalog\Repository\ProductRepositoryInterface.php::searchAfter()` and `Pim\Component\Catalog\Repository\ProductModelRepositoryInterface::searchAfter()` methods
+- Deletes `Pim\Component\Catalog\Repository\ProductRepositoryInterface.php::findAllWithOffsetAndSize()` and `Pim\Component\Catalog\Repository\ProductModelRepositoryInterface::findRootProductModelsWithOffsetAndSize()` methods.
+- Change the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductController` to add `Pim\Component\Catalog\Builder\ProductBuilderInterface`.
+
+## Update jobs
+
+IMPORTANT: In order to use the new quick exports, please execute `bin/console doctrine:migrations:migrate` to migrate your configurations.
+
+## Bug fixes
+
+- PIM-6914: Default UI locale for a new user is en_US but fix display of saved UI locale for user
+
 # 2.0.5 (2017-10-26)
 
 ## Bug fixes
@@ -6,10 +41,13 @@
 - PIM-6567: Fix attributes filter to not remove axes
 - API-411: Fix error 500 when product model has no values
 - API-408: Fix too many error messages
+- API-407: Fix too many error messages when trying to create a product model that extends a product model with a parent
 - PIM-6933: Fix menu display in case of acl restriction
-- PIM-6922: Fix sort order on attribute groups
 - PIM-6923: Fix search on all grids when returning on it
 - PIM-6878: Fix attribute creation popin not extensible
+
+# Improvements
+ - TIP-819: 3x indexing performance on command by not waiting for index refresh (Product, ProductModel and PublishedProduct indexing commands)
 
 ## Better manage products with variants!
 
@@ -17,9 +55,11 @@
 - PIM-6806: Update product completenesses whenever the attribute requirements of a family are updated
 - PIM-6492: search products with variants according to the completeness
 - PIM-6337: Create a product model from the UI
+- API-405: Update partially a list of product models
 
 ## BC breaks
 
+- `Refresh::disabled()` rename to `Refresh::disable()`, to make it homogeneous with `Refresh::enable()` and `Refresh::waitFor()`
 - Change the constructor of `Pim\Component\Catalog\Completeness\CompletenessCalculator`. Remove `Pim\Component\Catalog\Factory\ValueFactory` and both `Akeneo\Component\StorageUtils\Repository\CachedObjectRepositoryInterface`. Add `Pim\Component\Catalog\EntityWithFamily\IncompleteValueCollectionFactory` and `Pim\Component\Catalog\EntityWithFamily\RequiredValueCollectionFactory`.
 - Change the constructor of `Pim\Bundle\EnrichBundle\Normalizer\ProductModelNormalizer` to add `Symfony\Component\Serializer\Normalizer\NormalizerInterface`.
 - Move `Pim\Bundle\CatalogBundle\Elasticsearch\Filter\Field\CompletenessFilter` to `Pim\Bundle\CatalogBundle\Elasticsearch\Filter\Field\CompletenessFilter`
@@ -39,7 +79,6 @@ IMPORTANT: In order for your PIM to work properly, you will need to run the foll
 - PIM-6898: Fixes some data can break ES index and crashes new products indexing
 - PIM-6918: Fix error when deleteing boolean attribute linked to a published product
 - PIM-5817: move datepicker above field instead of under
-- API-407: Fix too many error messages when trying to create a product model that extends a product model with a parent
 
 ## Better manage products with variants!
 
@@ -50,7 +89,6 @@ IMPORTANT: In order for your PIM to work properly, you will need to run the foll
 - PIM-6892: Forbids users to unselect categories of parent product models
 - PIM-6896: Remove the button restore displayed on product models
 - PIM-6891: Keep the tab context between product and product model forms
-- API-405: Update partially a list of product models
 
 ## Better UI\UX!
 
