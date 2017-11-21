@@ -1,3 +1,9 @@
+# 1.7.14 (2017-11-21)
+
+## Bug Fixes
+
+- PIM-6995: fix memory leak in the MongoDB product association import (it bypasses a Doctrine bug about the detach method).
+
 # 1.7.13 (2017-11-09)
 
 ## Bug Fixes
