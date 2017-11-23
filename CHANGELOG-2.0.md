@@ -1,8 +1,33 @@
-# 2.0.x
+# 2.0.7 (2017-11-23)
+
+
+## Better manage products with variants!
+
+- PIM-6567: Add edition capabilities to family variants from the UI (distribution of the attributes)
+- PIM-6460: Preventing from deleting attributes used as axis from the family and remove the deleted attributes from the family variants
+- PIM-6986: Change the image in add variant modal
+- API-400: Update partially a family variant with the API
+- API-401: Update partially a list of family variants with the API
+
+## Bug fixes
+
+- PIM-6489: fix the sort of attributes in attribute groups
+- PIM-6997: fixes product model indexing CLI command slowness
+- PIM-6959: fix getting the product label according to the scope if needed
 
 ## Improvements
 
+- IM-825: allow concurrent AJAX requests by closing the session in a listener
+- PIM-6838: Display completeness panel after Attributes in the PEF
+- PIM-6891: On the grid, execute the ES query only once, not twice
+- PIM-6967: Allow category panels to be resized
+- PIM-6585: Add help center link in menu
 - PIM-6833: Aligns technical requirements with documentation
+- PIM-6992: Keep category panel open
+
+## BC breaks
+
+- Change the constructor of `Pim\Bundle\ApiBundle\Controller\FamilyVariantController` to add `Pim\Bundle\ApiBundle\Stream\StreamResourceResponse`.
 
 # 2.0.6 (2017-11-03)
 
@@ -17,10 +42,12 @@
 - PIM-6948: Use search after method for products and product models indexing instead of offset limit
 - PIM-6922: Fix sort order on attribute groups
 - PIM-6880: Remove the old variation asset icon
+- PIM-6914: Default UI locale for a new user is en_US but fix display of saved UI locale for user
 
 ## Improvements
 
 - TIP-824: Increase CLI products indexing performance by 20%
+- IMP-6932: Fix product model actions on products grid
 
 ## BC breaks
 
@@ -34,10 +61,6 @@
 ## Update jobs
 
 IMPORTANT: In order to use the new quick exports, please execute `bin/console doctrine:migrations:migrate` to migrate your configurations.
-
-## Bug fixes
-
-- PIM-6914: Default UI locale for a new user is en_US but fix display of saved UI locale for user
 
 # 2.0.5 (2017-10-26)
 
