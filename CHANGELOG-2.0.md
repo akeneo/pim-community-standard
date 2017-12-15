@@ -1,3 +1,23 @@
+# 2.0.9 (2017-12-15)
+
+## Bug fixes
+
+- PIM-7037: Allows code to be an integer on product model import
+- PIM-7011: XLS Options Import - Simple select attribute option cannot be updated for options with numeric codes
+- PIM-7039: Association grid, scopable attributes used as labels do not appear
+- PIM-6980: Missing labels for attribute prevent you from creating a variant family
+- PIM-7030: Not allow empty Metric value as axis for variant products
+
+## Better manage products with variants!
+
+- PIM-6341: Allow cascade deletion of product models via the grid and PEF
+- PIM-6357: Adds mass edit of attributes for product and product models
+
+## BC breaks
+
+- MySQL table constraints and elasticsearch indexes have changed. Please execute the pending migrations using the `doctrine:migrations:migrate` console command.
+
+
 # 2.0.8 (2017-12-07)
 
 ## Bug fixes
@@ -17,7 +37,13 @@ IMPORTANT: In order to use the new mass edit, please execute `bin/console akeneo
 
 ## BC breaks
 
-Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModelController` to add `Pim\Component\Catalog\Repository\FamilyVariantRepositoryInterface` 
+- Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModelController` to add `Pim\Component\Catalog\Repository\FamilyVariantRepositoryInterface` 
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\CursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\FromSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\SearchAfterSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
+- Deletes `Pim\Component\Catalog\Repository\ProductRepositoryInterface::getAssociatedProductIds()`
+- Changes the constructor of `Pim\Component\Catalog\Validator\Constraints\ImmutableVariantAxesValuesValidator` to remove `Doctrine\ORM\EntityManagerInterface`
+
 
 # 2.0.7 (2017-11-23)
 
@@ -28,6 +54,7 @@ Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModel
 - PIM-6986: Change the image in add variant modal
 - API-400: Update partially a family variant with the API
 - API-401: Update partially a list of family variants with the API
+- PIM-6357: Show the right count when selecting product and product models on mass edit
 
 ## Bug fixes
 
@@ -48,6 +75,7 @@ Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModel
 
 ## BC breaks
 
+- New data has been indexed in Elasticsearch. Please re-index the products and product models by launching the commands `pim:product:index --all -e prod` and `pim:product-model:index --all -e prod`.
 - Change the constructor of `Pim\Bundle\ApiBundle\Controller\FamilyVariantController` to add `Pim\Bundle\ApiBundle\Stream\StreamResourceResponse`.
 - Replace `Pim\Component\Catalog\Builder\ProductBuilderInterface` by `Pim\Component\Connector\Processor\Denormalization\Product\AddParent` and `Pim\Component\Connector\Processor\Denormalization\Product\FindProductToImport` in `Pim\Component\Connector\Processor\Denormalization\ProductProcessor`
 - Change method signature from `Pim\Component\Catalog\Model\ProductInterface::setAssociations(array $associations)` to `Pim\Component\Catalog\Model\ProductInterface::setAssociations(Collection $associations)`
