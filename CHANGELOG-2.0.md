@@ -1,3 +1,189 @@
+# 2.0.9 (2017-12-15)
+
+## Bug fixes
+
+- PIM-7037: Allows code to be an integer on product model import
+- PIM-7011: XLS Options Import - Simple select attribute option cannot be updated for options with numeric codes
+- PIM-7039: Association grid, scopable attributes used as labels do not appear
+- PIM-6980: Missing labels for attribute prevent you from creating a variant family
+- PIM-7030: Not allow empty Metric value as axis for variant products
+
+## Better manage products with variants!
+
+- PIM-6341: Allow cascade deletion of product models via the grid and PEF
+- PIM-6357: Adds mass edit of attributes for product and product models
+
+## BC breaks
+
+- MySQL table constraints and elasticsearch indexes have changed. Please execute the pending migrations using the `doctrine:migrations:migrate` console command.
+
+
+# 2.0.8 (2017-12-07)
+
+## Bug fixes
+
+- PIM-7035: fix reset login page style and error 500 thrown after submitting form
+- PIM-7045: fix memory leak in step `Compute product model descendants` for product model import
+- PIM-6958: fix loading a product with a reference data that is not available (simpleselect or multiselect)
+
+## Better manage products with variants!
+
+- PIM-6349: Adds mass edit to add products to an existing product model
+- PIM-6791: Change a product in a variant product by import
+
+## Update jobs
+
+IMPORTANT: In order to use the new mass edit, please execute `bin/console akeneo:batch:create-job internal add_to_existing_product_model mass_edit add_to_existing_product_model '{}' 'Add products to an existing product model' --env=prod`
+
+## BC breaks
+
+- Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModelController` to add `Pim\Component\Catalog\Repository\FamilyVariantRepositoryInterface` 
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\CursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\FromSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\SearchAfterSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
+- Deletes `Pim\Component\Catalog\Repository\ProductRepositoryInterface::getAssociatedProductIds()`
+- Changes the constructor of `Pim\Component\Catalog\Validator\Constraints\ImmutableVariantAxesValuesValidator` to remove `Doctrine\ORM\EntityManagerInterface`
+
+
+# 2.0.7 (2017-11-23)
+
+## Better manage products with variants!
+
+- PIM-6567: Add edition capabilities to family variants from the UI (distribution of the attributes)
+- PIM-6460: Preventing from deleting attributes used as axis from the family and remove the deleted attributes from the family variants
+- PIM-6986: Change the image in add variant modal
+- API-400: Update partially a family variant with the API
+- API-401: Update partially a list of family variants with the API
+- PIM-6357: Show the right count when selecting product and product models on mass edit
+
+## Bug fixes
+
+- PIM-6489: fix the sort of attributes in attribute groups
+- PIM-6997: fixes product model indexing CLI command slowness
+- PIM-6959: fix getting the product label according to the scope if needed
+
+## Improvements
+
+- IM-825: allow concurrent AJAX requests by closing the session in a listener
+- PIM-6838: Display completeness panel after Attributes in the PEF
+- PIM-6891: On the grid, execute the ES query only once, not twice
+- PIM-6967: Allow category panels to be resized
+- PIM-6585: Add help center link in menu
+- PIM-6833: Aligns technical requirements with documentation
+- PIM-6992: Keep category panel open
+- PIM-6791: Change a product in a variant product by import
+
+## BC breaks
+
+- New data has been indexed in Elasticsearch. Please re-index the products and product models by launching the commands `pim:product:index --all -e prod` and `pim:product-model:index --all -e prod`.
+- Change the constructor of `Pim\Bundle\ApiBundle\Controller\FamilyVariantController` to add `Pim\Bundle\ApiBundle\Stream\StreamResourceResponse`.
+- Replace `Pim\Component\Catalog\Builder\ProductBuilderInterface` by `Pim\Component\Connector\Processor\Denormalization\Product\AddParent` and `Pim\Component\Connector\Processor\Denormalization\Product\FindProductToImport` in `Pim\Component\Connector\Processor\Denormalization\ProductProcessor`
+- Change method signature from `Pim\Component\Catalog\Model\ProductInterface::setAssociations(array $associations)` to `Pim\Component\Catalog\Model\ProductInterface::setAssociations(Collection $associations)`
+
+# 2.0.6 (2017-11-03)
+
+## Better manage products with variants!
+
+- PIM-6354: Adds product models during quick exports.
+- PIM-6449: Adds a sub product model to a product model.
+- PIM-6450: Adds a variant product to a product model.
+
+## Bug fixes
+
+- PIM-6948: Use search after method for products and product models indexing instead of offset limit
+- PIM-6922: Fix sort order on attribute groups
+- PIM-6880: Remove the old variation asset icon
+- PIM-6914: Default UI locale for a new user is en_US but fix display of saved UI locale for user
+
+## Improvements
+
+- TIP-824: Increase CLI products indexing performance by 20%
+- IMP-6932: Fix product model actions on products grid
+
+## BC breaks
+
+- Rename `Pim\Bundle\EnrichBundle\Connector\Job\JobParameters\ConstraintCollectionProvider\ProductQuickExport` to `ProductAndProductModelQuickExport`
+- Rename `Pim\Bundle\EnrichBundle\Connector\Processor\QuickExport\ProductProcessor` to `ProductAndProductModelProcessor`
+- Updates quick export configurations to remove `filePath` and add `filePathProduct` and `filePathProductModel`.
+- Adds `Pim\Component\Catalog\Repository\ProductRepositoryInterface.php::searchAfter()` and `Pim\Component\Catalog\Repository\ProductModelRepositoryInterface::searchAfter()` methods
+- Deletes `Pim\Component\Catalog\Repository\ProductRepositoryInterface.php::findAllWithOffsetAndSize()` and `Pim\Component\Catalog\Repository\ProductModelRepositoryInterface::findRootProductModelsWithOffsetAndSize()` methods.
+- Change the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductController` to add `Pim\Component\Catalog\Builder\ProductBuilderInterface`.
+
+## Update jobs
+
+IMPORTANT: In order to use the new quick exports, please execute `bin/console doctrine:migrations:migrate` to migrate your configurations.
+IMPORTANT: In order for your PIM to work properly, you will need to run the following commands to add the missing job instances.
+- Add the job instance `compute_family_variant_structure_changes`: `bin/console akeneo:batch:create-job "internal" "compute_family_variant_structure_changes" "compute_family_variant_structure_changes" "compute_family_variant_structure_changes" '{"family_variant_codes":["null"]}' "Compute family variant structure changes" --env=prod`
+
+# 2.0.5 (2017-10-26)
+
+## Bug fixes
+
+- GITHUB-7035: Change class alias for proper LocaleType form parent indication, cheers @mkilmanas!
+- PIM-6567: Fix attributes filter to not remove axes
+- API-411: Fix error 500 when product model has no values
+- API-408: Fix too many error messages
+- API-407: Fix too many error messages when trying to create a product model that extends a product model with a parent
+- PIM-6933: Fix menu display in case of acl restriction
+- PIM-6923: Fix search on all grids when returning on it
+- PIM-6878: Fix attribute creation popin not extensible
+
+# Improvements
+ - TIP-819: 3x indexing performance on command by not waiting for index refresh (Product, ProductModel and PublishedProduct indexing commands)
+
+## Better manage products with variants!
+
+- PIM-6773: Add the missing required attributes filter in the product model edit form
+- PIM-6806: Update product completenesses whenever the attribute requirements of a family are updated
+- PIM-6492: search products with variants according to the completeness
+- PIM-6337: Create a product model from the UI
+- API-405: Update partially a list of product models
+
+## BC breaks
+
+- `Refresh::disabled()` rename to `Refresh::disable()`, to make it homogeneous with `Refresh::enable()` and `Refresh::waitFor()`
+- Change the constructor of `Pim\Component\Catalog\Completeness\CompletenessCalculator`. Remove `Pim\Component\Catalog\Factory\ValueFactory` and both `Akeneo\Component\StorageUtils\Repository\CachedObjectRepositoryInterface`. Add `Pim\Component\Catalog\EntityWithFamily\IncompleteValueCollectionFactory` and `Pim\Component\Catalog\EntityWithFamily\RequiredValueCollectionFactory`.
+- Change the constructor of `Pim\Bundle\EnrichBundle\Normalizer\ProductModelNormalizer` to add `Symfony\Component\Serializer\Normalizer\NormalizerInterface`.
+- Move `Pim\Bundle\CatalogBundle\Elasticsearch\Filter\Field\CompletenessFilter` to `Pim\Bundle\CatalogBundle\Elasticsearch\Filter\Field\CompletenessFilter`
+- Move `Pim\Bundle\FilterBundle\Filter\Product\CompletenessFilter` to `Pim\Bundle\FilterBundle\Filter\CompletenessFilter`
+- Change the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModelController` to add `Akeneo\Component\StorageUtils\Factory\SimpleFactoryInterface` and `Symfony\Component\Serializer\Normalizer\NormalizerInterface`
+
+## New jobs
+IMPORTANT: In order for your PIM to work properly, you will need to run the following commands to add the missing job instances.
+- Add the job instance `compute_completeness_of_products_family`: `bin/console akeneo:batch:create-job "internal" "compute_completeness_of_products_family" "compute_completeness_of_products_family" "compute_completeness_of_products_family" '{"family_code":"null"}' "compute completeness of products family" --env=prod`
+
+# 2.0.4 (2017-10-19)
+
+# 2.0.3 (2017-10-19)
+
+## Bug fixes
+
+- PIM-6898: Fixes some data can break ES index and crashes new products indexing
+- PIM-6918: Fix error when deleteing boolean attribute linked to a published product
+- PIM-5817: move datepicker above field instead of under
+
+## Better manage products with variants!
+
+- API-381: Create family variant via API.
+- API-399: Create a product model via API.
+- PIM-6903: Adds compare/translate functionality for product models
+- API-404: Update partially a single product model via API
+- PIM-6892: Forbids users to unselect categories of parent product models
+- PIM-6896: Remove the button restore displayed on product models
+- PIM-6891: Keep the tab context between product and product model forms
+
+## Better UI\UX!
+
+- PIM-6667: Update loading mask design
+- PIM-6504: Update action icons on datagrids
+- PIM-6848: Fix design on export builder fields
+- PIM-6868: CSS glitches compilation
+- PIM-6909: Replace 'products' by 'results' in products indexes
+
+## BC breaks
+
+- Change the constructor of `Pim\Bundle\EnrichBundle\Normalizer\ProductModelNormalizer` to add `Pim\Component\Enrich\Query\AscendantCategoriesInterface`
+
 # 2.0.2 (2017-10-12)
 
 ## Tech improvements
@@ -5,6 +191,7 @@
 - TIP-808: Add version strategy for js and css assets, no more need to ask final users to refresh their browser cache when applying a new patch!
 - PRE_SAVE and POST_SAVE events dispatched by instances of BaseSaver now include an "is_new" argument indicating if entities are being inserted or updated.
 - TIP-813: Move attribute form fields to make them generic
+- PIM-6589: Add new template for confirmation modals
 
 ## Bug Fixes
 
@@ -15,6 +202,7 @@
 - PIM-6872: Fix PQB sorters with Elasticsearch
 - PIM-6859: Fix missing attribute values in PDF
 - PIM-6894: Allow any special characters in password field
+- PIM-6821: Options "Edit attributes" and "classify the product" not working on the Product grid
 
 ## Better UI\UX!
 
@@ -45,14 +233,14 @@
 ## BC breaks
 
 - Throw exception when trying to create or update a product with the `variant_group` field through the API, now you have to use `parent` field [please see the link below](http://api.akeneo.com/documentation/products-with-variants.html)
-- Change the constructor of `Pim\Bundle\EnrichBundle\Controller\ProductController` to add `Oro\Bundle\SecurityBundle\SecurityFacade`, an acl and a template 
+- Change the constructor of `Pim\Bundle\EnrichBundle\Controller\ProductController` to add `Oro\Bundle\SecurityBundle\SecurityFacade`, an acl and a template
 - Change the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\AttributeGroupController` to add `Symfony\Component\EventDispatcher\EventDispatcherInterface` and `Pim\Bundle\CatalogBundle\Filter\CollectionFilterInterface`
 - Change the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\JobInstanceController` to add `Symfony\Component\EventDispatcher\EventDispatcherInterface` and `Pim\Bundle\CatalogBundle\Filter\CollectionFilterInterface`
 - Change the constructor of `Pim\Bundle\CatalogBundle\Doctrine\ORM\Repository\EntityWithFamilyVariantRepository` to add `Pim\Component\Catalog\Repository\VariantProductRepositoryInterface`
 - Change the constructor of `Pim\Component\Catalog\ProductModel\Filter` to add `Akeneo\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface`
-- Move `Pim\Component\Connector\Processor\Denormalization\AttributeFilter\AttributeFilterInterface` to `Pim\Component\Catalog\ProductModel\Filter\AttributeFilter\AttributeFilterInterface` 
-- Move `Pim\Component\Connector\Processor\Denormalization\AttributeFilter\ProductAttributeFilter` to `Pim\Component\Catalog\ProductModel\Filter\AttributeFilter\ProductAttributeFilter` 
-- Move `Pim\Component\Connector\Processor\Denormalization\AttributeFilter\ProductModelAttributeFilter` to `Pim\Component\Catalog\ProductModel\Filter\AttributeFilter\ProductModelAttributeFilter` 
+- Move `Pim\Component\Connector\Processor\Denormalization\AttributeFilter\AttributeFilterInterface` to `Pim\Component\Catalog\ProductModel\Filter\AttributeFilter\AttributeFilterInterface`
+- Move `Pim\Component\Connector\Processor\Denormalization\AttributeFilter\ProductAttributeFilter` to `Pim\Component\Catalog\ProductModel\Filter\AttributeFilter\ProductAttributeFilter`
+- Move `Pim\Component\Connector\Processor\Denormalization\AttributeFilter\ProductModelAttributeFilter` to `Pim\Component\Catalog\ProductModel\Filter\AttributeFilter\ProductModelAttributeFilter`
 - Rename `Pim\Component\Catalog\Validator\Constraints\SiblingUniqueVariantAxes` into `Pim\Component\Catalog\Validator\Constraints\UniqueVariantAxis`
 - Rename service `pim_catalog.validator.constraint.sibling_unique_variant_axes` into `pim_catalog.validator.constraint.unique_variant_axes`
 - Rename class parameter `pim_catalog.validator.constraint.sibling_unique_variant_axes.class` into `pim_catalog.validator.constraint.unique_variant_axes.class`
