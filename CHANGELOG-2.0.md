@@ -1,9 +1,16 @@
+# 2.0.10 (2017-12-22)
+
+## Bug fixes
+
+- PIM-7032: Fix close button when clicking on "Compare/Translate" option on the product edit form
+- PIM-7063: Add validation for AttributeGroup - cannot remove AttributeGroup containing attributes and cannot remove AttributGroup "other"
+
 # 2.0.9 (2017-12-15)
 
 ## Bug fixes
 
 - PIM-7037: Allows code to be an integer on product model import
-- PIM-7011: XLS Options Import - Simple select attribute option cannot be updated for options with numeric codes
+- PIM-7011: XLSX Options Import - Simple select attribute option cannot be updated for options with numeric codes
 - PIM-7039: Association grid, scopable attributes used as labels do not appear
 - PIM-6980: Missing labels for attribute prevent you from creating a variant family
 - PIM-7030: Not allow empty Metric value as axis for variant products
