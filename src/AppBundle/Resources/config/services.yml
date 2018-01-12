@@ -1,0 +1,5 @@
+parameters:
+    pim_catalog.entity.category.class: AppBundle\Entity\Category
+    pim_catalog.entity.category_translation.class: AppBundle\Entity\CategoryTranslation
+
+services:
