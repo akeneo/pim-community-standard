@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace AppBundle\Form\Type;
 
 use Pim\Bundle\EnrichBundle\Form\Type\TranslatableFieldType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 /**
@@ -36,7 +37,7 @@ class CategoryType extends \Pim\Bundle\EnrichBundle\Form\Type\CategoryType
                 'translation_class' => $this->translationDataClass,
                 'entity_class'      => $this->dataClass,
                 'property_path'     => 'translations',
-                'widget'            => 'textarea',
+                'widget'            => TextareaType::class,
             ]
         );
     }
