@@ -20,7 +20,7 @@ class AppKernel extends Kernel
     protected function registerProjectBundles()
     {
         return [
-            // your app bundles should be registered here
+            new AppBundle\AppBundle(),
         ];
     }
 

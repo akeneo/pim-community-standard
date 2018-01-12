@@ -1,0 +1,12 @@
+AppBundle\Entity\Category:
+    type: entity
+    table: pim_catalog_category
+    changeTrackingPolicy: DEFERRED_EXPLICIT
+    repositoryClass: Akeneo\Bundle\ClassificationBundle\Doctrine\ORM\Repository\CategoryRepository
+    uniqueConstraints:
+        pim_category_code_uc:
+            columns:
+                - code
+    gedmo:
+        tree:
+            type: nested

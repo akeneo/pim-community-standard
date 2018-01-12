@@ -3,6 +3,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: '@PimEnrichBundle/Resources/config/pim.yml' }
+    - { resource: "@AppBundle/Resources/config/services.yml" }
 
 framework:
     #esi:             ~
@@ -56,3 +57,12 @@ swiftmailer:
     spool:                    { type: memory }
 
 pim_reference_data: ~
+
+akeneo_storage_utils:
+    mapping_overrides:
+        -
+            original: Pim\Bundle\CatalogBundle\Entity\Category
+            override: AppBundle\Entity\Category
+        -
+            original: Pim\Bundle\CatalogBundle\Entity\CategoryTranslation
+            override: AppBundle\Entity\CategoryTranslation
