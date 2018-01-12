@@ -1,3 +1,31 @@
+# 2.0.12 (2018-01-12)
+
+## Bug fixes
+
+- PIM-7102: Fix product categories and groups being lost when attaching a product to a product model
+- PIM-6874: Fix select attribute groups from PEF when there are more than 25
+- PIM-7086: Fix enable loading message in system configuration
+- API-567: Fix validation of product-models on API
+- PIM-7085: Fix translation missing
+- PIM-6965: Show short view|project name in the grid
+- PIM-7083: fix access to product edit form if no right to view default locale
+- PIM-7082: remove double user menu on product import edit form
+- PIM-7084: fix attribute suppression
+- PIM-6355: Fix the count by categories on the product grid
+
+## Improvements
+
+- PIM-7103: Improve product datagrid performance
+
+## Better manage products with variants!
+
+- API-516: be able to add a parent to a product via API
+
+## BC Breaks
+
+- Changes the constructor of `Pim\Bundle\ApiBundle\Controller\ProductController` to add `Pim\Component\Catalog\EntityWithFamilyVariant\AddParent`
+- Changes the service `pim_enrich.doctrine.counter.category_product` first argument to a `@pim_catalog.query.product_query_builder_factory`
+
 # 2.0.11 (2018-01-05)
 
 ## Bug fixes
@@ -9,7 +37,7 @@
 - PIM-7070: Fix sequential edit when selecting multiple product models
 - PIM-6812: Change the message when delete an attribute as variant axis
 - PIM-7048: Fix cascade persist issue during import of families with variant
-- PIM-7049: Fix random order of attribute options 
+- PIM-7049: Fix random order of attribute options
 - PIM-7080: Fix memory leak on product export
 - PIM-6955: Fix delete user
 - PIM-7065: Fix versioning when attribute codes are numerics.
@@ -23,7 +51,7 @@
 ## BC breaks
 
 - Changes the constructor of  `Pim\Component\Catalog\ProductModel\Filter\ProductAttributeFilter` add `Akeneo\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface`
-- Changes the constructor of  `Pim\Component\Catalog\ProductModel\Filter\ProductModelAttributeFilter` add `Akeneo\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface` 
+- Changes the constructor of  `Pim\Component\Catalog\ProductModel\Filter\ProductModelAttributeFilter` add `Akeneo\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface`
 - Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\AttributeController` add `Doctrine\ORM\EntityManagerInterface` and `Symfony\Component\Translation\TranslatorInterface`
 - Changes the constructor of `Pim\Bundle\CatalogBundle\EventSubscriber\SaveFamilyVariantOnFamilyUpdateSubscriber` add `Akeneo\Component\StorageUtils\Detacher\BulkObjectDetacherInterface`
 - Changes the constructor of `Pim/Bundle/DataGridBundle/Extension/MassAction/Handler/DeleteProductsMassActionHandler` to add `Akeneo\Component\StorageUtils\Cursor\CursorFactoryInterface`
@@ -80,10 +108,10 @@ IMPORTANT: In order to use the new mass edit, please execute `bin/console akeneo
 
 ## BC breaks
 
-- Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModelController` to add `Pim\Component\Catalog\Repository\FamilyVariantRepositoryInterface` 
-- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\CursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
-- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\FromSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
-- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\SearchAfterSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName` 
+- Changes the constructor of `Pim\Bundle\EnrichBundle\Controller\Rest\ProductModelController` to add `Pim\Component\Catalog\Repository\FamilyVariantRepositoryInterface`
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\CursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName`
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\FromSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName`
+- Changes the constructor of `Akeneo\Bundle\ElasticsearchBundle\Cursor\SearchAfterSizeCursorFactory` to add `Akeneo\Component\StorageUtils\Repository\CursorableRepositoryInterface` and remove `Doctrine\Common\Persistence\ObjectManager` and string `$entityClassName`
 - Deletes `Pim\Component\Catalog\Repository\ProductRepositoryInterface::getAssociatedProductIds()`
 - Changes the constructor of `Pim\Component\Catalog\Validator\Constraints\ImmutableVariantAxesValuesValidator` to remove `Doctrine\ORM\EntityManagerInterface`
 
