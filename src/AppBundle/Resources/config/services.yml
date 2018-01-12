@@ -1,5 +1,7 @@
 parameters:
     pim_catalog.entity.category.class: AppBundle\Entity\Category
     pim_catalog.entity.category_translation.class: AppBundle\Entity\CategoryTranslation
+    pim_enrich.form.type.category.class: AppBundle\Form\Type\CategoryType
+    pim_enrich.view_element.category.tab.property.template: 'AppBundle:CategoryTree:Tab/property.html.twig'
 
 services:
