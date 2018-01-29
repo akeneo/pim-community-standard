@@ -1,3 +1,16 @@
+# 2.0.13 (2018-01-23)
+
+## Bug fixes
+
+- PIM-7111: Fix display bug on variant axis completeness
+- PIM-6908: Fix cancel button on unsaved changes dialog
+- PIM-6913: Fix incorrect product completeness percentage
+- PIM-7057: Fix import families by adding a dedicated step regarding the computing of product models data
+
+## BC Breaks
+
+- Changes the constructor of `\Pim\Bundle\CatalogBundle\EventSubscriber\SaveFamilyVariantOnFamilyUpdateSubscriber` to add `Akeneo\Component\StorageUtils\Detacher\BulkObjectDetacherInterface`
+
 # 2.0.12 (2018-01-12)
 
 ## Bug fixes
@@ -12,6 +25,7 @@
 - PIM-7082: remove double user menu on product import edit form
 - PIM-7084: fix attribute suppression
 - PIM-6355: Fix the count by categories on the product grid
+- PIM-7105: Fix un-index variant product on deletion
 
 ## Improvements
 
@@ -20,6 +34,7 @@
 ## Better manage products with variants!
 
 - API-516: be able to add a parent to a product via API
+- API-566: "updated" filter works on product variant if its product models were updated
 
 ## BC Breaks
 
