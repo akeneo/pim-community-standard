@@ -1,3 +1,81 @@
+# 1.7.16 (2018-01-11)
+
+## Bug Fixes
+
+- PIM-7347: Fix the edit form of multi-select attributes with a lot of options
+- PIM-7031: Removes 'required' label for product grid filters on user creation
+- PIM-7064: Keep family attribute panel state on edit
+
+## BC-break:
+
+- Remove class `Pim\Bundle\EnrichBundle\Form\Type\AttributeProperty\OptionsType` and service `pim_enrich.form.type.options`
+
+# 1.7.15 (2017-12-18)
+
+- GITHUB-7202: Ensure commit batch size value is always an int, cheers @bghitulescu!
+- PIM-7017: Permission on "Add attribute to a product" is not properly applied
+- PIM-7054: Optimize completeness generator
+
+# 1.7.14 (2017-11-21)
+
+## Bug Fixes
+
+- PIM-6995: fix memory leak in the MongoDB product association import (it bypasses a Doctrine bug about the detach method).
+
+# 1.7.13 (2017-11-09)
+
+## Bug Fixes
+
+- PIM-6904: Product Grid - Horizontal scrollbar should be at the bottom of the screen instead to be at the end of the grid
+- PIM-6960: fix association type deletion when it's the first item of the list
+- API-216: add application/x-www-form-urlencoded as allowed Content-Type when getting a token with the API
+- GITHUB-6414: fix the deletion of a newly created import/export profile, cheers @latenzio!
+
+## Improvements
+
+- PIM-6973: Manage removed association types with `pim:mongodb:clean` command
+
+# 1.7.12 (2017-10-25)
+
+## Bug Fixes
+
+PIM-6939: fix sort order on export
+SDS-1772: Removes query cache use on PQB to avoid memory leak
+
+# 1.7.11 (2017-10-16)
+
+## Bug Fixes
+
+PIM-6901: Fix ACL with a new role when we want to edit users
+
+# 1.7.10 (2017-10-10)
+
+## Bug Fixes
+
+- PIM-6823: Add missing "decimal separator" field on xlsx profil import
+
+# 1.7.9 (2017-09-27)
+
+## Bug Fixes
+
+- PIM-6491: Fix file extension validation on import job upload
+- PIM-6798: Fix the simple-select and multi-select copiers
+- PIM-6804: Fix the positioning (z-index) of the datafilter widgets
+- PIM-6820: During an import, prevent to add in a variant group two products with same variant axes
+- PIM-6822: Fix the product conversion from standard to flat format when the product is in one or several groups, but no variant group
+
+# 1.7.8 (2017-08-22)
+
+## Bug Fixes
+
+- PIM-6568: Fix import items invalid data that were no longer saved
+- PIM-6744: Fix field configuration of xlsx product import job edit form
+- PIM-6757: Fix scalability issue on product deletion
+
+## Improvements
+
+- GITHUB-6570: Make Attribute option labels longer, cheers @fitn!
+
 # 1.7.7 (2017-08-03)
 
 ## Bug Fixes
