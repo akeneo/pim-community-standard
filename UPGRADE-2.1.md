@@ -49,9 +49,9 @@
     rm -rf $PIM_DIR/upgrades/schema
     ```
 
-4. Update your dependencies:
+4. [Optional] Update your dependencies:
 
-    * [Optional] If you had added dependencies to your project, you will need to do it again in your `composer.json`.
+    If you added dependencies to your project, you will need to do it again in your `composer.json`.
     You can display the differences of your previous composer.json in `$PIM_DIR/composer.json.bak`.
     
     ```JSON
@@ -61,25 +61,27 @@
     }
     ```
 
-   * Then run the command to update your dependencies:
+5. Run a composer update:
+
+   Then run the command to update your dependencies:
 
     ```bash
     cd $PIM_DIR
     php -d memory_limit=3G ../composer.phar update
     ```
     
-    This step will copy the upgrades folder from `pim-community-dev/` to your Pim project root in order to migrate.
+    **This step will copy the upgrades folder from `pim-community-dev/` to your Pim project root in order to migrate.**
     If you have custom code in your project, this step may raise errors in the "post-script" command.
     In this case, go to the chapter "Migrate your custom code" before running the database migration.
  
-5. Migrate your database:
+6. Migrate your database:
  
     ```bash
     rm -rf var/cache
     bin/console doctrine:migration:migrate --env=prod
     ```
 
-6. Create the missing internal job instances:
+7. Create the missing internal job instances:
 
     If the current version of your PIM is lower than 2.0.8 you'll have to execute these commands to create new internal jobs.
 
@@ -104,7 +106,7 @@
     bin/console akeneo:batch:create-job internal add_to_existing_product_model mass_edit add_to_existing_product_model '{}' 'Add products to an existing product model' --env=prod
     ```
     
-7. Then re-generate the PIM assets:
+8. Then re-generate the PIM assets:
 
     ```bash
     bin/console pim:installer:assets --symlink --clean --env=prod
