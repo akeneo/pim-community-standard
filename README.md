@@ -38,7 +38,7 @@ Please note that you will certainly need to provide your GitHub credentials with
 A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls from anonymous users.
 
 ```
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "2.3.*@stable"
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "2.2.*@stable"
 ```
 
 After that, follow the instructions here: https://docs.akeneo.com/master/install_pim/installation_ce_archive.html
