@@ -20,7 +20,7 @@
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
     "require": {
-        "akeneo/pim-community-dev": "~2.2.0-ALPHA0"
+        "akeneo/pim-community-dev": "2.2.x-dev@dev"
     },
     "require-dev": {
         "doctrine/migrations": "1.5.0",
