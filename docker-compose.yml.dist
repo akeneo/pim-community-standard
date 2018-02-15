@@ -7,8 +7,7 @@ services:
       COMPOSER_HOME: '/home/docker/.composer'
       PHP_IDE_CONFIG: 'serverName=pim-ce'
       PHP_XDEBUG_ENABLED: 0
-      PHP_XDEBUG_IDE_KEY: XDEBUG_IDE_KEY
-      PHP_XDEBUG_REMOTE_HOST: xxx.xxx.xxx.xxx
+      PHP_XDEBUG_IDE_KEY: 'XDEBUG_IDE_KEY'
       XDEBUG_CONFIG: 'remote_host=xxx.xxx.xxx.xxx'
     ports:
       - '8080:80'
@@ -29,14 +28,14 @@ services:
       MYSQL_PASSWORD: akeneo_pim
       MYSQL_DATABASE: akeneo_pim
     ports:
-      - '3306:3306'
+      - '33006:3306'
     networks:
       - akeneo
 
   mongodb:
     image: mongo:2.4
     ports:
-      - '21017:21017'
+      - '27117:27017'
     networks:
       - akeneo
 
