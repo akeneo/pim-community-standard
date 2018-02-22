@@ -1,3 +1,10 @@
+# 2.0.16 (2018-02-22)
+
+## Bug fixes
+
+- PIM-7170: Fix media files unnecessarily generated during quick export
+- PIM-7155: Fix remove a locale from a channel
+
 # 2.0.15 (2018-02-01)
 
 # 2.0.14 (2018-02-01)
