@@ -1,5 +1,5 @@
 AppBundle\Entity\Supplier:
-    repositoryClass: Pim\Bundle\ReferenceDataBundle\Doctrine\ORM\Repository\ReferenceDataRepository
+    repositoryClass: Pim\Bundle\CustomEntityBundle\Entity\Repository\CustomEntityRepository
     type: entity
     table: app_supplier
     fields:

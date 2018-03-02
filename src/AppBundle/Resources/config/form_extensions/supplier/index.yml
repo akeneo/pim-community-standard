@@ -1,0 +1,84 @@
+extensions:
+    pim-supplier-index:
+        module: pim/common/simple-view
+        config:
+            template: pim/template/common/default-template
+        forwarded-events:
+            grid_load:start: grid_load:start
+            grid_load:complete: grid_load:complete
+
+    pim-supplier-index-grid-container:
+        module: pim/common/simple-view
+        parent: pim-supplier-index
+        targetZone: content
+        config:
+            template: pim/template/form/index/index
+
+    pim-supplier-index-user-navigation:
+        module: pim/menu/user-navigation
+        parent: pim-supplier-index
+        targetZone: user-menu
+        config:
+            userAccount: pim_menu.user.user_account
+            logout: pim_menu.user.logout
+
+    pim-supplier-index-grid-title:
+        module: pim/common/grid-title
+        parent: pim-supplier-index
+        targetZone: title
+        config:
+            title: app.supplier.index_title
+
+    pim-supplier-index-breadcrumbs:
+        module: pim/common/breadcrumbs
+        parent: pim-supplier-index
+        targetZone: breadcrumbs
+        config:
+            tab: pim-menu-reference_data
+            item: app-menu-reference_data-item-supplier
+
+    pim-supplier-index-grid-filters-list:
+        module: oro/datafilter/filters-list
+        parent: pim-supplier-index-grid-container
+        targetZone: filters
+
+    pim-supplier-index-grid-filters-manage:
+        module: oro/datafilter/filters-button
+        parent: pim-supplier-index-grid-container
+        targetZone: filters
+
+    pim-supplier-index-mass-actions:
+        module: pim/grid/mass-actions
+        parent: pim-supplier-index
+        targetZone: bottom-panel
+        config:
+            label: app.supplier.selected
+
+    pim-supplier-index-actions-panel:
+        module: oro/datagrid/actions-panel
+        parent: pim-supplier-index-mass-actions
+        targetZone: actions-panel
+
+    pim-supplier-index-pagination:
+        module: oro/datagrid/pagination-input
+        parent: pim-supplier-index-grid-container
+        targetZone: toolbar
+        config:
+            gridName: supplier
+
+    pim-supplier-index-grid:
+        module: pim/form/common/index/grid
+        parent: pim-supplier-index
+        targetZone: content
+        position: 1000
+        config:
+            alias: supplier
+
+    pim-supplier-index-create-button:
+        module: pim/form/common/index/create-button
+        parent: pim-supplier-index
+        targetZone: buttons
+        aclResourceId: pim_enrich_product_create
+        config:
+            title:     pim_custom_entity.button.create
+            modalForm: pim-supplier-create-modal
