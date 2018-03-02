@@ -1,0 +1,21 @@
+AppBundle\Entity\Supplier:
+    repositoryClass: Pim\Bundle\ReferenceDataBundle\Doctrine\ORM\Repository\ReferenceDataRepository
+    type: entity
+    table: app_supplier
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            length: 255
+            unique: true
+        name:
+            type: string
+            length: 255
+        country:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
