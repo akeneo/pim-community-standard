@@ -1,3 +1,13 @@
+# 2.2.0-ALPHA2 (2018-03-07)
+
+## BC breaks
+
+### Constructors
+
+- AOB-2: Change the constructor of `Pim\Bundle\DataGridBundle\EventListener\ConfigureProductGridListner` to add `Pim\Bundle\DataGridBundle\Datagrid\Configuration\ConfiguratorInterface`
+- AOB-2: Change the constructor of `Pim\Bundle\DataGridBundle\EventListener\ConfigureProductGridListner` to remove `Pim\Bundle\DataGridBundle\Datagrid\Configuration\Product\FiltersConfigurator`
+- AOB-2: Add `Akeneo\Component\StorageUtils\Repository\CountableRepositoryInterface` to `Pim\Bundle\UserBundle\Repository\UserRepositoryInterface`
+
 # 2.2.0-ALPHA1 (2018-02-21)
 
 ## Bug fixes
@@ -8,6 +18,7 @@
 
 - PIM-7106: Display the 1st variant product created as product model image
 - PIM-6334: Add support of product model to the export builder
+- PIM-6329: The family variant is now removable from the UI
 
 ## BC breaks
 
