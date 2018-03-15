@@ -55,4 +55,7 @@ swiftmailer:
     password:                 "%mailer_password%"
     spool:                    { type: memory }
 
-pim_reference_data: ~
+pim_reference_data:
+    supplier:
+        class: AppBundle\Entity\Supplier
+        type: simple

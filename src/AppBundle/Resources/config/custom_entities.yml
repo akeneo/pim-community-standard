@@ -1,0 +1,5 @@
+custom_entities:
+    supplier:
+        entity_class: AppBundle\Entity\Supplier
+        options:
+            edit_form_extension: pim-supplier-edit-form

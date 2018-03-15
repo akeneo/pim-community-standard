@@ -1,0 +1,9 @@
+parameters:
+    app.entity.supplier.class: AppBundle\Entity\Supplier
+
+services:
+    app.normalizer.standard.supplier:
+        public: false
+        class: AppBundle\Normalizer\Standard\SupplierNormalizer
+        tags:
+            - { name: pim_serializer.normalizer, priority: 200 }

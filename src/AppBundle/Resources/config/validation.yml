@@ -1,0 +1,8 @@
+AppBundle\Entity\Supplier:
+    properties:
+        code:
+            - NotBlank: ~
+        name:
+            - NotBlank: ~
+        country:
+            - NotBlank: ~

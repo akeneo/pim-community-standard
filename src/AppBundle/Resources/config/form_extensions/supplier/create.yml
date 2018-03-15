@@ -1,0 +1,41 @@
+extensions:
+    pim-supplier-create-modal:
+        module: custom_entity/form/creation/modal
+        config:
+            labels:
+               title: pim_custom_entity.create_popin.title
+               subTitle: app.menu.item.reference_data.supplier
+            picture: illustrations/User.svg
+            successMessage: pim_custom_entity.message.created
+            editRoute: pim_customentity_rest_get
+            postUrl:
+                route: pim_customentity_rest_create
+                parameters:
+                    customEntityName: supplier
+
+    pim-supplier-create-code:
+        module: pim/form/common/creation/field
+        parent: pim-supplier-create-modal
+        targetZone: fields
+        position: 10
+        config:
+            identifier: code
+            label: app.supplier.field.label.code
+
+    pim-supplier-create-name:
+        module: pim/form/common/creation/field
+        parent: pim-supplier-create-modal
+        targetZone: fields
+        position: 20
+        config:
+            identifier: name
+            label: app.supplier.field.label.name
+
+    pim-supplier-create-country:
+        module: pim/form/common/creation/field
+        parent: pim-supplier-create-modal
+        targetZone: fields
+        position: 20
+        config:
+            identifier: country
+            label: app.supplier.field.label.country

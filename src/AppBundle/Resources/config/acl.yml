@@ -1,0 +1,19 @@
+app_supplier_index:
+    type: action
+    label: app.acl.supplier.index
+    group_name: pim_custom_entity.acl_group.reference_data
+
+app_supplier_create:
+    type: action
+    label: app.acl.supplier.create
+    group_name: pim_custom_entity.acl_group.reference_data
+
+app_supplier_edit:
+    type: action
+    label: app.acl.supplier.edit
+    group_name: pim_custom_entity.acl_group.reference_data
+
+app_supplier_delete:
+    type: action
+    label: app.acl.supplier.delete
+    group_name: pim_custom_entity.acl_group.reference_data

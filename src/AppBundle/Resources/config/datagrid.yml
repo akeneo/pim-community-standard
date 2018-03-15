@@ -1,0 +1,79 @@
+datagrid:
+    supplier:
+        options:
+            entityHint: supplier
+        source:
+            type: pim_datasource_default
+            entity: AppBundle\Entity\Supplier
+            repository_method: createDatagridQueryBuilder
+        columns:
+            code:
+                label: Code
+            name:
+                label: Name
+            country:
+                label: Country
+        properties:
+            id: ~
+            show_link:
+                type: url
+                route: pim_customentity_rest_get
+                params:
+                    - id
+                    - customEntityName
+            edit_link:
+                type: url
+                route: pim_customentity_rest_get
+                params:
+                    - id
+                    - customEntityName
+            delete_link:
+                type: url
+                route: pim_customentity_rest_delete
+                params:
+                    - id
+                    - customEntityName
+        actions:
+            show:
+                launcherOptions:
+                    className: AknIconButton AknIconButton--small AknIconButton--view
+                type:      navigate
+                label:     Show the reference data
+                link:      show_link
+            edit:
+                launcherOptions:
+                    className: AknIconButton AknIconButton--small AknIconButton--edit
+                type:      navigate
+                label:     Edit the reference data
+                link:      edit_link
+                rowAction: true
+            delete:
+                launcherOptions:
+                    className: AknIconButton AknIconButton--small AknIconButton--trash
+                type:  delete
+                label: Delete the reference data
+                link:  delete_link
+        filters:
+            columns:
+                code:
+                    type:      string
+                    label:     Code
+                    data_name: rd.code
+                name:
+                    type:      string
+                    label:     Name
+                    data_name: rd.name
+                country:
+                    type:      string
+                    label:     Country
+                    data_name: rd.country
+        sorters:
+            columns:
+                code:
+                    data_name: rd.code
+                name:
+                    data_name: rd.name
+                country:
+                    data_name: rd.country
+            default:
+                code: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_ASC'
