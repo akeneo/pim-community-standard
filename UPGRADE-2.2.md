@@ -4,6 +4,7 @@
 
 - [Disclaimer](#disclaimer)
 - [Migrate your standard project](#migrate-your-standard-project)
+- [Important note](#important-note)
 - [Migrate your custom code](#migrate-your-custom-code)
 
 ## Disclaimer
@@ -32,12 +33,15 @@
 
     ```bash
     export PIM_DIR=/path/to/your/pim/installation
- 
+
     mv $PIM_DIR/app/config/config.yml $PIM_DIR/app/config/config.yml.bak
     cp app/config/config.yml $PIM_DIR/app/config
- 
+
     mv $PIM_DIR/app/config/pim_parameters.yml $PIM_DIR/app/config/pim_parameters.yml.bak
     cp app/config/pim_parameters.yml $PIM_DIR/app/config
+
+    mv $PIM_DIR/app/config/parameters.yml.dist $PIM_DIR/app/config/parameters.yml.dist.bak
+    cp app/config/parameters.yml.dist $PIM_DIR/app/config
 
     mv $PIM_DIR/composer.json $PIM_DIR/composer.json.bak
     cp composer.json $PIM_DIR/
@@ -53,7 +57,7 @@
 
     If you added dependencies to your project, you will need to do it again in your `composer.json`.
     You can display the differences of your previous composer.json in `$PIM_DIR/composer.json.bak`.
-    
+
     ```JSON
     "require": {
        "your/dependency": "version",
@@ -69,13 +73,13 @@
     cd $PIM_DIR
     php -d memory_limit=3G ../composer.phar update
     ```
-    
+
     **This step will copy the upgrades folder from `pim-community-dev/` to your Pim project root in order to migrate.**
     If you have custom code in your project, this step may raise errors in the "post-script" command.
     In this case, go to the chapter "Migrate your custom code" before running the database migration.
- 
+
 6. Migrate your database:
- 
+
     ```bash
     rm -rf var/cache
     bin/console doctrine:migration:migrate --env=prod
@@ -88,9 +92,11 @@
     yarn run webpack
     ```
 
-8. Important note:
+8. After all those steps, it's possible that your OPCache is out of date. So remember to restart your php-fpm daemon or apache.
 
-    **IMPORTANT**: In the 2.2, it's now possible to configure the export of product models like regular products. Unfortunately, they now need a channel to know which product models to export. As we cannot define this value for you, **you will need to update your existing product model export profiles**. To do so, you only need to go the the product model profiles, check that everything fits your needs (especially in the content tab) and save them. After that your product model exports should work as expected. For more details about this feature you can visit our help center: [The power of the Product Export Builder](https://help.akeneo.com/articles/product-export-builder.html)
+## Important note
+
+**IMPORTANT**: In the 2.2, it's now possible to configure the export of product models like regular products. Unfortunately, they now need a channel to know which product models to export. As we cannot define this value for you, **you will need to update your existing product model export profiles**. To do so, you only need to go the the product model profiles, check that everything fits your needs (especially in the content tab) and save them. After that your product model exports should work as expected. For more details about this feature you can visit our help center: [The power of the Product Export Builder](https://help.akeneo.com/articles/product-export-builder.html)
 
 ## Migrate your custom code
 
