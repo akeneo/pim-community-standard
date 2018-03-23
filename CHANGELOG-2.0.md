@@ -1,3 +1,12 @@
+# 2.0.19 (2018-03-23)
+
+## Bug fixes
+
+- PIM-7203: Fix bulk actions mass edit only some of the selection
+- PIM-7237: Fix integrity constraint violation during import
+- PIM-7243: Fix issue on currencies in CSV and XLSX product imports
+- PIM-7244: Fix duplicated entry during products import
+
 # 2.0.18 (2018-03-20)
 
 ## Bug fixes
