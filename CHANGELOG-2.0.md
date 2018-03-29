@@ -1,3 +1,55 @@
+# 2.0.20 (2018-03-29)
+
+## Bug fixes
+
+- PIM-7240: Add subscriber to clear the cache between each job step batch
+- PIM-7257: Add missing translations in product grid
+- PIM-7241: Fix memory consumption issue when archiving an import file
+- PIM-7256: Add missing filters on product group grid
+- PIM-6945: Fix missing header elements on identifier attribute edit form
+- PIM-7259: Remove only attribute's option removed for multi select attribute
+
+# 2.0.19 (2018-03-23)
+
+## Bug fixes
+
+- PIM-7203: Fix bulk actions mass edit only some of the selection
+- PIM-7237: Fix integrity constraint violation during import
+- PIM-7243: Fix issue on currencies in CSV and XLSX product imports
+- PIM-7244: Fix duplicated entry during products import
+
+# 2.0.18 (2018-03-20)
+
+## Bug fixes
+
+- PIM-7129: Fix repeated content for a Yaml export
+- PIM-7255: Reduce Slowness of the datagrid
+- PIM-7152: Fix errors due to deletion of attributes linked to published products
+- PIM-7214: Fix a bug that prevents to select multiple items across pages in Products, Family and associations grids
+- PIM-7215: Fix wrong direction of sorting arrow in the grids
+- PIM-7220: Fix the filter "is empty" when the attribute belongs to a family
+
+# 2.0.17 (2018-03-06)
+
+## Improvements
+
+- GITHUB-7730: Improve product and product model import performances by using cached repositories
+- GITHUB-7757: Fix wrong position of warning icon, thanks @AngelVazquezArroyo !
+
+## Bug fixes
+
+- PIM-7118: Fix bug related to product export
+- PIM-7199: Display a message when trying to delete the pim identifier attribute
+- PIM-7217: Fix missing and disabled fields in product model import
+- PIM-7167: Fix slowness when going back to the Product grid when a family is used in the filter
+
+# 2.0.16 (2018-02-22)
+
+## Bug fixes
+
+- PIM-7170: Fix media files unnecessarily generated during quick export
+- PIM-7155: Fix remove a locale from a channel
+
 # 2.0.15 (2018-02-01)
 
 # 2.0.14 (2018-02-01)
