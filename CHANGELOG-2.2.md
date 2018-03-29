@@ -1,3 +1,13 @@
+# 2.2.2 (2018-03-29)
+
+## BC Breaks
+
+- Rename `Akeneo\Component\StorageUtils\Cache\CacheClearerInterface` to `Akeneo\Component\StorageUtils\Cache\EntityManagerClearerInterface`
+
+## Improve Julia's experience
+
+- AOB-101: Apply user timezone on dates in the UI (missing cases)
+
 # 2.2.1 (2018-03-22)
 
 # 2.2.0 (2018-03-21)
@@ -137,7 +147,7 @@ IMPORTANT: In order for your PIM to work properly, you will need to run the foll
 - PIM-6367: Rename service `pim_enrich.factory.product_and_product_model_cursor` into `pim_catalog.factory.product_and_product_model_cursor`
 - PIM-6367: Rename service `pim_catalog.updater.product_property_adder` into `pim_catalog.updater.property_adder`
 - PIM-6367: Rename service `pim_catalog.updater.product_property_remover` into `pim_catalog.updater.property_remover`
-- PIM-6367: Rename service `pim_catalog.updater.product_property_copier` into `pim_catalog.updater.property_copier`
+- PIM-6367: Rename service `pim_catalog.updaterproduct_.property_copier` into `pim_catalog.updater.property_copier`
 - PIM-6367: Rename class parameter `pim_enrich.query.elasticsearch.product_and_model_query_builder_factory.class` into `pim_catalog.query.elasticsearch.product_and_model_query_builder_factory.class`
 - PIM-6367: Rename class parameter `pim_enrich.query.mass_edit_product_and_product_model_query_builder.class` into `pim_catalog.query.product_and_product_model_query_builder.class`
 - PIM-6367: Rename class parameter `pim_enrich.elasticsearch.cursor_factory.class` into `pim_catalog.elasticsearch.cursor_factory.class`
