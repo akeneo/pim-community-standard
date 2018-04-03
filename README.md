@@ -15,14 +15,14 @@ Application Technical Information
 ---------------------------------
 
 The following documentation is designed for both clients and partners and provides all technical information required to define required server(s) to run Akeneo PIM application and check that end users workstation is compatible with Akeneo PIM application:
-https://docs.akeneo.com/2.2/install_pim/manual/system_requirements/system_requirements.html
+https://docs.akeneo.com/2.3/install_pim/manual/system_requirements/system_requirements.html
 
 Installation instructions
 -------------------------
 
 ### Recommended installation
 
-To install Akeneo PIM for a PIM project or for evaluation, please follow: https://docs.akeneo.com/2.2/install_pim/manual/installation_ce_archive.html
+To install Akeneo PIM for a PIM project or for evaluation, please follow: https://docs.akeneo.com/2.3/install_pim/manual/installation_ce_archive.html
 
 ### Using Composer to create the project
 
@@ -38,14 +38,14 @@ Please note that you will certainly need to provide your GitHub credentials with
 A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls from anonymous users.
 
 ```
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "2.2.*@stable"
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "2.3.*@stable"
 ```
 
-After that, follow the instructions here: https://docs.akeneo.com/2.2/install_pim/installation_ce_archive.html
+After that, follow the instructions here: https://docs.akeneo.com/2.3/install_pim/installation_ce_archive.html
 
 Upgrade instructions
 --------------------
 
 To upgrade Akeneo PIM to a newer version, please follow:
-https://docs.akeneo.com/2.2/migrate_pim/index.html
+https://docs.akeneo.com/2.3/migrate_pim/index.html
 
