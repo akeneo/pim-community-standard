@@ -1,3 +1,7 @@
+# 1.6.23 (2018-04-03)
+
+- GITHUB-7760: Fix wrong HTTP status in AttributeOptionController::deleteAction, cheers @amansilla!
+
 # 1.6.22 (2018-02-26)
 
 ## Bug fixes
