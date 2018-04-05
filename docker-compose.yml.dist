@@ -17,8 +17,6 @@ services:
       - ./docker/akeneo.conf:/etc/apache2/sites-available/000-default.conf:ro
       - ~/.config/composer:/home/docker/.composer
     working_dir: /srv/pim
-    networks:
-      - akeneo
 
   mysql:
     image: mysql:5.5
@@ -29,15 +27,8 @@ services:
       MYSQL_DATABASE: akeneo_pim
     ports:
       - '33006:3306'
-    networks:
-      - akeneo
 
   mongodb:
     image: mongo:2.4
     ports:
       - '27117:27017'
-    networks:
-      - akeneo
-
-networks:
-  akeneo: ~
