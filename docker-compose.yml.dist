@@ -14,8 +14,6 @@ services:
       - ./:/srv/pim
       - ~/.composer:/home/docker/.composer
     working_dir: /srv/pim
-    networks:
-      - akeneo
 
   node:
     image: node:8
@@ -26,8 +24,6 @@ services:
       - ./:/srv/pim
       - ~/.cache/yarn:/home/node/.yarn-cache
     working_dir: /srv/pim
-    networks:
-      - akeneo
 
   httpd:
     image: httpd:2.4
@@ -41,8 +37,6 @@ services:
       - ./:/srv/pim:ro
       - ./docker/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
       - ./docker/akeneo.conf:/usr/local/apache2/conf/vhost.conf:ro
-    networks:
-      - akeneo
 
   mysql:
     image: mysql:5.7
@@ -53,8 +47,6 @@ services:
       MYSQL_DATABASE: akeneo_pim
     ports:
       - '33006:3306'
-    networks:
-      - akeneo
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.5.3
@@ -62,8 +54,3 @@ services:
       ES_JAVA_OPTS: '-Xms512m -Xmx512m'
     ports:
       - '9210:9200'
-    networks:
-      - akeneo
-
-networks:
-  akeneo: ~
