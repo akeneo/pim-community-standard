@@ -41,7 +41,10 @@ A lot of our dependencies are coming from GitHub and this reaches the max limit 
     $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "2.3.*@stable"
 ```
 
-After that, follow the instructions here: https://docs.akeneo.com/2.3/install_pim/installation_ce_archive.html
+After that, follow the instructions here:
+
+Manual: https://docs.akeneo.com/2.3/install_pim/manual/index.html
+Docker: https://docs.akeneo.com/2.2/install_pim/docker/installation_docker.html
 
 Upgrade instructions
 --------------------
