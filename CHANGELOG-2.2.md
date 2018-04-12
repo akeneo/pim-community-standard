@@ -1,3 +1,9 @@
+# 2.2.3 (2018-04-12)
+
+## BC Breaks
+
+- Rename command `pim:catalog:remove-wrong-values-on-variant-products` to `pim:catalog:remove-wrong-boolean-values-on-variant-products` (but an alias is still here so calling it from the old name will still work)
+
 # 2.2.2 (2018-03-29)
 
 ## BC Breaks
@@ -7,6 +13,10 @@
 ## Improve Julia's experience
 
 - AOB-101: Apply user timezone on dates in the UI (missing cases)
+
+## Bug fixes
+
+- PIM-7263: Create a purging command (`pim:catalog:remove-wrong-values-on-variant-products`) for boolean values on variant products that should belong to parents
 
 # 2.2.1 (2018-03-22)
 
