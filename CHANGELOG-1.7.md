@@ -1,4 +1,30 @@
-# 1.7.17 (2018-02-01) (2018-01-11)
+# 1.7.20 (2018-04-03)
+
+## Bug fixes
+
+- PIM-6825: Fix cancel button redirection when editing a user
+- GITHUB-7507: Fix XLSX product export to allow decimal separator configuration (Thanks [wa-daniel-fahl](https://github.com/wa-daniel-fahl)!)
+- PIM-7069: Fix Channel export regarding conversion_units output
+- PIM-7119: Fix missing translation on filters
+- PIM-7264: Fix validation on import decimal number greater than limit in database (MySQL)
+- PIM-7162: Fix issue with CSS on reset password form
+- GITHUB-7203: Fix comparators not ordered by priority (Thanks [Bogdan Ghitulescu](https://github.com/bghitulescu)!)
+
+# 1.7.19 (2018-02-27)
+
+## Improvements
+
+- IM-824: Change message when the user or email is not valid to a more generic message
+
+## Bug Fixes
+
+- PIM-7188: Avoid duplicate products during import
+- PIM-7164: Fix a memory leak on product export caused by associated products not being detached
+- PIM-7134: Fix a memory leak when purging version history (MongoDB)
+
+# 1.7.18 (2018-02-22)
+
+# 1.7.17 (2018-02-01)
 
 ## Bug Fixes
 
