@@ -1,3 +1,10 @@
+# 2.0.24 (2018-05-16)
+
+## Bug fixes
+
+- PIM-7335: Fix locale rendering on product form completeness panel
+- PIM-7323: Fix unique data synchronizer to handle value removal
+
 # 2.0.23 (2018-04-30)
 
 ## Bug fixes
