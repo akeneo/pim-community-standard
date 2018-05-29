@@ -82,6 +82,7 @@
 
     ```bash
     rm -rf var/cache
+    service php7.1-fpm restart
     bin/console doctrine:migration:migrate --env=prod
     ```
 
