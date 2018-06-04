@@ -1,3 +1,22 @@
+# 2.2.7 (2018-05-31)
+
+## Bug fixes
+
+- PIM-7358: Cascade remove variant attribute sets when removing a family variant
+- PIM-7367: Fix association of a product and product model with the same identifier
+- PIM-7388: Completeness filter on product grid for models does not work as expected
+- PIM-7315: Fix 500 on "IS EMPTY" operator for the SKU filter
+
+## BC breaks
+
+- MySQL table constraints have changed. Please execute the pending migrations using the `doctrine:migrations:migrate` console command.
+
+# 2.2.6 (2018-05-24)
+
+## Bug fixes
+
+- PIM-7363: fix the pim:catalog:remove-wrong-boolean-values-on-variant-products command
+
 # 2.2.5 (2018-05-16)
 
 ## Bug fixes
