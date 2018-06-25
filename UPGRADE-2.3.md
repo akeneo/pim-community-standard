@@ -41,6 +41,9 @@
     mv $PIM_DIR/app/config/parameters.yml.dist $PIM_DIR/app/config/parameters.yml.dist.bak
     cp app/config/parameters.yml.dist $PIM_DIR/app/config
 
+    mv $PIM_DIR/app/config/routing.yml $PIM_DIR/app/config/routing.yml.bak
+    cp app/config/routing.yml $PIM_DIR/app/config
+
     mv $PIM_DIR/composer.json $PIM_DIR/composer.json.bak
     cp composer.json $PIM_DIR/
     ```
