@@ -95,5 +95,5 @@
     0 22  *    *    *    php /path/to/installation/pim-community-standard/bin/console pim:volume:aggregate --env=prod > /path/to/installation/pim-community-standard/var/logs/volume_aggregate.log 2>&1
     ```
 
-8. After all those steps, it's possible that your OPCache is out of date. So remember to restart your php-fpm daemon or apache.
+9. After all those steps, it's possible that your OPCache is out of date. So remember to restart your php-fpm daemon or apache.
 
