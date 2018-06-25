@@ -62,8 +62,19 @@
        "your/other-dependency": "version",
     }
     ```
+5. Register PimCatalogVolumeMonitoringBundle in the AppKernel.php :
 
-5. Run a composer update:
+    ```php
+    protected function getPimBundles()
+    {
+        return [
+            ...
+            new Pim\Bundle\CatalogVolumeMonitoringBundle\PimCatalogVolumeMonitoringBundle(),
+        ];
+    }
+    ```
+    
+6. Run a composer update:
 
    Then run the command to update your dependencies:
 
@@ -76,24 +87,24 @@
     If you have custom code in your project, this step may raise errors in the "post-script" command.
     In this case, go to the chapter "Migrate your custom code" before running the database migration.
 
-6. Migrate your database:
+7. Migrate your database:
 
     ```bash
     rm -rf var/cache
     bin/console doctrine:migration:migrate --env=prod
     ```
 
-7. Then re-generate the PIM assets:
+8. Then re-generate the PIM assets:
 
     ```bash
     bin/console pim:installer:assets --symlink --clean --env=prod
     yarn run webpack
     ```
 
-8. Add the new cron in your crontab:
+9. Add the new cron in your crontab:
     ```cron
     0 22  *    *    *    php /path/to/installation/pim-community-standard/bin/console pim:volume:aggregate --env=prod > /path/to/installation/pim-community-standard/var/logs/volume_aggregate.log 2>&1
     ```
 
-8. After all those steps, it's possible that your OPCache is out of date. So remember to restart your php-fpm daemon or apache.
+10. After all those steps, it's possible that your OPCache is out of date. So remember to restart your php-fpm daemon or apache.
 
