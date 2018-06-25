@@ -19,6 +19,8 @@
 
 ## Migrate your standard project
 
+/!\ Before starting the migration process, we advise you to stop the job queue consumer daemon and start it again only when the migration process is finished.
+
 1. Download it from the website [PIM community standard](http://www.akeneo.com/download/) and extract:
 
     ```bash
