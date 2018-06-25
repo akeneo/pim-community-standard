@@ -19,6 +19,8 @@
 
 ## Migrate your standard project
 
+/!\ Before starting the migration process, we advise you to stop the job queue consumer daemon and start it again only when the migration process is finished.
+
 1. Download it from the website [PIM community standard](http://www.akeneo.com/download/) and extract:
 
     ```bash
@@ -40,6 +42,9 @@
 
     mv $PIM_DIR/app/config/parameters.yml.dist $PIM_DIR/app/config/parameters.yml.dist.bak
     cp app/config/parameters.yml.dist $PIM_DIR/app/config
+
+    mv $PIM_DIR/app/config/routing.yml $PIM_DIR/app/config/routing.yml.bak
+    cp app/config/routing.yml $PIM_DIR/app/config
 
     mv $PIM_DIR/composer.json $PIM_DIR/composer.json.bak
     cp composer.json $PIM_DIR/
