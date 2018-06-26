@@ -1,9 +1,19 @@
+# 2.0.28 (2018-06-26)
+
+## Bug fixes
+
+- PIM-7425: Prevent job 'compute_completeness_of_products_family' to run in some cases.
+- PIM-7396: Fix memory leak on product model descendants computation
+- PIM-7447: do not trigger caclulation of the completeness before exporting products
+- PIM-7411: Fix Request-URI Too Large issue on category selection for product export builder
+
 # 2.0.27 (2018-06-13)
 
 ## Bug fixes
 
 - PIM-7327: Fix memory leak on completeness calculation
 - PIM-7426: Fix search on the product 'add to group' mass edit
+- PIM-7415: Force the minus symbol for number on localization, whatever the locale of the user
 
 # 2.0.26 (2018-06-06)
 
