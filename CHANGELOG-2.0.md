@@ -1,3 +1,23 @@
+# 2.0.30 (2018-07-25)
+
+## Technical improvements
+
+- PIM-7396: Improve family import performances.
+
+## Bug fixes
+
+- PIM-7452: Fix a memory leak when computing the completeness of all the products of a family.
+- PIM-7519 : Fix infinite scroll to see all reference data options when creating a new variant product.
+
+## BC Breaks
+
+- PIM-7396: Changes the service `pim_connector.job.csv_family_import` list of job steps
+            to replace `@pim_connector.step.csv_family.compute_data_related_to_family_variants` with
+            `@pim_connector.step.csv_family.compute_data_related_to_family_root_product_models` and `@pim_connector.step.csv_family.compute_data_related_to_family_sub_product_models`
+- PIM-7396: Changes the service `pim_connector.job.xlsx_family_import` list of job steps
+            to replace `@pim_connector.step.xlsx_family.compute_data_related_to_family_variants` with
+            `@pim_connector.step.xlsx_family.compute_data_related_to_family_root_product_models` and `@pim_connector.step.xlsx_family.compute_data_related_to_family_sub_product_models`
+
 # 2.0.29 (2018-07-04)
 
 ## Bug fixes
