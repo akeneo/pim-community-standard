@@ -1,3 +1,10 @@
+# 1.7.28 (2018-07-26)
+
+## Bug fixes
+
+- PIM-7532: Improve the standard format for products associated to avoid performance impact
+- PIM-7540: Fix translations of boolean attributes
+
 # 1.7.27 (2018-07-24)
 
 ## Bug fixes
@@ -30,6 +37,7 @@
 ## Bug fixes
 
 - PIM-7466: do not escape quotes for translation
+- PIM-7474: Show job name label in job profile header
 
 # 1.7.24 (2018-07-05)
 
