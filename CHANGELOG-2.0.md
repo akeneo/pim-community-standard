@@ -1,3 +1,17 @@
+# 2.0.31 (2018-08-01)
+
+## Performances
+
+- PIM-7531: (backport) Improve indexation during the "compute product models descendants" step on product models import
+
+## BC Breaks
+
+- Added the method `removeForProductWithoutIndexing` on the `Pim\Component\Catalog\Completeness\CompletenessRemoverInterface`
+
+## Bug fixes
+
+- PIM-7522: Fix association changes not save on the product history.
+
 # 2.0.30 (2018-07-25)
 
 ## Technical improvements
