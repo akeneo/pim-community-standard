@@ -1,7 +1,14 @@
+# 1.7.29 (2018-08-01)
+
+## Bug fixes
+
+- PIM-7538: Fix persistent grid filters
+
 # 1.7.28 (2018-07-26)
 
 ## Bug fixes
 
+- PIM-7453: Forbid to remove a role if user won't have role after deletion
 - PIM-7532: Improve the standard format for products associated to avoid performance impact
 - PIM-7540: Fix translations of boolean attributes
 
@@ -24,13 +31,13 @@
 
 ## BC breaks:
 
-### AppKernel 
+### AppKernel
 
 - Remove `Pim\Bundle\JsFormValidationBundle\PimJsFormValidationBundle` and `APY\JsFormValidationBundle\APYJsFormValidationBundle`
 
 ### Routing
 
-- Remove routing from `APYJsFormValidationBundle` 
+- Remove routing from `APYJsFormValidationBundle`
 
 # 1.7.25 (2018-07-06)
 
