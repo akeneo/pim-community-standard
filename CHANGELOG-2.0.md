@@ -8,6 +8,7 @@
 
 - Added the method `removeForProductWithoutIndexing` on the `Pim\Component\Catalog\Completeness\CompletenessRemoverInterface`
 
+
 ## Bug fixes
 
 - PIM-7522: Fix association changes not save on the product history.
