@@ -1,3 +1,13 @@
+# 2.0.32 (2018-08-06)
+
+## Bug fixes
+
+- PIM-7559: Fix versionning query too slow on the PEF
+
+## BC Breaks
+
+- Method `Pim\Bundle\VersioningBundle\Repository\VersionRepositoryInterface::getNewestLogEntryForRessources` returns now an array
+
 # 2.0.31 (2018-08-01)
 
 ## Performances
@@ -7,7 +17,6 @@
 ## BC Breaks
 
 - Added the method `removeForProductWithoutIndexing` on the `Pim\Component\Catalog\Completeness\CompletenessRemoverInterface`
-
 
 ## Bug fixes
 
