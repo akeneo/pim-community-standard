@@ -30,13 +30,6 @@
         "doctrine/migrations": "1.5.0",
         "doctrine/doctrine-migrations-bundle": "1.2.1"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/akeneo/pim-community-dev.git",
-            "branch": "master"
-        }
-    ],
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
