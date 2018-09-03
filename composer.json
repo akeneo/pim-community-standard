@@ -12,10 +12,12 @@
     "autoload": {
         "psr-0": {
             "": "src/",
-            "Context": "features/"
+            "Context": "features/",
+            "Pim\\Behat": "vendor/akeneo/pim-community-dev/features/"
         },
         "psr-4": {
-          "Pim\\Upgrade\\": "upgrades/"
+          "Pim\\Upgrade\\": "upgrades/",
+          "Akeneo\\Test\\Integration\\": "vendor/akeneo/pim-community-dev/tests/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ],
         "exclude-from-classmap": [
@@ -24,19 +26,12 @@
         ]
     },
     "require": {
-        "akeneo/pim-community-dev": "2.3.x-dev@dev"
+        "akeneo/pim-community-dev": "3.0.x-dev@dev"
     },
     "require-dev": {
         "doctrine/migrations": "1.5.0",
         "doctrine/doctrine-migrations-bundle": "1.2.1"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/akeneo/pim-community-dev.git",
-            "branch": "master"
-        }
-    ],
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -46,17 +41,13 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "@php bin/console fos:js-routing:dump --target=web/js/routes.js"
+            "php bin/console fos:js-routing:dump --target=web/js/routes.js"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
         ],
         "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "@php bin/console fos:js-routing:dump --target=web/js/routes.js",
+            "@symfony-scripts",
             "Pim\\Bundle\\InstallerBundle\\ComposerScripts::copyUpgradesFiles"
         ]
     },
@@ -68,8 +59,8 @@
         "symfony-web-dir": "web",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
-            "keep-outdated": true,
             "file": "app/config/parameters.yml",
+            "keep-outdated": true,
             "env-map": {
                 "database_host": "PIM_DATABASE_HOST",
                 "database_port": "PIM_DATABASE_PORT",
