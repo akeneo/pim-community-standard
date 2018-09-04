@@ -1,18 +1,69 @@
+# 1.7.31 (2018-08-22)
+
+# 1.7.30 (2018-08-14)
+
+- PIM-7570: Adds 'Locale specific' fields in attribute versioning
+
+# 1.7.29 (2018-08-01)
+
+## Bug fixes
+
+- PIM-7538: Fix persistent grid filters
+- GITHUB-8418: Cast entity id for comparison with MongoObject
+
+# 1.7.28 (2018-07-26)
+
+## Bug fixes
+
+- PIM-7453: Forbid to remove a role if user won't have role after deletion
+- PIM-7532: Improve the standard format for products associated to avoid performance impact
+- PIM-7540: Fix translations of boolean attributes
+
+# 1.7.27 (2018-07-24)
+
+## Bug fixes
+
+- GITHUB-8521: Update reference data configuration following the PIM-7456
+
+# 1.7.26 (2018-07-23)
+
+## Bug fixes
+
+- PIM-7429: Fix category tab in product edit form
+- PIM-7523: Fix accessibility for boolean switches
+- PIM-7473: Enables cache to avoid reloading validation mapping files
+- PIM-7459: Fix completeness performances issues with high number of locales on MongoDB
+- PIM-7525: Add loading mask to avoid multiple import launches
+- PIM-7456: Security vulnerabilities in dependencies.
+
+## BC breaks:
+
+### AppKernel
+
+- Remove `Pim\Bundle\JsFormValidationBundle\PimJsFormValidationBundle` and `APY\JsFormValidationBundle\APYJsFormValidationBundle`
+
+### Routing
+
+- Remove routing from `APYJsFormValidationBundle`
+
 # 1.7.25 (2018-07-06)
 
 ## Bug fixes
 
 - PIM-7466: do not escape quotes for translation
+- PIM-7474: Show job name label in job profile header
 
 # 1.7.24 (2018-07-05)
 
 ## Bug fixes
+
 - PIM-7461: Allow to avoid type check on category filter
 - PIM-7366: Fix performance issue related to reloading of selected category children ids on the grid
 - PIM-7373: Fix deletion and reinsertion of all attributes relations at family save time
 - PIM-7474: Show job profile label instead of code in the headers
 - PIM-7466: do not escape quotes for translation
 - PIM-7470: reduce loading time for family selects
+- PIM-7475: Add family to Families edit history
 
 # 1.7.23 (2018-06-25)
 
