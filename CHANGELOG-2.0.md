@@ -1,3 +1,72 @@
+# 2.0.35 (2018-08-24)
+
+## Bug fixes
+
+- PIM-7595: Add missing acl on family variant managment 
+- PIM-7557: Don't display attribute group filter if no attribute is chosen in "edit common attributes" action
+
+# 2.0.34 (2018-08-17)
+
+# 2.0.33 (2018-08-16)
+
+## Bug fixes
+
+- PIM-7574: Use step start time to name exported files instead of current time
+
+# 2.0.32 (2018-08-06)
+
+## Bug fixes
+
+- PIM-7559: Fix versionning query too slow on the PEF
+
+## BC Breaks
+
+- Method `Pim\Bundle\VersioningBundle\Repository\VersionRepositoryInterface::getNewestLogEntryForRessources` returns now an array
+
+# 2.0.31 (2018-08-01)
+
+## Performances
+
+- PIM-7531: (backport) Improve indexation during the "compute product models descendants" step on product models import
+
+## BC Breaks
+
+- Added the method `removeForProductWithoutIndexing` on the `Pim\Component\Catalog\Completeness\CompletenessRemoverInterface`
+
+## Bug fixes
+
+- PIM-7522: Fix association changes not save on the product history.
+
+# 2.0.30 (2018-07-25)
+
+## Technical improvements
+
+- PIM-7396: Improve family import performances.
+
+## Bug fixes
+
+- PIM-7452: Fix a memory leak when computing the completeness of all the products of a family.
+- PIM-7519 : Fix infinite scroll to see all reference data options when creating a new variant product.
+
+## BC Breaks
+
+- PIM-7396: Changes the service `pim_connector.job.csv_family_import` list of job steps
+            to replace `@pim_connector.step.csv_family.compute_data_related_to_family_variants` with
+            `@pim_connector.step.csv_family.compute_data_related_to_family_root_product_models` and `@pim_connector.step.csv_family.compute_data_related_to_family_sub_product_models`
+- PIM-7396: Changes the service `pim_connector.job.xlsx_family_import` list of job steps
+            to replace `@pim_connector.step.xlsx_family.compute_data_related_to_family_variants` with
+            `@pim_connector.step.xlsx_family.compute_data_related_to_family_root_product_models` and `@pim_connector.step.xlsx_family.compute_data_related_to_family_sub_product_models`
+
+# 2.0.29 (2018-07-04)
+
+## Bug fixes
+
+- PIM-7460: Fix locale flag for locales with two underscores like az_cyrl_AZ.
+- PIM-7472: Fix username display in user form title
+- PIM-7478: Fix memory leak on quick export
+- PIM-7462: Fix step execution read count
+- PIM-7480: Fix generation of export file name with a date
+
 # 2.0.28 (2018-06-26)
 
 ## Bug fixes

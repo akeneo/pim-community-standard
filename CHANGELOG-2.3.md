@@ -1,3 +1,63 @@
+# 2.3.5 (2018-08-22)
+
+## Bug fixes
+
+- PIM-7580: Fixes the search on categories with product models
+- PIM-7573: Fix "nesting level too deep" error during family import
+- PIM-7562: Fix API filter product on status and groups
+- PIM-7571: Fix job instance validation in case of attribute deletion
+- PIM-7542: Fix completeness filter on edit product group page
+- PIM-7589: Fix job `compute_product_models_descendants` launched too many times
+- PIM-7587: Fix the preview generation configuration with imagine
+- PIM-7414: Fix localisable assets used as main image for family and added to product, break the product form
+
+## BC breaks
+
+- PIM-7414: Change the constructor of `Pim\Bundle\EnrichBundle\Normalizer\ProductNormalizer` to add `Pim\Bundle\CatalogBundle\Context\CatalogContext` as a new argument.
+
+# 2.3.4 (2018-08-08)
+
+## Bug fixes
+
+- PIM-7537: Fix console error in password reset form
+- PIM-7552: Fix SKU filter display bug on group grid
+- PIM-7543: Forbid usage of 'label' code for attributes to prevent UI bugs
+- PIM-7545: Redirect to login page when user is not authenticated anymore
+- PIM-7569: Fix limit of 20 results for view selector
+
+# 2.3.3 (2018-08-01)
+
+## Bug fixes
+
+- PIM-7529: Fix error when a tree is removed
+- PIM-7536: Fix tool-tip error
+- GITHUB-8550: Exclude more folders in typescript to improve build time
+- GITHUB-8578: Fixed wrong labels displayed in the "active/inactive" filter of user grid" (Thanks [oliverde8](https://github.com/oliverde8)!)
+- PIM-7551: Fix issue on product model import when using custom column headers
+- PIM-7541: Fix issue on filtered search on created and updated product and product model properties. Date must be instanciated on server timezone.
+
+# 2.3.2 (2018-07-24)
+
+## Bug fixes
+
+- PIM-7528: Fix Product and Product Model date attribute rendering in history panel, no timezone needed.
+- PIM-7488: use catalog locale for attributes list in attribute groups
+- PIM-7518: fix memory leak in channel/locale clean command
+- PIM-7517: fix the product models export filter on identifier
+- PIM-7476: fix family select2 to have the right limit
+- PIM-7516: fix metric default value on product edit form
+
+## Migration
+
+**IMPORTANT** Please run the doctrine migrations command to fix the product models export profiles : `bin/console doctrine:migrations:migrate --env=prod`
+
+
+# 2.3.1 (2018-07-04)
+
+## Enhancements
+
+- PIM-7465: Set form data entity into field context.
+
 # 2.3.0 (2018-06-25)
 
 # 2.3.0-BETA1 (2018-06-21)
