@@ -1,5 +1,26 @@
 # 2.3.x
 
+# 2.3.7 (2018-09-11)
+
+## Bug fixes
+
+- PIM-7628: Fix the initialization of the product datagrid identifier filter.
+- PIM-7594: Fix memory leak in `pim:versioning:purge` command
+- PIM-7635: Fix elasticsearch config override
+- PIM-7598: Fix locale change on reference data on simple and multi select
+
+## BC breaks
+
+- PIM-7594: Method `Pim\Bundle\VersioningBundle\Repository\VersionRepositoryInterface::findPotentiallyPurgeableBy` returns now an CursorInterface
+
+## Enhancements
+
+- PIM-7612: Add the media/cache/{filter}/{path} route support in order to handle scalable frontend architecture for media content delivering
+
+## Technical improvements
+
+- PIM-7601: Update Symfony to 3.4.4
+
 # 2.3.6 (2018-09-06)
 
 ## Enhancements
@@ -15,6 +36,7 @@
 - PIM-7631: Fix API filter product and product model on date with between operator
 - PIM-7613: Fix translations of boolean attributes
 - PIM-7609: Handle 'empty' and 'not empty' filter types in string filter
+- PIM-7484: Search families and family variants regardless of the current locale
 
 # 2.3.5 (2018-08-22)
 
