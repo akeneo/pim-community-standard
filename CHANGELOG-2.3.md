@@ -1,5 +1,12 @@
 # 2.3.x
 
+# 2.3.8 (2018-09-14)
+
+## Bug fixes
+
+- PIM-7648: Fix preview of huge images in Product Edit Form
+- PIM-7647: Fix completeness filter on the product export builder
+
 # 2.3.7 (2018-09-11)
 
 ## Bug fixes
