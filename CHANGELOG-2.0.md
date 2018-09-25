@@ -1,3 +1,23 @@
+# 2.0.x
+
+# 2.0.38 (2018-09-13)
+
+- PIM-7645: Fix media field drop zone access
+
+# 2.0.37 (2018-09-11)
+
+## Bug fixes
+
+- PIM-7637: Fix computation of completness of variant products when an attribute at product model level is updated on a bulk action
+- PIM-7639: Fix the "forgot password" title visibility 
+- PIM-7265: Fix attributes groups order on the PEF
+
+# 2.0.36 (2018-09-05)
+
+## Bug fixes
+
+- PIM-7605: Fix error when a tree is removed
+
 # 2.0.35 (2018-08-24)
 
 ## Bug fixes
