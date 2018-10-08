@@ -1,5 +1,14 @@
 # 2.3.x
 
+# 2.3.11 (2018-10-08)
+
+## Bug fixes
+
+- PIM-7676: Add code filter on attribute and family grid
+- PIM-7673: Fix permissions on locales applied on channel settings page
+- PIM-7664: ReferenceDataCollectionValueFactory can now ignore unknown reference data with an optionnal argument and not throw an exception.
+- PIM-7672: Fix the mass edit controller to launch jobs with authentication.
+
 # 2.3.10 (2018-10-01)
 
 ## Bug fixes
@@ -10,6 +19,7 @@
 - PIM-7671: Fix associations tab cannot display more than 24 associated products/product models or 25 groups.
 - PIM-7668: Fix issues with timezone in various screen, to always use current user timezone.
 - PIM-7656: Fix a bug preventing a link insertion in WYSIWYG mass edit field.
+- PIM-7670: Fix issue on SKU filters when changing context
 
 # 2.3.9 (2018-09-25)
 
@@ -63,7 +73,7 @@
 
 - PIM-7600: Change the default return value of ResetIndexesCommand to true to allow the --no-interaction parameter.
 - PIM-7572: Cross to remove associations displayed at PV level whereas association is done at PM level
-- PIM-7618: Hide the "Process tracker" link in the Dashboard if the user does not have the permission 
+- PIM-7618: Hide the "Process tracker" link in the Dashboard if the user does not have the permission
 - PIM-7626: Fix attribute groups order in the product grid's column configurator
 - PIM-7631: Fix API filter product and product model on date with between operator
 - PIM-7613: Fix translations of boolean attributes
