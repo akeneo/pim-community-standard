@@ -1,5 +1,11 @@
 # 2.0.x
 
+# 2.0.40 (2018-10-15)
+
+## Bug fixes
+
+- PIM-7655: Fix issue with Attribute Groups order when ordering manually and on import
+
 # 2.0.39 (2018-10-08)
 
 # 2.0.38 (2018-09-13)
