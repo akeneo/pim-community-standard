@@ -1,5 +1,18 @@
 # 2.3.x
 
+# 2.3.12 (2018-10-17)
+
+## Bug fixes
+
+- PIM-7674: fix Avatar image broken on dashboard
+- PIM-7694: fix option null values crashing PDF
+- PIM-7731: check for attribute as label not null in normalizers 
+- PIM-7740: bump summernote version to fix scroll glitches
+- PIM-7746: Fix issue when an attribute code is numeric
+- PIM-7727: parent filter search case insensitive
+- PIM-7724: fix role label update and error displayed on permission save action
+- PIM-7747: convert boolean strings in User converter
+
 # 2.3.11 (2018-10-08)
 
 ## Bug fixes
