@@ -21,8 +21,6 @@ swiftmailer:
 assetic:
     use_controller: false
 
-pim_reference_data: ~
-
 parameters:
     max_products_category_removal: 20
     installer_data:       PimInstallerBundle:minimal
