@@ -11,13 +11,10 @@
     ],
     "autoload": {
         "psr-0": {
-            "": "src/",
-            "Context": "features/",
-            "Pim\\Behat": "vendor/akeneo/pim-community-dev/features/"
+            "": "src/"
         },
         "psr-4": {
-          "Pim\\Upgrade\\": "upgrades/",
-          "Akeneo\\Test\\Integration\\": "vendor/akeneo/pim-community-dev/tests/"
+          "Pim\\Upgrade\\": "upgrades/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ],
         "exclude-from-classmap": [
@@ -33,7 +30,7 @@
         "doctrine/doctrine-migrations-bundle": "1.2.1"
     },
     "scripts": {
-        "post-install-cmd": [
+        "symfony-scripts": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
@@ -41,7 +38,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "php bin/console fos:js-routing:dump --target=web/js/routes.js"
+            "php bin/console --ansi fos:js-routing:dump --target=web/js/routes.js",
+            "php bin/console --ansi pim:installer:assets"
         ],
         "post-install-cmd": [
             "@symfony-scripts"
@@ -59,8 +57,8 @@
         "symfony-web-dir": "web",
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
-            "file": "app/config/parameters.yml",
             "keep-outdated": true,
+            "file": "app/config/parameters.yml",
             "env-map": {
                 "database_host": "PIM_DATABASE_HOST",
                 "database_port": "PIM_DATABASE_PORT",
