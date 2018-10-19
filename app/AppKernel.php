@@ -103,7 +103,6 @@ class AppKernel extends Kernel
     protected function getPimDependenciesBundles()
     {
         return [
-            new Akeneo\Tool\Bundle\ApiBundle\PimApiBundle(),
             new Akeneo\Tool\Bundle\ConnectorBundle\PimConnectorBundle(),
             new Akeneo\Tool\Bundle\ClassificationBundle\AkeneoClassificationBundle(),
             new Akeneo\Tool\Bundle\VersioningBundle\AkeneoVersioningBundle(),
@@ -116,6 +115,8 @@ class AppKernel extends Kernel
             new Akeneo\Tool\Bundle\StorageUtilsBundle\AkeneoStorageUtilsBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
+            // PimApiBundle must be registered after FOSOAuthServerBundle
+            new Akeneo\Tool\Bundle\ApiBundle\PimApiBundle(),
             new Oneup\FlysystemBundle\OneupFlysystemBundle(),
         ];
     }
