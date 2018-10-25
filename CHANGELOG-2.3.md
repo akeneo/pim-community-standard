@@ -1,5 +1,12 @@
 # 2.3.x
 
+# 2.3.13 (2018-10-25)
+
+## Bug fixes
+
+- PIM-7759: Date range grid filters should be ignored when no value is set
+- PIM-7758: Fix the product and product model deletion from the grid
+
 # 2.3.12 (2018-10-17)
 
 ## Bug fixes
