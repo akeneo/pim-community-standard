@@ -23,6 +23,7 @@
         ]
     },
     "require": {
+        "php": ">=7.2.0",
         "akeneo/pim-community-dev": "3.0.x-dev@dev"
     },
     "require-dev": {
