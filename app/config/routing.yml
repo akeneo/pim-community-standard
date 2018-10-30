@@ -18,9 +18,6 @@ pim_datagrid:
 pim_dashboard:
     resource: "@PimDashboardBundle/Resources/config/routing.yml"
 
-pim_enrich:
-    resource: "@PimEnrichBundle/Resources/config/routing.yml"
-
 pim_ui:
     resource: "@PimUIBundle/Resources/config/routing.yml"
 
@@ -32,12 +29,6 @@ pim_importexport:
 
 pim_notification:
     resource: "@PimNotificationBundle/Resources/config/routing.yml"
-
-pim_localization:
-    resource: "@PimLocalizationBundle/Resources/config/routing.yml"
-
-pim_reference_data:
-    resource: "@PimReferenceDataBundle/Resources/config/routing.yml"
 
 pim_api:
     resource: "@PimApiBundle/Resources/config/routing.yml"
@@ -51,7 +42,7 @@ pim_volume_monitoring:
 oro_default:
     path:  /
     defaults:
-        template:    PimEnrichBundle::index.html.twig
+        template:    PimUIBundle::index.html.twig
         _controller: FrameworkBundle:Template:template
 
 oro_config:

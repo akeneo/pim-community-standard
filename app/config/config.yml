@@ -1,5 +1,5 @@
 imports:
-    - { resource: '@PimEnrichBundle/Resources/config/pim.yml' }
+    - { resource: '../../vendor/akeneo/pim-community-dev/src/Akeneo/Platform/config/pim.yml' }
     - { resource: pim_parameters.yml }
     - { resource: parameters.yml }
     - { resource: security.yml }
@@ -56,7 +56,8 @@ swiftmailer:
     password:                 "%mailer_password%"
     spool:                    { type: memory }
 
-pim_reference_data: ~
+akeneo_pim_structure:
+    reference_data: ~
 
 parameters:
     pim_ce_dev_src_folder_location: '%kernel.project_dir%/vendor/akeneo/pim-community-dev'

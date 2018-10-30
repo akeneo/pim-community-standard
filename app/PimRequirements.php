@@ -64,7 +64,6 @@ class PimRequirements extends SymfonyRequirements
     }
 
     /**
-<<<<<<< HEAD
      * Gets the MySQL server version thanks to a PDO connection.
      *
      * If no connection is reached, or that "parameters.yml" do not exists, an
@@ -159,8 +158,7 @@ class PimRequirements extends SymfonyRequirements
     }
 
     /**
-=======
->>>>>>> Uses requirements from CE dev
+     * Uses requirements from CE dev
      * Get the list of mandatory requirements (all requirements excluding PhpIniRequirement)
      */
     public function getMandatoryRequirements(): array
