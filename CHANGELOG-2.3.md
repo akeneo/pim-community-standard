@@ -1,5 +1,59 @@
 # 2.3.x
 
+# 2.3.15 (2018-11-06)
+
+## Bug fixes
+
+- PIM-7765: Replace `JSON_ARRAYAGG` by `GROUP_CONCAT`
+
+# 2.3.14 (2018-11-05)
+
+## Bug fixes
+
+PIM-7810: Fix to mass delete products and product models
+
+# 2.3.13 (2018-10-25)
+
+## Bug fixes
+
+- PIM-7759: Date range grid filters should be ignored when no value is set
+- PIM-7758: Fix the product and product model deletion from the grid
+- PIM-7765: Fix the loading of price values for disabled currencies
+
+# 2.3.12 (2018-10-17)
+
+## Bug fixes
+
+- PIM-7674: fix Avatar image broken on dashboard
+- PIM-7694: fix option null values crashing PDF
+- PIM-7731: check for attribute as label not null in normalizers 
+- PIM-7740: bump summernote version to fix scroll glitches
+- PIM-7746: Fix issue when an attribute code is numeric
+- PIM-7727: parent filter search case insensitive
+- PIM-7724: fix role label update and error displayed on permission save action
+- PIM-7747: convert boolean strings in User converter
+
+# 2.3.11 (2018-10-08)
+
+## Bug fixes
+
+- PIM-7676: Add code filter on attribute and family grid
+- PIM-7673: Fix permissions on locales applied on channel settings page
+- PIM-7664: ReferenceDataCollectionValueFactory can now ignore unknown reference data with an optionnal argument and not throw an exception.
+- PIM-7672: Fix the mass edit controller to launch jobs with authentication.
+
+# 2.3.10 (2018-10-01)
+
+## Bug fixes
+
+- PIM-7629: Fix category filter in product grid.
+- PIM-7659: Fix search on the families to get all the results when they have same translations for many locales.
+- PIM-7619: Fix search on groups for the variant products.
+- PIM-7671: Fix associations tab cannot display more than 24 associated products/product models or 25 groups.
+- PIM-7668: Fix issues with timezone in various screen, to always use current user timezone.
+- PIM-7656: Fix a bug preventing a link insertion in WYSIWYG mass edit field.
+- PIM-7670: Fix issue on SKU filters when changing context
+
 # 2.3.9 (2018-09-25)
 
 ## Bug fixes
@@ -52,7 +106,7 @@
 
 - PIM-7600: Change the default return value of ResetIndexesCommand to true to allow the --no-interaction parameter.
 - PIM-7572: Cross to remove associations displayed at PV level whereas association is done at PM level
-- PIM-7618: Hide the "Process tracker" link in the Dashboard if the user does not have the permission 
+- PIM-7618: Hide the "Process tracker" link in the Dashboard if the user does not have the permission
 - PIM-7626: Fix attribute groups order in the product grid's column configurator
 - PIM-7631: Fix API filter product and product model on date with between operator
 - PIM-7613: Fix translations of boolean attributes
