@@ -1,5 +1,11 @@
 # 2.0.x
 
+# 2.0.42 (2018-11-12)
+
+## Bug fixes
+
+- PIM-7757: Fix the risk of inserting duplicate completenesses.
+
 # 2.0.41 (2018-10-23)
 
 ## Bug fixes
