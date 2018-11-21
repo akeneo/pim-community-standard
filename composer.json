@@ -47,7 +47,7 @@
         ],
         "post-update-cmd": [
             "@symfony-scripts",
-            "Pim\\Bundle\\InstallerBundle\\ComposerScripts::copyUpgradesFiles"
+            "Akeneo\\Platform\\Bundle\\InstallerBundle\\ComposerScripts::copyUpgradesFiles"
         ]
     },
     "minimum-stability": "stable",
