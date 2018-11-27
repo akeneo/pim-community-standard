@@ -1,5 +1,11 @@
 # 2.0.x
 
+# 2.0.43 (2018-11-27)
+
+## Bug fixes
+
+-GITHUB-7532: Fix the prepopulation of textarea field - cheers MarieMinasyan, userz58, kanduvisla & oliverde8 !    
+
 # 2.0.42 (2018-11-12)
 
 ## Bug fixes
