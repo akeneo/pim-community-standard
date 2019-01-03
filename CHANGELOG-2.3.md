@@ -1,5 +1,12 @@
 # 2.3.x
 
+# 2.3.23 (2019-01-03)
+ 
+## Bug fixes
+
+- PIM-7899: Remove Date of Birth field
+- PIM-7926: Fix the parent property setter when "enabled comparison" is set to false in an import job definition
+
 # 2.3.22 (2018-12-21)
 
 ## Bug fixes
@@ -13,7 +20,7 @@
  ## Elasticsearch
  
  - Please re-index the products and product models by launching the commands `console akeneo:elasticsearch:reset-indexes -e prod` and `pim:product:index --all -e prod`.
- 
+
 # 2.3.21 (2018-12-07)
 
 ## Bug fixes
