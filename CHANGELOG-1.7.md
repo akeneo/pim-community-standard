@@ -1,5 +1,12 @@
 # 1.7.x
 
+# 1.7.37 (2019-01-09)
+
+## Bug fixes
+
+- GITHUB-7594: Fix comparison in versioning system. Cheers @mathewrapid !
+- PIM-7957: Fix dependencies for doctrine
+
 # 1.7.36 (2018-12-11)
 
 ## Bug fixes
