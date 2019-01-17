@@ -1,10 +1,18 @@
 # 2.3.x
 
+# 2.3.25 (2019-01-17)
+
+## Bug fixes
+
+- PIM-7965: fix families patch endpoint when updating a family with a family variant 
+
 # 2.3.24 (2019-01-10)
  
 ## Bug fixes
 
 - PIM-7934: Fix translations of product model import
+- GITHUB-8780: Fix error in product normalizer. Cheers @yunosh!
+- PIM-7961: Fix localizable assets used as main image for family and added to product product model
 
 # 2.3.23 (2019-01-03)
  
