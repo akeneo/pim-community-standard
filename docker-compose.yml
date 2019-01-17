@@ -7,8 +7,9 @@ services:
     volumes:
       - './:/srv/pim'
     working_dir: '/srv/pim'
+
   node:
-    image: 'juliensnz/node'
+    image: 'node:10-slim'
     user: 'node'
     volumes:
       - './:/srv/pim'
