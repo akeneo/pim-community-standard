@@ -7,6 +7,8 @@ services:
     volumes:
       - './:/srv/pim'
     working_dir: '/srv/pim'
+    networks:
+      - 'akeneo'
 
   node:
     image: 'node:10-slim'
@@ -14,6 +16,8 @@ services:
     volumes:
       - './:/srv/pim'
     working_dir: '/srv/pim'
+    networks:
+      - 'akeneo'
 
   httpd:
     image: 'httpd:2.4'
@@ -25,6 +29,8 @@ services:
       - './:/srv/pim:ro'
       - './docker/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro'
       - './docker/akeneo.conf:/usr/local/apache2/conf/vhost.conf:ro'
+    networks:
+      - 'akeneo'
 
   mysql:
     image: 'mysql:5.7'
@@ -33,9 +39,16 @@ services:
       MYSQL_USER: 'akeneo_pim'
       MYSQL_PASSWORD: 'akeneo_pim'
       MYSQL_DATABASE: 'akeneo_pim'
+    networks:
+      - 'akeneo'
 
   elasticsearch:
-    image: 'docker.elastic.co/elasticsearch/elasticsearch:5.5.3'
+    image: 'docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4'
     environment:
       ES_JAVA_OPTS: '-Xms512m -Xmx512m'
       discovery.type: 'single-node'
+    networks:
+      - 'akeneo'
+
+networks:
+  akeneo:
