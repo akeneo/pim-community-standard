@@ -24,6 +24,5 @@ jobs:
       - run:
           name: Pim installation
           command: |
-              docker-compose exec fpm bin/console --env=behat pim:install --force --symlink --clean
-              docker-compose run --rm node yarn run webpack-dev
-              docker-compose run --rm node yarn run webpack-test
+              docker-compose exec fpm bin/console --env=prod pim:install --force --clean
+              docker-compose run --rm node yarn run webpack
