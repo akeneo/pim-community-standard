@@ -10,7 +10,7 @@ jobs:
           name: Copy env file
           command: cp .env.dist .env
       - run:
-          name: Setup the parameters.yml files
+          name: Setup environment
           command: ./bin/docker/pim-setup.sh
       - run:
           name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
