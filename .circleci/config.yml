@@ -24,8 +24,8 @@ jobs:
       - run:
           name: Pim installation
           command: |
-              docker-compose exec fpm bin/console --env=prod pim:install --force --clean
-              docker-compose run --rm node yarn run webpack
+              docker-compose exec fpm bin/console --env=prod pim:install --force --clean \
+              && docker-compose run --rm node yarn run webpack
 
 workflows:
     version: 2
