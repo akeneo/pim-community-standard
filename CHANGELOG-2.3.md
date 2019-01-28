@@ -1,10 +1,19 @@
 # 2.3.x
 
+# 2.3.26 (2019-01-28)
+
+## Bug fixes
+
+- PIM-7967: Fix ACL for asset categories
+- PIM-7969: fix special chars in PDF export
+- Force the use of ip-regex at 2.1.0 version. Upper version needs nodejs >= 8 but we have to support nodejs >= 6.
+
 # 2.3.25 (2019-01-17)
 
 ## Bug fixes
 
 - PIM-7965: fix families patch endpoint when updating a family with a family variant 
+- PIM-7961: Fix localizable assets used as main image for family and added to product product model
 
 # 2.3.24 (2019-01-10)
  
@@ -12,7 +21,6 @@
 
 - PIM-7934: Fix translations of product model import
 - GITHUB-8780: Fix error in product normalizer. Cheers @yunosh!
-- PIM-7961: Fix localizable assets used as main image for family and added to product product model
 
 # 2.3.23 (2019-01-03)
  
