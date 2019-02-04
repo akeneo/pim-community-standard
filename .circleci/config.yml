@@ -36,6 +36,6 @@ workflows:
                   filters:
                       branches:
                           only:
-                              - master
+                              - "3.0"
         jobs:
             - build
