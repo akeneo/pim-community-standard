@@ -1,5 +1,34 @@
 # 1.7.x
 
+# 1.7.38 (2019-01-15)
+
+# 1.7.37 (2019-01-09)
+
+## Bug fixes
+
+- PIM-7953: Fix back and cancel button link in user profile view and edit template
+- GITHUB-7594: Fix comparison in versioning system. Cheers @mathewrapid !
+- PIM-7957: Fix dependencies for doctrine
+
+# 1.7.36 (2018-12-11)
+
+## Bug fixes
+
+- PIM-7841: Allow users to set regional locales for UI (en_NZ, pt_PT and pt_BR)
+- PIM-7911: Product quick export with grid context only exports selected locale 
+
+# 1.7.35 (2018-11-26)
+
+## Bug fixes
+
+- PIM-7870: Fix issue in the case of deletion of attribute used in a user default product grid filter.
+
+# 1.7.34 (2018-11-12)
+
+## Bug fixes
+
+- PIM-7581: Fix unselect category when its code is numeric
+
 # 1.7.33 (2018-10-10)
 
 ## Bug fixes
@@ -13,6 +42,7 @@
 - PIM-7614: Reduce SQL queries and loading time on the product edit form
 
 ## BC Breaks
+
 - PIM-7614: New method getPresenterByAttributeType() on PresenterRegistryInterface
 
 # 1.7.31 (2018-08-22)
