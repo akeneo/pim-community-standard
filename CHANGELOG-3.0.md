@@ -1,5 +1,9 @@
 # 3.0.x
 
+# 3.0.1 (2019-02-06)
+
+- Name Community version "Super-Rabbit"
+
 # 3.0.0 (2019-02-06)
 
 ## Technical improvement
