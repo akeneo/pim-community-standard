@@ -1,5 +1,16 @@
 # 2.3.x
 
+# 2.3.29 (2019-02-11)
+
+## Bug fixes
+
+- GITHUB-9408: Fix jobs in minimal fixture - cheerz @userz58 !
+- PIM-7943: Fix duplicate popin mask in family variant edit form.
+- PIM-8007: Content of sortable attribute options is now copyable.
+- PIM-8008: Fix attributes sort order in PEF.
+- PIM-8022: Fix the job status when using the batch command.
+- PIM-8050: Fix ElasticSearch mappings loader
+
 # 2.3.28 (2019-02-01)
 
 # 2.3.27 (2019-01-29)
