@@ -1,6 +1,6 @@
 {
   "name": "pim-community-standard",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "The \"Akeneo Community Standard Edition\" distribution",
   "config": {
     "source": "vendor/akeneo/pim-community-dev",
