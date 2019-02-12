@@ -1,6 +1,6 @@
 {
   "name": "pim-community-standard",
-  "version": "2.0.0",
+  "version": "3.1.0",
   "description": "The \"Akeneo Community Standard Edition\" distribution",
   "config": {
     "source": "vendor/akeneo/pim-community-dev",
@@ -32,11 +32,12 @@
     "bundle-loader": "0.5.5",
     "codemirror": "5.25.2",
     "deepmerge": "1.5.1",
+    "dropzone": "4.0.1",
     "eslint": "4.5.0",
     "exports-loader": "0.6.4",
     "expose-loader": "0.7.3",
     "imports-loader": "0.7.1",
-    "jquery": "1.11.0",
+    "jquery": "3.3.1",
     "loader-utils": "1.1.0",
     "lodash": "4.17.4",
     "merge-objects": "1.0.5",
