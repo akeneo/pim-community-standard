@@ -4,13 +4,16 @@
   "description": "The \"Akeneo Community Standard Edition\" distribution",
   "config": {
     "source": "vendor/akeneo/pim-community-dev",
-    "check": "vendor/akeneo/pim-community-dev/webpack/check-dependencies.js"
+    "check": "vendor/akeneo/pim-community-dev/frontend/build/check-dependencies.js",
+    "styles": "vendor/akeneo/pim-community-dev/frontend/build/compile-less.js"
   },
   "scripts": {
     "sync": "NODE_PATH=node_modules node $npm_package_config_check --source=$npm_package_config_source",
     "webpack": "yarn run sync && NODE_PATH=node_modules webpack --config $npm_package_config_source/webpack.config.js --env=prod",
     "webpack-dev": "yarn run sync && NODE_PATH=node_modules webpack --config $npm_package_config_source/webpack.config.js",
-    "webpack-watch": "yarn run sync && NODE_PATH=node_modules webpack --progress --config $npm_package_config_source/webpack.config.js --watch"
+    "webpack-watch": "yarn run sync && NODE_PATH=node_modules webpack --progress --config $npm_package_config_source/webpack.config.js --watch",
+    "less": "node $npm_package_config_styles",
+    "less-watch": "SHELL=/bin/bash chokidar --verbose \"{$npm_package_config_source/src,src,web/bundles}/**/*.{less,css}\" -c \"yarn run less --dev\""
   },
   "devDependencies": {
     "colors": "1.1.2",
@@ -30,6 +33,7 @@
     "babel-preset-env": "1.6.0",
     "backbone": "0.9.10",
     "bundle-loader": "0.5.5",
+    "chokidar-cli": "^1.2.1",
     "codemirror": "5.25.2",
     "deepmerge": "1.5.1",
     "dropzone": "4.0.1",
@@ -38,6 +42,7 @@
     "expose-loader": "0.7.3",
     "imports-loader": "0.7.1",
     "jquery": "3.3.1",
+    "less": "^3.9.0",
     "loader-utils": "1.1.0",
     "lodash": "4.17.4",
     "merge-objects": "1.0.5",
