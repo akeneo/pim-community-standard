@@ -29,6 +29,11 @@ jobs:
 
 workflows:
     version: 2
+
+    pull_request:
+        jobs:
+            - build
+
     nightly:
         triggers:
             - schedule:
