@@ -1,5 +1,23 @@
 # 3.0.x
 
+# 3.0.4 (2019-02-20)
+
+## Bug fixes
+
+- PIM-8129: Fix default system locale
+- PIM-8145: Fix design on variant navigation
+- PIM-8144: Fix spaces on field labels and required note
+- PIM-8143: Fix missing translations
+- PIM-8147: Fix design issue on boolean fields
+- PIM-8146: Fix centered alignment on drag & drop fields
+- PIM-8156: Fix multiselect field alignment
+- PIM-8153: Fix locale specific field to allow multiple locales 
+- PIM-8017: Fix PDF generation
+- PIM-8060: Fix avatars migration 2.3 -> 3.0
+- PIM-8135: Fix cursor paginator sequence
+- PIM-8053: Fix avatar deletion and avatar update on dashboard page and user navigation
+- PIM-8149: Fix design of the cross deletion in the Item Picker
+
 # 3.0.3 (2019-02-18)
 
 ## Bug fixes
