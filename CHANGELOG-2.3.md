@@ -1,5 +1,13 @@
 # 2.3.x
 
+# 2.3.31 (2019-02-28)
+
+## Bug fixes
+
+- PIM-8056: Remove bad ACL on the internal API end-point that get an association-type
+- PIM-8162: use the catalog locale in product export builder
+- PIM-8155: Fix bad ACL set on xlsx product export edit form
+
 # 2.3.30 (2019-02-21)
 
 ## Bug fixes
