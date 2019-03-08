@@ -4,15 +4,12 @@
 
 ## Bug fixes
 
+- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
 - PIM-8178: Fix Attribute search on family edit page
 - PIM-8189: Fix new patch availability display
 - PIM-8195: Fix JS error on Catalog volume monitoring screen
 
 # 3.0.5 (2019-02-25)
-
-## Bug fixes
-
-- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
 
 ## Bug fixes
 
