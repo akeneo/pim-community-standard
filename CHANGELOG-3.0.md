@@ -1,5 +1,16 @@
 # 3.0.x
 
+# 3.0.6 (2019-03-08)
+
+## Bug fixes
+
+- PIM-8168: accept MySql version with suffix in requirements check
+- PIM-8152: accept spaces in kernel root dir when executing commands
+- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
+- PIM-8178: Fix Attribute search on family edit page
+- PIM-8189: Fix new patch availability display
+- PIM-8195: Fix JS error on Catalog volume monitoring screen
+
 # 3.0.5 (2019-02-25)
 
 ## Bug fixes
