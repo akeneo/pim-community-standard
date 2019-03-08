@@ -35,7 +35,6 @@
     "backbone": "0.9.10",
     "bundle-loader": "0.5.6",
     "chokidar-cli": "^1.2.2",
-    "codemirror": "5.25.2",
     "deepmerge": "3.2.0",
     "dropzone": "4.0.1",
     "eslint": "5.15.1",
@@ -60,8 +59,6 @@
     "underscore": "1.8.3",
     "webpack": "4.29.6",
     "webpack-cli": "^3.2.3",
-    "webpack-cleanup-plugin": "0.5.1",
-    "webpack-livereload-plugin": "2.2.0",
     "webpack-shell-plugin": "^0.5.0",
     "write-file-webpack-plugin": "4.5.0",
     "yamljs": "0.3.0"
