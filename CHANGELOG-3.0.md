@@ -22,8 +22,6 @@
 - PIM-8165: Increase font sizes
 - PIM-8018: Move Confirm button on mass edit screen
 - PIM-8167: register missing command "pim:reference-data:check"
-- PIM-8168: accept MySql version with suffix in requirements check
-- PIM-8152: accept spaces in kernel root dir when executing commands
 
 # 3.0.4 (2019-02-20)
 
