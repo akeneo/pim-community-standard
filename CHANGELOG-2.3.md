@@ -1,5 +1,13 @@
 # 2.3.x
 
+# 2.3.34 (2019-03-18)
+
+## Bug fixes
+
+- PIM-8222: Fix product model issues when code contains `/` (create variant through UI and get product models via API)
+- PIM-8187: Add the possibility to fetch descendant products and product models
+- PIM-8214: Be able to save and launch job even if filter values refer to deleted entities.
+
 # 2.3.33 (2019-03-13)
 
 ## Bug fixes
