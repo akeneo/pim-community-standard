@@ -1,5 +1,11 @@
 # 2.3.x
 
+# 2.3.34 (2019-03-18)
+
+## Bug fixes
+
+- PIM-8222: Fix product model issues when code contains `/` (create variant through UI and get product models via API)
+
 # 2.3.33 (2019-03-13)
 
 ## Bug fixes
@@ -7,12 +13,14 @@
 - PIM-7966: Fix variant product order on variant product navigation in case of metric variations
 - PIM-8177: Remove pages not accessible in case of product number higher than maximum ES window limit (10.000 by default) and add warning message on the last page
 - PIM-8197: Use ZipArchive::addFile to avoid too much ram consumption
+- PIM-8214: Be able to save and launch job even if filter values refer to deleted entities.
 
 # 2.3.32 (2019-03-07)
 
 ## Improvement
 
 - PIM-8175: add the possibility to filter on one or several index names when resetting ES indexes
+- PIM-8187: Add the possibility to fetch descendant products and product models
 
 # 2.3.31 (2019-02-28)
 
