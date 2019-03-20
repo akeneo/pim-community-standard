@@ -1,14 +1,23 @@
 # 3.0.x
 
+# 3.0.8 (2019-03-20)
+
+## Bug fixes
+
+- PIM-8217: Fix missing translations on product grid (Filters, Done, Yes and No)
+- PIM-8221: Fix missing translations on family attributes tab (Required, Not required)
+- PIM-8128: Fix display of reset password confirmation message
+- PIM-8223: Fix missing translation on family variant deletion
+- PIM-8224: Fix missing translations in process tracker (Compute completeness, Compute family variant and Compute product model descendants)
+- PIM-8136: Fix display order of datepicker
+- PIM-8227: Fix disappearing columns when saving view columns
+
 # 3.0.7 (2019-03-13)
 
 # 3.0.6 (2019-03-08)
 
 ## Bug fixes
 
-- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
-- PIM-8168: accept MySql version with suffix in requirements check
-- PIM-8152: accept spaces in kernel root dir when executing commands
 - PIM-8178: Fix Attribute search on family edit page
 - PIM-8189: Fix new patch availability display
 - PIM-8195: Fix JS error on Catalog volume monitoring screen
@@ -17,11 +26,17 @@
 
 ## Bug fixes
 
+- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
+
+## Bug fixes
+
 - PIM-8157: Fix issues on user edit (scroll and groups)
 - PIM-8164: Always display cancel cross on popins
 - PIM-8165: Increase font sizes
 - PIM-8018: Move Confirm button on mass edit screen
 - PIM-8167: register missing command "pim:reference-data:check"
+- PIM-8168: accept MySql version with suffix in requirements check
+- PIM-8152: accept spaces in kernel root dir when executing commands
 
 # 3.0.4 (2019-02-20)
 
@@ -34,7 +49,7 @@
 - PIM-8147: Fix design issue on boolean fields
 - PIM-8146: Fix centered alignment on drag & drop fields
 - PIM-8156: Fix multiselect field alignment
-- PIM-8153: Fix locale specific field to allow multiple locales 
+- PIM-8153: Fix locale specific field to allow multiple locales
 - PIM-8017: Fix PDF generation
 - PIM-8060: Fix avatars migration 2.3 -> 3.0
 - PIM-8135: Fix cursor paginator sequence
