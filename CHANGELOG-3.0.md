@@ -8,18 +8,6 @@
 - PXD-89: Update illustrations with new colors
 - PIM-8237: Fix ignored query params "options" on the internal API: search attribute
 - PIM-8248: Fix load order of pim/model/attribute in requirejs
-
-# 3.0.8 (2019-03-20)
-
-## Bug fixes
-
-- PIM-8217: Fix missing translations on product grid (Filters, Done, Yes and No)
-- PIM-8221: Fix missing translations on family attributes tab (Required, Not required)
-- PIM-8128: Fix display of reset password confirmation message
-- PIM-8223: Fix missing translation on family variant deletion
-- PIM-8224: Fix missing translations in process tracker (Compute completeness, Compute family variant and Compute product model descendants)
-- PIM-8136: Fix display order of datepicker
-- PIM-8227: Fix disappearing columns when saving view columns
 - PXD-10: Fix comment deletion Popin
 - PXD-11: Fix Done button position on category tree
 - PXD-12: Move view selector in the search box
@@ -35,12 +23,27 @@
 - PXD-82: Fix stick header on horizontal scroll
 - PXD-14: Add default placeholder for every select2 search input
 
+# 3.0.8 (2019-03-20)
+
+## Bug fixes
+
+- PIM-8217: Fix missing translations on product grid (Filters, Done, Yes and No)
+- PIM-8221: Fix missing translations on family attributes tab (Required, Not required)
+- PIM-8128: Fix display of reset password confirmation message
+- PIM-8223: Fix missing translation on family variant deletion
+- PIM-8224: Fix missing translations in process tracker (Compute completeness, Compute family variant and Compute product model descendants)
+- PIM-8136: Fix display order of datepicker
+- PIM-8227: Fix disappearing columns when saving view columns
+
 # 3.0.7 (2019-03-13)
 
 # 3.0.6 (2019-03-08)
 
 ## Bug fixes
 
+- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one	
+- PIM-8168: accept MySql version with suffix in requirements check	
+- PIM-8152: accept spaces in kernel root dir when executing commands
 - PIM-8178: Fix Attribute search on family edit page
 - PIM-8189: Fix new patch availability display
 - PIM-8195: Fix JS error on Catalog volume monitoring screen
@@ -49,17 +52,11 @@
 
 ## Bug fixes
 
-- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
-
-## Bug fixes
-
 - PIM-8157: Fix issues on user edit (scroll and groups)
 - PIM-8164: Always display cancel cross on popins
 - PIM-8165: Increase font sizes
 - PIM-8018: Move Confirm button on mass edit screen
 - PIM-8167: register missing command "pim:reference-data:check"
-- PIM-8168: accept MySql version with suffix in requirements check
-- PIM-8152: accept spaces in kernel root dir when executing commands
 
 # 3.0.4 (2019-02-20)
 
