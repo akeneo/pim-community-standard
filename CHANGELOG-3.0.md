@@ -1,5 +1,14 @@
 # 3.0.x
 
+# 3.0.9 (2019-03-26)
+
+# Bug fixes
+
+- PIM-8196: Fix long channel labels on completeness widget
+- PXD-89: Update illustrations with new colors
+- PIM-8237: Fix ignored query params "options" on the internal API: search attribute
+- PIM-8248: Fix load order of pim/model/attribute in requirejs
+
 # 3.0.8 (2019-03-20)
 
 ## Bug fixes
@@ -11,6 +20,20 @@
 - PIM-8224: Fix missing translations in process tracker (Compute completeness, Compute family variant and Compute product model descendants)
 - PIM-8136: Fix display order of datepicker
 - PIM-8227: Fix disappearing columns when saving view columns
+- PXD-10: Fix comment deletion Popin
+- PXD-11: Fix Done button position on category tree
+- PXD-12: Move view selector in the search box
+- PXD-13: Fix disable filter cross on filters list
+- PXD-15: Fix margins on filters column
+- PXD-17: Fix grid margins
+- PXD-19: Fix Forgot Password page design
+- PXD-20: Fix version number design in history pages
+- PXD-21: Fix Dashboard Last operation widget design
+- PXD-22: Fix grid action buttons margin
+- PXD-23: Fix border between user navigation and actions
+- PXD-24: Fix grid bottom panel margins
+- PXD-82: Fix stick header on horizontal scroll
+- PXD-14: Add default placeholder for every select2 search input
 
 # 3.0.7 (2019-03-13)
 
@@ -18,9 +41,6 @@
 
 ## Bug fixes
 
-- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
-- PIM-8168: accept MySql version with suffix in requirements check
-- PIM-8152: accept spaces in kernel root dir when executing commands
 - PIM-8178: Fix Attribute search on family edit page
 - PIM-8189: Fix new patch availability display
 - PIM-8195: Fix JS error on Catalog volume monitoring screen
@@ -29,11 +49,17 @@
 
 ## Bug fixes
 
+- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
+
+## Bug fixes
+
 - PIM-8157: Fix issues on user edit (scroll and groups)
 - PIM-8164: Always display cancel cross on popins
 - PIM-8165: Increase font sizes
 - PIM-8018: Move Confirm button on mass edit screen
 - PIM-8167: register missing command "pim:reference-data:check"
+- PIM-8168: accept MySql version with suffix in requirements check
+- PIM-8152: accept spaces in kernel root dir when executing commands
 
 # 3.0.4 (2019-02-20)
 
