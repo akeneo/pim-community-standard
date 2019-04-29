@@ -24,7 +24,7 @@
     },
     "require": {
         "php": ">=7.2.0",
-        "akeneo/pim-community-dev": "3.1.x-dev@dev"
+        "akeneo/pim-community-dev": "3.2.x-dev@dev"
     },
     "require-dev": {
         "doctrine/migrations": "1.5.0",
@@ -70,7 +70,7 @@
             }
         },
         "branch-alias": {
-            "dev-master": "3.1.x-dev"
+            "dev-master": "3.2.x-dev"
         }
     }
 }
