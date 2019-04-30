@@ -1,5 +1,11 @@
 # 3.0.x
 
+# 3.0.15 (2019-04-30)
+
+# Bug fixes
+
+- PIM-8287: Fix horizontal scroll on history panel
+
 # 3.0.14 (2019-04-19)
 
 # Bug fixes
