@@ -1,5 +1,16 @@
 # 3.0.x
 
+# 3.0.16 (2019-05-06)
+
+# Bug fixes
+
+- PIM-8312: Delete unique value row in `pim_catalog_product_unique_data` table when deleting unique value in product
+
+# Improvements
+
+- AOB-472: Add missing check template bootstrap modal
+- PIM-8325: Apply permissions on quick export
+
 # 3.0.15 (2019-04-30)
 
 # Bug fixes
