@@ -1,5 +1,13 @@
 # 2.3.x
 
+# 2.3.42 (2019-05-06)
+
+## Bug fixes
+
+- PIM-8319: Prevent users from clicking several times on Import button during file upload.
+- PIM-8323: Fix issue on attribute option removing
+- PIM-8330: Backport : Allow installation folder to contain src | tests ... for webpack
+
 # 2.3.41 (2019-05-02)
 
 ## Bug fixes
