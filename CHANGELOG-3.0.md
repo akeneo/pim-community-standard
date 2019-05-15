@@ -1,5 +1,16 @@
 # 3.0.x
 
+# 3.0.18 (2019-05-15)
+
+# Bug fixes
+
+- PIM-8013: Fix 401 redirection on non authorized page
+- PIM-8242: Fix the search result rendering of the product grid filters when a filter is unselected
+
+# Improvements
+
+- PIM-8282: Fix error message when removing category tree linked to a channel
+
 # 3.0.17 (2019-05-10)
 
 # Bug fixes
