@@ -1,5 +1,13 @@
 # 3.0.x
 
+# 3.0.21 (2019-05-27)
+
+## Bug fixes
+
+- PIM-7772: Fix translation in roles ACL
+- PIM-8308: Fix missing translation for import and export profiles
+- PIM-8375: Fix counter on grids when user selects all results then select all visible results
+
 # 3.0.20 (2019-05-24)
 
 ## Bug fixes
