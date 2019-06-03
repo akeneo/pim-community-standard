@@ -1,5 +1,17 @@
 # 2.3.x
 
+# 2.3.47 (2019-06-03)
+
+## Technical improvement
+
+- PIM-8384: Improve queue to consume specific jobs
+
+## Bug fixes
+
+- PIM-8378: Fix DI for EntityWithFamilyVariantNormalizer injection
+- PIM-8385: Fix timeout when launching the clean attributes command
+- PIM-8381: Do not expose disabled locales in attribute options export
+
 # 2.3.46 (2019-05-27)
 
 ## Bug fixes
@@ -9,13 +21,13 @@
 - PIM-8374: Fix timeout when launching the completeness purge command
 - PIM-7596: Fix margins on datagrids under tabs
 - PIM-6829: Fix mass edit enabled steps
-- PIM-7321: Fix blinking grid elements in gallery mode
 
 # 2.3.45 (2019-05-23)
 
 ## Bug fixes
 
 - PIM-8351: Fix entity overriding priority
+- PIM-7321: Fix blinking grid elements in gallery mode
 
 # 2.3.44 (2019-05-20)
 
