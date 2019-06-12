@@ -1,5 +1,12 @@
 # 2.3.x
 
+# 2.3.48 (2019-06-12)
+
+## Bug fixes
+
+- PIM-7942: Fix tooltip minimal width
+- PIM-8417: Fix inconsistent behavior in WYSIWYG editor by disabling HTML prettify
+
 # 2.3.47 (2019-06-03)
 
 ## Technical improvement
