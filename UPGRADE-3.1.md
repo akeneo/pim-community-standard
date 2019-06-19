@@ -292,10 +292,10 @@ Before updating the dependencies and migrating your data, please deactivate all 
 Several classes and services have been moved or renamed. The following commands help to migrate references to them:
 
 ```bash
-find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Akeneo\\Platform\\Bundle\\DashboardBundle\\Widget\\LastOperationsWidget/Akeneo\\Platform\\Bundle\\ImportExportBundle\\Widget\\LastOperationsWidget/g'
-find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Akeneo\\Pim\\Enrichment\\Bundle\\Storage\\ElasticsearchAndSql\\ProductGrid\\FromSizeIdentifierResultCursorFactory/Akeneo\\Pim\\Enrichment\\Bundle\\Elasticsearch\\FromSizeIdentifierResultCursorFactory/g'
-find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Akeneo\\Pim\\Enrichment\\Bundle\\Storage\\ElasticsearchAndSql\\ProductGrid\\IdentifierResultCursor/Akeneo\\Pim\\Enrichment\\Bundle\\Elasticsearch\\IdentifierResultCursor/g'
-find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Akeneo\\Pim\\Enrichment\\Bundle\\Storage\\ElasticsearchAndSql\\ProductGrid\\SearchAfterSizeIdentifierResultCursorFactory/Akeneo\\Pim\\Enrichment\\Bundle\\Elasticsearch\\SearchAfterSizeIdentifierResultCursorFactory/g'
+find ./src/ -type f -not -path "./*.git/*" -print0 | xargs -0 sed -i '' 's/Akeneo\\Platform\\Bundle\\DashboardBundle\\Widget\\LastOperationsWidget/Akeneo\\Platform\\Bundle\\ImportExportBundle\\Widget\\LastOperationsWidget/g'
+find ./src/ -type f -not -path "./*.git/*" -print0 | xargs -0 sed -i '' 's/Akeneo\\Pim\\Enrichment\\Bundle\\Storage\\ElasticsearchAndSql\\ProductGrid\\FromSizeIdentifierResultCursorFactory/Akeneo\\Pim\\Enrichment\\Bundle\\Elasticsearch\\FromSizeIdentifierResultCursorFactory/g'
+find ./src/ -type f -not -path "./*.git/*" -print0 | xargs -0 sed -i '' 's/Akeneo\\Pim\\Enrichment\\Bundle\\Storage\\ElasticsearchAndSql\\ProductGrid\\IdentifierResultCursor/Akeneo\\Pim\\Enrichment\\Bundle\\Elasticsearch\\IdentifierResultCursor/g'
+find ./src/ -type f -not -path "./*.git/*" -print0 | xargs -0 sed -i '' 's/Akeneo\\Pim\\Enrichment\\Bundle\\Storage\\ElasticsearchAndSql\\ProductGrid\\SearchAfterSizeIdentifierResultCursorFactory/Akeneo\\Pim\\Enrichment\\Bundle\\Elasticsearch\\SearchAfterSizeIdentifierResultCursorFactory/g'
 ```
 
 2. Migrate your .less assets
