@@ -263,46 +263,46 @@ To clean the code API, we continued our effort to extract PIM business classes f
 
 Please execute the following commands in your project folder to update the references you may have to these classes:
 ```
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\Bundle\CatalogBundle\Factory\AttributeFactory/Pim\Component\Catalog\Factory\AttributeFactory/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\Bundle\CatalogBundle\AttributeType\AttributeTypeRegistry/Pim\Component\Catalog\AttributeTypeRegistry/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Factory\\AttributeRequirementFactory/Pim\\Component\\Catalog\\Factory\\AttributeRequirementFactory/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Factory\\GroupFactory/Pim\\Component\\Catalog\\Factory\\GroupFactory/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Factory\\FamilyFactory/Pim\\Component\\Catalog\\Factory\\FamilyFactory/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Factory\\MetricFactory/Pim\\Component\\Catalog\\Factory\\MetricFactory/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Manager\\CompletenessManager/Pim\\Component\\Catalog\\Manager\\CompletenessManager/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Manager\\AttributeGroupManager/Pim\\Component\\Catalog\\Manager\\AttributeGroupManager/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Manager\\VariantGroupAttributesResolver/Pim\\Component\\Catalog\\Manager\\VariantGroupAttributesResolver/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Manager\\ProductTemplateApplier/Pim\\Component\\Catalog\\Manager\\ProductTemplateApplier/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Builder\\ProductTemplateBuilder/Pim\\Component\\Catalog\\Builder\\ProductTemplateBuilder/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Builder\\ProductBuilder/Pim\\Component\\Catalog\\Builder\\ProductBuilder/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Manager\\AttributeValuesResolver/Pim\\Component\\Catalog\\Manager\\AttributeValuesResolver/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Query\\Filter\\DumperInterface/Pim\\Bundle\\CatalogBundle\\Command\\DumperInterface/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Query\\Filter\\AttributeFilterDumper/Pim\\Bundle\\CatalogBundle\\Command\\ProductQueryHelp\\AttributeFilterDumper/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Query\\Filter\\FieldFilterDumper/Pim\\Bundle\\CatalogBundle\\Command\\ProductQueryHelp\\FieldFilterDumper/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Query/Pim\\Component\\Catalog\\Query/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Query/Pim\\Component\\Catalog\\Exception/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Exception/Pim\\Component\\Catalog\\Exception/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Event\\ProductEvents/Pim\\Component\\Catalog\\ProductEvents/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Repository/Pim\\Component\\Catalog\\Repository/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\Validator/Pim\\Component\\Catalog\\Validator/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\CatalogBundle\\AttributeType\\AttributeTypes/Pim\\Component\\Catalog\\AttributeTypes/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Catalog\\Normalizer\\Structured\\ReferenceDataNormalizer/Pim\\Component\\ReferenceData\\Normalizer\\Structured\\ReferenceDataNormalizer/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Catalog\\Denormalizer\\Structured\\ProductValue\\ReferenceDataDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Structured\\ProductValue\\ReferenceDataDenormalizer/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Catalog\\Denormalizer\\Structured\\ProductValue\\ReferenceDataCollectionDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Structured\\ProductValue\\ReferenceDataCollectionDenormalizer/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Catalog\\Normalizer\\Structured\\JobInstanceNormalizer/Akeneo\\Component\\Batch\\Normalizer\\Structured\\JobInstanceNormalizer/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_catalog\.event_subscriber\.resolve_target_repository/akeneo_storage_utils\.event_subscriber\.resolve_target_repository/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_catalog\.doctrine\.smart_manager_registry/akeneo_storage_utils\.doctrine\.smart_manager_registry/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_catalog\.doctrine\.table_name_builder/akeneo_storage_utils\.doctrine\.table_name_builder/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_catalog\.factory\.referenced_collection/akeneo_storage_utils\.factory\.referenced_collection/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_catalog\.saver\.base_options_resolver/akeneo_storage_utils\.saver\.base_options_resolver/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_import_export\.factory\.job_instance/akeneo_batch\.job_instance_factory/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_datagrid\.datagrid\.product\.context_configurator/pim_datagrid\.datagrid\.configuration\.product\.context_configurator/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_datagrid\.datagrid\.product\.columns_configurator/pim_datagrid\.datagrid\.configuration\.product\.columns_configurator/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_datagrid\.datagrid\.product\.filters_configurator/pim_datagrid\.datagrid\.configuration\.product\.filters_configurator/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_datagrid\.datagrid\.product\.sorters_configurator/pim_datagrid\.datagrid\.configuration\.product\.sorters_configurator/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_datagrid\.datagrid\.product\.group_columns_configurator/pim_datagrid\.datagrid\.configuration\.product\.group_columns_configurator/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_datagrid\.datagrid\.request_parameters_extractor/pim_datagrid\.datagrid\.request\.parameters_extractor/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pim_datagrid\.datagrid\.product\.configuration_registry/pim_datagrid\.datagrid\.configuration\.product\.configuration_registry/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\Bundle\CatalogBundle\Factory\AttributeFactory/Pim\Component\Catalog\Factory\AttributeFactory/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\Bundle\CatalogBundle\AttributeType\AttributeTypeRegistry/Pim\Component\Catalog\AttributeTypeRegistry/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Factory\\AttributeRequirementFactory/Pim\\Component\\Catalog\\Factory\\AttributeRequirementFactory/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Factory\\GroupFactory/Pim\\Component\\Catalog\\Factory\\GroupFactory/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Factory\\FamilyFactory/Pim\\Component\\Catalog\\Factory\\FamilyFactory/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Factory\\MetricFactory/Pim\\Component\\Catalog\\Factory\\MetricFactory/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Manager\\CompletenessManager/Pim\\Component\\Catalog\\Manager\\CompletenessManager/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Manager\\AttributeGroupManager/Pim\\Component\\Catalog\\Manager\\AttributeGroupManager/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Manager\\VariantGroupAttributesResolver/Pim\\Component\\Catalog\\Manager\\VariantGroupAttributesResolver/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Manager\\ProductTemplateApplier/Pim\\Component\\Catalog\\Manager\\ProductTemplateApplier/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Builder\\ProductTemplateBuilder/Pim\\Component\\Catalog\\Builder\\ProductTemplateBuilder/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Builder\\ProductBuilder/Pim\\Component\\Catalog\\Builder\\ProductBuilder/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Manager\\AttributeValuesResolver/Pim\\Component\\Catalog\\Manager\\AttributeValuesResolver/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Query\\Filter\\DumperInterface/Pim\\Bundle\\CatalogBundle\\Command\\DumperInterface/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Query\\Filter\\AttributeFilterDumper/Pim\\Bundle\\CatalogBundle\\Command\\ProductQueryHelp\\AttributeFilterDumper/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Query\\Filter\\FieldFilterDumper/Pim\\Bundle\\CatalogBundle\\Command\\ProductQueryHelp\\FieldFilterDumper/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Query/Pim\\Component\\Catalog\\Query/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Query/Pim\\Component\\Catalog\\Exception/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Exception/Pim\\Component\\Catalog\\Exception/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Event\\ProductEvents/Pim\\Component\\Catalog\\ProductEvents/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Repository/Pim\\Component\\Catalog\\Repository/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\Validator/Pim\\Component\\Catalog\\Validator/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\CatalogBundle\\AttributeType\\AttributeTypes/Pim\\Component\\Catalog\\AttributeTypes/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Catalog\\Normalizer\\Structured\\ReferenceDataNormalizer/Pim\\Component\\ReferenceData\\Normalizer\\Structured\\ReferenceDataNormalizer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Catalog\\Denormalizer\\Structured\\ProductValue\\ReferenceDataDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Structured\\ProductValue\\ReferenceDataDenormalizer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Catalog\\Denormalizer\\Structured\\ProductValue\\ReferenceDataCollectionDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Structured\\ProductValue\\ReferenceDataCollectionDenormalizer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Catalog\\Normalizer\\Structured\\JobInstanceNormalizer/Akeneo\\Component\\Batch\\Normalizer\\Structured\\JobInstanceNormalizer/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_catalog\.event_subscriber\.resolve_target_repository/akeneo_storage_utils\.event_subscriber\.resolve_target_repository/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_catalog\.doctrine\.smart_manager_registry/akeneo_storage_utils\.doctrine\.smart_manager_registry/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_catalog\.doctrine\.table_name_builder/akeneo_storage_utils\.doctrine\.table_name_builder/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_catalog\.factory\.referenced_collection/akeneo_storage_utils\.factory\.referenced_collection/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_catalog\.saver\.base_options_resolver/akeneo_storage_utils\.saver\.base_options_resolver/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_import_export\.factory\.job_instance/akeneo_batch\.job_instance_factory/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_datagrid\.datagrid\.product\.context_configurator/pim_datagrid\.datagrid\.configuration\.product\.context_configurator/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_datagrid\.datagrid\.product\.columns_configurator/pim_datagrid\.datagrid\.configuration\.product\.columns_configurator/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_datagrid\.datagrid\.product\.filters_configurator/pim_datagrid\.datagrid\.configuration\.product\.filters_configurator/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_datagrid\.datagrid\.product\.sorters_configurator/pim_datagrid\.datagrid\.configuration\.product\.sorters_configurator/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_datagrid\.datagrid\.product\.group_columns_configurator/pim_datagrid\.datagrid\.configuration\.product\.group_columns_configurator/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_datagrid\.datagrid\.request_parameters_extractor/pim_datagrid\.datagrid\.request\.parameters_extractor/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pim_datagrid\.datagrid\.product\.configuration_registry/pim_datagrid\.datagrid\.configuration\.product\.configuration_registry/g'
 ```
 
 #### Update references to moved `PimEnterprise\Component\Catalog` business classes
@@ -312,7 +312,7 @@ In the **Enterprise Edition**, several Catalog classes have been extracted in a 
 Please execute the following command in your project folder to update the references you may have to these classes:
 
 ```
-find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\CatalogBundle\\Model/PimEnterprise\\Component\\Catalog\\Model/g'
+find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\CatalogBundle\\Model/PimEnterprise\\Component\\Catalog\\Model/g'
 ```
 
 #### Update references to moved `PimEnterprise\Component\Security` business classes
@@ -322,9 +322,9 @@ In the **Enterprise Edition**, several Security classes have been extracted in a
 Please execute the following commands in your project folder to update the references you may have to these classes:
 
 ```
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\SecurityBundle\\Model/PimEnterprise\\Component\\Security\\Model/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\SecurityBundle\\Entity\\Repository\\AccessRepositoryInterface/PimEnterprise\\Component\\Security\\Repository\\AccessRepositoryInterface/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\SecurityBundle\\Attributes/PimEnterprise\\Component\\Security\\Attributes/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\SecurityBundle\\Model/PimEnterprise\\Component\\Security\\Model/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\SecurityBundle\\Entity\\Repository\\AccessRepositoryInterface/PimEnterprise\\Component\\Security\\Repository\\AccessRepositoryInterface/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\SecurityBundle\\Attributes/PimEnterprise\\Component\\Security\\Attributes/g'
 ```
 
 #### Update references to moved `PimEnterprise\Component\Workflow` business classes
@@ -334,19 +334,19 @@ In the **Enterprise Edition**, several Workflow classes have been extracted in a
 Please execute the following commands in your project folder to update the references you may have to these classes:
 
 ```
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Model/PimEnterprise\\Component\\Workflow\\Model/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Builder\\ProductDraftBuilderInterface/PimEnterprise\\Component\\Workflow\\Builder\\ProductDraftBuilderInterface/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Event\\ProductDraftEvents/PimEnterprise\\Component\\Workflow\\Event\\ProductDraftEvents/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Event\\PublishedProductEvent/PimEnterprise\\Component\\Workflow\\Event\\PublishedProductEvent/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Event\\PublishedProductEvents/PimEnterprise\\Component\\Workflow\\Event\\PublishedProductEvents/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Factory/PimEnterprise\\Component\\Workflow\\Factory/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Normalizer/PimEnterprise\\Component\\Workflow\\Normalizer/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Applier/PimEnterprise\\Component\\Workflow\\Applier/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Repository/PimEnterprise\\Component\\Workflow\\Repository/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Helper\\SortProductValuesHelper/PimEnterprise\\Bundle\\WorkflowBundle\\Twig\\SortProductValuesHelper/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Publisher/PimEnterprise\\Component\\Workflow\\Publisher/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Bundle\\WorkflowBundle\\Connector\\Tasklet/PimEnterprise\\Component\\Workflow\\Connector\\Tasklet/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Component\\Workflow\\Connector\\ArrayConverter\\FlatToStandard\\ProductDraft/PimEnterprise\\Component\\Workflow\\Connector\\ArrayConverter\\FlatToStandard\\ProductDraftChanges/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Model/PimEnterprise\\Component\\Workflow\\Model/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Builder\\ProductDraftBuilderInterface/PimEnterprise\\Component\\Workflow\\Builder\\ProductDraftBuilderInterface/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Event\\ProductDraftEvents/PimEnterprise\\Component\\Workflow\\Event\\ProductDraftEvents/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Event\\PublishedProductEvent/PimEnterprise\\Component\\Workflow\\Event\\PublishedProductEvent/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Event\\PublishedProductEvents/PimEnterprise\\Component\\Workflow\\Event\\PublishedProductEvents/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Factory/PimEnterprise\\Component\\Workflow\\Factory/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Normalizer/PimEnterprise\\Component\\Workflow\\Normalizer/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Applier/PimEnterprise\\Component\\Workflow\\Applier/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Repository/PimEnterprise\\Component\\Workflow\\Repository/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Helper\\SortProductValuesHelper/PimEnterprise\\Bundle\\WorkflowBundle\\Twig\\SortProductValuesHelper/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Publisher/PimEnterprise\\Component\\Workflow\\Publisher/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Bundle\\WorkflowBundle\\Connector\\Tasklet/PimEnterprise\\Component\\Workflow\\Connector\\Tasklet/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Component\\Workflow\\Connector\\ArrayConverter\\FlatToStandard\\ProductDraft/PimEnterprise\\Component\\Workflow\\Connector\\ArrayConverter\\FlatToStandard\\ProductDraftChanges/g'
 ```
 
 #### Update references to moved `PimEnterprise\Component\ProductAsset` business classes
@@ -356,13 +356,13 @@ In the **Enterprise Edition**, several ProductAsset classes have been extracted 
 Please execute the following commands in your project folder to update the references you may have to these classes:
 
 ```
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Component\\ProductAsset\\Connector\\ArrayConverter\\FlatToStandard\\Tag/PimEnterprise\\Component\\ProductAsset\\Connector\\ArrayConverter\\FlatToStandard\\Tags/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pimee_product_asset\.array_converter.flat_to_standard.tag/pimee_product_asset.array_converter.flat_to_standard.tags/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pimee_product_asset\.reader\.orm\.asset/pimee_product_asset\.reader\.database\.asset/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pimee_product_asset\.reader\.orm\.csv_channel_configuration/pimee_product_asset\.reader\.database\.channel_configuration/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pimee_product_asset\.reader\.orm\.variation/pimee_product_asset\.reader\.database\.variation/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/PimEnterprise\\Component\\ProductAsset\\Connector\\Reader\\Doctrine\\AssetCategoryReader/PimEnterprise\\Component\\ProductAsset\\Connector\\Reader\\Database\\AssetCategoryReader/g'
-    find ./src -type f -print0 | xargs -0 sed -i 's/pimee_connector\.reader\.file\.yaml_channel_configuration/pimee_product_asset\.reader\.file\.yaml_channel_configuration/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Component\\ProductAsset\\Connector\\ArrayConverter\\FlatToStandard\\Tag/PimEnterprise\\Component\\ProductAsset\\Connector\\ArrayConverter\\FlatToStandard\\Tags/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pimee_product_asset\.array_converter.flat_to_standard.tag/pimee_product_asset.array_converter.flat_to_standard.tags/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pimee_product_asset\.reader\.orm\.asset/pimee_product_asset\.reader\.database\.asset/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pimee_product_asset\.reader\.orm\.csv_channel_configuration/pimee_product_asset\.reader\.database\.channel_configuration/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pimee_product_asset\.reader\.orm\.variation/pimee_product_asset\.reader\.database\.variation/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/PimEnterprise\\Component\\ProductAsset\\Connector\\Reader\\Doctrine\\AssetCategoryReader/PimEnterprise\\Component\\ProductAsset\\Connector\\Reader\\Database\\AssetCategoryReader/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pimee_connector\.reader\.file\.yaml_channel_configuration/pimee_product_asset\.reader\.file\.yaml_channel_configuration/g'
 ```
 
 #### Update references to renamed `PimEnterprise\Component\CatalogRule` services
@@ -372,7 +372,7 @@ In the **Enterprise Edition**, a CatalogRule service have been renamed in a comp
 Please execute the following command in your project folder to update the references you may have to these services:
 
 ```
-    find ./src -type f -print0 | xargs -0 sed -i 's/pimee_catalog_rule\.reader\.doctrine\.rule_definition/pimee_catalog_rule\.reader\.database\.rule_definition/g'
+    find ./src -type f -print0 | xargs -0 sed -i '' 's/pimee_catalog_rule\.reader\.doctrine\.rule_definition/pimee_catalog_rule\.reader\.database\.rule_definition/g'
 ```
 
 ### Updates for projects customizing Import / Export
@@ -418,20 +418,20 @@ Flat (De)Normalizers have been moved to `VersioningBundle` and Structured ones h
 
 Based on a PIM standard installation, execute the following commands in your project folder:
 ```
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\TransformBundle\\Normalizer\\Flat/Pim\\Bundle\\VersioningBundle\\Normalizer\\Flat/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\TransformBundle\\Denormalizer\\Flat/Pim\\Bundle\\VersioningBundle\\Denormalizer\\Flat/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\TransformBundle\\Normalizer\\Structured/Pim\\Component\\Catalog\\Normalizer\\Structured/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\TransformBundle\\Denormalizer\\Structured/Pim\\Component\\Catalog\\Denormalizer\\Structured/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\TransformBundle\\Normalizer\\Flat/Pim\\Bundle\\VersioningBundle\\Normalizer\\Flat/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\TransformBundle\\Denormalizer\\Flat/Pim\\Bundle\\VersioningBundle\\Denormalizer\\Flat/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\TransformBundle\\Normalizer\\Structured/Pim\\Component\\Catalog\\Normalizer\\Structured/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\TransformBundle\\Denormalizer\\Structured/Pim\\Component\\Catalog\\Denormalizer\\Structured/g'
 ```
 
 Extra classes have been moved, but the rest of the `TransformBundle` has been removed.
 
 Based on a PIM standard installation, execute the following commands in your project folder:
 ```
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\TransformBundle\\Encoder/Pim\\Component\\Connector\\Encoder/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\TransformBundle\\DependencyInjection\\Compiler\\SerializerPass/Pim\\Bundle\\CatalogBundle\\DependencyInjection\\Compiler\\RegisterSerializerPass/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\TransformBundle\\Converter/Pim\\Component\\Catalog\\Converter/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_transform.converter.metric/pim_catalog.converter.metric/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\TransformBundle\\Encoder/Pim\\Component\\Connector\\Encoder/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\TransformBundle\\DependencyInjection\\Compiler\\SerializerPass/Pim\\Bundle\\CatalogBundle\\DependencyInjection\\Compiler\\RegisterSerializerPass/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\TransformBundle\\Converter/Pim\\Component\\Catalog\\Converter/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_transform.converter.metric/pim_catalog.converter.metric/g'
 ```
 
 Now you can try to detect if you are still using removed classes,
@@ -453,31 +453,31 @@ We've removed the deprecated `BaseConnectorBundle`.
 Some classes and services have been kept, but moved to others bundles or components. The following commands help to migrate references to these classes or services.
 
 ```
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.file\.yaml/pim_connector\.reader\.file\.yaml/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\BaseConnectorBundle\\Reader\\File\\YamlReader/Pim\\Component\\Connector\\Reader\\File\\Yaml\\Reader/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.orm\.family/pim_connector\.reader\.database\.family/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.orm\.attribute/pim_connector\.reader\.database\.attribute/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.orm\.association_type/pim_connector\.reader\.database\.association_type/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.orm\.attribute_option/pim_connector\.reader\.database\.attribute_option/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.orm\.category/pim_connector\.reader\.database\.category/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.repository\.group/pim_connector\.reader\.database\.group/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.reader\.repository\.variant_group/pim_connector\.reader\.database\.variant_group/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\BaseConnectorBundle\\Processor\\Normalization\\VariantGroupProcessor/Pim\\Component\\Connector\\Processor\\Normalization\\VariantGroupProcessor/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\BaseConnectorBundle\\DependencyInjection\\Compiler\\RegisterArchiversPass/Pim\\Bundle\\ConnectorBundle\\DependencyInjection\\Compiler\\RegisterArchiversPass/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\BaseConnectorBundle\\EventListener\\/Pim\\Bundle\\ConnectorBundle\\EventListener\\/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\BaseConnectorBundle\\Archiver\\/Pim\\Component\\Connector\\Archiver\\/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\BaseConnectorBundle\\Validator\\Constraints\\/Pim\\Component\\Connector\\Validator\\Constraints\/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.archiver\.file_writer_archiver/pim_connector\.archiver\.file_writer_archiver/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.event_listener\.archivist/pim_connector\.event_listener\.archivist/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.archiver/pim_connector\.archiver/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.archiver\.invalid_item_csv_archiver/pim_connector\.archiver\.invalid_item_csv_archiver/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.archiver\.file_reader_archiver/pim_connector\.archiver\.file_reader_archiver/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.factory\.zip_filesystem/pim_connector\.factory\.zip_filesystem/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.archiver\.archivable_file_writer_archiver/pim_connector\.archiver\.archivable_file_writer_archiver/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.validator\.constraints\.channel_validator/pim_connector\.validator\.constraints\.channel_validator/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\ImportExportBundle\\Form\\Type\\JobInstanceType/Pim\\Bundle\\ImportExportBundle\\Form\\Type\\JobInstanceFormType/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Bundle\\BaseConnectorBundle\\Processor\\ProductToFlatArrayProcessor/Pim\\Component\\Connector\\Processor\\Normalization\\ProductProcessor/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_base_connector\.processor\.product_to_flat_array/pim_connector\.processor\.normalization\.product/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.file\.yaml/pim_connector\.reader\.file\.yaml/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\BaseConnectorBundle\\Reader\\File\\YamlReader/Pim\\Component\\Connector\\Reader\\File\\Yaml\\Reader/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.orm\.family/pim_connector\.reader\.database\.family/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.orm\.attribute/pim_connector\.reader\.database\.attribute/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.orm\.association_type/pim_connector\.reader\.database\.association_type/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.orm\.attribute_option/pim_connector\.reader\.database\.attribute_option/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.orm\.category/pim_connector\.reader\.database\.category/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.repository\.group/pim_connector\.reader\.database\.group/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.reader\.repository\.variant_group/pim_connector\.reader\.database\.variant_group/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\BaseConnectorBundle\\Processor\\Normalization\\VariantGroupProcessor/Pim\\Component\\Connector\\Processor\\Normalization\\VariantGroupProcessor/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\BaseConnectorBundle\\DependencyInjection\\Compiler\\RegisterArchiversPass/Pim\\Bundle\\ConnectorBundle\\DependencyInjection\\Compiler\\RegisterArchiversPass/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\BaseConnectorBundle\\EventListener\\/Pim\\Bundle\\ConnectorBundle\\EventListener\\/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\BaseConnectorBundle\\Archiver\\/Pim\\Component\\Connector\\Archiver\\/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\BaseConnectorBundle\\Validator\\Constraints\\/Pim\\Component\\Connector\\Validator\\Constraints\/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.archiver\.file_writer_archiver/pim_connector\.archiver\.file_writer_archiver/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.event_listener\.archivist/pim_connector\.event_listener\.archivist/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.archiver/pim_connector\.archiver/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.archiver\.invalid_item_csv_archiver/pim_connector\.archiver\.invalid_item_csv_archiver/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.archiver\.file_reader_archiver/pim_connector\.archiver\.file_reader_archiver/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.factory\.zip_filesystem/pim_connector\.factory\.zip_filesystem/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.archiver\.archivable_file_writer_archiver/pim_connector\.archiver\.archivable_file_writer_archiver/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.validator\.constraints\.channel_validator/pim_connector\.validator\.constraints\.channel_validator/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\ImportExportBundle\\Form\\Type\\JobInstanceType/Pim\\Bundle\\ImportExportBundle\\Form\\Type\\JobInstanceFormType/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Bundle\\BaseConnectorBundle\\Processor\\ProductToFlatArrayProcessor/Pim\\Component\\Connector\\Processor\\Normalization\\ProductProcessor/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_base_connector\.processor\.product_to_flat_array/pim_connector\.processor\.normalization\.product/g'
 ```
 
 Then you can try to detect if you are still using removed classes,
@@ -508,26 +508,26 @@ The YAML Reader has also been moved from BatchBundle to ConnectorBundle, the CSV
 
 If you use standard Akeneo PIM processor and reader services in your custom imports or exports, please execute the following commands in your project folder:
 ```
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_connector\.processor\.normalization\.\(.*\)\.flat/pim_connector\.processor\.normalization\.\1/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Reader\\File\\CsvReader/Pim\\Component\\Connector\\Reader\\File\\Csv\\Reader/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Reader\\File\\CsvProductReader/Pim\\Component\\Connector\\Reader\\File\\Csv\\ProductReader/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\ArrayConverter\\StandardArrayConverterInterface/Pim\\Component\\Connector\\ArrayConverter\\ArrayConverterInterface/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/implements StandardArrayConverterInterface/implements ArrayConverterInterface/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\ArrayConverter\\Flat/Pim\\Component\\Connector\\ArrayConverter\\FlatToStandard/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_connector\.array_converter\.flat\./pim_connector\.array_converter\.flat_to_standard\./g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Reader\\Doctrine/Pim\\Component\\Connector\\Reader\\Database/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Reader\\ProductReader/Pim\\Component\\Connector\\Reader\\Database\\ProductReader/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_connector\.reader\.product/pim_connector\.reader\.database\.product/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_connector\.reader\.doctrine/pim_connector\.reader\.database/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Writer\\Doctrine/Pim\\Component\\Connector\\Writer\\Database/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/pim_connector\.writer\.doctrine/pim_connector\.writer\.database/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Writer\\CsvWriter/Pim\\Component\\Connector\\Writer\\Csv\\Writer/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Writer\\CsvProductWriter/Pim\\Component\\Connector\\Writer\\Csv\\ProductWriter/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Writer\\CsvVariantGroupWriter/Pim\\Component\\Connector\\Writer\\Csv\\VariantGroupWriter/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Writer\\YamlWriter/Pim\\Component\\Connector\\Writer\\Yaml\\Writer/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Normalizer\\Flat\\ReferenceDataNormalizer/Pim\\Component\\ReferenceData\\Normalizer\\Flat\\ReferenceDataNormalizer/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Denormalizer\\Flat\\ProductValue\\ReferenceDataDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Flat\\ProductValue\\ReferenceDataDenormalizer/g'
-    find ./src/ -type f -print0 | xargs -0 sed -i 's/Pim\\Component\\Connector\\Denormalizer\\Flat\\ProductValue\\ReferenceDataCollectionDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Flat\\ProductValue\\ReferenceDataCollectionDenormalizer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_connector\.processor\.normalization\.\(.*\)\.flat/pim_connector\.processor\.normalization\.\1/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Reader\\File\\CsvReader/Pim\\Component\\Connector\\Reader\\File\\Csv\\Reader/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Reader\\File\\CsvProductReader/Pim\\Component\\Connector\\Reader\\File\\Csv\\ProductReader/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\ArrayConverter\\StandardArrayConverterInterface/Pim\\Component\\Connector\\ArrayConverter\\ArrayConverterInterface/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/implements StandardArrayConverterInterface/implements ArrayConverterInterface/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\ArrayConverter\\Flat/Pim\\Component\\Connector\\ArrayConverter\\FlatToStandard/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_connector\.array_converter\.flat\./pim_connector\.array_converter\.flat_to_standard\./g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Reader\\Doctrine/Pim\\Component\\Connector\\Reader\\Database/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Reader\\ProductReader/Pim\\Component\\Connector\\Reader\\Database\\ProductReader/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_connector\.reader\.product/pim_connector\.reader\.database\.product/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_connector\.reader\.doctrine/pim_connector\.reader\.database/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Writer\\Doctrine/Pim\\Component\\Connector\\Writer\\Database/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/pim_connector\.writer\.doctrine/pim_connector\.writer\.database/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Writer\\CsvWriter/Pim\\Component\\Connector\\Writer\\Csv\\Writer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Writer\\CsvProductWriter/Pim\\Component\\Connector\\Writer\\Csv\\ProductWriter/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Writer\\CsvVariantGroupWriter/Pim\\Component\\Connector\\Writer\\Csv\\VariantGroupWriter/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Writer\\YamlWriter/Pim\\Component\\Connector\\Writer\\Yaml\\Writer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Normalizer\\Flat\\ReferenceDataNormalizer/Pim\\Component\\ReferenceData\\Normalizer\\Flat\\ReferenceDataNormalizer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Denormalizer\\Flat\\ProductValue\\ReferenceDataDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Flat\\ProductValue\\ReferenceDataDenormalizer/g'
+    find ./src/ -type f -print0 | xargs -0 sed -i '' 's/Pim\\Component\\Connector\\Denormalizer\\Flat\\ProductValue\\ReferenceDataCollectionDenormalizer/Pim\\Component\\ReferenceData\\Denormalizer\\Flat\\ProductValue\\ReferenceDataCollectionDenormalizer/g'
 ```
 
 #### Change the definition of Batch Jobs services to replace `batch_jobs.yml`
