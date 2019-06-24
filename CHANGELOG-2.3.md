@@ -1,5 +1,22 @@
 # 2.3.x
 
+# 2.3.50 (2019-06-24)
+
+## Bug fixes:
+
+- PIM-8464: Fix the product variant breadcrumb size
+- PIM-8462: Fix memory leak in `Pim\Component\Catalog\Job\ComputeFamilyVariantStructureChangesTasklet`.
+
+## BC Break
+
+- Change constructor of `src/Pim/Component/Catalog/Job/ComputeFamilyVariantStructureChangesTasklet.php`:
+    added: `Pim\Component\Catalog\Query\ProductQueryBuilderFactoryInterface` and `Akeneo\Component\StorageUtils\Cache\EntityManagerClearerInterface`
+    removed: `Pim\Component\Catalog\Repository\ProductModelRepositoryInterface` and `Pim\Component\Catalog\Repository\ProductRepositoryInterface`
+
+## Improvement
+
+- PIM-8469: Bump Symfony version to 3.4.28 to fix Intl issues.
+
 # 2.3.49 (2019-06-19)
 
 ## Bug fixes
