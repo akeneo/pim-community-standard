@@ -1,5 +1,12 @@
 # 3.1.x
 
+# 3.1.7 (2019-06-26)
+
+## Bug fixes
+
+- PIM-8428: PIM displays pim_common.code on grids
+- PIM-8447: Fix grids thumbnails display
+
 # 3.1.6 (2019-06-11)
 
 ## Bug fixes
