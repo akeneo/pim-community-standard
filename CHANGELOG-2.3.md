@@ -1,5 +1,11 @@
 # 2.3.x
 
+# 2.3.51 (2019-06-26)
+
+## Improvement
+
+- PIM-8449: AKENEO_PIM_URL configured in community edition
+
 # 2.3.50 (2019-06-24)
 
 ## Bug fixes:
@@ -23,6 +29,10 @@
 
 - GITHUB-9557: Fix yarn product dependencies requirements, cheers @AngelVazquezArroyo!
 - PIM-8450: Fix assets search with underscore in the code
+
+## Technical improvement
+
+- PIM-8449: Improve job notification by adding a link to the job.
 
 # 2.3.48 (2019-06-12)
 
