@@ -1,5 +1,11 @@
 # 3.0.x
 
+# 3.0.27 (2019-06-27)
+
+## Bug fixes
+
+- PIM-8413: Fix modal of category selection in product and product model exports
+
 # 3.0.26 (2019-06-21)
 
 ## Bug fixes
