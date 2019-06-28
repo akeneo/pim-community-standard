@@ -1,5 +1,9 @@
 # 2.3.x
 
+## Improvement
+
+- PIM-8449: Load .env variable with DotEnv
+
 # 2.3.51 (2019-06-26)
 
 ## Improvement
