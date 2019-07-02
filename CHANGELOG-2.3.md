@@ -4,8 +4,11 @@
 
 ## Bug fixes:
 
-- PIM-8449: Load .env variable with DotEnv
 - PIM-8480: Remove the job execution message orphans after a job execution purge.
+
+## Improvement
+
+- PIM-8449: Load .env variable with DotEnv
 
 # 2.3.51 (2019-06-26)
 
