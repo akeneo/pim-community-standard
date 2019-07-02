@@ -42,3 +42,5 @@ package-lock.json
 !/docker/akeneo.conf
 !/docker/httpd.conf
 docker-compose.override.yml
+
+.env
