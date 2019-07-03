@@ -1,5 +1,215 @@
 # 3.0.x
 
+# 3.0.28 (2019-07-02)
+
+## Bug fixes
+
+- PIM-7894: Fix metric and price filters design
+- PIM-8477: Fix rich text area link dialog
+- PIM-8463: On import profiles, displays an explicit error message when file upload fails, for example when the file is too big
+
+# 3.0.27 (2019-06-27)
+
+## Bug fixes
+
+- PIM-8413: Fix modal of category selection in product and product model exports
+
+# 3.0.26 (2019-06-21)
+
+## Bug fixes
+
+- PIM-8383: Do not take products without family into account when filtering on empty values
+- PIM-8460: Do not display Save button if user does not have ACL edit permissions on product models.
+
+# 3.0.25 (2019-06-18)
+
+# 3.0.24 (2019-06-17)
+
+## Bug fixes
+
+- PIM-8414: Fix the product variant breadcrumb size
+- PIM-8427: Fix PDF export of product to expose all attributes
+- PIM-8439: Fix mass edit translation for "remove from categories" operation
+- PIM-8426: Fix user password validation
+
+## Improvements
+
+- PIM-8433: Save loading messages in the database and display them randomly on the main loading screen.
+
+# 3.0.23 (2019-06-11)
+
+## Bug fixes
+
+- PIM-8412: Fix wrong display of too long attribute group labels when filtering in the datagrid
+- PIM-8424: Fix memory leak executing "akeneo:batch:purge-job-execution" command
+
+# 3.0.22 (2019-06-04)
+
+## Bug fixes
+
+- PIM-8315: Fix undefined attribute groups in family mass edit
+
+# 3.0.21 (2019-05-27)
+
+## Bug fixes
+
+- PIM-7772: Fix translation in roles ACL
+- PIM-8308: Fix missing translation for import and export profiles
+- PIM-8375: Fix counter on grids when user selects all results then select all visible results
+
+# 3.0.20 (2019-05-24)
+
+## Bug fixes
+
+- PIM-8257: Fix user grid filter set when creating a new user
+- PIM-8366: Translate the placeholder in the quick search input
+- PIM-8374: Fix timeout when launching the completeness purge command
+
+# 3.0.19 (2019-05-21)
+
+# Bug fixes
+
+- PIM-8343: Use BaseRemover instead of ObjectManager to delete a user
+- PIM-8340: Allow to delete a user who authored or replied to a comment
+
+# 3.0.18 (2019-05-15)
+
+# Bug fixes
+
+- PIM-8013: Fix 401 redirection on non authorized page
+- PIM-8242: Fix the search result rendering of the product grid filters when a filter is unselected
+
+# Improvements
+
+- PIM-8282: Fix error message when removing category tree linked to a channel
+
+# 3.0.17 (2019-05-10)
+
+# Bug fixes
+
+- PIM-8283: Command `akeneo:batch:purge-job-execution` now works with option `--days=0`.
+- PIM-8329: Add Serbian flag for CS region
+- PIM-8254: Attributes, attribute groups, groups, group types and channels edit page are not accessible anymore
+    and remove action is disabled from grid if they are not granted.
+
+# Improvements
+
+- AOB-472: Fix modal display when using illustration class
+- AOB-479: Resource paths in less files are now absolute and are checked when executing the "oro:assetic:dump" command to avoid wrong path resolution by Assetic.
+
+# 3.0.16 (2019-05-06)
+
+# Bug fixes
+
+- PIM-8312: Delete unique value row in `pim_catalog_product_unique_data` table when deleting unique value in product
+
+# Improvements
+
+- AOB-472: Add missing check template bootstrap modal
+- PIM-8325: Apply permissions on quick export
+
+# 3.0.15 (2019-04-30)
+
+# Bug fixes
+
+- PIM-8287: Fix horizontal scroll on history panel
+
+# 3.0.14 (2019-04-19)
+
+# Bug fixes
+
+- PIM-8291: Use the UI locale in Completeness dashboard widget
+- PIM-8285: allow reordering of some datagrid columns by forcing the presence of column.code if not provided by the backend
+
+# 3.0.13 (2019-04-15)
+
+# Bug fixes
+
+- PIM-8286: Allow users to edit their own account even if they're not granted the `pim_user_user_edit` permission
+
+# 3.0.12 (2019-04-09)
+
+# Bug fixes
+
+- PIM-8239: Set latest doctrine migration during fresh install to be consistent with database state
+- PIM-8272: Fix "My account" product grid filter search on label
+- PIM-8274: Fix misplaced button on imports/exports
+
+## Enhancements
+
+- PIM-8233: Extract attribute normalization in dedicated classes
+
+# 3.0.11 (2019-04-02)
+
+# Bug fixes
+
+- PIM-8258: Fix missing translation for "copy none"
+- PXD-98: Fix panel content size for filters selector column
+- PIM-8252: Add ACL on the edit import/export profile button and grid buttons
+- PIM-8267: Fix user's group delete translation
+- PIM-8271: Fix import/export delete translation
+- PIM-8264: Fix multiselect style
+- PIM-8265: Fix blinking display selector on products page
+- PIM-8259: add a max width and a title attribute to the label field in the product grid
+
+# 3.0.10 (2019-03-28)
+
+# Bug fixes
+
+- PIM-8241: Do not reset filter display when adding a new filter
+- PXD-91: Fix margins between search filter and grid
+- PXD-92: Fix badges visibility
+- PXD-93: Fix icon colors
+- PXD-95: Fix the too small content zone in the 'Associate' bulk action
+
+# 3.0.9 (2019-03-26)
+
+# Bug fixes
+
+- PIM-8196: Fix long channel labels on completeness widget
+- PXD-89: Update illustrations with new colors
+- PIM-8237: Fix ignored query params "options" on the internal API: search attribute
+- PIM-8248: Fix load order of pim/model/attribute in requirejs
+- PXD-10: Fix comment deletion Popin
+- PXD-11: Fix Done button position on category tree
+- PXD-12: Move view selector in the search box
+- PXD-13: Fix disable filter cross on filters list
+- PXD-15: Fix margins on filters column
+- PXD-17: Fix grid margins
+- PXD-19: Fix Forgot Password page design
+- PXD-20: Fix version number design in history pages
+- PXD-21: Fix Dashboard Last operation widget design
+- PXD-22: Fix grid action buttons margin
+- PXD-23: Fix border between user navigation and actions
+- PXD-24: Fix grid bottom panel margins
+- PXD-82: Fix stick header on horizontal scroll
+- PXD-14: Add default placeholder for every select2 search input
+
+# 3.0.8 (2019-03-20)
+
+## Bug fixes
+
+- PIM-8217: Fix missing translations on product grid (Filters, Done, Yes and No)
+- PIM-8221: Fix missing translations on family attributes tab (Required, Not required)
+- PIM-8128: Fix display of reset password confirmation message
+- PIM-8223: Fix missing translation on family variant deletion
+- PIM-8224: Fix missing translations in process tracker (Compute completeness, Compute family variant and Compute product model descendants)
+- PIM-8136: Fix display order of datepicker
+- PIM-8227: Fix disappearing columns when saving view columns
+
+# 3.0.7 (2019-03-13)
+
+# 3.0.6 (2019-03-08)
+
+## Bug fixes
+
+- PIM-8051: Fix display of product model images in the datagrid when "Attribute used as main picture" is at the variant attributes level one
+- PIM-8168: accept MySql version with suffix in requirements check
+- PIM-8152: accept spaces in kernel root dir when executing commands
+- PIM-8178: Fix Attribute search on family edit page
+- PIM-8189: Fix new patch availability display
+- PIM-8195: Fix JS error on Catalog volume monitoring screen
+
 # 3.0.5 (2019-02-25)
 
 ## Bug fixes
@@ -21,7 +231,7 @@
 - PIM-8147: Fix design issue on boolean fields
 - PIM-8146: Fix centered alignment on drag & drop fields
 - PIM-8156: Fix multiselect field alignment
-- PIM-8153: Fix locale specific field to allow multiple locales 
+- PIM-8153: Fix locale specific field to allow multiple locales
 - PIM-8017: Fix PDF generation
 - PIM-8060: Fix avatars migration 2.3 -> 3.0
 - PIM-8135: Fix cursor paginator sequence

@@ -1,5 +1,312 @@
 # 2.3.x
 
+# 2.3.52 (2019-07-02)
+
+## Bug fixes:
+
+- PIM-8480: Remove the job execution message orphans after a job execution purge.
+
+## Improvement
+
+- PIM-8449: Load .env variable with DotEnv
+
+# 2.3.51 (2019-06-26)
+
+## Improvement
+
+- PIM-8449: AKENEO_PIM_URL configured in community edition
+
+# 2.3.50 (2019-06-24)
+
+## Bug fixes:
+
+- PIM-8464: Fix the product variant breadcrumb size
+- PIM-8462: Fix memory leak in `Pim\Component\Catalog\Job\ComputeFamilyVariantStructureChangesTasklet`.
+
+## BC Break
+
+- Change constructor of `src/Pim/Component/Catalog/Job/ComputeFamilyVariantStructureChangesTasklet.php`:
+    added: `Pim\Component\Catalog\Query\ProductQueryBuilderFactoryInterface` and `Akeneo\Component\StorageUtils\Cache\EntityManagerClearerInterface`
+    removed: `Pim\Component\Catalog\Repository\ProductModelRepositoryInterface` and `Pim\Component\Catalog\Repository\ProductRepositoryInterface`
+
+## Improvement
+
+- PIM-8469: Bump Symfony version to 3.4.28 to fix Intl issues.
+
+# 2.3.49 (2019-06-19)
+
+## Bug fixes
+
+- GITHUB-9557: Fix yarn product dependencies requirements, cheers @AngelVazquezArroyo!
+- PIM-8450: Fix assets search with underscore in the code
+
+## Technical improvement
+
+- PIM-8449: Improve job notification by adding a link to the job.
+
+# 2.3.48 (2019-06-12)
+
+## Bug fixes
+
+- PIM-7942: Fix tooltip minimal width
+- PIM-8417: Fix inconsistent behavior in WYSIWYG editor by disabling HTML prettify
+
+# 2.3.47 (2019-06-03)
+
+## Technical improvement
+
+- PIM-8384: Improve queue to consume specific jobs
+
+## Bug fixes
+
+- PIM-8378: Fix DI for EntityWithFamilyVariantNormalizer injection
+- PIM-8385: Fix timeout when launching the clean attributes command
+- PIM-8381: Do not expose disabled locales in attribute options export
+
+# 2.3.46 (2019-05-27)
+
+## Bug fixes
+
+- PIM-7772: Fix translation in roles ACL
+- PIM-8308: Fix broken translation keys for import and export profiles
+- PIM-8374: Fix timeout when launching the completeness purge command
+- PIM-7596: Fix margins on datagrids under tabs
+- PIM-6829: Fix mass edit enabled steps
+- PIM-7321: Fix blinking grid elements in gallery mode
+
+# 2.3.45 (2019-05-23)
+
+## Bug fixes
+
+- PIM-8351: Fix entity overriding priority
+
+# 2.3.44 (2019-05-20)
+
+## Bug fixes
+
+- PIM-8341: Use user locale for job execution normalization
+- PIM-8347: Fix variant navigation display in case of long attribute labels
+- PIM-8346: Hide the currency selector on the product grid price filters 'empty' and 'not empty'
+
+## Improvement
+
+- PIM-8342: Fix unused imports
+
+# 2.3.43 (2019-05-14)
+
+## Bug fixes
+
+- PIM-8329: Add Serbian Flag for CS Region
+- PIM-8276: Label or identifier search input is now limited to 255 characters.
+- PIM-8322: Add a command to update elasticsearch mapping without having the need to reindex everything.
+- PIM-8334: When a translation choice is not correct, it does not break the page anymore.
+- PIM-8275: Set default attribute group filter to "All" when selecting attributes on product mass actions
+- PIM-8305: Display the correct amount of products and product models deleted by the "Mass delete products" process.
+
+# 2.3.42 (2019-05-06)
+
+## Bug fixes
+
+- PIM-8319: Prevent users from clicking several times on Import button during file upload.
+- PIM-8323: Fix issue on attribute option removing
+- PIM-8330: Backport : Allow installation folder to contain src | tests ... for webpack
+
+# 2.3.41 (2019-05-02)
+
+## Bug fixes
+
+- PIM-8289: Fix search products on label or identifier for product variants ancestors
+
+## Elasticsearch
+
+- Please re-index the products and product models by launching the commands `console akeneo:elasticsearch:reset-indexes -e prod`, `pim:product:index --all -e prod` and `bin/console pim:product-model:index --all`.
+
+## Improvement
+
+- PIM-8318: Bump Symfony version to 3.4.26 to fix Intl issues.
+
+# 2.3.40 (2019-04-30)
+
+# 2.3.39 (2019-04-23)
+
+# 2.3.38 (2019-04-23)
+
+## Bug fixes
+
+- PIM-8290: Fix flat to standard conversion of metrics, with unit filled and empty amount
+- PIM-8288: keep locale-specific but non-localizable attribute values in the flat normalization to make them appear in the product changeset
+
+# 2.3.37 (2019-04-15)
+
+## Bug fixes
+
+- PIM-8269: Do not create empty product values if it relies on an attribute which has been removed from family
+
+# 2.3.36 (2019-04-02)
+
+## Bug fixes
+
+- PIM-8251: display variant family code in sidebar if no translated label
+- PIM-8253: Fix unique attributes excluded in attributes search
+
+# 2.3.35 (2019-03-26)
+
+## Bug fixes
+
+- PIM-8230: Show on hover information for a read-only text in product edit form
+- PIM-8245: Fix the save-buttons extension (js) incorrectly resetting its internal state between calls.
+- PIM-8176: `Nesting level too deep – recursive dependency?` for some custom reference_data attributes
+
+# 2.3.34 (2019-03-18)
+
+## Bug fixes
+
+- PIM-8222: Fix product model issues when code contains `/` (create variant through UI and get product models via API)
+- PIM-8187: Add the possibility to fetch descendant products and product models
+- PIM-8214: Be able to save and launch job even if filter values refer to deleted entities.
+
+## BC breaks
+
+- PIM-8214: Remove validators `Pim\Component\Connector\Validator\Constraints\FilterDataValidator`, `Pim\Component\Connector\Validator\Constraints\ProductFilterData` and `Pim\Component\Connector\Validator\Constraints\ProductModelFilterData`
+
+# 2.3.33 (2019-03-13)
+
+## Bug fixes
+
+- PIM-7966: Fix variant product order on variant product navigation in case of metric variations
+- PIM-8177: Remove pages not accessible in case of product number higher than maximum ES window limit (10.000 by default) and add warning message on the last page
+- PIM-8197: Use ZipArchive::addFile to avoid too much ram consumption
+
+# 2.3.32 (2019-03-07)
+
+## Improvement
+
+- PIM-8175: add the possibility to filter on one or several index names when resetting ES indexes
+
+# 2.3.31 (2019-02-28)
+
+## Bug fixes
+
+- PIM-8056: Remove bad ACL on the internal API end-point that get an association-type
+- PIM-8162: use the catalog locale in product export builder
+- PIM-8155: Fix bad ACL set on xlsx product export edit form
+
+# 2.3.30 (2019-02-21)
+
+## Bug fixes
+
+- PIM-8134: Fix flickering on assets
+- PIM-8131: Labels cannot be used for search in bulk actions
+- PIM-7939: Fix PQB search when an attribute as label is on an ancestor.
+  -> Not mandatory, you can re-index your products and product models to enjoy this fix with commands: `bin/console pim:product:index --all` and `bin/console pim:product-model:index --all`.
+
+# 2.3.29 (2019-02-11)
+
+## Bug fixes
+
+- PIM-7943: Fix duplicate popin mask in family variant edit form.
+- PIM-8010: Add missing job in minimal fixture
+- PIM-8007: Content of sortable attribute options is now copyable.
+- PIM-8008: Fix attributes sort order in PEF.
+- PIM-8022: Fix the job status when using the batch command.
+- PIM-8050: Fix ElasticSearch mappings loader
+
+# 2.3.28 (2019-02-01)
+
+# 2.3.27 (2019-01-29)
+
+# 2.3.26 (2019-01-28)
+
+## Bug fixes
+
+- PIM-7967: Fix ACL for asset categories
+- PIM-7969: fix special chars in PDF export
+- Force the use of ip-regex at 2.1.0 version. Upper version needs nodejs >= 8 but we have to support nodejs >= 6.
+
+# 2.3.25 (2019-01-17)
+
+## Bug fixes
+
+- PIM-7965: fix families patch endpoint when updating a family with a family variant
+- PIM-7961: Fix localizable assets used as main image for family and added to product product model
+
+# 2.3.24 (2019-01-10)
+
+## Bug fixes
+
+- PIM-7934: Fix translations of product model import
+- PIM-7961: Fix localizable assets used as main image for family and added to product product model
+
+# 2.3.23 (2019-01-03)
+
+## Bug fixes
+
+- PIM-7899: Remove Date of Birth field
+- PIM-7926: Fix the parent property setter when "enabled comparison" is set to false in an import job definition
+
+# 2.3.22 (2018-12-21)
+
+## Bug fixes
+
+- PIM-7892: Allow to filter on active catalog locale when adding an attribute to the product export filters
+- PIM-7898: Fix tab navigation when the column is collapsed
+- PIM-7866: Do not show delete icon on import/export profile if the user doesn't have the right to delete.
+- PIM-7910: Search parent filter is now case insensitive
+- PIM-7936: Missing breadcrumb when you create Attribute group or Channel
+
+ ## Elasticsearch
+
+ - Please re-index the products and product models by launching the commands `console akeneo:elasticsearch:reset-indexes -e prod` and `pim:product:index --all -e prod`.
+
+# 2.3.21 (2018-12-07)
+
+## Bug fixes
+
+- PIM-7908: Fix variant family creation if an attribute doesn't have a translation for the current locale
+- PIM-7901: Fix memory leak on "compute_family_variant_structure_changes" job
+
+# 2.3.20 (2018-12-06)
+
+## Bug fixes
+
+- PIM-7897: Fix multiple calls to get all attribute groups in the PEF.
+
+# 2.3.19 (2018-12-03)
+
+# 2.3.18 (2018-11-28)
+
+## Bug fixes
+
+- PIM-7775: Security patch: check MIME type to be coherent with extension file. Saving products with incoherent file extension and MIME type is now forbidden.
+- PIM-7865: Improve performances on Product model export
+- PIM-7885: Allow "0" for non decimal metric value
+
+# 2.3.17 (2018-11-15)
+
+## Bug fixes
+
+- PIM-7774: Fix refresh of grid date filter
+- PIM-7778: Fix ACL on Catalog Volume Monitoring
+- PIM-7773: Fix routing issues with product status toggle
+- PIM-7776: Fix injection in the job's label in notification area
+- PIM-7828: Fix ACL on System Info
+- PIM-7824: Fix filter on view with attribute option deleted
+- PIM-7852: Increase product import performances and fixes model association import when comparison is disabled
+- PIM-7853: Fix unwanted automatic reload of the user page even if there were errors on the form
+- PIM-7841: Allow users to set regional locales for UI (en_NZ, pt_PT and pt_BR)
+- PIM-7791: Suppress warning on attribute option in case of case sensitive codes
+- PIM-7831: Blacklist some characters in user form inputs in order to prevent from malicious injection
+
+# 2.3.16 (2018-11-13)
+
+## Bug fixes
+
+- PIM-7823: Fix product gap between product grid and sequential edit when selecting `All` option
+- PIM-7783: Fix constraint on attribute name
+- PIM-7767: Remove option values label from attribute versioning
+- PIM-7771: Fix refresh versioning command about duplicate version's rule.
+- PIM-7813: Fix a bug that prevents to drag'n'drop an attribute group containing a lot of attributes in the variant family configuration screen.
+
 # 2.3.15 (2018-11-06)
 
 ## Bug fixes
@@ -26,7 +333,7 @@ PIM-7810: Fix to mass delete products and product models
 
 - PIM-7674: fix Avatar image broken on dashboard
 - PIM-7694: fix option null values crashing PDF
-- PIM-7731: check for attribute as label not null in normalizers 
+- PIM-7731: check for attribute as label not null in normalizers
 - PIM-7740: bump summernote version to fix scroll glitches
 - PIM-7746: Fix issue when an attribute code is numeric
 - PIM-7727: parent filter search case insensitive
