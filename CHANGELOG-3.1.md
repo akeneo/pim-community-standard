@@ -1,5 +1,11 @@
 # 3.1.x
 
+# 3.1.11 (2019-07-05)
+
+## Bug fixes
+
+- PIM-8488: Fix wrapping of inline filters on records
+
 # 3.1.10 (2019-07-04)
 
 # 3.1.9 (2019-07-02)
