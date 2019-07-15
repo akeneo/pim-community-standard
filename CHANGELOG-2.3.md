@@ -1,14 +1,17 @@
 # 2.3.x
 
+# 2.3.53 (2019-07-15)
+
+## Bug fixes
+
+- PIM-7935: Close variant select dropdowns on page navigation
+- PIM-8476: Fix drag & drop on category trees
+
 # 2.3.52 (2019-07-02)
 
 ## Bug fixes:
 
 - PIM-8480: Remove the job execution message orphans after a job execution purge.
-
-## Improvement
-
-- PIM-8449: Load .env variable with DotEnv
 
 # 2.3.51 (2019-06-26)
 
