@@ -49,7 +49,6 @@ services:
       discovery.type: 'single-node'
     networks:
       - 'akeneo'
-      - 'behat'
 
   object-storage:
     image: 'minio/minio'
