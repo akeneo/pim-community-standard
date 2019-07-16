@@ -24,7 +24,7 @@
     },
     "require": {
         "php": ">=7.2.0",
-        "akeneo/pim-community-dev": "3.2.x-dev@dev"
+        "akeneo/pim-community-dev": "3.2@dev"
     },
     "require-dev": {
         "doctrine/migrations": "1.5.0",
@@ -68,9 +68,6 @@
                 "database_password": "PIM_DATABASE_PASSWORD",
                 "index_hosts": "PIM_INDEX_HOSTS"
             }
-        },
-        "branch-alias": {
-            "dev-master": "3.2.x-dev"
         }
     }
 }
