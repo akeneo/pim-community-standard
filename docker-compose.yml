@@ -45,10 +45,19 @@ services:
   elasticsearch:
     image: 'docker.elastic.co/elasticsearch/elasticsearch-oss:6.5.4'
     environment:
-      ES_JAVA_OPTS: "${ES_JAVA_OPTS:--Xms512m -Xmx512m}"
+      ES_JAVA_OPTS: '${ES_JAVA_OPTS:--Xms512m -Xmx512m}'
       discovery.type: 'single-node'
     networks:
       - 'akeneo'
+
+  object-storage:
+    image: 'minio/minio'
+    entrypoint: '/bin/sh -c "mkdir -p /data/archive /data/catalog/ /data/jobs && minio server /data"'
+    environment:
+      MINIO_ACCESS_KEY: 'AKENEO_OBJECT_STORAGE_ACCESS_KEY'
+      MINIO_SECRET_KEY: 'AKENEO_OBJECT_STORAGE_SECRET_KEY'
+    networks:
+      - akeneo
 
 networks:
   akeneo:
