@@ -42,6 +42,6 @@ workflows:
                   filters:
                       branches:
                           only:
-                              - master
+                              - "3.2" 
         jobs:
             - build
