@@ -17,11 +17,6 @@ set_time_limit(0);
  */
 $loader = require __DIR__.'/../app/autoload.php';
 
-$envFile = __DIR__ . '/../.env';
-if (file_exists($envFile)) {
-    (new Dotenv())->load($envFile);
-}
-
 $input = new ArgvInput();
 $env = $input->getParameterOption(['--env', '-e'], getenv('SYMFONY_ENV') ?: 'dev');
 $behat = strpos($env, 'behat');

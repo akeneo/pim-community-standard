@@ -9,7 +9,8 @@ services:
     working_dir: '/srv/pim'
     networks:
       - 'akeneo'
-
+    environment:
+      AKENEO_PIM_URL: '${AKENEO_PIM_URL}'
   node:
     image: 'node:10-slim'
     user: 'node'
