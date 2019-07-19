@@ -1,5 +1,11 @@
 # 2.3.x
 
+# 2.3.54 (2019-07-19)
+
+## Bug fixes
+
+- PIM-8551: Replace 'div' by '/' in Measure
+
 # 2.3.53 (2019-07-15)
 
 ## Bug fixes
@@ -12,10 +18,6 @@
 ## Bug fixes:
 
 - PIM-8480: Remove the job execution message orphans after a job execution purge.
-
-## Improvement
-
-- PIM-8449: Load .env variable with DotEnv
 
 # 2.3.51 (2019-06-26)
 
