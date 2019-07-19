@@ -1,5 +1,12 @@
 # 3.0.x
 
+# 3.0.32 (2019-07-19)
+
+## Bug fixes
+
+- PIM-8555: Fix display of metric as variant axis in PEF
+- PIM-8560: Fix maximum height of categories tree to be able to scroll
+
 # 3.0.31 (2019-07-16)
 
 # 3.0.30 (2019-07-05)
