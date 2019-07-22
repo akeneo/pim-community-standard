@@ -1,5 +1,11 @@
 # 3.1.x
 
+# 3.1.16 (2019-07-22)
+
+## Bug fixes:
+
+- PIM-8570: Fix category tree display
+
 # 3.1.15 (2019-07-19)
 
 ## Bug fixes
@@ -14,7 +20,7 @@
 - PIM-8540: Display option label in product PDF
 - PIM-8549: Fix filter caret invisible when option label is too long
 - PIM-8560: Fix maximum height of categories tree to be able to scroll
- 
+
 # 3.1.13 (2019-07-16)
 
 # 3.1.12 (2019-07-15)
