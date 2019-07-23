@@ -177,6 +177,8 @@ Please, make sure the folder `upgrades/schema/` does not contain former migratio
 
     Also, as Elasticsearch does not take into account case insensitivity of option codes when searching and as we modified the way products values are loaded from MySQL, Elasticsearch search has to be case insensitive when searching on option codes. Thus, all mappings have to updated.
 
+    For your information, this migration took ~10 minutes for a catalog containing 500 000 products.
+
     To take into account those two changes:
 
     ```bash
