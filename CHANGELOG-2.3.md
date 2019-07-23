@@ -1,5 +1,12 @@
 # 2.3.x
 
+# 2.3.55 (2019-07-23)
+
+## Bug fixes
+
+- PIM-8570: Fix category tree display
+- PIM-8572: Fix issue on category selection in product grid
+
 # 2.3.54 (2019-07-19)
 
 ## Bug fixes
@@ -12,6 +19,7 @@
 
 - PIM-7935: Close variant select dropdowns on page navigation
 - PIM-8476: Fix drag & drop on category trees
+- PIM-8484: Show flash message instead of deprecated error modal on deletion
 
 # 2.3.52 (2019-07-02)
 
