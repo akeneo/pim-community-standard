@@ -1,5 +1,11 @@
 # 3.0.x
 
+# 3.0.33 (2019-07-24)
+
+## Bug fixes
+
+- PIM-8564: fixes link dialog rendering for wysiwyg editors on product edition page
+
 # 3.0.32 (2019-07-19)
 
 ## Bug fixes
