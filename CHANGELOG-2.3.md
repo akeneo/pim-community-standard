@@ -1,5 +1,15 @@
 # 2.3.x
 
+# 2.3.56 (2019-07-24)
+
+## Bug fixes
+
+- PIM-8349: Fixes missing variable passed to pim_enrich.job.upload translation
+
+## Improvement
+
+- GITHUB-10438: Include less files in the main stylesheet by default
+
 # 2.3.55 (2019-07-23)
 
 ## Bug fixes
