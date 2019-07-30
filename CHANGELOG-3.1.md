@@ -1,5 +1,13 @@
 # 3.1.x
 
+# 3.1.17 (2019-07-30)
+
+## Bug fixes
+
+- PIM-8577: Convert dates to user timezone in the dashboard's last operations widget
+- PIM-8557: Remove empty headers when building the error reporting file
+- PIM-8597: Fix display of long attribute names in the filter menu
+
 # 3.1.16 (2019-07-22)
 
 ## Bug fixes:
