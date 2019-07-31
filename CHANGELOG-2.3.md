@@ -1,5 +1,13 @@
 # 2.3.x
 
+# 2.3.57 (2019-07-31)
+
+## Bug fixes
+
+- PIM-7741: use the catalog locale when choosing a new parent product model
+- TIP-1200: Use SQL queries instead of repositories in UniqueVariantAxisValidator
+- PIM-7888: Fix creation of a product model / variant product with a boolean attribute as axis
+
 # 2.3.56 (2019-07-24)
 
 ## Bug fixes
