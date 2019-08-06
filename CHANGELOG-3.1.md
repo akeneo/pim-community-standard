@@ -1,5 +1,12 @@
 # 3.1.x
 
+# 3.1.18 (2019-08-06)
+
+## Bug fixes
+
+- PIM-8603: Sort attribute columns by label if no order is defined
+- PIM-8600: Fix import filepath tooltip
+
 # 3.1.17 (2019-07-30)
 
 ## Bug fixes
