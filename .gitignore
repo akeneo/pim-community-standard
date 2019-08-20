@@ -23,7 +23,6 @@ vendor
 !/bin/docker/pim-setup.sh
 !/bin/console
 composer.phar
-composer.lock
 
 var/cache/*
 var/logs/*
