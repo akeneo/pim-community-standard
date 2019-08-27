@@ -1,5 +1,12 @@
 # 3.2.x
 
+# 3.2.7 (2019-08-27)
+
+## Bug fixes:
+
+- PIM-8655: Fix page title of the categories settings
+- PIM-8701: Fix PDF rendering for scopable/localizable simple or multi select attributes
+
 # 3.2.6 (2019-08-22)
 
 ## Bug fixes:
