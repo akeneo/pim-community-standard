@@ -1,5 +1,12 @@
 # 3.0.x
 
+# 3.0.41 (2019-09-05)
+
+## Bug fixes
+
+- PIM-8719: Update Mink Selenium driver
+- PIM-8720: Revert product grid loading twice (PIM-6978)
+
 # 3.0.40 (2019-09-02)
 
 ## Bug fixes
