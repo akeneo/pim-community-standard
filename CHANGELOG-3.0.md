@@ -1,5 +1,12 @@
 # 3.0.x
 
+# 3.0.42 (2019-09-13)
+
+## Bug fixes
+
+- PIM-8754: Fix completeness for locale specific attribute
+- PIM-8756: Fix variant axis label normalization
+
 # 3.0.41 (2019-09-05)
 
 ## Bug fixes
