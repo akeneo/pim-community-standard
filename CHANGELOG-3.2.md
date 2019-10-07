@@ -1,10 +1,19 @@
 # 3.2.x
 
+# 3.2.11 (2019-10-07)
+
+## Bug fixes:
+
+- PIM-8838: Force display of label and image in gallery mode even if they are not in the column list
+- PIM-8820: Avoid multiple refresh of the product grid on product delete
+- PIM-8838: Force display of identifier, label and image in gallery mode even if they are not in the column list
+
 # 3.2.10 (2019-10-02)
 
 ## Bug fixes:
 
 - PIM-8820: Avoid multiple refresh of the product grid on product delete
+- PIM-8736: Fix error message on channel deletion
 
 # 3.2.9 (2019-09-23)
 
