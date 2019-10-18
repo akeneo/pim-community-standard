@@ -1,5 +1,11 @@
 # 2.3.x
 
+# 2.3.68 (2019-10-18)
+
+## Bug fixes
+
+- PIM-6976: fix max_characters attribute field not being nullable
+
 # 2.3.67 (2019-10-14)
 
 ## Bug fixes
