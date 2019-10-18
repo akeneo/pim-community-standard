@@ -1,5 +1,12 @@
 # 3.2.x
 
+# 3.2.13 (2019-10-18)
+
+## Bug fixes:
+
+- PIM-8773: Fix logout after opening a select2 dropdown
+- PIM-8879: Validate attribute options existence
+
 # 3.2.12 (2019-10-08)
 
 # 3.2.11 (2019-10-07)
