@@ -1,5 +1,12 @@
 # 3.0.x
 
+# 3.0.47 (2019-10-21)
+
+## Bug fixes
+
+- PIM-8586: Fix association type order in association tab
+- PIM-8892: Fix product bulk actions on categories
+
 # 3.0.46 (2019-10-16)
 
 ## Bug fixes
