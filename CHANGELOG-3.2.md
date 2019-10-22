@@ -1,5 +1,16 @@
 # 3.2.x
 
+# 3.2.14 (2019-10-22)
+
+## Features
+
+- AOB-661: allow prefix of ES document `_id`
+
+## Bug fixes:
+
+- PIM-8893: update dompdf because the pdf export fail on some products
+- PIM-7963: Fix datepicker width not adapting to the dropdown
+
 # 3.2.13 (2019-10-18)
 
 ## Bug fixes:
