@@ -1,5 +1,12 @@
 # 3.0.x
 
+# 3.0.48 (2019-10-23)
+
+## Bug fixes
+
+AOB-691: Allow to show only specific operators in datagrid
+AOB-691: Allow only default filters without calling a dynamic attributes query in datagrid
+
 # 3.0.47 (2019-10-21)
 
 ## Bug fixes
