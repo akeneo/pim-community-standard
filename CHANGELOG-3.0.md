@@ -1,5 +1,12 @@
 # 3.0.x
 
+# 3.0.49 (2019-10-24)
+
+## Bug fixes
+
+- GITHUB-10955: Remove database prefix in queries
+- PIM-8903: Fix export job instances filters when a family is deleted
+
 # 3.0.48 (2019-10-23)
 
 ## Bug fixes
