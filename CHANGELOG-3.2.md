@@ -1,5 +1,13 @@
 # 3.2.x
 
+# 3.2.22 (2019-12-03)
+
+## Bug fixes:
+
+- PIM-8996: Display an error when a file upload failed
+- PIM-8984: Fix css on records dropdowns
+- PIM-8988: Remove useless "Remove" button when editing exported attributes (in export profile)
+
 # 3.2.21 (2019-11-22)
 
 - PIM-8995: Fix the completeness widget (dashboard) for channels having no translations
