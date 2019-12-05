@@ -1,5 +1,11 @@
 # 3.2.x
 
+# 3.2.23 (2019-12-05)
+
+## Bug fixes:
+
+- PIM-9008: Fix product models API when the filter "completenes" was used with a sub-filter "locale"
+
 # 3.2.22 (2019-12-03)
 
 ## Bug fixes:
