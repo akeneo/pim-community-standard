@@ -1,10 +1,19 @@
 # 3.2.x
 
+# 3.2.24 (2019-12-10)
+
+## Bug fixes:
+
+- PIM-8998: Fix error 500 on asset list & product list when a user has no permission on categories & asset categories
+- PIM-9016: Fix error message not translated for attribute code
+- PIM-9015: Fix validation message display on attribute group creation failure
+
 # 3.2.23 (2019-12-05)
 
 ## Bug fixes:
 
 - PIM-9008: Fix product models API when the filter "completenes" was used with a sub-filter "locale"
+- PIM-9005: Fix display of long option labels in the Product Edit Form
 
 # 3.2.22 (2019-12-03)
 
