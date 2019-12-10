@@ -46,3 +46,7 @@ Upgrade instructions
 
 To upgrade Akeneo PIM to a newer version, please follow:
 https://docs.akeneo.com/master/migrate_pim/index.html
+
+Changelog
+---------
+You can check out the changelog files in https://github.com/akeneo/pim-community-dev.
