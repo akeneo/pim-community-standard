@@ -50,3 +50,7 @@ https://docs.akeneo.com/master/migrate_pim/index.html
 Changelog
 ---------
 You can check out the changelog files in https://github.com/akeneo/pim-community-dev.
+
+Migrating
+---------
+See https://docs.akeneo.com/latest/migrate_pim/index.html.
