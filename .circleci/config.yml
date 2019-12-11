@@ -6,26 +6,20 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Copy env file
-          command: cp .env.dist .env
-      - run:
-          name: Setup environment
-          command: ./bin/docker/pim-setup.sh
-      - run:
           name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
           command: sudo chown -R 1000:1000 ../project
       - run:
+          name: Install PHP dependencies
+          command: docker run -u www-data --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer install
+      - run:
           name: Start containers
-          command: docker-compose up -d
+          command: make up
       - run:
           name: Install dependencies
-          command: ./bin/docker/pim-dependencies.sh
+          command: make node_modules
       - run:
-          name: Pim installation
-          command: |
-              docker-compose exec fpm bin/console --env=prod pim:install --force --clean \
-              && docker-compose run --rm node yarn run less \
-              && docker-compose run --rm node yarn run webpack
+          name: PIM installation
+          command: make pim-prod
 
 workflows:
     version: 2
