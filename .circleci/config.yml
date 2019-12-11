@@ -15,6 +15,9 @@ jobs:
           name: Start containers
           command: make up
       - run:
+          name: Create mandatory yarn directories
+          command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
+      - run:
           name: Install dependencies
           command: make node_modules
       - run:
