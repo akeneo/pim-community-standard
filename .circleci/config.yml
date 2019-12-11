@@ -10,7 +10,7 @@ jobs:
           command: sudo chown -R 1000:1000 ../project
       - run:
           name: Install PHP dependencies
-          command: docker run -u www-data --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer install
+          command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer install
       - run:
           name: Start containers
           command: make up
