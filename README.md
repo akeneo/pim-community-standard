@@ -33,7 +33,7 @@ Please note that you will certainly need to provide your GitHub credentials with
 A lot of our dependencies are coming from GitHub and this reaches the max limit of 50 API calls from anonymous users.
 
 ```
-    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "3.1.*@stable"
+    $ php composer.phar create-project --prefer-dist akeneo/pim-community-standard ./pim-project "4.0.*@stable"
 ```
 
 After that, follow the instructions here:
@@ -50,7 +50,3 @@ https://docs.akeneo.com/master/migrate_pim/index.html
 Changelog
 ---------
 You can check out the changelog files in https://github.com/akeneo/pim-community-dev.
-
-Migrating
----------
-See https://docs.akeneo.com/latest/migrate_pim/index.html.
