@@ -21,7 +21,9 @@ Installation instructions
 The following steps will install Akeneo PIM in the current directory (must be empty) and launch it from tthere.
 
 ```bash
- docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer create-project --prefer-dist akeneo/pim-community-standard /srv/pim "4.0.*@stable"
+ docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 \
+    php -d memory_limit=4G /usr/local/bin/composer create-project --prefer-dist \
+    akeneo/pim-community-standard /srv/pim "4.0.*@stable"
  make dependencies
  make
 
