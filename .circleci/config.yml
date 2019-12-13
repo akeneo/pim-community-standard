@@ -15,14 +15,8 @@ jobs:
           name: Create mandatory yarn directories
           command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
       - run:
-          name: Install dependencies
-          command: make node_modules
-      - run:
-          name: Start containers
-          command: make up
-      - run:
-          name: PIM installation
-          command: make pim-prod
+          name: Launch the installation
+          command: make
 
 workflows:
     version: 2
