@@ -30,6 +30,9 @@
     "scripts": {
         "post-install-cmd": [
             "vendor/akeneo/pim-community-dev/std-build/copy-required-files.sh"
+        ],
+        "post-create-project-cmd": [
+            "vendor/akeneo/pim-community-dev/std-build/copy-required-files.sh"
         ]
     },
     "minimum-stability": "stable"
