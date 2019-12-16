@@ -17,6 +17,9 @@ jobs:
       - run:
           name: Launch the installation
           command: make
+      - run:
+          name: Test login page HTTP status
+          command: curl -f http://localhost:8080/
 
 workflows:
     version: 2
@@ -28,10 +31,10 @@ workflows:
     nightly:
         triggers:
             - schedule:
-                  cron: "0 5 * * *"
-                  filters:
-                      branches:
-                          only:
-                              - master
+                cron: 0 5 * * *
+                filters:
+                  branches:
+                    only:
+                      - master
         jobs:
-            - build
+          - build
