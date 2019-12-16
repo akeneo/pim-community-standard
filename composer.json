@@ -27,7 +27,7 @@
         "doctrine/doctrine-migrations-bundle": "1.3.2"
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-update-cmd": [
             "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ],
         "post-create-project-cmd": [
