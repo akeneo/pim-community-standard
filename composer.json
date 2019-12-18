@@ -14,63 +14,28 @@
             "": "src/"
         },
         "psr-4": {
-          "Pim\\Upgrade\\": "upgrades/"
+            "Pim\\Upgrade\\": "upgrades/"
         },
-        "classmap": [ "app/AppKernel.php", "app/AppCache.php" ],
         "exclude-from-classmap": [
-            "vendor/akeneo/pim-community-dev/app/AppKernel.php",
-            "vendor/akeneo/pim-community-dev/app/AppCache.php"
+            "vendor/akeneo/pim-community-dev/src/Kernel.php"
         ]
     },
     "require": {
-        "php": ">=7.2.0",
-        "akeneo/pim-community-dev": "3.2.x-dev@dev"
+        "akeneo/pim-community-dev": "dev-master@dev"
     },
     "require-dev": {
-        "doctrine/migrations": "1.5.0",
-        "doctrine/doctrine-migrations-bundle": "1.2.1"
+        "doctrine/doctrine-migrations-bundle": "1.3.2"
     },
     "scripts": {
-        "symfony-scripts": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "php bin/console --ansi fos:js-routing:dump --target=web/js/routes.js",
-            "php bin/console --ansi pim:installer:assets"
+        "post-update-cmd": [
+            "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ],
         "post-install-cmd": [
-            "@symfony-scripts"
+            "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ],
-        "post-update-cmd": [
-            "@symfony-scripts",
-            "Akeneo\\Platform\\Bundle\\InstallerBundle\\ComposerScripts::copyUpgradesFiles"
+        "post-create-project-cmd": [
+            "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ]
     },
-    "minimum-stability": "stable",
-    "extra": {
-        "symfony-app-dir": "app",
-        "symfony-bin-dir": "bin",
-        "symfony-var-dir": "var",
-        "symfony-web-dir": "web",
-        "symfony-assets-install": "relative",
-        "incenteev-parameters": {
-            "keep-outdated": true,
-            "file": "app/config/parameters.yml",
-            "env-map": {
-                "database_host": "PIM_DATABASE_HOST",
-                "database_port": "PIM_DATABASE_PORT",
-                "database_name": "PIM_DATABASE_NAME",
-                "database_user": "PIM_DATABASE_USER",
-                "database_password": "PIM_DATABASE_PASSWORD",
-                "index_hosts": "PIM_INDEX_HOSTS"
-            }
-        },
-        "branch-alias": {
-            "dev-master": "3.2.x-dev"
-        }
-    }
+    "minimum-stability": "stable"
 }

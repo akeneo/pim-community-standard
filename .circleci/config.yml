@@ -2,30 +2,33 @@ version: 2
 jobs:
   build:
     machine:
-      enabled: true
+      image: ubuntu-1604:201903-01
     steps:
       - checkout
-      - run:
-          name: Copy env file
-          command: cp .env.dist .env
-      - run:
-          name: Setup environment
-          command: ./bin/docker/pim-setup.sh
       - run:
           name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
           command: sudo chown -R 1000:1000 ../project
       - run:
-          name: Start containers
-          command: docker-compose up -d
+          name: Install PHP dependencies
+          command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
       - run:
-          name: Install dependencies
-          command: ./bin/docker/pim-dependencies.sh
+          name: Create mandatory yarn directories
+          command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
       - run:
-          name: Pim installation
-          command: |
-              docker-compose exec fpm bin/console --env=prod pim:install --force --clean \
-              && docker-compose run --rm node yarn run less \
-              && docker-compose run --rm node yarn run webpack
+          name: Launch the installation
+          command: make
+      - run:
+          name: Test login page HTTP status
+          command: curl -f http://localhost:8080/
+      - run:
+          name: Shutdown dev mode
+          command: make down
+      - run:
+          name: Launch the PIM in prod mode
+          command: make pim-prod
+      - run:
+          name: Test login page HTTP status
+          command: curl -f http://localhost:8080/
 
 workflows:
     version: 2
@@ -37,10 +40,10 @@ workflows:
     nightly:
         triggers:
             - schedule:
-                  cron: "0 5 * * *"
-                  filters:
-                      branches:
-                          only:
-                              - master
+                cron: 0 5 * * *
+                filters:
+                  branches:
+                    only:
+                      - master
         jobs:
-            - build
+          - build
