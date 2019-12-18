@@ -20,6 +20,15 @@ jobs:
       - run:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
+      - run:
+          name: Shutdown dev mode
+          command: make down
+      - run:
+          name: Launch the PIM in prod mode
+          command: make pim-prod
+      - run:
+          name: Test login page HTTP status
+          command: curl -f http://localhost:8080/
 
 workflows:
     version: 2
