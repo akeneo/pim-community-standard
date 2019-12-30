@@ -9,10 +9,12 @@ services:
       PHP_XDEBUG_ENABLED: 0
       PHP_XDEBUG_IDE_KEY: 'XDEBUG_IDE_KEY'
       XDEBUG_CONFIG: 'remote_host=xxx.xxx.xxx.xxx'
+      SSH_AUTH_SOCK: '/ssh-agent'
     user: docker
     volumes:
       - ./:/srv/pim
       - ~/.composer:/home/docker/.composer
+      - '${SSH_AUTH_SOCK}:/ssh-agent:ro'
     working_dir: /srv/pim
 
   node:
