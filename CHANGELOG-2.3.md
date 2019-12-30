@@ -1,5 +1,9 @@
 # 2.3.x
 
+## Improvement
+
+- PIM-9034: Use SSH agent with docker compose
+
 # 2.3.74 (2019-12-12)
 
 - PIM-9017: Remove "Add an attribute to a product" ACL
