@@ -10,8 +10,10 @@ services:
       PHP_IDE_CONFIG: 'serverName=pim-ce-cli'
       PHP_XDEBUG_ENABLED: 0
       XDEBUG_CONFIG: 'remote_host=172.17.0.1'
+      SSH_AUTH_SOCK: '/ssh-agent'      
     volumes:
       - '~/.composer:/home/docker/.composer'
+      - '${SSH_AUTH_SOCK}:/ssh-agent:ro'      
 
   node:
     environment:

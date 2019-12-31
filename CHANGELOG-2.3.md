@@ -1,14 +1,155 @@
 # 2.3.x
 
+## Improvement
+
+- PIM-9034: Use SSH agent with docker compose
+
+# 2.3.74 (2019-12-12)
+
+- PIM-9017: Remove "Add an attribute to a product" ACL
+- PIM-6427: Fix wrong label update on attribute through the API
+
+# 2.3.73 (2019-12-06)
+
+## Bug fixes
+
+- PIM-9003: Fix product variant navigation when there is no completeness for a given channel
+- PIM-6437: Remove empty or already added attribute groups from family edit screen
+
+# 2.3.72 (2019-12-02)
+
+## Bug fixes
+
+- PIM-8987: Add --batch-size option to pim:versioning:purge command and add a workaround for the memory leak inside.
+
+# 2.3.71 (2019-11-25)
+
+# 2.3.70 (2019-11-20)
+
+## Bug fixes
+
+- PIM-7027: fix completeness visibility on product edit form
+- PIM-8965: Fix misleading error messages due to all-caps formatting
+- PIM-8954: Forbid user without "list users" permission to access other user data
+- PIM-8989: fix attributes order in the list of attributes
+
+# 2.3.69 (2019-10-24)
+
+## Bug fixes
+
+- PIM-7963: fix datepicker width not adapting to the dropdown
+- GITHUB-10955: Remove database prefix in queries
+
+# 2.3.68 (2019-10-18)
+
+## Bug fixes
+
+- PIM-6976: fix max_characters attribute field not being nullable
+
+# 2.3.67 (2019-10-14)
+
+## Bug fixes
+
+- PIM-7332: show an error message when a number attribute field reaches the PHP_INT_MAX.
+- PIM-7691: Users were able to edit their own roles
+
+# 2.3.66 (2019-10-09)
+
+# 2.3.65 (2019-10-04)
+
+## Bug fixes
+
+- PIM-7122: User can not delete an attribute used as conversion unit in a channel
+
+# 2.3.64 (2019-10-01)
+
+## Bug fixes
+
+- PIM-6424: update exports when a locale is removed from a channel
+- PIM-7891: Update exports when an attribute is deleted
+
+# 2.3.63 (2019-09-23)
+
+
+## Bug fixes
+
+- PIM-8738: Fix memory leak executing "akeneo:batch:purge-job-execution" command
+- PIM-8790: Fix non removed category filter in job instances
+- PIM-8778: Fix error code when request is bad formatted in product API
+
+# 2.3.62 (2019-09-13)
+
+## Bug fixes
+
+- PIM-8757: Use a stream to create export archive
+- PIM-8751: Fix simple and multi select attributes history when creating a new option
+
+# 2.3.61 (2019-09-10)
+
+# 2.3.60 (2019-09-05)
+
+## Improvement
+
+- PIM-7127: Hide version from CSS call
+
+# 2.3.59 (2019-08-12)
+
+## Bug fixes
+
+- PIM-7675: Fix file input style
+
+# 2.3.58 (2019-08-08)
+
+## Bug fixes
+
+- PIM-8461: Do not display 'Compare/translate' if user has no permission to edit product attributes
+- PIM-7583: Allow user to import custom locales without '_'
+- PIM-8630: Fix revert action when it exists an association type with integer as code
+
+# 2.3.57 (2019-07-31)
+
+## Bug fixes
+
+- PIM-7741: use the catalog locale when choosing a new parent product model
+- TIP-1200: Use SQL queries instead of repositories in UniqueVariantAxisValidator
+- PIM-7888: Fix creation of a product model / variant product with a boolean attribute as axis
+
+# 2.3.56 (2019-07-24)
+
+## Bug fixes
+
+- PIM-8349: Fixes missing variable passed to pim_enrich.job.upload translation
+
+## Improvement
+
+- GITHUB-10438: Include less files in the main stylesheet by default
+
+# 2.3.55 (2019-07-23)
+
+## Bug fixes
+
+- PIM-8484: Show flash message instead of deprecated error modal on deletion
+- PIM-8570: Fix category tree display
+- PIM-8572: Fix issue on category selection in product grid
+
+# 2.3.54 (2019-07-19)
+
+## Bug fixes
+
+- PIM-8551: Replace 'div' by '/' in Measure
+
+# 2.3.53 (2019-07-15)
+
+## Bug fixes
+
+- PIM-7935: Close variant select dropdowns on page navigation
+- PIM-8476: Fix drag & drop on category trees
+
 # 2.3.52 (2019-07-02)
 
 ## Bug fixes:
 
 - PIM-8480: Remove the job execution message orphans after a job execution purge.
-
-## Improvement
-
-- PIM-8449: Load .env variable with DotEnv
 
 # 2.3.51 (2019-06-26)
 
