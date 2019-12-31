@@ -1,5 +1,12 @@
 # 3.2.x
 
+# 3.2.28 (2019-12-31)
+
+## Bug fixes:
+
+- PIM-9043: Do not filter archivable jobs to be able to download all logs
+- PIM-9029: Use Catalog locale in variant families datagrid
+
 # 3.2.27 (2019-12-19)
 
 ## Bug fixes:
