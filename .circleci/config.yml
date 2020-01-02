@@ -15,7 +15,7 @@ jobs:
           name: Create mandatory yarn directories
           command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
       - run:
-          name: Launch the installation
+          name: Launch the PIM in dev mode
           command: make
       - run:
           name: Test login page HTTP status
@@ -25,7 +25,7 @@ jobs:
           command: make down
       - run:
           name: Launch the PIM in prod mode
-          command: make pim-prod
+          command: make prod
       - run:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
