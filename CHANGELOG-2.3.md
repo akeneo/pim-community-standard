@@ -1,8 +1,14 @@
 # 2.3.x
 
-## Improvement
+# 2.3.75 (2020-01-03)
 
-- PIM-9034: Use SSH agent with docker compose
+## Bug fixes
+
+- PIM-7699: Fix multi-select filter design with a lot of filtered items
+
+## Technical improvement
+
+- Update composer dependencies to fix PhpSpec Prohecy version to 1.9.*
 
 # 2.3.74 (2019-12-12)
 
