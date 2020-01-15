@@ -44,6 +44,6 @@ workflows:
                 filters:
                   branches:
                     only:
-                      - master
+                      - "4.0"
         jobs:
           - build
