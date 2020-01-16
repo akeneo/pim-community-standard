@@ -150,9 +150,9 @@ Otherwise, kill your daemon:
     pkill -f job-queue-consumer-daemon
     ```
 
-To give you a quick overview of the changes made to a standard project, you can check on [Github](https://github.com/akeneo/pim-enterprise-standard/compare/2.3...3.0).
+To give you a quick overview of the changes made to a standard project, you can check on [Github](https://github.com/akeneo/pim-community-standard/compare/2.3...3.0).
 
-2 Download the latest standard edition from the website [PIM community standard](http://www.akeneo.com/download/) and extract:
+2. Download the latest standard edition from the website [PIM community standard](http://www.akeneo.com/download/) and extract:
 
     ```bash
     wget http://download.akeneo.com/pim-community-standard-v3.0-latest.tar.gz
@@ -586,9 +586,9 @@ Before updating the dependencies and migrating your data, please deactivate all 
 
 11. Migrate your Elasticsearch indices:
 
-    In case you updated the settings of Elasticsearch (like normalizers, filters and analyzers), please make sure you properly loaded your custom settings in the [Elasticsearch configuration](https://github.com/akeneo/pim-enterprise-standard/blob/3.0/app/config/pim_parameters.yml#L58-L68).
+    In case you updated the settings of Elasticsearch (like normalizers, filters and analyzers), please make sure you properly loaded your custom settings in the [Elasticsearch configuration](https://github.com/akeneo/pim-community-standard/blob/3.0/app/config/pim_parameters.yml#L58-L68).
 
-    Same in case you have a big catalog and increased the [index.mapping.total_fields.limit](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping.html#mapping-limit-settings). Make sure you properly loaded your custom settings in the [Elasticsearch configuration](https://github.com/akeneo/pim-enterprise-standard/blob/3.0/app/config/pim_parameters.yml#L58-L68).
+    Same in case you have a big catalog and increased the [index.mapping.total_fields.limit](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping.html#mapping-limit-settings). Make sure you properly loaded your custom settings in the [Elasticsearch configuration](https://github.com/akeneo/pim-community-standard/blob/3.0/app/config/pim_parameters.yml#L58-L68).
 
     ```bash
     php upgrades/schema/es_20190128110000_ce_update_document_type_product_and_product_model.php
