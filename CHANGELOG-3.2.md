@@ -1,10 +1,17 @@
 # 3.2.x
 
+# 3.2.33 (2020-01-20)
+
+## Bug fixes:
+
+- PIM-9059: Fix catalog locale on user panel & attribute groups attributes
+
 # 3.2.32 (2020-01-17)
 
 ## Bug fixes:
 
 - PIM-9056: Fix filters with numeric attribute codes for bulk actions
+- PIM-9058: Fix search products API with filters on numeric attribute codes
 
 # 3.2.31 (2020-01-14)
 
