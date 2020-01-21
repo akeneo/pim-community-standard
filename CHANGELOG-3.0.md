@@ -1,5 +1,13 @@
 # 3.0.x
 
+# 3.0.64 (2020-01-21)
+
+## Bug fixes
+
+- PIM-8163: Display messages when toggling curencies
+- PIM-6160: Fix update of 'unique' property in attribute updater when updating both unique and type properties
+- PIM-9061: Fix filters with numeric attribute codes for bulk actions
+
 # 3.0.63 (2020-01-10)
 
 ## Bug fixes
