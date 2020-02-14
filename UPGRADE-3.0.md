@@ -1710,7 +1710,7 @@ Now you are ready to restart the queue consumer daemon.
 
 If you use `supervisor`, then restart your daemon as following:
 
-    ```bash
+```bash
     supervisorctl status
     # the command returns the following daemons
     # pim-queue-daemon:pim-queue-daemon_00 STOPPED    Jan 24 11:41 AM
@@ -1720,4 +1720,4 @@ If you use `supervisor`, then restart your daemon as following:
     supervisorctl status
     # pim-queue-daemon:pim-queue-daemon_00 RUNNING    pid 3500, uptime 0:00:04
     # the daemon has been restarted
-    ```
+```
