@@ -282,7 +282,7 @@ Before updating the dependencies and migrating your data, please deactivate all 
     And we also have to update the frontend dependencies:
 
     ```bash
-    yarn install'
+    yarn install
     ```
 
 ## Migrate your custom code
