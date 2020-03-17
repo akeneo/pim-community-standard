@@ -1,5 +1,12 @@
 # 3.0.x
 
+# 3.0.70 (2020-03-17)
+
+## Bug fixes
+
+- PIM-9140: Translate error message from backend in dialogs
+- PIM-9146: Fix product grid choice-filter data fetching
+
 # 3.0.69 (2020-03-11)
 
 ## Bug fixes
