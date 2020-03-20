@@ -1,5 +1,11 @@
 # 3.2.x
 
+# 3.2.45 (2020-03-20)
+
+## Bug fixes
+
+- PIM-9152: Handle old versioning date format
+
 # 3.2.44 (2020-03-13)
 
 ## Bug fixes
