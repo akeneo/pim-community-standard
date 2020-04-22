@@ -28,6 +28,8 @@ jobs:
       - run:
           name: Launch the PIM in prod mode
           command: make prod
+          environment:
+              YARN_REGISTRY: "http://registry.yarnpkg.com"
       - run:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
