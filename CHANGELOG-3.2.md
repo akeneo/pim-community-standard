@@ -1,5 +1,10 @@
 # 3.2.x
 
+# 3.2.52 (2020-04-30)
+
+## Bug fixes
+- GITHUB-11995: Fixes invalid Jquery generic type (#11995)
+
 # 3.2.51 (2020-04-28)
 
 ## Bug fixes
