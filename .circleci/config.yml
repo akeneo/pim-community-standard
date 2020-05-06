@@ -9,7 +9,7 @@ jobs:
           name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
           command: sudo chown -R 1000:1000 ../project
       - run:
-          name: Install PHP dependencies
+          name: Install PHP dependencies - PIM tags
           command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
       - run:
           name: Create mandatory yarn directories
@@ -33,6 +33,17 @@ jobs:
       - run:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
+      - run:
+            name: Shutdown prod mode
+            command: make down
+      - run:
+            name: Install PHP dependencies - PIM dev
+            command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer require akeneo/pim-community-dev 4.0.x-dev
+      - run:
+            name: Launch the PIM in dev mode
+            command: make
+            environment:
+                YARN_REGISTRY: "http://registry.yarnpkg.com"
 
 workflows:
     version: 2
