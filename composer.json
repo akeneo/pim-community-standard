@@ -24,7 +24,10 @@
         "akeneo/pim-community-dev": "^4.0.0"
     },
     "require-dev": {
-        "doctrine/doctrine-migrations-bundle": "1.3.2"
+        "doctrine/doctrine-migrations-bundle": "1.3.2",
+        "symfony/debug-bundle": "^4.4.7",
+        "symfony/web-profiler-bundle": "^4.4.7",
+        "symfony/web-server-bundle": "^4.4.7"
     },
     "scripts": {
         "post-update-cmd": [
