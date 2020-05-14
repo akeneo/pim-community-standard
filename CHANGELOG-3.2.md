@@ -1,5 +1,12 @@
 # 3.2.x
 
+# 3.2.55 (2020-05-14)
+
+## Bug fixes
+
+- PIM-9245: Fix relative JS files path for less compilation
+- PIM-9249: Fix channel and locale popin display on product export
+
 # 3.2.54 (2020-05-06)
 
 ## Bug fixes
