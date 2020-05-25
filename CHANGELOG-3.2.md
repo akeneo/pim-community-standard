@@ -1,5 +1,15 @@
 # 3.2.x
 
+# 3.2.56 (2020-05-25)
+
+## Bug fixes
+
+- AOB-953: Fix `ComputeFamilyVariantStructureChanges` constraint by accepting array of several elements
+
+## Improvement
+
+- PIM-9165: Improve message of `akeneo:elasticsearch:reset-indexes` command. Now, all commands available to re-index entities are shown.
+
 # 3.2.55 (2020-05-14)
 
 ## Bug fixes
