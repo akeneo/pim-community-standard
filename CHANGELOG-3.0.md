@@ -1,5 +1,11 @@
 # 3.0.x
 
+# 3.0.83 (2020-08-04)
+
+## Improvements
+
+- PIM-9383: Fix underscore JS dependency
+
 # 3.0.82 (2020-07-23)
 
 ## Bug fixes
