@@ -8,6 +8,9 @@ jobs:
                 name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
                 command: sudo chown -R 1000:1000 ../project
           - run:
+                name: Create mandatory yarn directories as explained in the documentation
+                command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
+          - run:
                 name: Create the project as explained in the documentation
                 command: |
                     docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 \
