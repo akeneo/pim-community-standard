@@ -1,56 +1,83 @@
 version: 2
 jobs:
-  build:
-    machine:
-      image: ubuntu-1604:201903-01
-    steps:
-      - checkout
-      - run:
-          name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
-          command: sudo chown -R 1000:1000 ../project
-      - run:
-          name: Install PHP dependencies - PIM tags
-          command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
-      - run:
-          name: Create mandatory yarn directories
-          command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
-      - run:
-          name: Launch the PIM in dev mode
-          command: make
-          environment:
-              YARN_REGISTRY: "http://registry.yarnpkg.com"
-      - run:
-          name: Test login page HTTP status
-          command: curl -f http://localhost:8080/
-      - run:
-          name: Shutdown dev mode
-          command: make down
-      - run:
-          name: Launch the PIM in prod mode
-          command: make prod
-          environment:
-              YARN_REGISTRY: "http://registry.yarnpkg.com"
-      - run:
-          name: Test login page HTTP status
-          command: curl -f http://localhost:8080/
-      - run:
-            name: Shutdown prod mode
-            command: make down
-      - run:
-            name: Install PHP dependencies - PIM dev
-            command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer require akeneo/pim-community-dev 4.0.x-dev
-      - run:
-            name: Launch the PIM in dev mode
-            command: make
-            environment:
-                YARN_REGISTRY: "http://registry.yarnpkg.com"
+  build_last_release:
+      machine:
+          image: ubuntu-1604:201903-01
+      steps:
+          - run:
+                name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
+                command: sudo chown -R 1000:1000 ../project
+          - run:
+                name: Create mandatory yarn directories as explained in the documentation
+                command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
+          - run:
+                name: Create the project as explained in the documentation
+                command: |
+                    docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 \
+                    php -d memory_limit=4G /usr/local/bin/composer create-project --prefer-dist \
+                    akeneo/pim-community-standard /srv/pim "4.0.*@stable"
+          - run:
+                name: Launch the PIM in dev mode
+                command: make
+                environment:
+                    YARN_REGISTRY: "http://registry.yarnpkg.com"
+          - run:
+                name: Test login page HTTP status
+                command: curl -f http://localhost:8080/
+          - run:
+                name: Shutdown dev mode
+                command: make down
+          - run:
+                name: Launch the PIM in prod mode
+                command: make prod
+                environment:
+                    YARN_REGISTRY: "http://registry.yarnpkg.com"
+          - run:
+                name: Test login page HTTP status
+                command: curl -f http://localhost:8080/
+
+  build_4_0_dev:
+      machine:
+          image: ubuntu-1604:201903-01
+      steps:
+          - checkout
+          - run:
+                name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
+                command: sudo chown -R 1000:1000 ../project
+          - run:
+                name: Install PHP dependencies - Require the development branch 4.0
+                command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 php -d memory_limit=4G /usr/local/bin/composer require akeneo/pim-community-dev 4.0.x-dev
+          - run:
+                name: Create mandatory yarn directories
+                command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
+          - run:
+                name: Launch the PIM in dev mode
+                command: make
+                environment:
+                    YARN_REGISTRY: "http://registry.yarnpkg.com"
+          - run:
+                name: Test login page HTTP status
+                command: curl -f http://localhost:8080/
+          - run:
+                name: Shutdown dev mode
+                command: make down
+          - run:
+                name: Launch the PIM in prod mode
+                command: make prod
+                environment:
+                    YARN_REGISTRY: "http://registry.yarnpkg.com"
+          - run:
+                name: Test login page HTTP status
+                command: curl -f http://localhost:8080/
+
 
 workflows:
     version: 2
 
     pull_request:
         jobs:
-            - build
+            - build_4_0_dev
+            - build_last_release
 
     nightly:
         triggers:
@@ -61,4 +88,5 @@ workflows:
                     only:
                       - "4.0"
         jobs:
-          - build
+          - build_last_release
+          - build_4_0_dev
