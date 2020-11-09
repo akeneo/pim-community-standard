@@ -34,12 +34,37 @@ jobs:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
 
+  test_migrations_from_4_0:
+      machine:
+          image: ubuntu-1604:201903-01
+      steps:
+          - checkout
+          - run:
+                name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
+                command: |
+                    sudo chown -R 1000:1000 ../project
+          - run:
+                name: Create mandatory composer and yarn directories
+                command: |
+                    mkdir -p ~/.composer ~/.cache/yarn
+                    sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn
+          - run:
+                name: Test migrations from 4.0
+                no_output_timeout: 60m
+                command: .circleci/test_migrations_from_4_0.sh $CIRCLE_BRANCH
+                environment:
+                    YARN_REGISTRY: "http://registry.yarnpkg.com"
+          - run:
+                name: Test login page HTTP status
+                command: curl --fail http://localhost:8080/
+
 workflows:
     version: 2
 
     pull_request:
         jobs:
             - build
+            - test_migrations_from_4_0
 
     nightly:
         triggers:
@@ -50,4 +75,5 @@ workflows:
                     only:
                       - master
         jobs:
-          - build
+            - build
+            - test_migrations_from_4_0
