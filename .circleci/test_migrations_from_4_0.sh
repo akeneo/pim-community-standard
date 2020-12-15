@@ -43,7 +43,7 @@ install_pim_without_database() {
   APP_ENV=dev make up
   # Wait for docker up. This is not mandatory but it checks the containers are working properly.
   ./docker/wait_docker_up.sh
-  APP_ENV=dev PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 make node_modules cache assets javascript-dev
+  APP_ENV=dev PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 make node_modules cache front
 }
 
 copy_migrations_to_upgrades_directory() {
