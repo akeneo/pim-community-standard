@@ -9,7 +9,7 @@ services:
       COMPOSER_HOME: '/home/docker/.composer'
       PHP_IDE_CONFIG: 'serverName=pim-ce-cli'
       PHP_XDEBUG_ENABLED: "${PHP_XDEBUG_ENABLED:-0}"
-      XDEBUG_CONFIG: 'remote_host=172.17.0.1'
+      XDEBUG_CONFIG: 'client_host=172.17.0.1'
     volumes:
       - '~/.composer:/home/docker/.composer'
 
