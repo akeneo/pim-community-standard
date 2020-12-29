@@ -21,7 +21,7 @@ Installation instructions
 The following steps will install Akeneo PIM in the current directory (must be empty) and launch it from there:
 
 ```bash
-$ docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:4.0 \
+$ docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:5.0 \
     php -d memory_limit=4G /usr/local/bin/composer create-project --prefer-dist \
     akeneo/pim-community-standard /srv/pim "4.0.*@stable"
 ```
@@ -36,10 +36,13 @@ To shutdown your PIM: `make down`
 
 ### Installation without Docker
 
+## Requirements
+ - php 7.4
+ - composer 2.0
 
 ```bash
 $ php -d memory_limit=4G /usr/local/bin/composer create-project --prefer-dist \
-    akeneo/pim-community-standard /srv/pim "4.0.*@stable"
+    akeneo/pim-community-standard /srv/pim "5.0.*@stable"
 ```
 
 You will need to change the `.env` file to configure the access to your MySQL and ES server.
@@ -51,13 +54,13 @@ $ NO_DOCKER=true make
 
 ```
 
-For more details, please follow https://docs.akeneo.com/master/install_pim
+For more details, please follow https://docs.akeneo.com/5.0/install_pim
 
 Upgrade instructions
 --------------------
 
 To upgrade Akeneo PIM to a newer version, please follow:
-https://docs.akeneo.com/master/migrate_pim/index.html
+https://docs.akeneo.com/5.0/migrate_pim/index.html
 
 Changelog
 ---------
