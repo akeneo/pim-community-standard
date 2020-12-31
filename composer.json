@@ -31,13 +31,13 @@
     },
     "scripts": {
         "post-update-cmd": [
-            "sh vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
+            "bash vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ],
         "post-install-cmd": [
-            "sh vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
+            "bash vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ],
         "post-create-project-cmd": [
-            "sh vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
+            "bash vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ]
     },
     "minimum-stability": "stable"
