@@ -29,6 +29,8 @@ $ docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:
 $ make
 
 ```
+For Windows using PowerShell : 
+```docker run -u www-data -v ${PWD}:/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:5.0 php -d memory_limit=4G /usr/local/bin/composer create-project akeneo/pim-community-standard /srv/pim "5.0.*@stable"```
 
 The PIM will be available on http://localhost:8080/, with `admin/admin` as default credentials.
 
