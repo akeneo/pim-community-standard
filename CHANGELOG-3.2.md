@@ -1,5 +1,11 @@
 # 3.2.x
 
+# 3.2.81 (2021-02-15)
+
+# Technical Improvements
+
+- PIM-9648: Mitigate DDoS risk on API auth endpoint by rejecting too large content
+
 # 3.2.80 (2021-01-04)
 
 ## Bug fixes
