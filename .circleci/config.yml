@@ -9,11 +9,20 @@ jobs:
           name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
           command: sudo chown -R 1000:1000 ../project
       - run:
-          name: Install PHP dependencies
-          command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:master php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
+            name: Create mandatory composer and yarn directories
+            command: |
+                mkdir -p ~/.composer ~/.cache/yarn
+                sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn
       - run:
-          name: Create mandatory yarn directories
-          command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
+          name: Install PHP dependencies
+          command: |
+            docker run -u www-data -u www-data \
+              -e COMPOSER_HOME=/var/www/.composer \
+              --volume $(pwd):/srv/pim \
+              --volume ~/.composer:/var/www/.composer \
+              -w /srv/pim \
+              --rm akeneo/pim-php-dev:master \
+              php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
       - run:
           name: Launch the PIM in dev mode
           command: make
