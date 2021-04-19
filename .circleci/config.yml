@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     machine:
-      image: ubuntu-1604:201903-01
+      image: ubuntu-2004:202101-01
     steps:
       - checkout
       - run:
@@ -36,7 +36,7 @@ jobs:
 
   test_migrations_from_4_0:
       machine:
-          image: ubuntu-1604:201903-01
+          image: ubuntu-2004:202101-01
       steps:
           - checkout
           - run:
