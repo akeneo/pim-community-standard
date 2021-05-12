@@ -27,7 +27,9 @@ jobs:
           command: docker run -u www-data -e COMPOSER_HOME=/var/www/.composer -v $(pwd):/srv/pim -v ~/.composer:/var/www/.composer -w /srv/pim --rm akeneo/pim-php-dev:master composer --prefer-dist install
       - run:
           name: Install missing Docker build files
-          command: cp vendor/akeneo/pim-community-dev/ docker/cypress/Dockerfile docker/cypress/Dockerfile
+          command: |
+            mkdir -p docker/cypress
+            cp vendor/akeneo/pim-community-dev/docker/cypress/Dockerfile docker/cypress/Dockerfile
       - run:
           name: Launch the PIM in dev mode
           command: make
