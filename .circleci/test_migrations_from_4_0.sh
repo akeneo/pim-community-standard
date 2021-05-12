@@ -78,10 +78,6 @@ docker run --user www-data --rm \
   akeneo/pim-php-dev:4.0 \
   php -d memory_limit=4G /usr/local/bin/composer install --no-interaction
 
-echo "Install missing Docker build files"
-mkdir -p docker/cypress
-cp vendor/akeneo/pim-community-dev/docker/cypress/Dockerfile docker/cypress/Dockerfile
-
 echo "Update docker-compose configuration to use volumes for MySQL and Elasticsearch containers..."
 update_docker_compose_config_to_use_volumes
 
@@ -115,6 +111,10 @@ docker run --user www-data --rm \
   --env COMPOSER_AUTH \
   akeneo/pim-php-dev:master \
   php -d memory_limit=4G /usr/local/bin/composer install --no-interaction
+
+echo "Install missing Docker build files"
+mkdir -p docker/cypress
+cp vendor/akeneo/pim-community-dev/docker/cypress/Dockerfile docker/cypress/Dockerfile
 
 echo "Update docker-compose configuration to use volumes for MySQL and Elasticsearch containers..."
 update_docker_compose_config_to_use_volumes
