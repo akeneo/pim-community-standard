@@ -8,7 +8,8 @@ jobs:
       - run:
           name: Change ACLs on project dir (default user = circleci (1001) and docker needs uid 1000)
           command: |
-              sudo apt install acl --yes
+              sudo apt update
+              sudo apt install acl
               # set permissions for future files and folders
               sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ../project
               # set permissions on the existing files and folders
@@ -53,6 +54,7 @@ jobs:
           - run:
                 name: Change ACLs on project dir (default user = circleci (1001) and docker needs uid 1000)
                 command: |
+                    sudo apt update
                     # set permissions for future files and folders
                     sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ../project
                     # set permissions on the existing files and folders
