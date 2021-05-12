@@ -72,11 +72,15 @@ sudo chown -R 1000:1000 "${PROJECT_DIR}"
 
 echo "Install 4.0 PIM dependencies and required files (including Makefile)..."
 docker run --user www-data --rm \
-  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www.composer --volume ~/.ssh:/var/www/.ssh \
+  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www/.composer --volume ~/.ssh:/var/www/.ssh \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
   akeneo/pim-php-dev:4.0 \
   php -d memory_limit=4G /usr/local/bin/composer install --no-interaction
+
+echo "Install missing Docker build files"
+mkdir -p docker/cypress
+cp vendor/akeneo/pim-community-dev/docker/cypress/Dockerfile docker/cypress/Dockerfile
 
 echo "Update docker-compose configuration to use volumes for MySQL and Elasticsearch containers..."
 update_docker_compose_config_to_use_volumes
@@ -106,7 +110,7 @@ sudo chown -R 1000:1000 "${PROJECT_DIR}"
 
 echo "Install $PR_BRANCH PIM dependencies and required files (including Makefile)..."
 docker run --user www-data --rm \
-  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www.composer --volume ~/.ssh:/var/www/.ssh \
+  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www/.composer --volume ~/.ssh:/var/www/.ssh \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
   akeneo/pim-php-dev:master \
