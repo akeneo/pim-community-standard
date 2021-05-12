@@ -6,8 +6,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
-          command: sudo chown -R 1000:1000 ../project
+          name: Change ACLs on project dir (default user = circleci (1001) and docker needs uid 1000)
+          command: |
+              # set permissions for future files and folders
+              sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ../project
+              # set permissions on the existing files and folders
+              sudo setfacl -R -m u:1000:rwX -m u:1001:rwX ../project
+      - run:
+            name: Create mandatory composer and yarn directories
+            command: |
+                mkdir -p ~/.composer ~/.cache/yarn
+                sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ~/.composer
+                sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ~/.cache
       - run:
           name: Install PHP dependencies
           command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:master php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
@@ -40,14 +50,18 @@ jobs:
       steps:
           - checkout
           - run:
-                name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
+                name: Change ACLs on project dir (default user = circleci (1001) and docker needs uid 1000)
                 command: |
-                    sudo chown -R 1000:1000 ../project
+                    # set permissions for future files and folders
+                    sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ../project
+                    # set permissions on the existing files and folders
+                    sudo setfacl -R -m u:1000:rwX -m u:1001:rwX ../project
           - run:
                 name: Create mandatory composer and yarn directories
                 command: |
                     mkdir -p ~/.composer ~/.cache/yarn
-                    sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn
+                    sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ~/.composer
+                    sudo setfacl -dR -m u:1000:rwX -m u:1001:rwX ~/.cache
           - run:
                 name: Test migrations from 4.0
                 no_output_timeout: 60m
