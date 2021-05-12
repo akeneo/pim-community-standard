@@ -26,8 +26,8 @@ jobs:
           name: Install PHP dependencies
           command: docker run -u www-data -e COMPOSER_HOME=/var/www/.composer -v $(pwd):/srv/pim -v ~/.composer:/var/www/.composer -w /srv/pim --rm akeneo/pim-php-dev:master composer --prefer-dist install
       - run:
-          name: Create mandatory yarn directories
-          command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
+          name: Install missing Docker build files
+          command: cp vendor/akeneo/pim-community-dev/ docker/cypress/Dockerfile docker/cypress/Dockerfile
       - run:
           name: Launch the PIM in dev mode
           command: make
@@ -57,16 +57,19 @@ jobs:
                 name: Change ACLs on project dir (default user = circleci (1001) and docker needs uid 1000)
                 command: |
                     sudo apt update
+                    sudo apt install acl
                     # set permissions for future files and folders
-                    sudo setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwX ../project
+                    sudo setfacl -dR -m u:1000:rwX -m u:$(whoami):rwX ../project
                     # set permissions on the existing files and folders
-                    sudo setfacl -R -m u:www-data:rwX -m u:$(whoami):rwX ../project
+                    sudo setfacl -R -m u:1000:rwX -m u:$(whoami):rwX ../project
           - run:
                 name: Create mandatory composer and yarn directories
                 command: |
                     mkdir -p ~/.composer ~/.cache/yarn
-                    sudo setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwX ~/.composer
-                    sudo setfacl -dR -m u:www-data:rwX -m u:$(whoami):rwX ~/.cache
+                    sudo setfacl -dR -m u:1000:rwX -m u:$(whoami):rwX ~/.composer
+                    sudo setfacl -R -m u:1000:rwX -m u:$(whoami):rwX ~/.composer
+                    sudo setfacl -dR -m u:1000:rwX -m u:$(whoami):rwX ~/.cache
+                    sudo setfacl -R -m u:1000:rwX -m u:$(whoami):rwX ~/.cache
           - run:
                 name: Test migrations from 4.0
                 no_output_timeout: 60m
