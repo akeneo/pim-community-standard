@@ -33,14 +33,3 @@ workflows:
     pull_request:
         jobs:
             - build
-
-    nightly:
-        triggers:
-            - schedule:
-                  cron: "0 5 * * *"
-                  filters:
-                      branches:
-                          only:
-                              - "3.2" 
-        jobs:
-            - build
