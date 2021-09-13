@@ -13,7 +13,7 @@ jobs:
           command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:master php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
       - run:
           name: Create mandatory yarn directories
-          command: mkdir -p ~/.cache/yarn && sudo chown -R 1000:1000 ~/.cache/yarn
+          command: mkdir -p ~/.cache/yarn ~/.cache/Cypress && sudo chown -R 1000:1000 ~/.cache/yarn ~/.cache/Cypress
       - run:
           name: Launch the PIM in dev mode
           command: make
@@ -46,8 +46,8 @@ jobs:
           - run:
                 name: Create mandatory composer and yarn directories
                 command: |
-                    mkdir -p ~/.composer ~/.cache/yarn
-                    sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn
+                    mkdir -p ~/.composer ~/.cache/yarn ~/.cache/Cypress
+                    sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn ~/.cache/Cypress
           - run:
                 name: Test migrations from 4.0
                 no_output_timeout: 60m
