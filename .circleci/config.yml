@@ -34,7 +34,7 @@ jobs:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
 
-  test_migrations_from_4_0:
+  test_migrations_from_5_0:
       machine:
           image: ubuntu-2004:202101-01
       steps:
@@ -49,9 +49,9 @@ jobs:
                     mkdir -p ~/.composer ~/.cache/yarn ~/.cache/Cypress
                     sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn ~/.cache/Cypress
           - run:
-                name: Test migrations from 4.0
+                name: Test migrations from 5.0
                 no_output_timeout: 60m
-                command: .circleci/test_migrations_from_4_0.sh $CIRCLE_BRANCH
+                command: .circleci/test_migrations_from_5_0.sh $CIRCLE_BRANCH
                 environment:
                     YARN_REGISTRY: "http://registry.yarnpkg.com"
           - run:
@@ -64,7 +64,7 @@ workflows:
     pull_request:
         jobs:
             - build
-            - test_migrations_from_4_0
+            - test_migrations_from_5_0
 
     nightly:
         triggers:
@@ -76,4 +76,4 @@ workflows:
                       - master
         jobs:
             - build
-            - test_migrations_from_4_0
+            - test_migrations_from_5_0

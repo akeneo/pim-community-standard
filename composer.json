@@ -21,7 +21,7 @@
         ]
     },
     "require": {
-        "akeneo/pim-community-dev": "dev-jml-fix-migrations"
+        "akeneo/pim-community-dev": "dev-master"
     },
     "require-dev": {
         "symfony/debug-bundle": "^4.4.7",
