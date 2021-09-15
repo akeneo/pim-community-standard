@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# This script tests that the migrations are working from a 4.0 version to the current branch.
+# This script tests that the migrations are working from a 5.0 version to the current branch.
 # Here is the steps to do that:
-#   - Checkout and install a PIM 4.0 with icecat catalog, using docker volumes (to keep the data in next steps)
+#   - Checkout and install a PIM 5.0 with icecat catalog, using docker volumes (to keep the data in next steps)
 #   - Mark the current migrations as "done"
-#   - Checkout and install PIM on current branch without catalog in order to use the 4.0 data
+#   - Checkout and install PIM on current branch without catalog in order to use the 5.0 data
 #   - Launch migrations and check there is no errors
 
 set -eu
@@ -39,11 +39,10 @@ services:
 }
 
 install_pim_without_database() {
-  export $(cat .env)
-  APP_ENV=dev make up
+  source .env
+  APP_ENV=dev C='fpm mysql elasticsearch httpd object-storage pubsub-emulator' make up
   # Wait for docker up. This is not mandatory but it checks the containers are working properly.
   ./docker/wait_docker_up.sh
-  APP_ENV=dev PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 make node_modules cache front
 }
 
 copy_migrations_to_upgrades_directory() {
@@ -64,18 +63,18 @@ if [ $# -ne 1 ]; then
 fi
 PR_BRANCH=$1
 
-## STEP 1: install 4.0 database and index
-echo "Checkout 4.0 branch..."
-git branch -D real40 || true
-git checkout -b real40 --track origin/4.0
+## STEP 1: install 5.0 database and index
+echo "Checkout 5.0 branch..."
+git branch -D real50 || true
+git checkout -b real50 --track origin/5.0
 sudo chown -R 1000:1000 "${PROJECT_DIR}"
 
-echo "Install 4.0 PIM dependencies and required files (including Makefile)..."
+echo "Install 5.0 PIM dependencies and required files (including Makefile)..."
 docker run --user www-data --rm \
   --volume $(pwd):/srv/pim --volume ~/.composer:/var/www.composer --volume ~/.ssh:/var/www/.ssh \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
-  akeneo/pim-php-dev:4.0 \
+  akeneo/pim-php-dev:5.0 \
   php -d memory_limit=4G /usr/local/bin/composer install --no-interaction
 
 echo "Update docker-compose configuration to use volumes for MySQL and Elasticsearch containers..."
@@ -84,7 +83,6 @@ update_docker_compose_config_to_use_volumes
 echo "Launch PIM install..."
 install_pim_without_database
 APP_ENV=dev make database O="--catalog vendor/akeneo/pim-community-dev/src/Akeneo/Platform/Bundle/InstallerBundle/Resources/fixtures/icecat_demo_dev"
-curl --fail http://localhost:8080/
 
 # Currently we have a bug when we install a PIM with a new database: the migrations are not marked as done.
 # Meanwhile we fix this bug, we manually mark the migrations as done.
@@ -112,6 +110,8 @@ docker run --user www-data --rm \
   akeneo/pim-php-dev:master \
   php -d memory_limit=4G /usr/local/bin/composer install --no-interaction
 
+sudo rm -rf ${PROJECT_DIR}/var/cache/*
+
 echo "Update docker-compose configuration to use volumes for MySQL and Elasticsearch containers..."
 update_docker_compose_config_to_use_volumes
 
@@ -125,8 +125,7 @@ get_executed_migrations_count
 EXECUTED_MIGRATIONS_COUNT_BEFORE=${EXECUTED_MIGRATIONS_COUNT}
 echo "Number of migrations marked as done before migration: ${EXECUTED_MIGRATIONS_COUNT_BEFORE}"
 copy_migrations_to_upgrades_directory
-docker-compose run --user www-data --rm --volume $(pwd):/srv/pim --workdir /srv/pim php \
-  php bin/console doctrine:migrations:migrate --no-interaction
+docker-compose run --user www-data --rm --volume $(pwd):/srv/pim --workdir /srv/pim php php bin/console doctrine:migrations:migrate --no-interaction
 get_executed_migrations_count
 EXECUTED_MIGRATIONS_COUNT_AFTER=${EXECUTED_MIGRATIONS_COUNT}
 echo "Number of migrations marked as done after migration: ${EXECUTED_MIGRATIONS_COUNT_AFTER}"
