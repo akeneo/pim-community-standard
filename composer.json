@@ -24,9 +24,8 @@
         "akeneo/pim-community-dev": "dev-master"
     },
     "require-dev": {
-        "symfony/debug-bundle": "^4.4.7",
-        "symfony/web-profiler-bundle": "^4.4.7",
-        "symfony/web-server-bundle": "^4.4.7"
+        "symfony/debug-bundle": "^5.3",
+        "symfony/web-profiler-bundle": "^5.3"
     },
     "scripts": {
         "post-update-cmd": [
