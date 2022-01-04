@@ -65,15 +65,3 @@ workflows:
         jobs:
             - build
             - test_migrations_from_5_0
-
-    nightly:
-        triggers:
-            - schedule:
-                cron: 0 5 * * *
-                filters:
-                  branches:
-                    only:
-                      - master
-        jobs:
-            - build
-            - test_migrations_from_5_0
