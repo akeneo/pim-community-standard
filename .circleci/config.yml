@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     machine:
@@ -62,6 +62,15 @@ workflows:
     version: 2
 
     pull_request:
+        jobs:
+            - build
+            - test_migrations_from_5_0
+
+    nightly:
+        when:
+            and:
+                - equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
+                - equal: [ "nightly_v6", << pipeline.schedule.name >> ]
         jobs:
             - build
             - test_migrations_from_5_0
