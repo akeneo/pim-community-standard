@@ -96,7 +96,7 @@ docker-compose run --user www-data --rm --volume $(pwd):/srv/pim --workdir /srv/
 ## STEP 2: Stop the containers, checkout target branch and install new PIM using previously installed catalog
 echo "Stop containers and checkout $PR_BRANCH branch..."
 make down || true
-sudo chown -R 1001:1001 "${PROJECT_DIR}"
+sudo chown -R ${UID}:${UID} "${PROJECT_DIR}"
 git clean -d --force
 [ -f composer.lock ] && sudo rm composer.lock
 git checkout $PR_BRANCH
