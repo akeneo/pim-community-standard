@@ -67,10 +67,13 @@ workflows:
             - test_migrations_from_5_0
 
     nightly:
-        when:
-            and:
-                - equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
-                - equal: [ "nightly_v6", << pipeline.schedule.name >> ]
+        triggers:
+            - schedule:
+                cron: 0 5 * * *
+                filters:
+                  branches:
+                    only:
+                      - master
         jobs:
             - build
             - test_migrations_from_5_0
