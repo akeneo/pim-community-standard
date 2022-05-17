@@ -38,5 +38,10 @@
             "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
         ]
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    }
 }
