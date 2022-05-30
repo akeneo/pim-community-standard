@@ -78,15 +78,3 @@ workflows:
         jobs:
             - build_4_0_dev
             - build_last_release
-
-    nightly:
-        triggers:
-            - schedule:
-                cron: 0 5 * * *
-                filters:
-                  branches:
-                    only:
-                      - "4.0"
-        jobs:
-          - build_last_release
-          - build_4_0_dev
