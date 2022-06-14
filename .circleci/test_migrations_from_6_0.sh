@@ -107,7 +107,7 @@ docker run --user www-data --rm \
   --volume $(pwd):/srv/pim --volume ~/.composer:/var/www.composer --volume ~/.ssh:/var/www/.ssh \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
-  akeneo/pim-php-dev:6.0 \
+  akeneo/pim-php-dev:master \
   composer install --no-interaction
 
 sudo rm -rf ${PROJECT_DIR}/var/cache/*
