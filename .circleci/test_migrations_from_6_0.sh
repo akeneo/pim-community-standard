@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# This script tests that the migrations are working from a 5.0 version to the current branch.
+# This script tests that the migrations are working from a 6.0 version to the current branch.
 # Here is the steps to do that:
-#   - Checkout and install a PIM 5.0 with icecat catalog, using docker volumes (to keep the data in next steps)
+#   - Checkout and install a PIM 6.0 with icecat catalog, using docker volumes (to keep the data in next steps)
 #   - Mark the current migrations as "done"
-#   - Checkout and install PIM on current branch without catalog in order to use the 5.0 data
+#   - Checkout and install PIM on current branch without catalog in order to use the 6.0 data
 #   - Launch migrations and check there is no errors
 
 set -eu
@@ -63,19 +63,19 @@ if [ $# -ne 1 ]; then
 fi
 PR_BRANCH=$1
 
-## STEP 1: install 5.0 database and index
-echo "Checkout 5.0 branch..."
-git branch -D real50 || true
-git checkout -b real50 --track origin/5.0
+## STEP 1: install 6.0 database and index
+echo "Checkout 6.0 branch..."
+git branch -D real60 || true
+git checkout -b real60 --track origin/6.0
 sudo chown -R 1000:1000 "${PROJECT_DIR}"
 
-echo "Install 5.0 PIM dependencies and required files (including Makefile)..."
+echo "Install 6.0 PIM dependencies and required files (including Makefile)..."
 docker run --user www-data --rm \
   --volume $(pwd):/srv/pim --volume ~/.composer:/var/www.composer --volume ~/.ssh:/var/www/.ssh \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
-  akeneo/pim-php-dev:5.0 \
-  php -d memory_limit=4G /usr/local/bin/composer install --no-interaction
+  akeneo/pim-php-dev:6.0 \
+  composer install --no-interaction
 
 echo "Update docker-compose configuration to use volumes for MySQL and Elasticsearch containers..."
 update_docker_compose_config_to_use_volumes
@@ -108,7 +108,7 @@ docker run --user www-data --rm \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
   akeneo/pim-php-dev:6.0 \
-  php -d memory_limit=4G /usr/local/bin/composer install --no-interaction
+  composer install --no-interaction
 
 sudo rm -rf ${PROJECT_DIR}/var/cache/*
 
