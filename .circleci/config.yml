@@ -2,7 +2,7 @@ version: 2
 jobs:
   build_last_release:
     machine:
-      image: ubuntu-1604:201903-01
+      image: ubuntu-2004:2022.04.1
     steps:
       - checkout
       - run:
@@ -36,7 +36,7 @@ jobs:
 
   build_5_0_dev:
     machine:
-      image: ubuntu-1604:201903-01
+      image: ubuntu-2004:2022.04.1
     steps:
       - checkout
       - run:
