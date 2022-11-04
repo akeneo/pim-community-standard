@@ -40,10 +40,6 @@ jobs:
       steps:
           - checkout
           - run:
-                name: Change owner on project dir (default user = circleci (1001) and docker needs uid 1000)
-                command: |
-                    sudo chown -R 1000:1000 ../project
-          - run:
                 name: Create mandatory composer and yarn directories
                 command: |
                     mkdir -p ~/.composer ~/.cache/yarn ~/.cache/Cypress
