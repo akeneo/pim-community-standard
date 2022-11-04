@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     machine:
-      image: ubuntu-2004:202101-01
+      image: ubuntu-2204:2022.07.1
     steps:
       - checkout
       - run:
@@ -10,7 +10,7 @@ jobs:
           command: sudo chown -R 1000:1000 ../project
       - run:
           name: Install PHP dependencies
-          command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:6.0 php -d memory_limit=4G /usr/local/bin/composer --prefer-dist install
+          command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:8.1 composer --prefer-dist install
       - run:
           name: Create mandatory yarn directories
           command: mkdir -p ~/.cache/yarn ~/.cache/Cypress ~/.composer && sudo chown -R 1000:1000 ~/.cache/yarn ~/.cache/Cypress ~/.composer
@@ -36,7 +36,7 @@ jobs:
 
   test_migrations_from_6_0:
       machine:
-          image: ubuntu-2004:202101-01
+          image: ubuntu-2204:2022.07.1
       steps:
           - checkout
           - run:
