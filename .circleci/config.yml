@@ -10,7 +10,7 @@ jobs:
           command: sudo chown -R 1000:1000 ../project
       - run:
           name: Install PHP dependencies
-          command: docker run -u www-data -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:8.1 composer --prefer-dist install
+          command: docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:8.1 composer --prefer-dist install
       - run:
           name: Create mandatory yarn directories
           command: mkdir -p ~/.cache/yarn ~/.cache/Cypress ~/.composer && sudo chown -R 1000:1000 ~/.cache/yarn ~/.cache/Cypress ~/.composer
