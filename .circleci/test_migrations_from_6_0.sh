@@ -53,8 +53,8 @@ copy_migrations_to_upgrades_directory() {
 
 get_executed_migrations_count() {
   # If the migration_versions table does not exist (=no migrations available) we just echo 0
-  EXECUTED_MIGRATIONS_COUNT=$(docker-compose exec --env MYSQL_PWD=${APP_DATABASE_PASSWORD} mysql \
-    mysql --user ${APP_DATABASE_USER} ${APP_DATABASE_NAME} --silent --skip-column-names --execute="SELECT count(*) FROM migration_versions" || echo 0)
+    echo $(docker-compose exec --env MYSQL_PWD=${APP_DATABASE_PASSWORD} mysql \
+      mysql --user ${APP_DATABASE_USER} ${APP_DATABASE_NAME} --silent --skip-column-names --execute="SELECT count(*) FROM migration_versions" || echo 0)
 }
 
 if [ $# -ne 1 ]; then
@@ -121,13 +121,12 @@ install_pim_without_database
 
 ## STEP 3: Launch migrations
 echo "Copy migrations and launch them"
-get_executed_migrations_count
-EXECUTED_MIGRATIONS_COUNT_BEFORE=${EXECUTED_MIGRATIONS_COUNT}
+EXECUTED_MIGRATIONS_COUNT_BEFORE=$(get_executed_migrations_count)
 echo "Number of migrations marked as done before migration: ${EXECUTED_MIGRATIONS_COUNT_BEFORE}"
 copy_migrations_to_upgrades_directory
 docker-compose run --user www-data --rm --volume $(pwd):/srv/pim --workdir /srv/pim php php bin/console doctrine:migrations:migrate --no-interaction
-get_executed_migrations_count
-EXECUTED_MIGRATIONS_COUNT_AFTER=${EXECUTED_MIGRATIONS_COUNT}
+
+EXECUTED_MIGRATIONS_COUNT_AFTER=$(get_executed_migrations_count)
 echo "Number of migrations marked as done after migration: ${EXECUTED_MIGRATIONS_COUNT_AFTER}"
 
 if [ "${EXECUTED_MIGRATIONS_COUNT_AFTER}" == "${EXECUTED_MIGRATIONS_COUNT_BEFORE}" ]; then
