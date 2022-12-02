@@ -21,8 +21,8 @@ Installation instructions
 The following steps will install Akeneo PIM in the current directory (must be empty) and launch it from there:
 
 ```bash
-$ docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:master \
-    php -d memory_limit=4G /usr/local/bin/composer create-project --prefer-dist \
+$ docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:8.1 \
+    php /usr/local/bin/composer create-project --prefer-dist \
     akeneo/pim-community-standard /srv/pim "dev-master@dev"
 ```
 ```
@@ -38,8 +38,7 @@ To shutdown your PIM: `make down`
 
 
 ```bash
-$ php -d memory_limit=4G /usr/local/bin/composer create-project --prefer-dist \
-    akeneo/pim-community-standard /srv/pim "dev-master@dev"
+$ php /usr/local/bin/composer create-project --prefer-dist akeneo/pim-community-standard /srv/pim "dev-master@dev"
 ```
 
 You will need to change the `.env` file to configure the access to your MySQL and ES server.
@@ -48,7 +47,6 @@ Once done, you can run:
 
 ```
 $ NO_DOCKER=true make
-
 ```
 
 For more details, please follow https://docs.akeneo.com/master/install_pim
