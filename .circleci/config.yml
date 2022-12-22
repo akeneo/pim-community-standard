@@ -66,7 +66,7 @@ workflows:
         when:
             and:
                 - equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
-                - equal: [ "nightly_master", << pipeline.schedule.name >> ]
+                - equal: [ "nightly_v7", << pipeline.schedule.name >> ]
         jobs:
             - build
             - test_migrations_from_6_0
