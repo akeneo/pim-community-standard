@@ -76,13 +76,6 @@ workflows:
             - build_5_0_dev
 
     nightly:
-        triggers:
-            - schedule:
-                cron: 0 5 * * *
-                filters:
-                  branches:
-                    only:
-                      - "5.0"
         jobs:
             - build_last_release
             - build_5_0_dev
