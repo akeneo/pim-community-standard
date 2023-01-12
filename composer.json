@@ -24,6 +24,7 @@
         "akeneo/pim-community-dev": "^7.0.0"
     },
     "require-dev": {
+        "ramsey/uuid": "4.7.1",
         "symfony/debug-bundle": "^5.4.0",
         "symfony/web-profiler-bundle": "^5.4.0"
     },
