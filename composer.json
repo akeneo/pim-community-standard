@@ -43,5 +43,10 @@
         "allow-plugins": {
             "symfony/flex": true
         }
+    },
+    "extra": {
+        "symfony": {
+            "require": "5.4.*"
+        }
     }
 }
