@@ -1,52 +1,52 @@
 {
-    "name": "akeneo/pim-community-standard",
-    "description": "The \"Akeneo Community Standard Edition\" distribution",
-    "license": "OSL-3.0",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Akeneo",
-            "homepage": "http://www.akeneo.com"
-        }
-    ],
-    "autoload": {
-        "psr-0": {
-            "": "src/"
-        },
-        "psr-4": {
-            "Pim\\Upgrade\\": "upgrades/"
-        },
-        "exclude-from-classmap": [
-            "vendor/akeneo/pim-community-dev/src/Kernel.php"
-        ]
-    },
-    "require": {
-        "akeneo/pim-community-dev": "^7.0.0"
-    },
-    "require-dev": {
-        "symfony/debug-bundle": "^5.4.0",
-        "symfony/web-profiler-bundle": "^5.4.0"
-    },
-    "scripts": {
-        "post-update-cmd": [
-            "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
-        ],
-        "post-install-cmd": [
-            "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
-        ],
-        "post-create-project-cmd": [
-            "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
-        ]
-    },
-    "minimum-stability": "stable",
-    "config": {
-        "allow-plugins": {
-            "symfony/flex": true
-        }
-    },
-    "extra": {
-        "symfony": {
-            "require": "5.4.*"
-        }
+  "name": "akeneo/pim-community-standard",
+  "description": "The \"Akeneo Community Standard Edition\" distribution",
+  "license": "OSL-3.0",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Akeneo",
+      "homepage": "http://www.akeneo.com"
     }
+  ],
+  "autoload": {
+    "psr-0": {
+      "": "src/"
+    },
+    "psr-4": {
+      "Pim\\Upgrade\\": "upgrades/"
+    },
+    "exclude-from-classmap": [
+      "vendor/akeneo/pim-community-dev/src/Kernel.php"
+    ]
+  },
+  "require": {
+    "akeneo/pim-community-dev": "dev-master"
+  },
+  "require-dev": {
+    "symfony/debug-bundle": "^5.4.0",
+    "symfony/web-profiler-bundle": "^5.4.0"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
+    ],
+    "post-install-cmd": [
+      "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
+    ],
+    "post-create-project-cmd": [
+      "vendor/akeneo/pim-community-dev/std-build/install-required-files.sh"
+    ]
+  },
+  "minimum-stability": "stable",
+  "config": {
+    "allow-plugins": {
+      "symfony/flex": true
+    }
+  },
+  "extra": {
+    "symfony": {
+      "require": "5.4.*"
+    }
+  }
 }
