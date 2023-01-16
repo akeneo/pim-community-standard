@@ -124,7 +124,7 @@ echo "Copy migrations and launch them"
 EXECUTED_MIGRATIONS_COUNT_BEFORE=$(get_executed_migrations_count)
 echo "Number of migrations marked as done before migration: ${EXECUTED_MIGRATIONS_COUNT_BEFORE}"
 copy_migrations_to_upgrades_directory
-docker-compose run --user www-data --rm --volume $(pwd):/srv/pim --workdir /srv/pim php php bin/console doctrine:migrations:migrate --no-interaction
+docker-compose run --user www-data --rm --volume $(pwd):/srv/pim -e APP_ENV=prod --workdir /srv/pim php php bin/console doctrine:migrations:migrate --no-interaction
 
 EXECUTED_MIGRATIONS_COUNT_AFTER=$(get_executed_migrations_count)
 echo "Number of migrations marked as done after migration: ${EXECUTED_MIGRATIONS_COUNT_AFTER}"
