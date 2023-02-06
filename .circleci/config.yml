@@ -18,7 +18,7 @@ jobs:
           name: Launch the PIM in dev mode
           command: make
           environment:
-              YARN_REGISTRY: "http://registry.yarnpkg.com"
+            YARN_REGISTRY: "http://registry.yarnpkg.com"
       - run:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
@@ -29,44 +29,44 @@ jobs:
           name: Launch the PIM in prod mode
           command: make prod
           environment:
-              YARN_REGISTRY: "http://registry.yarnpkg.com"
+            YARN_REGISTRY: "http://registry.yarnpkg.com"
       - run:
           name: Test login page HTTP status
           command: curl -f http://localhost:8080/
 
-  test_migrations_from_6_0:
-      machine:
-          image: ubuntu-2204:2022.07.1
-      steps:
-          - checkout
-          - run:
-                name: Create mandatory composer and yarn directories
-                command: |
-                    mkdir -p ~/.composer ~/.cache/yarn ~/.cache/Cypress
-                    sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn ~/.cache/Cypress
-          - run:
-                name: Test migrations from 6.0
-                no_output_timeout: 60m
-                command: .circleci/test_migrations_from_6_0.sh $CIRCLE_BRANCH
-                environment:
-                    YARN_REGISTRY: "http://registry.yarnpkg.com"
-          - run:
-                name: Test login page HTTP status
-                command: curl --fail http://localhost:8080/
+  test_migrations_from_7_0:
+    machine:
+      image: ubuntu-2204:2022.07.1
+    steps:
+      - checkout
+      - run:
+          name: Create mandatory composer and yarn directories
+          command: |
+            mkdir -p ~/.composer ~/.cache/yarn ~/.cache/Cypress
+            sudo chown -R 1000:1000 ~/.composer ~/.cache/yarn ~/.cache/Cypress
+      - run:
+          name: Test migrations from 7.0
+          no_output_timeout: 60m
+          command: .circleci/test_migrations_from_7_0.sh $CIRCLE_BRANCH
+          environment:
+            YARN_REGISTRY: "http://registry.yarnpkg.com"
+      - run:
+          name: Test login page HTTP status
+          command: curl --fail http://localhost:8080/
 
 workflows:
-    version: 2
+  version: 2
 
-    pull_request:
-        jobs:
-            - build
-            - test_migrations_from_6_0
+  pull_request:
+    jobs:
+      - build
+      - test_migrations_from_7_0
 
-    nightly:
-        when:
-            and:
-                - equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
-                - equal: [ "nightly_master", << pipeline.schedule.name >> ]
-        jobs:
-            - build
-            - test_migrations_from_6_0
+  nightly:
+    when:
+      and:
+        - equal: [scheduled_pipeline, << pipeline.trigger_source >>]
+        - equal: ["nightly_master", << pipeline.schedule.name >>]
+    jobs:
+      - build
+      - test_migrations_from_7_0
