@@ -71,7 +71,7 @@ sudo chown -R 1000:1000 "${PROJECT_DIR}"
 
 echo "Install 7.0 PIM dependencies and required files (including Makefile)..."
 docker run --user www-data --rm \
-  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www.composer --volume ~/.ssh:/var/www/.ssh \
+  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www/.cache/composer --volume ~/.ssh:/var/www/.ssh \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
   akeneo/pim-php-dev:8.1 \
@@ -104,7 +104,7 @@ sudo chown -R 1000:1000 "${PROJECT_DIR}"
 
 echo "Install $PR_BRANCH PIM dependencies and required files (including Makefile)..."
 docker run --user www-data --rm \
-  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www.composer --volume ~/.ssh:/var/www/.ssh \
+  --volume $(pwd):/srv/pim --volume ~/.composer:/var/www/.cache/composer --volume ~/.ssh:/var/www/.ssh \
   --workdir /srv/pim \
   --env COMPOSER_AUTH \
   akeneo/pim-php-dev:8.1 \
