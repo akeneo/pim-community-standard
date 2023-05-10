@@ -58,6 +58,9 @@ workflows:
   version: 2
 
   pull_request:
+    when:
+      not:
+        equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
     jobs:
       - build
       - test_migrations_from_7_0
