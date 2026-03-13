@@ -42,6 +42,9 @@
   "config": {
     "allow-plugins": {
       "symfony/flex": true
+    },
+    "audit": {
+      "block-insecure": false
     }
   },
   "extra": {
