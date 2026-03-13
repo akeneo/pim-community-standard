@@ -36,7 +36,7 @@ jobs:
 
   test_migrations_from_7_0:
     machine:
-      image: ubuntu-2204:2022.07.1
+      image: ubuntu-2204:current
     steps:
       - checkout
       - run:
