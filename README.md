@@ -21,9 +21,9 @@ Installation instructions
 The following steps will install Akeneo PIM in the current directory (must be empty) and launch it from there:
 
 ```bash
-$ docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:8.1 \
+$ docker run -u www-data -v $(pwd):/srv/pim -w /srv/pim --rm akeneo/pim-php-dev:8.3 \
     php /usr/local/bin/composer create-project --prefer-dist \
-    akeneo/pim-community-standard /srv/pim "dev-master@dev"
+    akeneo/pim-community-standard /srv/pim "dev-main@dev"
 ```
 ```
 $ make
