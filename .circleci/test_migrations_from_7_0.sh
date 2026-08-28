@@ -29,6 +29,7 @@ version: '3.4'
 
 services:
     mysql:
+        command: '--log_bin_trust_function_creators=1 --mysql_native_password=ON'
         volumes:
             - '${MYSQL_DATA_DIR}:/var/lib/mysql'
     elasticsearch:
