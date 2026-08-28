@@ -21,7 +21,7 @@
     ]
   },
   "require": {
-    "akeneo/pim-community-dev": "v2026.3"
+    "akeneo/pim-community-dev": "v2026.4"
   },
   "require-dev": {
     "symfony/debug-bundle": "^5.4.0",
